@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29CA6612D782BC86B3A3FF1D /* Pods_Cuppo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13EC5D2DA38B7852FD05532 /* Pods_Cuppo.framework */; };
 		9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962227D64C0200FF42BA /* AppDelegate.swift */; };
 		9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962427D64C0200FF42BA /* SceneDelegate.swift */; };
 		9F81962727D64C0200FF42BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962627D64C0200FF42BA /* ViewController.swift */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DB9F37DD0B307B399E1B39D /* Pods-Cuppo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cuppo.debug.xcconfig"; path = "Target Support Files/Pods-Cuppo/Pods-Cuppo.debug.xcconfig"; sourceTree = "<group>"; };
+		78B7CE531B317FCE57E694A4 /* Pods-Cuppo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cuppo.release.xcconfig"; path = "Target Support Files/Pods-Cuppo/Pods-Cuppo.release.xcconfig"; sourceTree = "<group>"; };
 		9F81961F27D64C0200FF42BA /* Cuppo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuppo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F81962227D64C0200FF42BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F81962427D64C0200FF42BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		9F81962B27D64C0300FF42BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F81962E27D64C0400FF42BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F81963027D64C0400FF42BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D13EC5D2DA38B7852FD05532 /* Pods_Cuppo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cuppo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29CA6612D782BC86B3A3FF1D /* Pods_Cuppo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24FDE9BF14CDFF62C1689AFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1DB9F37DD0B307B399E1B39D /* Pods-Cuppo.debug.xcconfig */,
+				78B7CE531B317FCE57E694A4 /* Pods-Cuppo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9F81961627D64C0200FF42BA = {
 			isa = PBXGroup;
 			children = (
 				9F81962127D64C0200FF42BA /* Cuppo */,
 				9F81962027D64C0200FF42BA /* Products */,
+				24FDE9BF14CDFF62C1689AFF /* Pods */,
+				AB7E05F38FA4277B3F736A53 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +164,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		AB7E05F38FA4277B3F736A53 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D13EC5D2DA38B7852FD05532 /* Pods_Cuppo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F81963327D64C0400FF42BA /* Build configuration list for PBXNativeTarget "Cuppo" */;
 			buildPhases = (
+				BDE4CAF766E79DC9A9E4869F /* [CP] Check Pods Manifest.lock */,
 				9F81961B27D64C0200FF42BA /* Sources */,
 				9F81961C27D64C0200FF42BA /* Frameworks */,
 				9F81961D27D64C0200FF42BA /* Resources */,
+				A9FCBCA545FED87A27603144 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,6 +239,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A9FCBCA545FED87A27603144 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cuppo/Pods-Cuppo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cuppo/Pods-Cuppo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cuppo/Pods-Cuppo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDE4CAF766E79DC9A9E4869F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cuppo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9F81961B27D64C0200FF42BA /* Sources */ = {
@@ -364,6 +433,7 @@
 		};
 		9F81963427D64C0400FF42BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DB9F37DD0B307B399E1B39D /* Pods-Cuppo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -392,6 +462,7 @@
 		};
 		9F81963527D64C0400FF42BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78B7CE531B317FCE57E694A4 /* Pods-Cuppo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
