@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		29CA6612D782BC86B3A3FF1D /* Pods_Cuppo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13EC5D2DA38B7852FD05532 /* Pods_Cuppo.framework */; };
+		9F253E9F27D668D30010C1E6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253E9E27D668D30010C1E6 /* Constant.swift */; };
+		9F253EA127D669320010C1E6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253EA027D669320010C1E6 /* UIColor.swift */; };
+		9F253EA327D6693B0010C1E6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253EA227D6693B0010C1E6 /* UIViewController.swift */; };
+		9F253EA527D66A3D0010C1E6 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253EA427D66A3D0010C1E6 /* IndicatorView.swift */; };
 		9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962227D64C0200FF42BA /* AppDelegate.swift */; };
 		9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962427D64C0200FF42BA /* SceneDelegate.swift */; };
 		9F81962727D64C0200FF42BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962627D64C0200FF42BA /* ViewController.swift */; };
@@ -19,6 +23,10 @@
 /* Begin PBXFileReference section */
 		1DB9F37DD0B307B399E1B39D /* Pods-Cuppo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cuppo.debug.xcconfig"; path = "Target Support Files/Pods-Cuppo/Pods-Cuppo.debug.xcconfig"; sourceTree = "<group>"; };
 		78B7CE531B317FCE57E694A4 /* Pods-Cuppo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cuppo.release.xcconfig"; path = "Target Support Files/Pods-Cuppo/Pods-Cuppo.release.xcconfig"; sourceTree = "<group>"; };
+		9F253E9E27D668D30010C1E6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		9F253EA027D669320010C1E6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		9F253EA227D6693B0010C1E6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		9F253EA427D66A3D0010C1E6 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		9F81961F27D64C0200FF42BA /* Cuppo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuppo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F81962227D64C0200FF42BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F81962427D64C0200FF42BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +56,6 @@
 				1DB9F37DD0B307B399E1B39D /* Pods-Cuppo.debug.xcconfig */,
 				78B7CE531B317FCE57E694A4 /* Pods-Cuppo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -116,6 +123,7 @@
 		9F81963927D64C9900FF42BA /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				9F253E9E27D668D30010C1E6 /* Constant.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -123,6 +131,8 @@
 		9F81963A27D64CA100FF42BA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9F253EA027D669320010C1E6 /* UIColor.swift */,
+				9F253EA227D6693B0010C1E6 /* UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -130,6 +140,7 @@
 		9F81963B27D64CAA00FF42BA /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				9F253EA427D66A3D0010C1E6 /* IndicatorView.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -289,7 +300,11 @@
 			files = (
 				9F81962727D64C0200FF42BA /* ViewController.swift in Sources */,
 				9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */,
+				9F253EA327D6693B0010C1E6 /* UIViewController.swift in Sources */,
 				9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */,
+				9F253E9F27D668D30010C1E6 /* Constant.swift in Sources */,
+				9F253EA527D66A3D0010C1E6 /* IndicatorView.swift in Sources */,
+				9F253EA127D669320010C1E6 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
