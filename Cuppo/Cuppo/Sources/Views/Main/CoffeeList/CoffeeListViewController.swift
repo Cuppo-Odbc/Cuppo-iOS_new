@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CoffeeListViewController: UIViewController {
+class CoffeeListViewController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

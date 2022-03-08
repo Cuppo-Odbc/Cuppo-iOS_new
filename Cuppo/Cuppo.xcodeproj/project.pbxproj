@@ -20,10 +20,12 @@
 		9F253EB627D712D10010C1E6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253EB527D712D10010C1E6 /* SettingViewController.swift */; };
 		9F253EBF27D71B4C0010C1E6 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253EBE27D71B4C0010C1E6 /* ViewModelProtocol.swift */; };
 		9F253EC127D71CA60010C1E6 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253EC027D71CA60010C1E6 /* UIFont.swift */; };
-		9F253EC327D71E550010C1E6 /* Goyang.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9F253EC227D71E470010C1E6 /* Goyang.otf */; };
+		9F253EC627D72CA70010C1E6 /* Coffee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F253EC527D72CA70010C1E6 /* Coffee.storyboard */; };
+		9F253EC827D72D760010C1E6 /* CoffeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253EC727D72D760010C1E6 /* CoffeeViewController.swift */; };
+		9F253ECA27D7A5870010C1E6 /* Goyang.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9F253EC227D71E470010C1E6 /* Goyang.otf */; };
+		9F253ECC27D7A6310010C1E6 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253ECB27D7A6310010C1E6 /* BaseController.swift */; };
 		9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962227D64C0200FF42BA /* AppDelegate.swift */; };
 		9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962427D64C0200FF42BA /* SceneDelegate.swift */; };
-		9F81962727D64C0200FF42BA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962627D64C0200FF42BA /* MainViewController.swift */; };
 		9F81962A27D64C0200FF42BA /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962827D64C0200FF42BA /* TabBar.storyboard */; };
 		9F81962C27D64C0300FF42BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962B27D64C0300FF42BA /* Assets.xcassets */; };
 		9F81962F27D64C0400FF42BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962D27D64C0400FF42BA /* LaunchScreen.storyboard */; };
@@ -45,10 +47,12 @@
 		9F253EBE27D71B4C0010C1E6 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		9F253EC027D71CA60010C1E6 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		9F253EC227D71E470010C1E6 /* Goyang.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Goyang.otf; sourceTree = "<group>"; };
+		9F253EC527D72CA70010C1E6 /* Coffee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Coffee.storyboard; sourceTree = "<group>"; };
+		9F253EC727D72D760010C1E6 /* CoffeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeViewController.swift; sourceTree = "<group>"; };
+		9F253ECB27D7A6310010C1E6 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		9F81961F27D64C0200FF42BA /* Cuppo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuppo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F81962227D64C0200FF42BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F81962427D64C0200FF42BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9F81962627D64C0200FF42BA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9F81962927D64C0200FF42BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBar.storyboard; sourceTree = "<group>"; };
 		9F81962B27D64C0300FF42BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F81962E27D64C0400FF42BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,8 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				9F81962827D64C0200FF42BA /* TabBar.storyboard */,
-				9F81962627D64C0200FF42BA /* MainViewController.swift */,
 				9F253EA727D70B390010C1E6 /* Calendar */,
+				9F253EC427D72C940010C1E6 /* Coffee */,
 				9F253EA827D70B660010C1E6 /* CoffeeList */,
 				9F253EA927D70B9E0010C1E6 /* Setting */,
 			);
@@ -174,6 +178,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		9F253EC427D72C940010C1E6 /* Coffee */ = {
+			isa = PBXGroup;
+			children = (
+				9F253EC527D72CA70010C1E6 /* Coffee.storyboard */,
+				9F253EC727D72D760010C1E6 /* CoffeeViewController.swift */,
+			);
+			path = Coffee;
+			sourceTree = "<group>";
+		};
 		9F81961627D64C0200FF42BA = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				9F253EA427D66A3D0010C1E6 /* IndicatorView.swift */,
+				9F253ECB27D7A6310010C1E6 /* BaseController.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -366,12 +380,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F253EC627D72CA70010C1E6 /* Coffee.storyboard in Resources */,
 				9F253EAB27D70BBB0010C1E6 /* Calendar.storyboard in Resources */,
-				9F253EC327D71E550010C1E6 /* Goyang.otf in Resources */,
 				9F253EAD27D70BCC0010C1E6 /* CoffeeList.storyboard in Resources */,
 				9F81962F27D64C0400FF42BA /* LaunchScreen.storyboard in Resources */,
 				9F81962C27D64C0300FF42BA /* Assets.xcassets in Resources */,
 				9F81962A27D64C0200FF42BA /* TabBar.storyboard in Resources */,
+				9F253ECA27D7A5870010C1E6 /* Goyang.otf in Resources */,
 				9F253EAF27D70BD40010C1E6 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,8 +441,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F253EB227D712AE0010C1E6 /* CalendarViewController.swift in Sources */,
-				9F81962727D64C0200FF42BA /* MainViewController.swift in Sources */,
+				9F253EC827D72D760010C1E6 /* CoffeeViewController.swift in Sources */,
 				9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */,
+				9F253ECC27D7A6310010C1E6 /* BaseController.swift in Sources */,
 				9F253EA327D6693B0010C1E6 /* UIViewController.swift in Sources */,
 				9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */,
 				9F253EB627D712D10010C1E6 /* SettingViewController.swift in Sources */,
