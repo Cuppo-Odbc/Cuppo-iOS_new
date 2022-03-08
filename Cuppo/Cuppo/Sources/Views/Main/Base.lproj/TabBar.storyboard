@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IzI-QM-ikd">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="BIN-G4-qcL">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="IzI-QM-ikd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GvN-GI-SnA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="EWp-At-Wb3" kind="relationship" relationship="viewControllers" id="nPl-gh-I7c"/>
+                        <segue destination="Jar-7i-KTi" kind="relationship" relationship="viewControllers" id="wQb-j8-gga"/>
+                        <segue destination="CHC-tX-gzd" kind="relationship" relationship="viewControllers" id="mUU-Xn-RYp"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ckI-Ci-iHM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
+        </scene>
+        <!--CalendarSB-->
+        <scene sceneID="iSb-Dq-y5g">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Calendar" referencedIdentifier="CalendarSB" id="EWp-At-Wb3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="main" selectedImage="main" id="HXj-Ot-9Xc"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D8u-Rq-Vym" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888" y="-85"/>
+        </scene>
+        <!--CoffeeListSB-->
+        <scene sceneID="Vic-X9-I7b">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CoffeeList" referencedIdentifier="CoffeeListSB" id="Jar-7i-KTi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="cards" selectedImage="cards" id="NoU-O3-yX5"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kHl-xv-96k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="115"/>
+        </scene>
+        <!--SettingSB-->
+        <scene sceneID="YxM-S6-0gm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setting" referencedIdentifier="SettingSB" id="CHC-tX-gzd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="settings" selectedImage="settings" id="BVA-e2-OMJ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="acs-yk-Ubx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888" y="323"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cards" width="20" height="20"/>
+        <image name="main" width="20" height="20"/>
+        <image name="settings" width="20" height="20"/>
+    </resources>
+</document>
