@@ -18,6 +18,9 @@
 		9F253EB227D712AE0010C1E6 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253EB127D712AE0010C1E6 /* CalendarViewController.swift */; };
 		9F253EB427D712C60010C1E6 /* CoffeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253EB327D712C60010C1E6 /* CoffeeListViewController.swift */; };
 		9F253EB627D712D10010C1E6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253EB527D712D10010C1E6 /* SettingViewController.swift */; };
+		9F253EBF27D71B4C0010C1E6 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253EBE27D71B4C0010C1E6 /* ViewModelProtocol.swift */; };
+		9F253EC127D71CA60010C1E6 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253EC027D71CA60010C1E6 /* UIFont.swift */; };
+		9F253EC327D71E550010C1E6 /* Goyang.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9F253EC227D71E470010C1E6 /* Goyang.otf */; };
 		9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962227D64C0200FF42BA /* AppDelegate.swift */; };
 		9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962427D64C0200FF42BA /* SceneDelegate.swift */; };
 		9F81962727D64C0200FF42BA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962627D64C0200FF42BA /* MainViewController.swift */; };
@@ -39,6 +42,9 @@
 		9F253EB127D712AE0010C1E6 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9F253EB327D712C60010C1E6 /* CoffeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeListViewController.swift; sourceTree = "<group>"; };
 		9F253EB527D712D10010C1E6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		9F253EBE27D71B4C0010C1E6 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		9F253EC027D71CA60010C1E6 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		9F253EC227D71E470010C1E6 /* Goyang.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Goyang.otf; sourceTree = "<group>"; };
 		9F81961F27D64C0200FF42BA /* Cuppo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuppo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F81962227D64C0200FF42BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F81962427D64C0200FF42BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +123,57 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		9F253EB727D719030010C1E6 /* CoffeeList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoffeeList;
+			sourceTree = "<group>";
+		};
+		9F253EB827D719210010C1E6 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		9F253EB927D719280010C1E6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9F253EBA27D719360010C1E6 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		9F253EBB27D7194E0010C1E6 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		9F253EBC27D71AC10010C1E6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9F253EC227D71E470010C1E6 /* Goyang.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		9F253EBD27D71B340010C1E6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9F253EBE27D71B4C0010C1E6 /* ViewModelProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		9F81961627D64C0200FF42BA = {
 			isa = PBXGroup;
 			children = (
@@ -159,10 +216,12 @@
 		9F81963727D64C3F00FF42BA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9F253EBC27D71AC10010C1E6 /* Fonts */,
 				9F81962B27D64C0300FF42BA /* Assets.xcassets */,
 				9F81963927D64C9900FF42BA /* Constants */,
 				9F81963A27D64CA100FF42BA /* Extension */,
 				9F81963B27D64CAA00FF42BA /* Util */,
+				9F253EBD27D71B340010C1E6 /* Protocols */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -171,9 +230,9 @@
 			isa = PBXGroup;
 			children = (
 				9F81963D27D64CC800FF42BA /* Network */,
-				9F81963C27D64CC300FF42BA /* Model */,
-				9F81963E27D64CCF00FF42BA /* Views */,
+				9F81963C27D64CC300FF42BA /* Models */,
 				9F81963F27D64CD500FF42BA /* ViewModels */,
+				9F81963E27D64CCF00FF42BA /* Views */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -191,6 +250,7 @@
 			children = (
 				9F253EA027D669320010C1E6 /* UIColor.swift */,
 				9F253EA227D6693B0010C1E6 /* UIViewController.swift */,
+				9F253EC027D71CA60010C1E6 /* UIFont.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -203,16 +263,21 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		9F81963C27D64CC300FF42BA /* Model */ = {
+		9F81963C27D64CC300FF42BA /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9F81963D27D64CC800FF42BA /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				9F253EB927D719280010C1E6 /* Login */,
+				9F253EBA27D719360010C1E6 /* SignUp */,
+				9F253EB827D719210010C1E6 /* Calendar */,
+				9F253EB727D719030010C1E6 /* CoffeeList */,
+				9F253EBB27D7194E0010C1E6 /* Setting */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -302,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F253EAB27D70BBB0010C1E6 /* Calendar.storyboard in Resources */,
+				9F253EC327D71E550010C1E6 /* Goyang.otf in Resources */,
 				9F253EAD27D70BCC0010C1E6 /* CoffeeList.storyboard in Resources */,
 				9F81962F27D64C0400FF42BA /* LaunchScreen.storyboard in Resources */,
 				9F81962C27D64C0300FF42BA /* Assets.xcassets in Resources */,
@@ -366,6 +432,8 @@
 				9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */,
 				9F253EB627D712D10010C1E6 /* SettingViewController.swift in Sources */,
 				9F253E9F27D668D30010C1E6 /* Constant.swift in Sources */,
+				9F253EBF27D71B4C0010C1E6 /* ViewModelProtocol.swift in Sources */,
+				9F253EC127D71CA60010C1E6 /* UIFont.swift in Sources */,
 				9F253EB427D712C60010C1E6 /* CoffeeListViewController.swift in Sources */,
 				9F253EA527D66A3D0010C1E6 /* IndicatorView.swift in Sources */,
 				9F253EA127D669320010C1E6 /* UIColor.swift in Sources */,

@@ -15,6 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="EWp-At-Wb3" kind="relationship" relationship="viewControllers" id="nPl-gh-I7c"/>
@@ -40,7 +42,9 @@
         <scene sceneID="Vic-X9-I7b">
             <objects>
                 <viewControllerPlaceholder storyboardName="CoffeeList" referencedIdentifier="CoffeeListSB" id="Jar-7i-KTi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="cards" selectedImage="cards" id="NoU-O3-yX5"/>
+                    <tabBarItem key="tabBarItem" title="" image="cards" selectedImage="cards" id="NoU-O3-yX5">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kHl-xv-96k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
