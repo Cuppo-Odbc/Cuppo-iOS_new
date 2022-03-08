@@ -216,8 +216,8 @@
 		9F81963727D64C3F00FF42BA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9F253EBC27D71AC10010C1E6 /* Fonts */,
 				9F81962B27D64C0300FF42BA /* Assets.xcassets */,
+				9F253EBC27D71AC10010C1E6 /* Fonts */,
 				9F81963927D64C9900FF42BA /* Constants */,
 				9F81963A27D64CA100FF42BA /* Extension */,
 				9F81963B27D64CAA00FF42BA /* Util */,
