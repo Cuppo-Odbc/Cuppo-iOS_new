@@ -6,8 +6,15 @@
 //
 
 import UIKit
+import Then
+import SnapKit
 
 class BaseController: UIViewController {
+    
+    private lazy var bgImgView = UIImageView().then {
+        $0.image = UIImage(named: "basicLightMode.jpeg")
+        $0.contentMode = .scaleToFill
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +22,11 @@ class BaseController: UIViewController {
     }
     
     func setBackground(){
+        self.view.addSubview(bgImgView)
         
+        bgImgView.snp.makeConstraints{
+            $0.top.bottom.trailing.leading.equalToSuperview().offset(0)
+        }
     }
 
 }
