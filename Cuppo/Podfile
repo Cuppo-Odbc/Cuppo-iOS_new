@@ -8,6 +8,8 @@ target 'Cuppo' do
   # Pods for Cuppo
   pod 'Alamofire'
   pod 'Kingfisher'
-  
-
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Then'
+  pod 'SnapKit'
 end
