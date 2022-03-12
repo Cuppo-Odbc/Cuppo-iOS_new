@@ -24,6 +24,7 @@
 		9F253EC827D72D760010C1E6 /* CoffeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253EC727D72D760010C1E6 /* CoffeeViewController.swift */; };
 		9F253ECA27D7A5870010C1E6 /* Goyang.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9F253EC227D71E470010C1E6 /* Goyang.otf */; };
 		9F253ECC27D7A6310010C1E6 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253ECB27D7A6310010C1E6 /* BaseController.swift */; };
+		9F253ECF27DA4C370010C1E6 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253ECE27DA4C370010C1E6 /* DiaryViewController.swift */; };
 		9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962227D64C0200FF42BA /* AppDelegate.swift */; };
 		9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962427D64C0200FF42BA /* SceneDelegate.swift */; };
 		9F81962A27D64C0200FF42BA /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962827D64C0200FF42BA /* TabBar.storyboard */; };
@@ -50,6 +51,7 @@
 		9F253EC527D72CA70010C1E6 /* Coffee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Coffee.storyboard; sourceTree = "<group>"; };
 		9F253EC727D72D760010C1E6 /* CoffeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeViewController.swift; sourceTree = "<group>"; };
 		9F253ECB27D7A6310010C1E6 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		9F253ECE27DA4C370010C1E6 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		9F81961F27D64C0200FF42BA /* Cuppo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuppo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F81962227D64C0200FF42BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F81962427D64C0200FF42BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				9F253EC527D72CA70010C1E6 /* Coffee.storyboard */,
 				9F253EC727D72D760010C1E6 /* CoffeeViewController.swift */,
+				9F253ECE27DA4C370010C1E6 /* DiaryViewController.swift */,
 			);
 			path = Coffee;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				9F253E9F27D668D30010C1E6 /* Constant.swift in Sources */,
 				9F253EBF27D71B4C0010C1E6 /* ViewModelProtocol.swift in Sources */,
 				9F253EC127D71CA60010C1E6 /* UIFont.swift in Sources */,
+				9F253ECF27DA4C370010C1E6 /* DiaryViewController.swift in Sources */,
 				9F253EB427D712C60010C1E6 /* CoffeeListViewController.swift in Sources */,
 				9F253EA527D66A3D0010C1E6 /* IndicatorView.swift in Sources */,
 				9F253EA127D669320010C1E6 /* UIColor.swift in Sources */,
@@ -619,7 +623,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -648,7 +652,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

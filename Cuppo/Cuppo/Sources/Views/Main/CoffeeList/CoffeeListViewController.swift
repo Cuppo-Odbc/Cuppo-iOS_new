@@ -31,8 +31,12 @@ extension CoffeeListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
+    // 디바이스가로- 60 : 세로 x : 315 : 200
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        let width = UIScreen.main.bounds.size.width - 60
+        let height = 200 * width / 315
+        
+        return height
     }
     
     
@@ -53,3 +57,4 @@ class CoffeeListCell: UITableViewCell {
     }
     
 }
+
