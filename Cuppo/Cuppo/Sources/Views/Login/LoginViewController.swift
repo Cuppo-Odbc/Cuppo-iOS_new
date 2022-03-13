@@ -51,7 +51,7 @@ class LoginViewController: BaseController {
         $0.titleLabel?.font = UIFont.TTFont(type: .GFReg, size: 12)
     }
     
-    let joinButton = UIButton().then{
+    let signUpButton = UIButton().then{
         $0.setTitle("회원가입", for: .normal)
         $0.setTitleColor(.lightGray, for: .normal)
         $0.titleLabel?.font = UIFont.TTFont(type: .GFReg, size: 12)
@@ -106,14 +106,22 @@ class LoginViewController: BaseController {
         self.loginButton.rx.tap
             .bind{
                 //TODO: 로그인 검증 로직
-                print("로그인 검증 로직")
+                self.viewModel.login(email: self.emailTextField.textField.text ?? "",
+                                     password: self.passwordTextField.textField.text ?? "")
+            }
+            .disposed(by: disposeBag)
+        
+        self.signUpButton.rx.tap
+            .bind{
+                //TODO: 회원가입 화면으로 이동
+                self.navigationController?.pushViewController(SignUpViewController(), animated: true)
             }
             .disposed(by: disposeBag)
     }
     
     func setLayout(){
         [inputStackView, loginButton,
-         passwordFindButton, separaterView, joinButton, startWithoutLoginButton].forEach {
+         passwordFindButton, separaterView, signUpButton, startWithoutLoginButton].forEach {
             self.view.addSubview($0)
         }
         
@@ -136,7 +144,7 @@ class LoginViewController: BaseController {
             $0.top.equalTo(loginButton.snp.bottom).offset(10)
         }
         
-        joinButton.snp.makeConstraints{
+        signUpButton.snp.makeConstraints{
             $0.centerX.equalTo(loginButton.snp.centerX).multipliedBy(1.4)
             $0.top.equalTo(loginButton.snp.bottom).offset(10)
         }

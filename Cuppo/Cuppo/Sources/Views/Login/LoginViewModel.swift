@@ -12,6 +12,9 @@ import RxRelay
 class LoginViewModel {
     let emailObserver = BehaviorRelay<String>(value: "")
     let passwordObserver = BehaviorRelay<String>(value: "")
+    var loginService = LoginService()
+    
+    let dummyURL: String = "http://cuppotest-env.eba-ag42sqsg.ap-northeast-2.elasticbeanstalk.com/auth/signin"
     
     //MARK: - 회원가입할때 필요한 email password 로직 일단 임시로 박아놓자
     var isEmailVaild: Observable<Bool> {
@@ -37,5 +40,12 @@ class LoginViewModel {
                 let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
                 return passwordPredicate.evaluate(with: password)
             }
+    }
+    
+    func login(email: String, password: String){
+        self.loginService.requestLogin(email: email, password: password){ response in
+            //TODO: access token 값 저장
+            print("reponse \(response)")
+        }
     }
 }

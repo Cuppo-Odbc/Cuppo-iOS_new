@@ -33,6 +33,12 @@
 		A8373A6B27DD17CE00BA0442 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A6A27DD17CE00BA0442 /* LoginViewController.swift */; };
 		A8373A6D27DD270F00BA0442 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A6C27DD270F00BA0442 /* UnderLineTextField.swift */; };
 		A8373A6F27DDC12700BA0442 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A6E27DDC12700BA0442 /* LoginViewModel.swift */; };
+		A8373A7227DDE01400BA0442 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A7127DDE01400BA0442 /* LoginService.swift */; };
+		A8373A7A27DDE2B800BA0442 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A7927DDE2B800BA0442 /* LoginResponse.swift */; };
+		A8373A7E27DDEDCF00BA0442 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A7D27DDEDCF00BA0442 /* LoginRequest.swift */; };
+		A8373A8127DDF96F00BA0442 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A8027DDF96F00BA0442 /* SignUpViewController.swift */; };
+		A8373A8327DDFDFC00BA0442 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A8227DDFDFC00BA0442 /* SignUpViewModel.swift */; };
+		A8373A8527DDFE4600BA0442 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A8427DDFE4600BA0442 /* SignUpService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +71,12 @@
 		A8373A6A27DD17CE00BA0442 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Cuppo/Sources/Views/Login/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		A8373A6C27DD270F00BA0442 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UnderLineTextField.swift; path = Cuppo/Sources/Views/Login/UnderLineTextField.swift; sourceTree = SOURCE_ROOT; };
 		A8373A6E27DDC12700BA0442 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Cuppo/Sources/Views/Login/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
+		A8373A7127DDE01400BA0442 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		A8373A7927DDE2B800BA0442 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		A8373A7D27DDEDCF00BA0442 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		A8373A8027DDF96F00BA0442 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A8373A8227DDFDFC00BA0442 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		A8373A8427DDFE4600BA0442 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		D13EC5D2DA38B7852FD05532 /* Pods_Cuppo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cuppo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -245,9 +257,9 @@
 			isa = PBXGroup;
 			children = (
 				9F81963D27D64CC800FF42BA /* Network */,
-				9F81963C27D64CC300FF42BA /* Models */,
 				9F81963F27D64CD500FF42BA /* ViewModels */,
 				9F81963E27D64CCF00FF42BA /* Views */,
+				A8373A7727DDE28B00BA0442 /* Model */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -279,13 +291,6 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		9F81963C27D64CC300FF42BA /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		9F81963D27D64CC800FF42BA /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +306,7 @@
 		9F81963E27D64CCF00FF42BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A8373A7F27DDF95400BA0442 /* SignUp */,
 				A8373A7027DDDD6300BA0442 /* Login */,
 				9F253EA627D70B240010C1E6 /* Main */,
 			);
@@ -320,8 +326,36 @@
 				A8373A6A27DD17CE00BA0442 /* LoginViewController.swift */,
 				A8373A6C27DD270F00BA0442 /* UnderLineTextField.swift */,
 				A8373A6E27DDC12700BA0442 /* LoginViewModel.swift */,
+				A8373A7127DDE01400BA0442 /* LoginService.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		A8373A7727DDE28B00BA0442 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A8373A7827DDE29E00BA0442 /* Login */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A8373A7827DDE29E00BA0442 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A8373A7927DDE2B800BA0442 /* LoginResponse.swift */,
+				A8373A7D27DDEDCF00BA0442 /* LoginRequest.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A8373A7F27DDF95400BA0442 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A8373A8027DDF96F00BA0442 /* SignUpViewController.swift */,
+				A8373A8227DDFDFC00BA0442 /* SignUpViewModel.swift */,
+				A8373A8427DDFE4600BA0442 /* SignUpService.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		AB7E05F38FA4277B3F736A53 /* Frameworks */ = {
@@ -465,10 +499,16 @@
 				A8373A6F27DDC12700BA0442 /* LoginViewModel.swift in Sources */,
 				9F253EBF27D71B4C0010C1E6 /* ViewModelProtocol.swift in Sources */,
 				9F253EC127D71CA60010C1E6 /* UIFont.swift in Sources */,
+				A8373A7227DDE01400BA0442 /* LoginService.swift in Sources */,
+				A8373A8527DDFE4600BA0442 /* SignUpService.swift in Sources */,
 				9F253ECF27DA4C370010C1E6 /* DiaryViewController.swift in Sources */,
+				A8373A8127DDF96F00BA0442 /* SignUpViewController.swift in Sources */,
 				9F253EB427D712C60010C1E6 /* CoffeeListViewController.swift in Sources */,
 				9F253EA527D66A3D0010C1E6 /* IndicatorView.swift in Sources */,
 				9F253EA127D669320010C1E6 /* UIColor.swift in Sources */,
+				A8373A7A27DDE2B800BA0442 /* LoginResponse.swift in Sources */,
+				A8373A8327DDFDFC00BA0442 /* SignUpViewModel.swift in Sources */,
+				A8373A7E27DDEDCF00BA0442 /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
