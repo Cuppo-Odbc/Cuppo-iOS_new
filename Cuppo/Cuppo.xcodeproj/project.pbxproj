@@ -62,9 +62,9 @@
 		9F81962B27D64C0300FF42BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F81962E27D64C0400FF42BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F81963027D64C0400FF42BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A8373A6A27DD17CE00BA0442 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Cuppo/Sources/Views/Main/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
-		A8373A6C27DD270F00BA0442 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UnderLineTextField.swift; path = Cuppo/Sources/Views/Main/UnderLineTextField.swift; sourceTree = SOURCE_ROOT; };
-		A8373A6E27DDC12700BA0442 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Cuppo/Sources/Views/Main/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
+		A8373A6A27DD17CE00BA0442 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Cuppo/Sources/Views/Login/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
+		A8373A6C27DD270F00BA0442 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UnderLineTextField.swift; path = Cuppo/Sources/Views/Login/UnderLineTextField.swift; sourceTree = SOURCE_ROOT; };
+		A8373A6E27DDC12700BA0442 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Cuppo/Sources/Views/Login/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
 		D13EC5D2DA38B7852FD05532 /* Pods_Cuppo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cuppo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -126,16 +126,6 @@
 				9F253EB527D712D10010C1E6 /* SettingViewController.swift */,
 			);
 			path = Setting;
-			sourceTree = "<group>";
-		};
-		9F253EB027D70C680010C1E6 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				A8373A6A27DD17CE00BA0442 /* LoginViewController.swift */,
-				A8373A6C27DD270F00BA0442 /* UnderLineTextField.swift */,
-				A8373A6E27DDC12700BA0442 /* LoginViewModel.swift */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		9F253EB727D719030010C1E6 /* CoffeeList */ = {
@@ -311,7 +301,7 @@
 		9F81963E27D64CCF00FF42BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9F253EB027D70C680010C1E6 /* Login */,
+				A8373A7027DDDD6300BA0442 /* Login */,
 				9F253EA627D70B240010C1E6 /* Main */,
 			);
 			path = Views;
@@ -322,6 +312,16 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A8373A7027DDDD6300BA0442 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A8373A6A27DD17CE00BA0442 /* LoginViewController.swift */,
+				A8373A6C27DD270F00BA0442 /* UnderLineTextField.swift */,
+				A8373A6E27DDC12700BA0442 /* LoginViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		AB7E05F38FA4277B3F736A53 /* Frameworks */ = {
