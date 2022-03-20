@@ -23,20 +23,36 @@ class LoginService {
             .responseJSON { response in
                 switch response.result {
                 case .success:
-                    do{
-                        let jsonData = try JSONSerialization.data(withJSONObject: response.value!, options: .prettyPrinted)
-                        let json = try JSONDecoder().decode(LoginResponse.self, from: jsonData)
-                        completion(json)
-                    }catch let error {
-                        print("parsing error -> \(error.localizedDescription)")
+                    if let statusCode = response.response?.statusCode {
+                        switch statusCode {
+                        case 200:
+                            do{
+                                let jsonData = try JSONSerialization.data(withJSONObject: response.value!, options: .prettyPrinted)
+                                let json = try JSONDecoder().decode(LoginResponse.LoginSuccess.self, from: jsonData)
+                                
+                                completion(LoginResponse(type: .success, successObj: json))
+                            }catch let error {
+                                print("parsing error -> \(error.localizedDescription)")
+                            }
+                            break
+                        case 400:
+                            do{
+                                let jsonData = try JSONSerialization.data(withJSONObject: response.value!, options: .prettyPrinted)
+                                let json = try JSONDecoder().decode(LoginResponse.LoginFail.self, from: jsonData)
+                                completion(LoginResponse(type: .fail, failureObj: json))
+                            }catch let error {
+                                print("parsing error -> \(error.localizedDescription)")
+                            }
+                            break
+                        default:
+                            print("예상치 못한 에러")
+                            completion(LoginResponse(type: .fail, failureObj: nil))
+                            break
+                        }
                     }
                 case .failure:
                     print("fail , statusCode --> \(response.result)")
                 }
             }
-    }
-    
-    func decode<T>(from data: Data) -> T {
-        return LoginResponse(accessToken: "aa", tokenType: "b") as! T
     }
 }

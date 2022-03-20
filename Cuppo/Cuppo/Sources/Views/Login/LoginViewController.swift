@@ -25,7 +25,7 @@ class LoginViewController: BaseController {
     let passwordTextField = UnderLineTextField().then{
         $0.setPlaceHolder(placeHolder: "비밀번호")
         $0.setAlertLabel(text: "비밀번호가 다릅니다.")
-        $0.textField.isSecureTextEntry = true
+//        $0.textField.isSecureTextEntry = true
     }
     
     lazy var inputStackView = UIStackView().then{
@@ -81,28 +81,9 @@ class LoginViewController: BaseController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
-        
+    
     //MARK: - Functions
     func bind(){
-        self.emailTextField.textField.rx.text
-            .orEmpty
-            .bind(to: viewModel.emailObserver)
-            .disposed(by: disposeBag)
-        
-        self.passwordTextField.textField.rx.text
-            .orEmpty
-            .bind(to: viewModel.passwordObserver)
-            .disposed(by: disposeBag)
-        
-        self.viewModel.isEmailVaild
-            .bind(to: self.emailTextField.alertLabel.rx.isHidden)
-            .disposed(by: disposeBag)
-
-        self.viewModel.isPasswordValid
-            .bind(to: self.passwordTextField.alertLabel.rx.isHidden)
-            .disposed(by: disposeBag)
-
-        
         self.loginButton.rx.tap
             .bind{
                 //TODO: 로그인 검증 로직
