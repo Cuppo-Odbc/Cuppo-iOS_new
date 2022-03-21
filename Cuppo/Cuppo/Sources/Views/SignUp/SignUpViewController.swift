@@ -76,19 +76,6 @@ class SignUpViewController: UIViewController {
             .bind(to: viewModel.passwordCheckObserver)
             .disposed(by: disposeBag)
         
-//        self.passwordCheckTextField.textField.rx.text
-//            .filter{
-//                $0 != ""
-//            }
-//            .bind { text in
-//                if text == self.passwordTextField.textField.text {
-//                    self.passwordCheckTextField.alertLabel.isHidden = true
-//                }else{
-//                    self.passwordCheckTextField.alertLabel.isHidden = false
-//                }
-//            }
-//            .disposed(by: disposeBag)
-        
         self.viewModel.isEmailVaild
             .bind(to: self.emailTextField.alertLabel.rx.isHidden)
             .disposed(by: disposeBag)
@@ -103,9 +90,19 @@ class SignUpViewController: UIViewController {
         
         self.signUpButton.rx.tap
             .bind{
-                //TODO: 이메일, 비밀번호 검증 후 회원가입 요청 API 호출
-                self.viewModel.signUp(email: self.emailTextField.textField.text ?? "",
-                                      password: self.passwordTextField.textField.text ?? "")
+                //TODO: 성공 메인으로 이동
+                Observable.combineLatest(self.viewModel.isEmailVaild,
+                                         self.viewModel.isPasswordValid,
+                                         self.viewModel.isPasswordCheckValid)
+                    .subscribe(onNext: { email, password, passwordCheck in
+                        if email && password && passwordCheck {
+                            print("회원가입 성공, 메인으로 이동")
+                        }else {
+                            //TODO: 잘못된 입력 alert
+                            print("잘못된 입력 alert")
+                        }
+                    })
+                    .disposed(by: self.disposeBag)
             }
             .disposed(by: disposeBag)
             

@@ -18,6 +18,7 @@ import RxRelay
  */
 
 class SignUpViewModel {
+    let disposeBag = DisposeBag()
     let emailObserver = BehaviorRelay<String>(value: "")
     let passwordObserver = BehaviorRelay<String>(value: "")
     let passwordCheckObserver = BehaviorRelay<String>(value: "")
@@ -74,4 +75,11 @@ class SignUpViewModel {
             }
         }
     }
+    
+//    func verify(){
+//        self.isEmailVaild
+//            .subscribe(onNext: { val in
+//                print("val --> \(val)")
+//            })
+//    }
 }
