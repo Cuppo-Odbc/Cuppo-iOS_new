@@ -25,6 +25,7 @@
 		9F253ECA27D7A5870010C1E6 /* Goyang.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9F253EC227D71E470010C1E6 /* Goyang.otf */; };
 		9F253ECC27D7A6310010C1E6 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253ECB27D7A6310010C1E6 /* BaseController.swift */; };
 		9F253ECF27DA4C370010C1E6 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253ECE27DA4C370010C1E6 /* DiaryViewController.swift */; };
+		9F6AAA0727E78B6B008CE72F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6AAA0627E78B6B008CE72F /* TabBarViewController.swift */; };
 		9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962227D64C0200FF42BA /* AppDelegate.swift */; };
 		9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962427D64C0200FF42BA /* SceneDelegate.swift */; };
 		9F81962A27D64C0200FF42BA /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962827D64C0200FF42BA /* TabBar.storyboard */; };
@@ -61,6 +62,7 @@
 		9F253EC727D72D760010C1E6 /* CoffeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeViewController.swift; sourceTree = "<group>"; };
 		9F253ECB27D7A6310010C1E6 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		9F253ECE27DA4C370010C1E6 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		9F6AAA0627E78B6B008CE72F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		9F81961F27D64C0200FF42BA /* Cuppo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuppo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F81962227D64C0200FF42BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F81962427D64C0200FF42BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				9F81962827D64C0200FF42BA /* TabBar.storyboard */,
+				9F6AAA0627E78B6B008CE72F /* TabBarViewController.swift */,
 				9F253EA727D70B390010C1E6 /* Calendar */,
 				9F253EC427D72C940010C1E6 /* Coffee */,
 				9F253EA827D70B660010C1E6 /* CoffeeList */,
@@ -502,6 +505,7 @@
 				A8373A7227DDE01400BA0442 /* LoginService.swift in Sources */,
 				A8373A8527DDFE4600BA0442 /* SignUpService.swift in Sources */,
 				9F253ECF27DA4C370010C1E6 /* DiaryViewController.swift in Sources */,
+				9F6AAA0727E78B6B008CE72F /* TabBarViewController.swift in Sources */,
 				A8373A8127DDF96F00BA0442 /* SignUpViewController.swift in Sources */,
 				9F253EB427D712C60010C1E6 /* CoffeeListViewController.swift in Sources */,
 				9F253EA527D66A3D0010C1E6 /* IndicatorView.swift in Sources */,
