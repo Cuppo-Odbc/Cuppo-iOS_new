@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IzI-QM-ikd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IzI-QM-ikd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="887" y="115"/>
         </scene>
-        <!--SettingSB-->
+        <!--SettingNaviVC-->
         <scene sceneID="YxM-S6-0gm">
             <objects>
-                <viewControllerPlaceholder storyboardName="Setting" referencedIdentifier="SettingSB" id="CHC-tX-gzd" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Setting" referencedIdentifier="SettingNaviVC" id="CHC-tX-gzd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="settings" selectedImage="settings" id="BVA-e2-OMJ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acs-yk-Ubx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

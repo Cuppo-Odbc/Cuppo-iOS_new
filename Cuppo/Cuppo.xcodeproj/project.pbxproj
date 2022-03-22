@@ -40,6 +40,8 @@
 		A8373A8127DDF96F00BA0442 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A8027DDF96F00BA0442 /* SignUpViewController.swift */; };
 		A8373A8327DDFDFC00BA0442 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A8227DDFDFC00BA0442 /* SignUpViewModel.swift */; };
 		A8373A8527DDFE4600BA0442 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A8427DDFE4600BA0442 /* SignUpService.swift */; };
+		A85D997C27EA081100E9B0AA /* SettingTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D997B27EA081100E9B0AA /* SettingTwoViewController.swift */; };
+		A85D997E27EA172600E9B0AA /* TestNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D997D27EA172600E9B0AA /* TestNaviViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +81,8 @@
 		A8373A8027DDF96F00BA0442 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A8373A8227DDFDFC00BA0442 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		A8373A8427DDFE4600BA0442 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		A85D997B27EA081100E9B0AA /* SettingTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTwoViewController.swift; sourceTree = "<group>"; };
+		A85D997D27EA172600E9B0AA /* TestNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNaviViewController.swift; sourceTree = "<group>"; };
 		D13EC5D2DA38B7852FD05532 /* Pods_Cuppo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cuppo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -139,6 +143,8 @@
 			children = (
 				9F253EAE27D70BD40010C1E6 /* Setting.storyboard */,
 				9F253EB527D712D10010C1E6 /* SettingViewController.swift */,
+				A85D997B27EA081100E9B0AA /* SettingTwoViewController.swift */,
+				A85D997D27EA172600E9B0AA /* TestNaviViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -498,6 +504,7 @@
 				9F253EA327D6693B0010C1E6 /* UIViewController.swift in Sources */,
 				9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */,
 				9F253EB627D712D10010C1E6 /* SettingViewController.swift in Sources */,
+				A85D997C27EA081100E9B0AA /* SettingTwoViewController.swift in Sources */,
 				9F253E9F27D668D30010C1E6 /* Constant.swift in Sources */,
 				A8373A6F27DDC12700BA0442 /* LoginViewModel.swift in Sources */,
 				9F253EBF27D71B4C0010C1E6 /* ViewModelProtocol.swift in Sources */,
@@ -506,6 +513,7 @@
 				A8373A8527DDFE4600BA0442 /* SignUpService.swift in Sources */,
 				9F253ECF27DA4C370010C1E6 /* DiaryViewController.swift in Sources */,
 				9F6AAA0727E78B6B008CE72F /* TabBarViewController.swift in Sources */,
+				A85D997E27EA172600E9B0AA /* TestNaviViewController.swift in Sources */,
 				A8373A8127DDF96F00BA0442 /* SignUpViewController.swift in Sources */,
 				9F253EB427D712C60010C1E6 /* CoffeeListViewController.swift in Sources */,
 				9F253EA527D66A3D0010C1E6 /* IndicatorView.swift in Sources */,
