@@ -122,6 +122,15 @@ class LoginViewController: BaseController {
             }
             .disposed(by: disposeBag)
         
+        self.startWithoutLoginButton.rx.tap
+            .bind{
+                let sb = UIStoryboard(name: "TabBar", bundle: nil)
+                let tabbarVC = sb.instantiateViewController(withIdentifier: "tabbarViewController")
+                
+                self.view.window?.rootViewController = tabbarVC
+            }
+            .disposed(by: disposeBag)
+        
         self.signUpButton.rx.tap
             .bind{
                 //TODO: 회원가입 화면으로 이동

@@ -42,6 +42,8 @@
 		A8373A8527DDFE4600BA0442 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A8427DDFE4600BA0442 /* SignUpService.swift */; };
 		A85D997C27EA081100E9B0AA /* SettingTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D997B27EA081100E9B0AA /* SettingTwoViewController.swift */; };
 		A85D997E27EA172600E9B0AA /* TestNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D997D27EA172600E9B0AA /* TestNaviViewController.swift */; };
+		A85D998027EA203600E9B0AA /* SettingOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D997F27EA203600E9B0AA /* SettingOptionCell.swift */; };
+		A85D998227EA2E2F00E9B0AA /* OptionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D998127EA2E2F00E9B0AA /* OptionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		A8373A8427DDFE4600BA0442 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		A85D997B27EA081100E9B0AA /* SettingTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTwoViewController.swift; sourceTree = "<group>"; };
 		A85D997D27EA172600E9B0AA /* TestNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNaviViewController.swift; sourceTree = "<group>"; };
+		A85D997F27EA203600E9B0AA /* SettingOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionCell.swift; sourceTree = "<group>"; };
+		A85D998127EA2E2F00E9B0AA /* OptionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionHeaderView.swift; sourceTree = "<group>"; };
 		D13EC5D2DA38B7852FD05532 /* Pods_Cuppo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cuppo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -145,6 +149,8 @@
 				9F253EB527D712D10010C1E6 /* SettingViewController.swift */,
 				A85D997B27EA081100E9B0AA /* SettingTwoViewController.swift */,
 				A85D997D27EA172600E9B0AA /* TestNaviViewController.swift */,
+				A85D997F27EA203600E9B0AA /* SettingOptionCell.swift */,
+				A85D998127EA2E2F00E9B0AA /* OptionHeaderView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -499,6 +505,7 @@
 				9F253EC827D72D760010C1E6 /* CoffeeViewController.swift in Sources */,
 				A8373A6D27DD270F00BA0442 /* UnderLineTextField.swift in Sources */,
 				9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */,
+				A85D998027EA203600E9B0AA /* SettingOptionCell.swift in Sources */,
 				A8373A6B27DD17CE00BA0442 /* LoginViewController.swift in Sources */,
 				9F253ECC27D7A6310010C1E6 /* BaseController.swift in Sources */,
 				9F253EA327D6693B0010C1E6 /* UIViewController.swift in Sources */,
@@ -520,6 +527,7 @@
 				9F253EA127D669320010C1E6 /* UIColor.swift in Sources */,
 				A8373A7A27DDE2B800BA0442 /* LoginResponse.swift in Sources */,
 				A8373A8327DDFDFC00BA0442 /* SignUpViewModel.swift in Sources */,
+				A85D998227EA2E2F00E9B0AA /* OptionHeaderView.swift in Sources */,
 				A8373A7E27DDEDCF00BA0442 /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
