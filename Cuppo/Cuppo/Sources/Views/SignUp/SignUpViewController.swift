@@ -61,48 +61,27 @@ class SignUpViewController: UIViewController {
     
     //MARK: - Functions
     func bind(){
-        self.emailTextField.textField.rx.text
-            .orEmpty
-            .bind(to: viewModel.emailObserver)
-            .disposed(by: disposeBag)
-        
-        self.passwordTextField.textField.rx.text
-            .orEmpty
-            .bind(to: viewModel.passwordObserver)
-            .disposed(by: disposeBag)
-
-        self.passwordCheckTextField.textField.rx.text
-            .orEmpty
-            .bind(to: viewModel.passwordCheckObserver)
-            .disposed(by: disposeBag)
-        
-        self.viewModel.isEmailVaild
-            .bind(to: self.emailTextField.alertLabel.rx.isHidden)
-            .disposed(by: disposeBag)
-
-        self.viewModel.isPasswordValid
-            .bind(to: self.passwordTextField.alertLabel.rx.isHidden)
-            .disposed(by: disposeBag)
-        
-        self.viewModel.isPasswordCheckValid
-            .bind(to: self.passwordCheckTextField.alertLabel.rx.isHidden)
-            .disposed(by: disposeBag)
-        
         self.signUpButton.rx.tap
             .bind{
-                //TODO: 성공 메인으로 이동
-                Observable.combineLatest(self.viewModel.isEmailVaild,
-                                         self.viewModel.isPasswordValid,
-                                         self.viewModel.isPasswordCheckValid)
-                    .subscribe(onNext: { email, password, passwordCheck in
-                        if email && password && passwordCheck {
-                            print("회원가입 성공, 메인으로 이동")
-                        }else {
-                            //TODO: 잘못된 입력 alert
-                            print("잘못된 입력 alert")
-                        }
-                    })
-                    .disposed(by: self.disposeBag)
+                let emailIsHidden = self.viewModel.verifyEmail(email: self.emailTextField.textField.text ?? "")
+                let passwordIsHidden = self.viewModel.verifyPassword(password: self.passwordTextField.textField.text ?? "")
+                let passwordCheckIsHidden = self.viewModel.verifyPasswordCheck(password: self.passwordTextField.textField.text ?? "", passwordCheck: self.passwordCheckTextField.textField.text ?? "")
+                
+                self.emailTextField.alertLabel.isHidden = emailIsHidden
+                self.passwordTextField.alertLabel.isHidden = passwordIsHidden
+                self.passwordCheckTextField.alertLabel.isHidden = passwordCheckIsHidden
+
+                if [emailIsHidden, passwordIsHidden, passwordCheckIsHidden].contains(false) {
+                    //TODO: false 가 존재한다면, 잘못된 입력 얼럿 띄우기
+                    print("잘못된 입력입니다. 얼럿")
+                }else{
+                    //TODO: false 가 존재하지 않는다면, 회원가입 성공, 메인으로 이동
+                    print("회원가입 성공, 메인화면으로 이동")
+                    let sb = UIStoryboard(name: "TabBar", bundle: nil)
+                    let tabbarVC = sb.instantiateViewController(withIdentifier: "tabbarViewController")
+                    
+                    self.view.window?.rootViewController = tabbarVC
+                }
             }
             .disposed(by: disposeBag)
             

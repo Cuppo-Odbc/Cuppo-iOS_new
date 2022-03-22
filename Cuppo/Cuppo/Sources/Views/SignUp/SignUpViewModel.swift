@@ -26,40 +26,32 @@ class SignUpViewModel {
     
     var isEmailVaild: Observable<Bool> {
         return emailObserver
-            .filter{ //email
-                !$0.isEmpty
-            }
             .map { email in
                 let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}" //이메일 검증
                 let emailPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
-                return emailPredicate.evaluate(with: email)
+                
+                return email.isEmpty ? false : emailPredicate.evaluate(with: email)
             }
     }
 
     var isPasswordValid: Observable<Bool> {
         return passwordObserver
-            .filter {
-                !$0.isEmpty
-            }
             .map { password in
                 let regex = "^(?=.*[A-Za-z])(?=.*[0-9]).{8,50}" // 8자리 ~ 50자리 영어+숫자
                 
                 let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
-                return passwordPredicate.evaluate(with: password)
+                return password.isEmpty ? false : passwordPredicate.evaluate(with: password)
             }
     }
     var isPasswordCheckValid: Observable<Bool> {
         return Observable
             .combineLatest(self.passwordObserver, self.passwordCheckObserver)
-            .filter{ password, passwordCheck in
-                password != "" && passwordCheck != ""
-            }
             .map { password, passwordCheck -> Bool in
-                if password == passwordCheck && passwordCheck != "" {
-                    return true
-                }else{
+                if password.isEmpty || passwordCheck.isEmpty{
                     return false
                 }
+                
+                return password == passwordCheck ? true : false
             }
     }
 
@@ -76,10 +68,25 @@ class SignUpViewModel {
         }
     }
     
-//    func verify(){
-//        self.isEmailVaild
-//            .subscribe(onNext: { val in
-//                print("val --> \(val)")
-//            })
-//    }
+    func verifyEmail(email: String) -> Bool {
+        let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}" //이메일 검증
+        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
+        
+        return emailPredicate.evaluate(with: email)
+    }
+    
+    func verifyPassword(password: String) -> Bool {
+        let regex = "^(?=.*[A-Za-z])(?=.*[0-9]).{8,50}" // 8자리 ~ 50자리 영어+숫자
+        let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
+        
+        return passwordPredicate.evaluate(with: password)
+    }
+    
+    func verifyPasswordCheck(password: String, passwordCheck: String) -> Bool {
+        if password.isEmpty || passwordCheck.isEmpty {
+            return false
+        }
+        
+        return password == passwordCheck ? true : false
+    }
 }

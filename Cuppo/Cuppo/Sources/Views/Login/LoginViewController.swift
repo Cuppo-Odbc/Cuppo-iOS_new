@@ -103,15 +103,18 @@ class LoginViewController: BaseController {
                         switch failureType {
                         case .invalidPassword:
                             //TODO: 패스워드 올바르지않음 얼럿
+                            self.passwordTextField.alertLabel.isHidden = false
                             print("패스워드 올바르지 않음")
                             break
                         case .emailNotFound:
                             //TODO: 이메일 올바르지 않음 alert
+                            self.emailTextField.alertLabel.isHidden = false
                             print("이메일 올바르지 않음")
                             break
                         case .exception:
                             //TODO: 예외 얼럿
-                            print("예외 발생")
+                            self.emailTextField.alertLabel.isHidden = false
+                            print("이메일 올바르지 않음")
                             break
                         }
                     } //switch
