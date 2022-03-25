@@ -40,8 +40,11 @@
 		A8373A8127DDF96F00BA0442 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A8027DDF96F00BA0442 /* SignUpViewController.swift */; };
 		A8373A8327DDFDFC00BA0442 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A8227DDFDFC00BA0442 /* SignUpViewModel.swift */; };
 		A8373A8527DDFE4600BA0442 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A8427DDFE4600BA0442 /* SignUpService.swift */; };
-		A85D997C27EA081100E9B0AA /* SettingTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D997B27EA081100E9B0AA /* SettingTwoViewController.swift */; };
-		A85D997E27EA172600E9B0AA /* TestNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D997D27EA172600E9B0AA /* TestNaviViewController.swift */; };
+		A85A980827ED8294003DFC0F /* SettingActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A980727ED8294003DFC0F /* SettingActionView.swift */; };
+		A85A980B27EE093F003DFC0F /* LetterStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A980A27EE093F003DFC0F /* LetterStyleViewController.swift */; };
+		A85A980D27EE0B06003DFC0F /* RadioViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A980C27EE0B06003DFC0F /* RadioViewButton.swift */; };
+		A85A981027EE17BC003DFC0F /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A980F27EE17BC003DFC0F /* ThemeViewController.swift */; };
+		A85A981227EE19DD003DFC0F /* AccountManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A981127EE19DD003DFC0F /* AccountManagementViewController.swift */; };
 		A85D998027EA203600E9B0AA /* SettingOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D997F27EA203600E9B0AA /* SettingOptionCell.swift */; };
 		A85D998227EA2E2F00E9B0AA /* OptionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D998127EA2E2F00E9B0AA /* OptionHeaderView.swift */; };
 /* End PBXBuildFile section */
@@ -83,8 +86,11 @@
 		A8373A8027DDF96F00BA0442 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A8373A8227DDFDFC00BA0442 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		A8373A8427DDFE4600BA0442 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
-		A85D997B27EA081100E9B0AA /* SettingTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTwoViewController.swift; sourceTree = "<group>"; };
-		A85D997D27EA172600E9B0AA /* TestNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNaviViewController.swift; sourceTree = "<group>"; };
+		A85A980727ED8294003DFC0F /* SettingActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingActionView.swift; sourceTree = "<group>"; };
+		A85A980A27EE093F003DFC0F /* LetterStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterStyleViewController.swift; sourceTree = "<group>"; };
+		A85A980C27EE0B06003DFC0F /* RadioViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioViewButton.swift; sourceTree = "<group>"; };
+		A85A980F27EE17BC003DFC0F /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
+		A85A981127EE19DD003DFC0F /* AccountManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagementViewController.swift; sourceTree = "<group>"; };
 		A85D997F27EA203600E9B0AA /* SettingOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionCell.swift; sourceTree = "<group>"; };
 		A85D998127EA2E2F00E9B0AA /* OptionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionHeaderView.swift; sourceTree = "<group>"; };
 		D13EC5D2DA38B7852FD05532 /* Pods_Cuppo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cuppo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,12 +151,12 @@
 		9F253EA927D70B9E0010C1E6 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				A85A980927EE07E2003DFC0F /* SubViews */,
 				9F253EAE27D70BD40010C1E6 /* Setting.storyboard */,
 				9F253EB527D712D10010C1E6 /* SettingViewController.swift */,
-				A85D997B27EA081100E9B0AA /* SettingTwoViewController.swift */,
-				A85D997D27EA172600E9B0AA /* TestNaviViewController.swift */,
-				A85D997F27EA203600E9B0AA /* SettingOptionCell.swift */,
-				A85D998127EA2E2F00E9B0AA /* OptionHeaderView.swift */,
+				A85A980A27EE093F003DFC0F /* LetterStyleViewController.swift */,
+				A85A980F27EE17BC003DFC0F /* ThemeViewController.swift */,
+				A85A981127EE19DD003DFC0F /* AccountManagementViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -373,6 +379,17 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		A85A980927EE07E2003DFC0F /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				A85D998127EA2E2F00E9B0AA /* OptionHeaderView.swift */,
+				A85D997F27EA203600E9B0AA /* SettingOptionCell.swift */,
+				A85A980727ED8294003DFC0F /* SettingActionView.swift */,
+				A85A980C27EE0B06003DFC0F /* RadioViewButton.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		AB7E05F38FA4277B3F736A53 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,8 +518,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A85A981027EE17BC003DFC0F /* ThemeViewController.swift in Sources */,
 				9F253EB227D712AE0010C1E6 /* CalendarViewController.swift in Sources */,
 				9F253EC827D72D760010C1E6 /* CoffeeViewController.swift in Sources */,
+				A85A980B27EE093F003DFC0F /* LetterStyleViewController.swift in Sources */,
 				A8373A6D27DD270F00BA0442 /* UnderLineTextField.swift in Sources */,
 				9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */,
 				A85D998027EA203600E9B0AA /* SettingOptionCell.swift in Sources */,
@@ -510,8 +529,8 @@
 				9F253ECC27D7A6310010C1E6 /* BaseController.swift in Sources */,
 				9F253EA327D6693B0010C1E6 /* UIViewController.swift in Sources */,
 				9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */,
+				A85A980827ED8294003DFC0F /* SettingActionView.swift in Sources */,
 				9F253EB627D712D10010C1E6 /* SettingViewController.swift in Sources */,
-				A85D997C27EA081100E9B0AA /* SettingTwoViewController.swift in Sources */,
 				9F253E9F27D668D30010C1E6 /* Constant.swift in Sources */,
 				A8373A6F27DDC12700BA0442 /* LoginViewModel.swift in Sources */,
 				9F253EBF27D71B4C0010C1E6 /* ViewModelProtocol.swift in Sources */,
@@ -520,14 +539,15 @@
 				A8373A8527DDFE4600BA0442 /* SignUpService.swift in Sources */,
 				9F253ECF27DA4C370010C1E6 /* DiaryViewController.swift in Sources */,
 				9F6AAA0727E78B6B008CE72F /* TabBarViewController.swift in Sources */,
-				A85D997E27EA172600E9B0AA /* TestNaviViewController.swift in Sources */,
 				A8373A8127DDF96F00BA0442 /* SignUpViewController.swift in Sources */,
+				A85A981227EE19DD003DFC0F /* AccountManagementViewController.swift in Sources */,
 				9F253EB427D712C60010C1E6 /* CoffeeListViewController.swift in Sources */,
 				9F253EA527D66A3D0010C1E6 /* IndicatorView.swift in Sources */,
 				9F253EA127D669320010C1E6 /* UIColor.swift in Sources */,
 				A8373A7A27DDE2B800BA0442 /* LoginResponse.swift in Sources */,
 				A8373A8327DDFDFC00BA0442 /* SignUpViewModel.swift in Sources */,
 				A85D998227EA2E2F00E9B0AA /* OptionHeaderView.swift in Sources */,
+				A85A980D27EE0B06003DFC0F /* RadioViewButton.swift in Sources */,
 				A8373A7E27DDEDCF00BA0442 /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

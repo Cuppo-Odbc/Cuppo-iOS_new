@@ -48,4 +48,16 @@ extension UIViewController {
         }
     }
     
+    // MARK: 네비게이션바 색상 커스텀
+        func customNavigationBarAttribute(_ backgroundColor: UIColor,
+                                          _ titleColor: UIColor) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = backgroundColor
+            appearance.titleTextAttributes = [.foregroundColor: titleColor]
+            appearance.shadowColor = .clear
+            self.navigationController?.navigationBar.standardAppearance = appearance
+            self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        }
+    
 }
