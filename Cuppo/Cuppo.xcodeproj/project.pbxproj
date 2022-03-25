@@ -45,6 +45,7 @@
 		A85A980D27EE0B06003DFC0F /* RadioViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A980C27EE0B06003DFC0F /* RadioViewButton.swift */; };
 		A85A981027EE17BC003DFC0F /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A980F27EE17BC003DFC0F /* ThemeViewController.swift */; };
 		A85A981227EE19DD003DFC0F /* AccountManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A981127EE19DD003DFC0F /* AccountManagementViewController.swift */; };
+		A85A981427EE4D20003DFC0F /* PasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A981327EE4D20003DFC0F /* PasswordChangeViewController.swift */; };
 		A85D998027EA203600E9B0AA /* SettingOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D997F27EA203600E9B0AA /* SettingOptionCell.swift */; };
 		A85D998227EA2E2F00E9B0AA /* OptionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D998127EA2E2F00E9B0AA /* OptionHeaderView.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		A85A980C27EE0B06003DFC0F /* RadioViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioViewButton.swift; sourceTree = "<group>"; };
 		A85A980F27EE17BC003DFC0F /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		A85A981127EE19DD003DFC0F /* AccountManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagementViewController.swift; sourceTree = "<group>"; };
+		A85A981327EE4D20003DFC0F /* PasswordChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeViewController.swift; sourceTree = "<group>"; };
 		A85D997F27EA203600E9B0AA /* SettingOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionCell.swift; sourceTree = "<group>"; };
 		A85D998127EA2E2F00E9B0AA /* OptionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionHeaderView.swift; sourceTree = "<group>"; };
 		D13EC5D2DA38B7852FD05532 /* Pods_Cuppo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cuppo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +159,7 @@
 				A85A980A27EE093F003DFC0F /* LetterStyleViewController.swift */,
 				A85A980F27EE17BC003DFC0F /* ThemeViewController.swift */,
 				A85A981127EE19DD003DFC0F /* AccountManagementViewController.swift */,
+				A85A981327EE4D20003DFC0F /* PasswordChangeViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				A85D998027EA203600E9B0AA /* SettingOptionCell.swift in Sources */,
 				A8373A6B27DD17CE00BA0442 /* LoginViewController.swift in Sources */,
 				9F253ECC27D7A6310010C1E6 /* BaseController.swift in Sources */,
+				A85A981427EE4D20003DFC0F /* PasswordChangeViewController.swift in Sources */,
 				9F253EA327D6693B0010C1E6 /* UIViewController.swift in Sources */,
 				9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */,
 				A85A980827ED8294003DFC0F /* SettingActionView.swift in Sources */,

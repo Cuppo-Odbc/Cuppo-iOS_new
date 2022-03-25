@@ -147,15 +147,15 @@ class LoginViewController: BaseController {
         
         inputStackView.snp.makeConstraints{
             $0.centerX.equalToSuperview()
-            $0.centerY.equalToSuperview().multipliedBy(0.7)
-            $0.leading.equalToSuperview().offset(50)
-            $0.trailing.equalToSuperview().offset(-50)
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().offset(37)
+            $0.trailing.equalToSuperview().offset(-38)
         }
         
         loginButton.snp.makeConstraints{
             $0.top.equalTo(inputStackView.snp.bottom).offset(16.0)
-            $0.leading.equalToSuperview().offset(50)
-            $0.trailing.equalToSuperview().offset(-50)
+            $0.leading.equalToSuperview().offset(37)
+            $0.trailing.equalToSuperview().offset(-38)
             $0.height.equalTo(50.0)
         }
         
@@ -177,9 +177,10 @@ class LoginViewController: BaseController {
         }
         
         startWithoutLoginButton.snp.makeConstraints{
-            $0.top.equalTo(loginButton.snp.bottom).offset(100)
-            $0.leading.equalToSuperview().offset(50)
-            $0.trailing.equalToSuperview().offset(-50)
+//            $0.top.equalTo(loginButton.snp.bottom).offset(100)
+            $0.centerY.equalToSuperview().multipliedBy(1.7)
+            $0.leading.equalToSuperview().offset(37)
+            $0.trailing.equalToSuperview().offset(-38)
             $0.height.equalTo(50.0)
         }
     }

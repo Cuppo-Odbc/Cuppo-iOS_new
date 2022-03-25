@@ -94,15 +94,15 @@ class SignUpViewController: UIViewController {
         
         inputStackView.snp.makeConstraints{
             $0.centerX.equalToSuperview()
-            $0.centerY.equalToSuperview().multipliedBy(0.7)
-            $0.leading.equalToSuperview().offset(50)
-            $0.trailing.equalToSuperview().offset(-50)
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().offset(37)
+            $0.trailing.equalToSuperview().offset(-38)
         }
         
         signUpButton.snp.makeConstraints{
             $0.top.equalTo(inputStackView.snp.bottom).offset(20.0)
-            $0.leading.equalToSuperview().offset(50.0)
-            $0.trailing.equalToSuperview().offset(-50)
+            $0.leading.equalToSuperview().offset(37)
+            $0.trailing.equalToSuperview().offset(-38)
             $0.height.equalTo(50.0)
         }
     }

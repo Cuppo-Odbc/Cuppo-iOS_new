@@ -6,19 +6,26 @@
 //
 
 import UIKit
+import Then
+import SnapKit
+
+enum AccountManagementMenu {
+    case changePassword // 비밀번호 변경
+    case withdrawl // 회원 탈퇴
+}
 
 class AccountManagementViewController: UIViewController {
     
-    lazy var passwordChangeButton = UILabel().then{
-        $0.text = "비밀번호 변경"
-        $0.font = UIFont.TTFont(type: .GFReg, size: 16)
-        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(passwordChangeBtnTapped(_:))))
+    lazy var passwordChangeButton = SettingActionView().then{
+        $0.accountDelegate = self
+        $0.accountMenuType = .changePassword
+        $0.setTitleLabel(text: "비밀번호 변경", font: .TTFont(type: .GFReg, size: 16))
     }
     
-    lazy var withdrawalButton = UILabel().then{
-        $0.text = "회원 탈퇴"
-        $0.font = UIFont.TTFont(type: .GFReg, size: 16)
-        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(withdrawalBtnTapped(_:))))
+    lazy var withdrawalButton = SettingActionView().then{
+        $0.accountDelegate = self
+        $0.accountMenuType = .withdrawl
+        $0.setTitleLabel(text: "회원 탈퇴", font: .TTFont(type: .GFReg, size: 16))
     }
     
     lazy var accountStackView = UIStackView().then{
@@ -43,19 +50,24 @@ class AccountManagementViewController: UIViewController {
         }
         
         accountStackView.snp.makeConstraints{
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(46)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(86)
             $0.leading.equalToSuperview().offset(30)
             $0.trailing.equalToSuperview().offset(-30)
         }
     }
-    
-    @objc
-    func passwordChangeBtnTapped(_ sender: UITapGestureRecognizer){
-        
-    }
-    
-    @objc
-    func withdrawalBtnTapped(_ sender: UITapGestureRecognizer){
-        
+}
+
+extension AccountManagementViewController: SettingAccountDelegate {
+    func tapMenu(menuType: AccountManagementMenu) {
+        switch menuType {
+        case .changePassword:
+            let passwordChangeVC = PasswordChangeViewController()
+            passwordChangeVC.modalPresentationStyle = .overFullScreen
+            self.present(passwordChangeVC, animated: true, completion: nil)
+            break
+        case .withdrawl:
+            //TODO: 회원 탈퇴 화면 이동
+            break
+        }
     }
 }

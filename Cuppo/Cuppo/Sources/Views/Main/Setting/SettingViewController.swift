@@ -41,19 +41,19 @@ class SettingViewController: BaseController {
     }
     
     lazy var fontMenu = SettingActionView().then{
-        $0.delegate = self
+        $0.actionDelegate = self
         $0.type = .fontStyle
         $0.setTitleLabel(text: Menu.fontStyle.rawValue, font: UIFont.TTFont(type: .GFReg, size: 16.0))
     }
     
     lazy var themeMenu = SettingActionView().then{
-        $0.delegate = self
+        $0.actionDelegate = self
         $0.type = .theme
         $0.setTitleLabel(text: Menu.theme.rawValue, font: UIFont.TTFont(type: .GFReg, size: 16.0))
         
     }
     lazy var instarMenu = SettingActionView().then{
-        $0.delegate = self
+        $0.actionDelegate = self
         $0.type = .instargram
         $0.setTitleLabel(text: Menu.instargram.rawValue, font: UIFont.TTFont(type: .GFReg, size: 16.0))
     }
@@ -63,12 +63,12 @@ class SettingViewController: BaseController {
     }
     
     lazy var serviceMenu = SettingActionView().then{
-        $0.delegate = self
+        $0.actionDelegate = self
         $0.type = .serviceInfo
         $0.setTitleLabel(text: Menu.serviceInfo.rawValue, font: UIFont.TTFont(type: .GFReg, size: 16.0))
     }
     lazy var accountManagement = SettingActionView().then{
-        $0.delegate = self
+        $0.actionDelegate = self
         $0.type = .accountManagement
         $0.setTitleLabel(text: Menu.accountManagement.rawValue, font: UIFont.TTFont(type: .GFReg, size: 16.0))
     }
@@ -92,7 +92,7 @@ class SettingViewController: BaseController {
         }
         
         topSettingView.snp.makeConstraints{
-            $0.centerY.equalToSuperview().multipliedBy(0.5)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(86)
             $0.leading.equalTo(self.view.safeAreaLayoutGuide).offset(30)
             $0.trailing.equalTo(self.view.safeAreaLayoutGuide).offset(-30)
         }

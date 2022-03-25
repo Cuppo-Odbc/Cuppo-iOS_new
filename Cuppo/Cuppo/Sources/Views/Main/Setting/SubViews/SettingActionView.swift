@@ -13,10 +13,16 @@ protocol SettingActionDelegate {
     func tapMenu(menuType: Menu) /// 탭 이벤트 수행할 delegate 메소드
 }
 
+protocol SettingAccountDelegate {
+    func tapMenu(menuType: AccountManagementMenu) ///
+}
+
 class SettingActionView: UIView {
     //MARK: - Properties
-    var delegate: SettingActionDelegate?
+    var actionDelegate: SettingActionDelegate?
+    var accountDelegate: SettingAccountDelegate?
     var type: Menu?
+    var accountMenuType: AccountManagementMenu?
     //MARK: - UI Components
     let menuLabel = UILabel()
     
@@ -40,10 +46,19 @@ class SettingActionView: UIView {
     
     @objc
     func tap(_ sender: UITapGestureRecognizer){
-        guard let tapDelegate = self.delegate else { return }
-        guard let type = self.type else { return }
+        if let tapDelegate = self.actionDelegate {
+            guard let type = self.type else { return }
+            
+            tapDelegate.tapMenu(menuType: type)
+        }
         
-        tapDelegate.tapMenu(menuType: type)
+        if let accountDelegate = self.accountDelegate {
+            guard let accountMenuType = accountMenuType else { return }
+
+            accountDelegate.tapMenu(menuType: accountMenuType)
+        }
+        
+        
     }
     
     func setLayout(){

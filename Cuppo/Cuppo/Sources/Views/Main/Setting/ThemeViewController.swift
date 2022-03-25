@@ -42,7 +42,7 @@ class ThemeViewController: UIViewController {
         }
         
         themeStackView.snp.makeConstraints{
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(46)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(86)
             $0.leading.equalToSuperview().offset(30)
             $0.trailing.equalToSuperview().offset(-30)
         }
