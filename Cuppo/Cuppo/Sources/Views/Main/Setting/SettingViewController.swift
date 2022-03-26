@@ -92,7 +92,7 @@ class SettingViewController: BaseController {
         }
         
         topSettingView.snp.makeConstraints{
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(86)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(41)
             $0.leading.equalTo(self.view.safeAreaLayoutGuide).offset(30)
             $0.trailing.equalTo(self.view.safeAreaLayoutGuide).offset(-30)
         }

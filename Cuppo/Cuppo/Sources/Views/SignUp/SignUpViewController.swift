@@ -10,7 +10,7 @@ import SnapKit
 import Then
 import RxSwift
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: BaseController {
     let disposeBag = DisposeBag()
     let viewModel = SignUpViewModel()
     
@@ -94,13 +94,13 @@ class SignUpViewController: UIViewController {
         
         inputStackView.snp.makeConstraints{
             $0.centerX.equalToSuperview()
-            $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(37)
             $0.trailing.equalToSuperview().offset(-38)
+            $0.bottom.equalTo(signUpButton.snp.top).offset(-12)
         }
         
         signUpButton.snp.makeConstraints{
-            $0.top.equalTo(inputStackView.snp.bottom).offset(20.0)
+            $0.centerY.equalToSuperview().multipliedBy(1.2)
             $0.leading.equalToSuperview().offset(37)
             $0.trailing.equalToSuperview().offset(-38)
             $0.height.equalTo(50.0)

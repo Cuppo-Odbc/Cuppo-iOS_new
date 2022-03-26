@@ -17,8 +17,8 @@ class BaseController: UIViewController {
     }
 
     override func viewDidLoad() {
-//        setBackground()
         super.viewDidLoad()
+        setBackground()
     }
     
     func setBackground(){

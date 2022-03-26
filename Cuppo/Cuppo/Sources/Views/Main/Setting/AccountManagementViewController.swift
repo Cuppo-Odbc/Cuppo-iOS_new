@@ -14,7 +14,7 @@ enum AccountManagementMenu {
     case withdrawl // 회원 탈퇴
 }
 
-class AccountManagementViewController: UIViewController {
+class AccountManagementViewController: BaseController {
     
     lazy var passwordChangeButton = SettingActionView().then{
         $0.accountDelegate = self
@@ -50,7 +50,7 @@ class AccountManagementViewController: UIViewController {
         }
         
         accountStackView.snp.makeConstraints{
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(86)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(41)
             $0.leading.equalToSuperview().offset(30)
             $0.trailing.equalToSuperview().offset(-30)
         }

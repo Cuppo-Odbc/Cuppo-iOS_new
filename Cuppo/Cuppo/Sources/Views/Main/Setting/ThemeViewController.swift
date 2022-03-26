@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ThemeViewController: UIViewController {
+class ThemeViewController: BaseController {
     //MARK: - UI Components
     let lightModeView = RadioViewButton().then{
         $0.setTitleLabel(text: "라이트 모드", font: .TTFont(type: .GFReg, size: 16))
@@ -42,7 +42,7 @@ class ThemeViewController: UIViewController {
         }
         
         themeStackView.snp.makeConstraints{
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(86)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(41)
             $0.leading.equalToSuperview().offset(30)
             $0.trailing.equalToSuperview().offset(-30)
         }

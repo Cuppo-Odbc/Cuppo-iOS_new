@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PasswordChangeViewController: UIViewController {
+class PasswordChangeViewController: BaseController {
     let currentPasswordTextField = UnderLineTextField().then{
         $0.setPlaceHolder(placeHolder: "현재 비밀번호")
         $0.setAlertLabel(text: "비밀번호가 다릅니다")

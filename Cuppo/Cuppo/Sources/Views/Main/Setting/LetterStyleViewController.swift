@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class LetterStyleViewController: UIViewController {
+class LetterStyleViewController: BaseController {
     //MARK: - Properties
     let guideLabel = UILabel().then{
         $0.text = "커피 한 잔에 담긴, 오롯이 나만의 시간"
@@ -59,7 +59,7 @@ class LetterStyleViewController: UIViewController {
         }
         
         guideLabel.snp.makeConstraints{
-            $0.centerY.equalToSuperview().multipliedBy(0.5)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(81)
             $0.leading.trailing.equalToSuperview()
         }
         
