@@ -50,6 +50,11 @@ class SignUpViewController: BaseController {
         $0.layer.borderColor = UIColor.lightGray.cgColor
     }
     
+    lazy var closeButton = UIButton().then{
+        $0.setImage(UIImage(named: "closeButton"), for: .normal)
+        $0.addTarget(self, action: #selector(closeButtonTapped(_:)), for: .touchUpInside)
+    }
+    
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,11 +81,18 @@ class SignUpViewController: BaseController {
                     print("잘못된 입력입니다. 얼럿")
                 }else{
                     //TODO: false 가 존재하지 않는다면, 회원가입 성공, 메인으로 이동
-                    print("회원가입 성공, 메인화면으로 이동")
-                    let sb = UIStoryboard(name: "TabBar", bundle: nil)
-                    let tabbarVC = sb.instantiateViewController(withIdentifier: "tabbarViewController")
+                    self.viewModel.signUp(email: self.emailTextField.textField.text ?? "",
+                                          password: self.passwordTextField.textField.text ?? "") { isSignupSuccess in
+                        if isSignupSuccess {
+                            //TODO: 회원가입 성공, 끝나면 유저 토큰 저장 후 로그인 화면으로 이동
+                            self.dismiss(animated: true, completion: nil)
+                        }else{
+                            //TODO: 실패 - 중복된 이메일입니다 alert 띄우기
+                            
+                        }
+                    }
                     
-                    self.view.window?.rootViewController = tabbarVC
+                    
                 }
             }
             .disposed(by: disposeBag)
@@ -88,8 +100,14 @@ class SignUpViewController: BaseController {
     }
     
     func setLayout(){
-        [inputStackView, signUpButton].forEach {
+        [closeButton, inputStackView, signUpButton].forEach {
             self.view.addSubview($0)
+        }
+        
+        closeButton.snp.makeConstraints{
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(20)
+            $0.leading.equalToSuperview().offset(30)
+            $0.width.height.equalTo(15)
         }
         
         inputStackView.snp.makeConstraints{
@@ -106,4 +124,10 @@ class SignUpViewController: BaseController {
             $0.height.equalTo(50.0)
         }
     }
+    
+    @objc
+    func closeButtonTapped(_ sender: UIButton){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

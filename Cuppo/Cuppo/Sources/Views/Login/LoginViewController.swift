@@ -92,7 +92,8 @@ class LoginViewController: BaseController {
                     switch response.type {
                     case .success:
                         //TODO: 로그인 성공, 메인화면으로 전환 and 인디케이터 넣어도 좋음
-                        // 타입별로 구분해서 하면됨 1. 성공, 2 실패, 오류
+                        self.viewModel.setAccessTokenForUser(token: response.loginSuccess?.accessToken ?? "")
+                        
                         let sb = UIStoryboard(name: "TabBar", bundle: nil)
                         let tabbarVC = sb.instantiateViewController(withIdentifier: "tabbarViewController")
                         
@@ -103,12 +104,14 @@ class LoginViewController: BaseController {
                         switch failureType {
                         case .invalidPassword:
                             //TODO: 패스워드 올바르지않음 얼럿
+                            self.emailTextField.alertLabel.isHidden = true
                             self.passwordTextField.alertLabel.isHidden = false
                             print("패스워드 올바르지 않음")
                             break
                         case .emailNotFound:
                             //TODO: 이메일 올바르지 않음 alert
                             self.emailTextField.alertLabel.isHidden = false
+                            self.passwordTextField.alertLabel.isHidden = true
                             print("이메일 올바르지 않음")
                             break
                         case .exception:
@@ -134,7 +137,10 @@ class LoginViewController: BaseController {
         self.signUpButton.rx.tap
             .bind{
                 //TODO: 회원가입 화면으로 이동
-                self.navigationController?.pushViewController(SignUpViewController(), animated: true)
+                let signUpVC = SignUpViewController()
+                signUpVC.modalPresentationStyle = .overFullScreen
+                
+                self.present(signUpVC, animated: true, completion: nil)
             }
             .disposed(by: disposeBag)
     }

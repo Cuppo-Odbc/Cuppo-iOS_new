@@ -49,6 +49,7 @@
 		A85D998027EA203600E9B0AA /* SettingOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D997F27EA203600E9B0AA /* SettingOptionCell.swift */; };
 		A85D998227EA2E2F00E9B0AA /* OptionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D998127EA2E2F00E9B0AA /* OptionHeaderView.swift */; };
 		A872773427EEE0E300B11132 /* WithdrawalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872773327EEE0E300B11132 /* WithdrawalViewController.swift */; };
+		A872773627EF06E900B11132 /* UserDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872773527EF06E900B11132 /* UserDataCenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		A85D997F27EA203600E9B0AA /* SettingOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionCell.swift; sourceTree = "<group>"; };
 		A85D998127EA2E2F00E9B0AA /* OptionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionHeaderView.swift; sourceTree = "<group>"; };
 		A872773327EEE0E300B11132 /* WithdrawalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalViewController.swift; sourceTree = "<group>"; };
+		A872773527EF06E900B11132 /* UserDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCenter.swift; sourceTree = "<group>"; };
 		D13EC5D2DA38B7852FD05532 /* Pods_Cuppo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cuppo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -314,6 +316,7 @@
 			children = (
 				9F253EA427D66A3D0010C1E6 /* IndicatorView.swift */,
 				9F253ECB27D7A6310010C1E6 /* BaseController.swift */,
+				A872773527EF06E900B11132 /* UserDataCenter.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */,
 				A85A980827ED8294003DFC0F /* SettingActionView.swift in Sources */,
 				9F253EB627D712D10010C1E6 /* SettingViewController.swift in Sources */,
+				A872773627EF06E900B11132 /* UserDataCenter.swift in Sources */,
 				9F253E9F27D668D30010C1E6 /* Constant.swift in Sources */,
 				A8373A6F27DDC12700BA0442 /* LoginViewModel.swift in Sources */,
 				9F253EBF27D71B4C0010C1E6 /* ViewModelProtocol.swift in Sources */,

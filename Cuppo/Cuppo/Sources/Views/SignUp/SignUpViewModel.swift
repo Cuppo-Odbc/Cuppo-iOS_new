@@ -56,14 +56,14 @@ class SignUpViewModel {
     }
 
     //MARK: - Functions
-    func signUp(email: String, password: String){
+    func signUp(email: String, password: String, completion: @escaping ((Bool)->(Void))) {
         self.signUpService.requestSignUp(email: email, password: password) { response in
             if response {
                 //TODO: 회원가입 성공
-                print("회원가입 성공")
+                completion(true)
             }else{
                 //TODO: 회원가입 실패
-                print("회원가입 실패")
+                completion(false)
             }
         }
     }
