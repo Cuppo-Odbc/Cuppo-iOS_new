@@ -66,7 +66,9 @@ extension AccountManagementViewController: SettingAccountDelegate {
             self.present(passwordChangeVC, animated: true, completion: nil)
             break
         case .withdrawl:
-            //TODO: 회원 탈퇴 화면 이동
+            let widthdrawlVC = WithdrawalViewController()
+            widthdrawlVC.modalPresentationStyle = .overFullScreen
+            self.present(widthdrawlVC, animated: true, completion: nil)
             break
         }
     }

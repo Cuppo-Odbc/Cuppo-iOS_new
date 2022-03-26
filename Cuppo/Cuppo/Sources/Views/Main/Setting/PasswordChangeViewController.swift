@@ -44,7 +44,7 @@ class PasswordChangeViewController: BaseController {
     }
     
     lazy var closeButton = UIButton().then{
-        $0.setImage(UIImage(systemName: "star"), for: .normal)
+        $0.setImage(UIImage(named: "closeButton"), for: .normal)
         $0.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
     }
     

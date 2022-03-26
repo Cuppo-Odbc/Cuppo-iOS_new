@@ -48,6 +48,7 @@
 		A85A981427EE4D20003DFC0F /* PasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85A981327EE4D20003DFC0F /* PasswordChangeViewController.swift */; };
 		A85D998027EA203600E9B0AA /* SettingOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D997F27EA203600E9B0AA /* SettingOptionCell.swift */; };
 		A85D998227EA2E2F00E9B0AA /* OptionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D998127EA2E2F00E9B0AA /* OptionHeaderView.swift */; };
+		A872773427EEE0E300B11132 /* WithdrawalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872773327EEE0E300B11132 /* WithdrawalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		A85A981327EE4D20003DFC0F /* PasswordChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeViewController.swift; sourceTree = "<group>"; };
 		A85D997F27EA203600E9B0AA /* SettingOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionCell.swift; sourceTree = "<group>"; };
 		A85D998127EA2E2F00E9B0AA /* OptionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionHeaderView.swift; sourceTree = "<group>"; };
+		A872773327EEE0E300B11132 /* WithdrawalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalViewController.swift; sourceTree = "<group>"; };
 		D13EC5D2DA38B7852FD05532 /* Pods_Cuppo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cuppo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 				A85A980F27EE17BC003DFC0F /* ThemeViewController.swift */,
 				A85A981127EE19DD003DFC0F /* AccountManagementViewController.swift */,
 				A85A981327EE4D20003DFC0F /* PasswordChangeViewController.swift */,
+				A872773327EEE0E300B11132 /* WithdrawalViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A85A981027EE17BC003DFC0F /* ThemeViewController.swift in Sources */,
+				A872773427EEE0E300B11132 /* WithdrawalViewController.swift in Sources */,
 				9F253EB227D712AE0010C1E6 /* CalendarViewController.swift in Sources */,
 				9F253EC827D72D760010C1E6 /* CoffeeViewController.swift in Sources */,
 				A85A980B27EE093F003DFC0F /* LetterStyleViewController.swift in Sources */,
