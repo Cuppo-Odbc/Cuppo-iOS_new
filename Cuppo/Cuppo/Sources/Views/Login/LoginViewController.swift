@@ -25,7 +25,6 @@ class LoginViewController: BaseController {
     let passwordTextField = UnderLineTextField().then{
         $0.setPlaceHolder(placeHolder: "비밀번호")
         $0.setAlertLabel(text: "비밀번호가 다릅니다.")
-//        $0.textField.isSecureTextEntry = true
     }
     
     lazy var inputStackView = UIStackView().then{
@@ -143,6 +142,15 @@ class LoginViewController: BaseController {
                 self.present(signUpVC, animated: true, completion: nil)
             }
             .disposed(by: disposeBag)
+        
+        self.passwordFindButton.rx.tap
+            .bind{
+                // 비밀번호 찾기로 이동
+                let passwordFindVC = PasswordFindViewController()
+                passwordFindVC.modalPresentationStyle = .overFullScreen
+                
+                self.present(passwordFindVC, animated: true, completion: nil)
+            }
     }
     
     func setLayout(){
