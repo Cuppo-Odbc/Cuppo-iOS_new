@@ -16,7 +16,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = UINavigationController(rootViewController: LoginViewController()) 
+        window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+        
+        if let appearance = UserDefaults.standard.bool(forKey: "GlobalAppearanceMode") {
+        if UserDefaults.standard.bool(forKey: "GlobalAppearanceMode") {
+            window?.overrideUserInterfaceStyle = .light
+        }else {
+            window?.overrideUserInterfaceStyle = .dark
+        }
+        
+        
         window?.makeKeyAndVisible()
         
     }

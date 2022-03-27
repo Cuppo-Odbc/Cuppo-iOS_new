@@ -10,10 +10,12 @@ import UIKit
 class ThemeViewController: BaseController {
     //MARK: - UI Components
     let lightModeView = RadioViewButton().then{
+        $0.themeType = .light
         $0.setTitleLabel(text: "라이트 모드", font: .TTFont(type: .GFReg, size: 16))
     }
     
     let darkModeView = RadioViewButton().then{
+        $0.themeType = .dark
         $0.setTitleLabel(text: "다크 모드", font: .TTFont(type: .GFReg, size: 16))
     }
     
