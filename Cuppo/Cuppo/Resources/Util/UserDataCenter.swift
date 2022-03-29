@@ -27,6 +27,7 @@ class UserDataCenter {
     /// 다크 모드 설정
     func setDarkMode(){
         UserDefaults.standard.set(true, forKey: "GlobalAppearanceMode")
+        UserDefaults.standard.synchronize()
         
         let sceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
         sceneDelegate.window?.overrideUserInterfaceStyle = .dark
@@ -36,9 +37,13 @@ class UserDataCenter {
     func setLightMode(){
         // 설정 저장
         UserDefaults.standard.set(false, forKey: "GlobalAppearanceMode")
+        UserDefaults.standard.synchronize()
         
         let sceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
         sceneDelegate.window?.overrideUserInterfaceStyle = .light
-
+    }
+    
+    func getUserInterfaceStyle() -> Bool {
+        return UserDefaults.standard.bool(forKey: "GlobalAppearanceMode")
     }
 }

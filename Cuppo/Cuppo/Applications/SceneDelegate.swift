@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
         
-        if UserDefaults.standard.bool(forKey: "GlobalAppearanceMode") {
+        if UserDataCenter.shared.getUserInterfaceStyle() {
             window?.overrideUserInterfaceStyle = .dark
         }else {
             window?.overrideUserInterfaceStyle = .light
