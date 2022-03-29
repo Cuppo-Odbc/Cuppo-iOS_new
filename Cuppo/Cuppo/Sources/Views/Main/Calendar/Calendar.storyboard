@@ -44,7 +44,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="calendarCell" id="tjZ-Xk-Wjp">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="calendarCell" id="tjZ-Xk-Wjp" customClass="CalendarCell" customModule="Cuppo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HfV-Ke-wqZ">
@@ -52,8 +52,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZn-2L-HcP">
-                                                    <rect key="frame" x="61.5" y="53.5" width="5.5" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="16"/>
+                                                    <rect key="frame" x="62" y="56.5" width="4" height="15.5"/>
+                                                    <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -72,6 +72,10 @@
                                                 <constraint firstItem="WQO-dm-nWn" firstAttribute="centerX" secondItem="HfV-Ke-wqZ" secondAttribute="centerX" id="nJA-I8-NRa"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="coffeeImage" destination="WQO-dm-nWn" id="hMS-Ps-Gs0"/>
+                                            <outlet property="dayOfMonth" destination="eZn-2L-HcP" id="gd8-sj-yJW"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -95,6 +99,11 @@
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="PjP-8e-MSd" id="Or2-my-fJU"/>
+                        <outlet property="monthLabel" destination="c9i-QW-ziM" id="ix3-hu-o9O"/>
+                        <outlet property="yearLabel" destination="pqg-Vw-yoY" id="KBc-JV-A5b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
