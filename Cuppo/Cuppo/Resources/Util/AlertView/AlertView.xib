@@ -29,13 +29,13 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PIu-cq-dsK">
+                <visualEffectView opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PIu-cq-dsK">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PAz-vM-bWE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
-                    <blurEffect style="regular"/>
+                    <blurEffect style="dark"/>
                 </visualEffectView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bj4-zA-7Lm">
                     <rect key="frame" x="69.5" y="278" width="275" height="340"/>
@@ -46,8 +46,8 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqX-Cp-5Vd">
                                     <rect key="frame" x="0.0" y="0.0" width="275" height="180"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHj-WI-6m4">
-                                            <rect key="frame" x="67.5" y="30" width="140" height="120"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="gHj-WI-6m4">
+                                            <rect key="frame" x="55" y="30" width="165" height="120"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNc-QZ-OYf">
                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
@@ -56,7 +56,7 @@
                                                     </constraints>
                                                 </pickerView>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWQ-3J-mAq">
-                                                    <rect key="frame" x="90" y="0.0" width="50" height="120"/>
+                                                    <rect key="frame" x="115" y="0.0" width="50" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="equ-G4-Rmj"/>
                                                     </constraints>

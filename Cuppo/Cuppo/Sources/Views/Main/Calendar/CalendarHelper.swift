@@ -27,10 +27,17 @@ class CalendarHelper {
         return dateFormatter.string(from: date)
     }
     
-    // 달 출력
+    // 달 출력 (월을 전체적으로 표현)
     func monthString(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM"
+        return dateFormatter.string(from: date)
+    }
+    
+    // 달 출력 (월의 두자리)
+    func month2String(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM"
         return dateFormatter.string(from: date)
     }
     
@@ -54,6 +61,17 @@ class CalendarHelper {
     {
         let components = calendar.dateComponents([.year, .month], from: date)
         return calendar.date(from: components)!
+    }
+    
+    // 날짜 변경
+    func changeDate(_ selectYear: String, _ selectMonth: String) -> Date {
+        let dateString:String = "\(selectYear)-\(selectMonth)-01 00:00:00"
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+
+        return dateFormatter.date(from: dateString)!
     }
     
     

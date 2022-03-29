@@ -8,6 +8,6 @@
 import UIKit
 
 class CalendarCell: UICollectionViewCell {
-    @IBOutlet weak var dayButton: UIButton!
+    @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var coffeeImage: UIImageView!
 }
