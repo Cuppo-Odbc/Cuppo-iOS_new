@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Goyang.otf">
+            <string>Goyang</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlertView" customModule="Cuppo" customModuleProvider="target">
+            <connections>
+                <outlet property="calendarView" destination="cqX-Cp-5Vd" id="mFW-iw-7Cr"/>
+                <outlet property="cancelButton" destination="eLx-RJ-7Jo" id="BSf-XH-mUG"/>
+                <outlet property="contentLabel" destination="APz-2K-uCV" id="8cr-Uz-RBd"/>
+                <outlet property="customView" destination="iN0-l3-epB" id="OWa-w1-aQ8"/>
+                <outlet property="monthPickerView" destination="IWQ-3J-mAq" id="dBG-jm-BpR"/>
+                <outlet property="okButton" destination="K4m-0H-g9Y" id="LzT-CE-nvb"/>
+                <outlet property="popupView" destination="6aP-53-ZkT" id="s0v-x1-C7f"/>
+                <outlet property="yearPickerView" destination="tNc-QZ-OYf" id="vba-C1-Urw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PIu-cq-dsK">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PAz-vM-bWE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="regular"/>
+                </visualEffectView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bj4-zA-7Lm">
+                    <rect key="frame" x="69.5" y="278" width="275" height="340"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YZs-WV-1Ll">
+                            <rect key="frame" x="0.0" y="0.0" width="275" height="290"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqX-Cp-5Vd">
+                                    <rect key="frame" x="0.0" y="0.0" width="275" height="180"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHj-WI-6m4">
+                                            <rect key="frame" x="67.5" y="30" width="140" height="120"/>
+                                            <subviews>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNc-QZ-OYf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="2Qa-Fv-4nQ"/>
+                                                    </constraints>
+                                                </pickerView>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWQ-3J-mAq">
+                                                    <rect key="frame" x="90" y="0.0" width="50" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="equ-G4-Rmj"/>
+                                                    </constraints>
+                                                </pickerView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="gHj-WI-6m4" firstAttribute="top" secondItem="cqX-Cp-5Vd" secondAttribute="top" constant="30" id="38V-DT-rD2"/>
+                                        <constraint firstAttribute="height" constant="180" id="BZ6-bR-jd5"/>
+                                        <constraint firstAttribute="bottom" secondItem="gHj-WI-6m4" secondAttribute="bottom" constant="30" id="OpW-qk-kSe"/>
+                                        <constraint firstItem="gHj-WI-6m4" firstAttribute="centerX" secondItem="cqX-Cp-5Vd" secondAttribute="centerX" id="n9e-Ks-PHP"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aP-53-ZkT">
+                                    <rect key="frame" x="0.0" y="180" width="275" height="110"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APz-2K-uCV">
+                                            <rect key="frame" x="39" y="24.5" width="197" height="61.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="197" id="9KR-gr-AwL"/>
+                                            </constraints>
+                                            <string key="text">로그인 없이 사용할 경우, 
+앱 재설치 및 기기 변경 시 
+기존 데이터가 사라집니다.</string>
+                                            <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="275" id="BYe-xF-2sw"/>
+                                        <constraint firstItem="APz-2K-uCV" firstAttribute="centerX" secondItem="6aP-53-ZkT" secondAttribute="centerX" id="ZRK-uc-Zl1"/>
+                                        <constraint firstAttribute="height" constant="110" id="cr6-Ic-umZ"/>
+                                        <constraint firstItem="APz-2K-uCV" firstAttribute="centerY" secondItem="6aP-53-ZkT" secondAttribute="centerY" id="pER-rJ-H69"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aHd-sb-wWC">
+                            <rect key="frame" x="0.0" y="290" width="275" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLx-RJ-7Jo">
+                                    <rect key="frame" x="0.0" y="0.0" width="137.5" height="50"/>
+                                    <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="18"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="취소">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="Wyu-xG-fTP"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4m-0H-g9Y">
+                                    <rect key="frame" x="137.5" y="0.0" width="137.5" height="50"/>
+                                    <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="18"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="확인">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="okButtonTapped:" destination="-1" eventType="touchUpInside" id="H7W-P7-PpF"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="uIY-LC-NNe"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="PIu-cq-dsK" secondAttribute="bottom" id="79r-0P-8bg"/>
+                <constraint firstItem="PIu-cq-dsK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Vq3-cY-jjB"/>
+                <constraint firstItem="Bj4-zA-7Lm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="YcI-Vc-Z0W"/>
+                <constraint firstItem="PIu-cq-dsK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="afv-sM-n4K"/>
+                <constraint firstItem="Bj4-zA-7Lm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xjH-J3-7K7"/>
+                <constraint firstAttribute="trailing" secondItem="PIu-cq-dsK" secondAttribute="trailing" id="zR7-2F-JML"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

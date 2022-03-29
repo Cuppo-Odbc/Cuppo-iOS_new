@@ -26,6 +26,10 @@
 		9F253ECC27D7A6310010C1E6 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253ECB27D7A6310010C1E6 /* BaseController.swift */; };
 		9F253ECF27DA4C370010C1E6 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F253ECE27DA4C370010C1E6 /* DiaryViewController.swift */; };
 		9F6AAA0727E78B6B008CE72F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6AAA0627E78B6B008CE72F /* TabBarViewController.swift */; };
+		9F7D540A27F3061A00D75CD0 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D540927F3061A00D75CD0 /* AlertView.swift */; };
+		9F7D540C27F3062400D75CD0 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F7D540B27F3062400D75CD0 /* AlertView.xib */; };
+		9F7D540E27F3079700D75CD0 /* CustomAlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D540D27F3079700D75CD0 /* CustomAlertProtocol.swift */; };
+		9F7D541027F3122C00D75CD0 /* AlertView + PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D540F27F3122C00D75CD0 /* AlertView + PickerView.swift */; };
 		9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962227D64C0200FF42BA /* AppDelegate.swift */; };
 		9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962427D64C0200FF42BA /* SceneDelegate.swift */; };
 		9F81962A27D64C0200FF42BA /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962827D64C0200FF42BA /* TabBar.storyboard */; };
@@ -74,6 +78,10 @@
 		9F253ECB27D7A6310010C1E6 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		9F253ECE27DA4C370010C1E6 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		9F6AAA0627E78B6B008CE72F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		9F7D540927F3061A00D75CD0 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		9F7D540B27F3062400D75CD0 /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		9F7D540D27F3079700D75CD0 /* CustomAlertProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertProtocol.swift; sourceTree = "<group>"; };
+		9F7D540F27F3122C00D75CD0 /* AlertView + PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertView + PickerView.swift"; sourceTree = "<group>"; };
 		9F81961F27D64C0200FF42BA /* Cuppo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuppo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F81962227D64C0200FF42BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F81962427D64C0200FF42BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				9F253EBE27D71B4C0010C1E6 /* ViewModelProtocol.swift */,
+				9F7D540D27F3079700D75CD0 /* CustomAlertProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -230,6 +239,16 @@
 				9F253ECE27DA4C370010C1E6 /* DiaryViewController.swift */,
 			);
 			path = Coffee;
+			sourceTree = "<group>";
+		};
+		9F7D540827F3060E00D75CD0 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				9F7D540F27F3122C00D75CD0 /* AlertView + PickerView.swift */,
+				9F7D540927F3061A00D75CD0 /* AlertView.swift */,
+				9F7D540B27F3062400D75CD0 /* AlertView.xib */,
+			);
+			path = AlertView;
 			sourceTree = "<group>";
 		};
 		9F81961627D64C0200FF42BA = {
@@ -316,6 +335,7 @@
 		9F81963B27D64CAA00FF42BA /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				9F7D540827F3060E00D75CD0 /* AlertView */,
 				9F253EA427D66A3D0010C1E6 /* IndicatorView.swift */,
 				9F253ECB27D7A6310010C1E6 /* BaseController.swift */,
 				A872773527EF06E900B11132 /* UserDataCenter.swift */,
@@ -478,6 +498,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F7D540C27F3062400D75CD0 /* AlertView.xib in Resources */,
 				9F253EC627D72CA70010C1E6 /* Coffee.storyboard in Resources */,
 				9F253EAB27D70BBB0010C1E6 /* Calendar.storyboard in Resources */,
 				9F253EAD27D70BCC0010C1E6 /* CoffeeList.storyboard in Resources */,
@@ -544,9 +565,11 @@
 				9F253EC827D72D760010C1E6 /* CoffeeViewController.swift in Sources */,
 				A85A980B27EE093F003DFC0F /* LetterStyleViewController.swift in Sources */,
 				A8373A6D27DD270F00BA0442 /* UnderLineTextField.swift in Sources */,
+				9F7D541027F3122C00D75CD0 /* AlertView + PickerView.swift in Sources */,
 				9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */,
 				A85D998027EA203600E9B0AA /* SettingOptionCell.swift in Sources */,
 				A8373A6B27DD17CE00BA0442 /* LoginViewController.swift in Sources */,
+				9F7D540E27F3079700D75CD0 /* CustomAlertProtocol.swift in Sources */,
 				A872773927EF0CA500B11132 /* PasswordFindViewController.swift in Sources */,
 				9F253ECC27D7A6310010C1E6 /* BaseController.swift in Sources */,
 				A85A981427EE4D20003DFC0F /* PasswordChangeViewController.swift in Sources */,
@@ -567,6 +590,7 @@
 				A85A981227EE19DD003DFC0F /* AccountManagementViewController.swift in Sources */,
 				9F253EB427D712C60010C1E6 /* CoffeeListViewController.swift in Sources */,
 				9F253EA527D66A3D0010C1E6 /* IndicatorView.swift in Sources */,
+				9F7D540A27F3061A00D75CD0 /* AlertView.swift in Sources */,
 				9F253EA127D669320010C1E6 /* UIColor.swift in Sources */,
 				A8373A7A27DDE2B800BA0442 /* LoginResponse.swift in Sources */,
 				A8373A8327DDFDFC00BA0442 /* SignUpViewModel.swift in Sources */,
