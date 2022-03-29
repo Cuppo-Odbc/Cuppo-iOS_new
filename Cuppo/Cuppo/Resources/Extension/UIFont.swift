@@ -20,4 +20,13 @@ extension UIFont {
         
         return UIFont(name: fontName, size: size) ?? UIFont.systemFont(ofSize: size)
     }
+    
+    static func globalFont(size: CGFloat) -> UIFont {
+        switch UserDataCenter.shared.getGlobalFont() {
+        case .systemFont:
+            return UIFont.systemFont(ofSize: size)
+        case .goyangFont:
+            return UIFont(name: "Goyang", size: size) ?? UIFont.systemFont(ofSize: size)
+        }
+    }
 }

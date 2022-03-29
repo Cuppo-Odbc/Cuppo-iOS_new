@@ -14,7 +14,8 @@ class LetterStyleViewController: BaseController {
     let guideLabel = UILabel().then{
         $0.text = "커피 한 잔에 담긴, 오롯이 나만의 시간"
         $0.textAlignment = .center
-        $0.font = .TTFont(type: .GFReg, size: 16)
+//        $0.font = .TTFont(type: .GFReg, size: 16)
+        $0.font = .globalFont(size: 16)
     }
     
     let dividerView = UIView().then{

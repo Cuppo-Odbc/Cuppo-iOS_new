@@ -9,6 +9,7 @@ import UIKit
 
 class RadioViewButton: UIView {
     var themeType: GlobalAppearanceMode?
+    var themeDelegate: ThemeViewDelegate?
     
     let menuLabel = UILabel()
     lazy var radioButton = UIButton().then {
@@ -21,7 +22,6 @@ class RadioViewButton: UIView {
         super.init(frame: frame)
         
         setLayout()
-//        checkGlobalAppearance()
     }
     
     required init?(coder: NSCoder) {
@@ -32,11 +32,6 @@ class RadioViewButton: UIView {
     func setTitleLabel(text: String, font: UIFont){
         self.menuLabel.text = text
         self.menuLabel.font = font
-    }
-    
-    func checkGlobalAppearance() {
-        //TODO: 현재 앱의 세팅을 확인하고, 그에 맞게 isSelected 하자
-        
     }
     
     func setLayout(){
@@ -59,15 +54,16 @@ class RadioViewButton: UIView {
     @objc
     func radioTapped(_ sender: UIButton){
         // selected 설정 변경
-        self.radioButton.isSelected = !self.radioButton.isSelected
-        
         guard let themeType = self.themeType else { return }
-    
+        guard let delegate = self.themeDelegate else { return }
+        
         switch themeType {
         case .light:
             UserDataCenter.shared.setLightMode()
         case .dark:
             UserDataCenter.shared.setDarkMode()
         }
+        
+        delegate.radioButtonTapped(tag: sender.tag)
     }
 }
