@@ -17,13 +17,12 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
             return UICollectionViewCell()
         }
         cell.coffeeImage.isHidden = true
-        cell.dayOfMonth.text = totalSquares[indexPath.item]
+        cell.dayButton.setTitle(totalSquares[indexPath.item], for: .normal)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        print(collectionView.frame.size.width)
         let width = (collectionView.frame.size.width - 10) / 8
         let height = (collectionView.frame.size.height - 2) /  12
         return CGSize(width: width, height: height)

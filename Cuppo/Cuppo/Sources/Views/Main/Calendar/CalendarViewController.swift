@@ -14,8 +14,13 @@ class CalendarViewController: BaseController {
     
     // MARK: - UIComponents
     @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var monthButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBAction func changeDateAction(_ sender: Any) {
+        
+    }
+    
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -47,7 +52,7 @@ class CalendarViewController: BaseController {
         }
         
         yearLabel.text = CalendarHelper().yearString(date: selectedDate)
-        monthLabel.text = CalendarHelper().monthString(date: selectedDate).uppercased()
+        monthButton.setTitle(CalendarHelper().monthString(date: selectedDate).uppercased(), for: .normal)
         collectionView.reloadData()
     }
     
