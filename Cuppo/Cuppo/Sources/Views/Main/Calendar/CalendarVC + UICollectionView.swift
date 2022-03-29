@@ -16,8 +16,8 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "calendarCell", for: indexPath) as? CalendarCell else {
             return UICollectionViewCell()
         }
+        cell.dayLabel.text = totalSquares[indexPath.item]
         cell.coffeeImage.isHidden = true
-        cell.dayButton.setTitle(totalSquares[indexPath.item], for: .normal)
         
         return cell
     }

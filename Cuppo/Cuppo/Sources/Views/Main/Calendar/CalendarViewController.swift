@@ -14,11 +14,16 @@ class CalendarViewController: BaseController {
     
     // MARK: - UIComponents
     @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var monthButton: UIButton!
+    @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func changeDateAction(_ sender: Any) {
-        
+        let popupView = AlertView(frame: view.bounds)
+        popupView.calendarAlert(popupView)
+        popupView.selectYear = CalendarHelper().yearString(date: selectedDate)
+        popupView.selectMonth = CalendarHelper().month2String(date: selectedDate)
+        popupView.delegate = self
+        view.addSubview(popupView)
     }
     
     
@@ -50,10 +55,23 @@ class CalendarViewController: BaseController {
             }
             count += 1
         }
-        
         yearLabel.text = CalendarHelper().yearString(date: selectedDate)
-        monthButton.setTitle(CalendarHelper().monthString(date: selectedDate).uppercased(), for: .normal)
+        monthLabel.text = CalendarHelper().monthString(date: selectedDate).uppercased()
         collectionView.reloadData()
+    }
+    
+}
+
+extension CalendarViewController: CustomAlertProtocol {
+    func cancleButtonTapped(_ popupView: UIView) {
+        popupView.removeFromSuperview()
+    }
+    
+    func okButtonTapped(_ popupView: UIView, _ year: String?, _ month: String?) {
+        selectedDate = CalendarHelper().changeDate(year!, month!)
+        setMonthView()
+        popupView.removeFromSuperview()
+        
     }
     
 }

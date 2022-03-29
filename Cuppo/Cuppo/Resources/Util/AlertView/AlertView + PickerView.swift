@@ -46,9 +46,13 @@ extension AlertView: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == yearPickerView {
-            print(yearArr[row])
+            selectYear = "\(yearArr[row])"
         } else if pickerView == monthPickerView {
-            print(monthArr[row])
+            if monthArr[row] > 0 && monthArr[row] < 10 {
+                selectMonth = "0\(monthArr[row])"
+            }else {
+                selectMonth = "\(monthArr[row])"
+            }
         }
     }
 }

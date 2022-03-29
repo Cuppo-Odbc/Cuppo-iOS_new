@@ -30,13 +30,3 @@ class BaseController: UIViewController {
     }
 
 }
-
-extension BaseController: CustomAlertProtocol {
-    func cancleButtonTapped(_ sender: UIButton, _ selectView: UIView) {
-        selectView.removeFromSuperview()
-    }
-    
-    func okButtonTapped(_ sender: UIButton, _ selectView: UIView) {
-        selectView.removeFromSuperview()
-    }
-}

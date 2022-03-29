@@ -22,20 +22,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqg-Vw-yoY">
-                                <rect key="frame" x="30" y="134" width="30.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqg-Vw-yoY">
+                                <rect key="frame" x="30" y="134" width="4.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Drl-M2-ueA">
-                                <rect key="frame" x="30" y="156" width="88" height="30"/>
+                                <rect key="frame" x="30" y="156" width="95" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="C6I-Oy-A4K"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="22"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="FEBRUARY">
+                                <state key="normal" title="                 ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -66,29 +66,33 @@
                                                         <constraint firstAttribute="width" constant="23" id="wAz-e1-7WR"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Hs-xc-4T1">
-                                                    <rect key="frame" x="49" y="50" width="30" height="28"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKF-nz-VBe">
+                                                    <rect key="frame" x="62" y="56" width="4" height="16"/>
                                                     <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="12"/>
-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" title="1">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                </button>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="8Hs-xc-4T1" firstAttribute="centerY" secondItem="HfV-Ke-wqZ" secondAttribute="centerY" id="2gL-oK-w4b"/>
+                                                <constraint firstItem="MKF-nz-VBe" firstAttribute="centerY" secondItem="HfV-Ke-wqZ" secondAttribute="centerY" id="1D9-aS-a5h"/>
                                                 <constraint firstItem="WQO-dm-nWn" firstAttribute="centerY" secondItem="HfV-Ke-wqZ" secondAttribute="centerY" id="3HB-jb-jbS"/>
-                                                <constraint firstItem="8Hs-xc-4T1" firstAttribute="centerX" secondItem="HfV-Ke-wqZ" secondAttribute="centerX" id="l3a-bw-TQt"/>
+                                                <constraint firstItem="MKF-nz-VBe" firstAttribute="centerX" secondItem="HfV-Ke-wqZ" secondAttribute="centerX" id="aD9-6c-Nmq"/>
                                                 <constraint firstItem="WQO-dm-nWn" firstAttribute="centerX" secondItem="HfV-Ke-wqZ" secondAttribute="centerX" id="nJA-I8-NRa"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="coffeeImage" destination="WQO-dm-nWn" id="hMS-Ps-Gs0"/>
-                                            <outlet property="dayButton" destination="8Hs-xc-4T1" id="0Xz-Bs-FWe"/>
+                                            <outlet property="dayLabel" destination="MKF-nz-VBe" id="zVQ-ZA-daX"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZ7-xg-SPD">
+                                <rect key="frame" x="30" y="156" width="21.5" height="28.5"/>
+                                <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -98,11 +102,13 @@
                             <constraint firstItem="Drl-M2-ueA" firstAttribute="top" secondItem="pqg-Vw-yoY" secondAttribute="bottom" constant="1" id="RaB-sl-VmP"/>
                             <constraint firstItem="pqg-Vw-yoY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="90" id="S4U-V1-C8j"/>
                             <constraint firstItem="PjP-8e-MSd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="UzO-Fw-jhg"/>
+                            <constraint firstItem="DZ7-xg-SPD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="YpD-qh-vMv"/>
                             <constraint firstItem="pqg-Vw-yoY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="ceU-fV-CRi"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pqg-Vw-yoY" secondAttribute="trailing" id="fD4-aP-DpS"/>
                             <constraint firstItem="PjP-8e-MSd" firstAttribute="top" secondItem="Drl-M2-ueA" secondAttribute="bottom" constant="100" id="hBS-kJ-1sw"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Drl-M2-ueA" secondAttribute="trailing" id="kBa-pz-9x7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PjP-8e-MSd" secondAttribute="trailing" constant="15" id="mCu-ef-wCy"/>
+                            <constraint firstItem="DZ7-xg-SPD" firstAttribute="top" secondItem="pqg-Vw-yoY" secondAttribute="bottom" constant="1" id="urJ-KQ-1gG"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="main" selectedImage="main" id="cDj-fc-yTn">
@@ -111,7 +117,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="PjP-8e-MSd" id="Or2-my-fJU"/>
-                        <outlet property="monthButton" destination="Drl-M2-ueA" id="hIa-Ll-z9L"/>
+                        <outlet property="monthLabel" destination="DZ7-xg-SPD" id="PAC-OJ-0gc"/>
                         <outlet property="yearLabel" destination="pqg-Vw-yoY" id="KBc-JV-A5b"/>
                     </connections>
                 </viewController>
