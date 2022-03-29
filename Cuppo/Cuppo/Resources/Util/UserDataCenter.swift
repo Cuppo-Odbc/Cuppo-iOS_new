@@ -12,6 +12,11 @@ enum GlobalAppearanceMode: String {
     case dark = "dark"
 }
 
+enum GlobalFontType: String {
+    case systemFont = "systemFont"
+    case goyangFont = "goyangFont"
+}
+
 class UserDataCenter {
     static let shared = UserDataCenter()
     
@@ -45,5 +50,42 @@ class UserDataCenter {
     
     func getUserInterfaceStyle() -> Bool {
         return UserDefaults.standard.bool(forKey: "GlobalAppearanceMode")
+    }
+    
+    func getGlobalFont() -> GlobalFontType {
+        let dict = [GlobalFontType.systemFont.rawValue : false,
+                    GlobalFontType.goyangFont.rawValue : false]
+//        var fontModel = FontModel()
+//        fontModel.initDict()
+        
+        UserDefaults.standard.set(dict, forKey: "dictTest")
+        UserDefaults.standard.synchronize()
+        
+        guard let fontTypeToDict = UserDefaults.standard.dictionary(forKey: "dictTest") else { return GlobalFontType.systemFont }
+        
+        for (key, value) in fontTypeToDict {
+            if value as! Bool{
+                if key == GlobalFontType.goyangFont.rawValue {
+                    return GlobalFontType.goyangFont
+                }else {
+                    return GlobalFontType.systemFont
+                }
+            }
+        }
+        
+        return GlobalFontType.systemFont
+    }
+}
+
+struct FontModel {
+    var dict: [String: Any]
+    
+    init(){
+        self.dict = ["":""]
+    }
+    
+    mutating func initDict(){
+        self.dict.updateValue(false, forKey: GlobalFontType.systemFont.rawValue)
+        self.dict.updateValue(false, forKey: GlobalFontType.goyangFont.rawValue)
     }
 }

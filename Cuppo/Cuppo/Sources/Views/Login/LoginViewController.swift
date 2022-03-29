@@ -151,6 +151,7 @@ class LoginViewController: BaseController {
                 
                 self.present(passwordFindVC, animated: true, completion: nil)
             }
+            .disposed(by: disposeBag)
     }
     
     func setLayout(){
@@ -160,7 +161,6 @@ class LoginViewController: BaseController {
         }
         
         inputStackView.snp.makeConstraints{
-            $0.centerX.equalToSuperview()
             $0.leading.equalToSuperview().offset(37)
             $0.trailing.equalToSuperview().offset(-38)
             $0.bottom.equalTo(loginButton.snp.top).offset(-12)
@@ -191,7 +191,6 @@ class LoginViewController: BaseController {
         }
         
         startWithoutLoginButton.snp.makeConstraints{
-//            $0.top.equalTo(loginButton.snp.bottom).offset(100)
             $0.centerY.equalToSuperview().multipliedBy(1.7)
             $0.leading.equalToSuperview().offset(37)
             $0.trailing.equalToSuperview().offset(-38)
