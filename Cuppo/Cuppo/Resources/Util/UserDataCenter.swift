@@ -6,6 +6,12 @@
 //
 
 import UIKit
+import SwiftUI
+
+enum UserDefaultsKeys: String {
+    case globalAppearanceMode
+    case globalFont
+}
 
 enum GlobalAppearanceMode: String {
     case light = "light"
@@ -48,28 +54,43 @@ class UserDataCenter {
         sceneDelegate.window?.overrideUserInterfaceStyle = .light
     }
     
+    func setGlobalFont(type: GlobalFontType){
+        switch type {
+        case .systemFont:
+            let font = GlobalFont(isSystemFont: true, isGoyangFont: false)
+            let propertyEncoder = try? PropertyListEncoder().encode(font)
+            UserDefaults.standard.set(propertyEncoder, forKey: UserDefaultsKeys.globalFont.rawValue)
+            UserDefaults.standard.synchronize()
+            break
+        case .goyangFont:
+            let font = GlobalFont(isSystemFont: false, isGoyangFont: true)
+            let propertyEncoder = try? PropertyListEncoder().encode(font)
+            UserDefaults.standard.set(propertyEncoder, forKey: UserDefaultsKeys.globalFont.rawValue)
+            UserDefaults.standard.synchronize()
+            break
+        }
+    }
+    
     func getUserInterfaceStyle() -> Bool {
         return UserDefaults.standard.bool(forKey: "GlobalAppearanceMode")
     }
     
     func getGlobalFont() -> GlobalFontType {
-        let dict = [GlobalFontType.systemFont.rawValue : false,
-                    GlobalFontType.goyangFont.rawValue : false]
-//        var fontModel = FontModel()
-//        fontModel.initDict()
+        guard let _ = UserDefaults.standard.object(forKey: UserDefaultsKeys.globalFont.rawValue) else {
+            return GlobalFontType.systemFont
+        }
         
-        UserDefaults.standard.set(dict, forKey: "dictTest")
-        UserDefaults.standard.synchronize()
+        guard let fontData = UserDefaults.standard.value(forKey: UserDefaultsKeys.globalFont.rawValue) as? Data else {
+            return GlobalFontType.systemFont
+        }
         
-        guard let fontTypeToDict = UserDefaults.standard.dictionary(forKey: "dictTest") else { return GlobalFontType.systemFont }
-        
-        for (key, value) in fontTypeToDict {
-            if value as! Bool{
-                if key == GlobalFontType.goyangFont.rawValue {
-                    return GlobalFontType.goyangFont
-                }else {
-                    return GlobalFontType.systemFont
-                }
+        if let font = try? PropertyListDecoder().decode(GlobalFont.self, from: fontData) {
+            if font.isSystemFont { // 시스템 폰트 설정
+                return GlobalFontType.systemFont
+            } else if font.isGoyangFont { // 고양 폰트 설정
+                return GlobalFontType.goyangFont
+            }else { // 아무 설정도 되지 않은 초기상태라면
+                return GlobalFontType.systemFont
             }
         }
         
@@ -77,15 +98,12 @@ class UserDataCenter {
     }
 }
 
-struct FontModel {
-    var dict: [String: Any]
+struct GlobalFont: Codable {
+    var isSystemFont: Bool
+    var isGoyangFont: Bool
     
-    init(){
-        self.dict = ["":""]
-    }
-    
-    mutating func initDict(){
-        self.dict.updateValue(false, forKey: GlobalFontType.systemFont.rawValue)
-        self.dict.updateValue(false, forKey: GlobalFontType.goyangFont.rawValue)
+    init(isSystemFont: Bool, isGoyangFont: Bool){
+        self.isSystemFont = isSystemFont
+        self.isGoyangFont = isGoyangFont
     }
 }

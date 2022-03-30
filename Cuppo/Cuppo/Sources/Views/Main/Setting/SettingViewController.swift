@@ -43,7 +43,8 @@ class SettingViewController: BaseController {
     lazy var fontMenu = SettingActionView().then{
         $0.actionDelegate = self
         $0.type = .fontStyle
-        $0.setTitleLabel(text: Menu.fontStyle.rawValue, font: UIFont.TTFont(type: .GFReg, size: 16.0))
+//        $0.setTitleLabel(text: Menu.fontStyle.rawValue, font: UIFont.TTFont(type: .GFReg, size: 16.0))
+        $0.setTitleLabel(text: Menu.fontStyle.rawValue, font: UIFont.globalFont(size: 16))
     }
     
     lazy var themeMenu = SettingActionView().then{

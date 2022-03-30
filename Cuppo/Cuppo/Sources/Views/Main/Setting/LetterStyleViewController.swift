@@ -14,7 +14,6 @@ class LetterStyleViewController: BaseController {
     let guideLabel = UILabel().then{
         $0.text = "커피 한 잔에 담긴, 오롯이 나만의 시간"
         $0.textAlignment = .center
-//        $0.font = .TTFont(type: .GFReg, size: 16)
         $0.font = .globalFont(size: 16)
     }
     
@@ -29,10 +28,12 @@ class LetterStyleViewController: BaseController {
     
     lazy var systemFontButton = RadioViewButton().then{
         $0.setTitleLabel(text: "시스템 폰트", font: .TTFont(type: .GFReg, size: 14))
+        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(systemFontButtonTapped(_:))))
     }
     
     lazy var basicFontButton = RadioViewButton().then{
         $0.setTitleLabel(text: "기본 글씨체", font: .TTFont(type: .GFReg, size: 14))
+        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(basicFontButtonTapped(_:))))
     }
     
     lazy var fontStackView = UIStackView().then{
@@ -51,7 +52,21 @@ class LetterStyleViewController: BaseController {
         self.customNavigationBarAttribute(.clear, .black)
         self.navigationItem.title = "글자 스타일"
         
+        setLetterButton()
         setLayout()
+    }
+    
+    func setLetterButton(){
+        switch UserDataCenter.shared.getGlobalFont() {
+        case .systemFont:
+            self.systemFontButton.radioButton.isSelected = true
+            self.basicFontButton.radioButton.isSelected = false
+            break
+        case .goyangFont:
+            self.systemFontButton.radioButton.isSelected = false
+            self.basicFontButton.radioButton.isSelected = true
+            break
+        }
     }
     
     func setLayout(){
@@ -80,5 +95,25 @@ class LetterStyleViewController: BaseController {
             $0.leading.equalToSuperview().offset(30)
             $0.trailing.equalToSuperview().offset(-30)
         }
+    }
+    
+    @objc
+    func systemFontButtonTapped(_ sender: UITapGestureRecognizer){
+        // 폰트설정 and 버튼 속성 변경
+        UserDataCenter.shared.setGlobalFont(type: .systemFont)
+        
+        self.systemFontButton.radioButton.isSelected = true
+        self.basicFontButton.radioButton.isSelected = false
+        self.guideLabel.font = UIFont.globalFont(size: 16)
+    }
+    
+    @objc
+    func basicFontButtonTapped(_ sender: UITapGestureRecognizer){
+        // 폰트설정 and 버튼 속성 변경
+        UserDataCenter.shared.setGlobalFont(type: .goyangFont)
+        
+        self.systemFontButton.radioButton.isSelected = false
+        self.basicFontButton.radioButton.isSelected = true
+        self.guideLabel.font = UIFont.globalFont(size: 16)
     }
 }

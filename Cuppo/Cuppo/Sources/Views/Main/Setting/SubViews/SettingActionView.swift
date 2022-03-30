@@ -41,7 +41,8 @@ class SettingActionView: UIView {
     
     func setTitleLabel(text: String, font: UIFont){
         self.menuLabel.text = text
-        self.menuLabel.font = UIFont.TTFont(type: .GFReg, size: 16)
+        self.menuLabel.font = font
+        self.menuLabel.adjustsFontForContentSizeCategory = true
     }
     
     @objc

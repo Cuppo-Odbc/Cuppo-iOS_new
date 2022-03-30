@@ -18,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
         
+        // 다크 / 라이트 모드 설정
         if UserDataCenter.shared.getUserInterfaceStyle() {
             window?.overrideUserInterfaceStyle = .dark
         }else {
