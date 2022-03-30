@@ -11,9 +11,12 @@ class AlertView: UIView {
     public var delegate: CustomAlertProtocol?
     
     // MARK: - Properties
-    var yearArr: [Int] = [2021,2022,2023]
+    var yearArr: [Int] = []
     var monthArr: [Int] = [1,2,3,4,5,6,7,8,9,10,11,12]
     var currentView: UIView!
+    
+    var selectYear: String = ""
+    var selectMonth: String = ""
     
     // MARK: - UIComponents
     @IBOutlet var customView: UIView!
@@ -27,11 +30,11 @@ class AlertView: UIView {
     
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        self.delegate?.cancleButtonTapped(sender, currentView)
+        self.delegate?.cancleButtonTapped(currentView)
     }
     
     @IBAction func okButtonTapped(_ sender: UIButton) {
-        self.delegate?.okButtonTapped(sender,currentView)
+        self.delegate?.okButtonTapped(currentView,selectYear,selectMonth)
     }
     
     
@@ -44,6 +47,7 @@ class AlertView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setYear()
         initialize()
     }
     
@@ -53,6 +57,12 @@ class AlertView: UIView {
     }
     
     // MARK: - Functions
+    
+    func setYear(){
+        for year in 1950...2070 {
+            yearArr.append(year)
+        }
+    }
     
     // 모든 화면에 맞춰주는 작업
     private func initialize() {
@@ -79,6 +89,11 @@ class AlertView: UIView {
         monthPickerView.dataSource = self
         selectedPickerViewUICustom(yearPickerView)
         selectedPickerViewUICustom(monthPickerView)
+        
+        let yearIdx = yearArr.firstIndex { $0 == Int(selectYear) }
+        yearPickerView.selectRow(yearIdx!, inComponent:0, animated:true)
+        let monthIdx = monthArr.firstIndex { $0 == Int(selectMonth) }
+        monthPickerView.selectRow(monthIdx!, inComponent:0, animated:true)
     }
     
     // calendar PickerView 내부 선 생성
@@ -96,7 +111,7 @@ class AlertView: UIView {
     }
     
     // 캘린더 표시
-    func calendarAlert(currentYear: String, currentMonth: String, myView: UIView){
+    func calendarAlert(_ myView: UIView){
         cancelButton.setTitle("취소", for: .normal)
         okButton.setTitle("확인", for: .normal)
         

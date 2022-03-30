@@ -8,6 +8,6 @@
 import UIKit
 
 protocol CustomAlertProtocol {
-    func cancleButtonTapped(_ sender: UIButton,_ test: UIView)
-    func okButtonTapped(_ sender: UIButton, _ test: UIView)
+    func cancleButtonTapped(_ popupView: UIView)
+    func okButtonTapped(_ popupView: UIView, _ year: String?, _ month: String?)
 }
