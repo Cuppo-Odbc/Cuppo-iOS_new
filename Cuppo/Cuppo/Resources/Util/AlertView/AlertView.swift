@@ -11,7 +11,7 @@ class AlertView: UIView {
     public var delegate: CustomAlertProtocol?
     
     // MARK: - Properties
-    var yearArr: [Int] = [2021,2022,2023]
+    var yearArr: [Int] = []
     var monthArr: [Int] = [1,2,3,4,5,6,7,8,9,10,11,12]
     var currentView: UIView!
     
@@ -47,6 +47,7 @@ class AlertView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setYear()
         initialize()
     }
     
@@ -56,6 +57,12 @@ class AlertView: UIView {
     }
     
     // MARK: - Functions
+    
+    func setYear(){
+        for year in 1950...2070 {
+            yearArr.append(year)
+        }
+    }
     
     // 모든 화면에 맞춰주는 작업
     private func initialize() {
