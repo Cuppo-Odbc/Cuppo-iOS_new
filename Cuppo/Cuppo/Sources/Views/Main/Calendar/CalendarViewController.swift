@@ -8,9 +8,8 @@
 import UIKit
 
 class CalendarViewController: BaseController {
-    
-    var selectedDate = Date()
-    var totalSquares = [String]()
+    // MARK: - Properties
+    let viewModel = CalendarViewModel()
     
     // MARK: - UIComponents
     @IBOutlet weak var yearLabel: UILabel!
@@ -20,8 +19,8 @@ class CalendarViewController: BaseController {
     @IBAction func changeDateAction(_ sender: Any) {
         let popupView = AlertView(frame: view.bounds)
         popupView.calendarAlert(popupView)
-        popupView.selectYear = CalendarHelper().yearString(date: selectedDate)
-        popupView.selectMonth = CalendarHelper().month2String(date: selectedDate)
+        popupView.selectYear = viewModel.getYear()
+        popupView.selectMonth = viewModel.getNumberMonth()
         popupView.delegate = self
         view.addSubview(popupView)
     }
@@ -30,34 +29,38 @@ class CalendarViewController: BaseController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        yearLabel.text = viewModel.getYear()
+        monthLabel.text = viewModel.getMonth()
+        
+        setBind()
         setMonthView()
+        setCollectionView()
+    }
+    
+    // MARK: - Functions
+    func setCollectionView(){
         collectionView.dataSource = self
         collectionView.delegate = self
     }
     
     // 해당 달의 일수 설정
     func setMonthView(){
-        totalSquares.removeAll()
-        
-        var count: Int = 0
-        
-        let daysInMonth = CalendarHelper().daysInMonth(date: selectedDate)
-        let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
-        let startingSpaces = CalendarHelper().weekDay(date: firstDayOfMonth)
-        
-        while count < 42 {
-            let dayLocation = count - startingSpaces
-            
-            if(dayLocation < 0 || dayLocation >= daysInMonth){
-                totalSquares.append("")
-            } else {
-                totalSquares.append(String(dayLocation+1))
-            }
-            count += 1
+        viewModel.deleteCellArea()
+        viewModel.setDayInCellArea()
+    }
+    
+    func setBind() {
+        viewModel.selectedDate.bind { date in
+            self.yearLabel.text = self.viewModel.getYear()
+            self.monthLabel.text = self.viewModel.getMonth()
+            self.collectionView.reloadData()
         }
-        yearLabel.text = CalendarHelper().yearString(date: selectedDate)
-        monthLabel.text = CalendarHelper().monthString(date: selectedDate).uppercased()
-        collectionView.reloadData()
+        
+        viewModel.searchedList.bind { days in
+            //TODO: 해당 날짜의 이미지뷰 hidden true / false
+            
+        }
     }
     
 }
@@ -68,7 +71,7 @@ extension CalendarViewController: CustomAlertProtocol {
     }
     
     func okButtonTapped(_ popupView: UIView, _ year: String?, _ month: String?) {
-        selectedDate = CalendarHelper().changeDate(year!, month!)
+        viewModel.changeSelectedDate(year: year!, month: month!)
         setMonthView()
         popupView.removeFromSuperview()
         

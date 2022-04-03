@@ -8,15 +8,16 @@
 import UIKit
 
 extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return totalSquares.count
+        return viewModel.cellAreaCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "calendarCell", for: indexPath) as? CalendarCell else {
             return UICollectionViewCell()
         }
-        cell.dayLabel.text = totalSquares[indexPath.item]
+        cell.dayLabel.text = viewModel.getCellDate(idx: indexPath.item).dayName
         cell.coffeeImage.isHidden = true
         
         return cell

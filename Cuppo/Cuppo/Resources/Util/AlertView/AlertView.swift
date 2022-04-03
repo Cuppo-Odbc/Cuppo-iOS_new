@@ -8,7 +8,9 @@
 import UIKit
 
 class AlertView: UIView {
+    
     public var delegate: CustomAlertProtocol?
+    
     
     // MARK: - Properties
     var yearArr: [Int] = []
