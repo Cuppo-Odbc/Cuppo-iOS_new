@@ -59,11 +59,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unselectedRadio" translatesAutoresizingMaskIntoConstraints="NO" id="WQO-dm-nWn">
-                                                    <rect key="frame" x="52.5" y="54" width="23" height="20"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeBin" translatesAutoresizingMaskIntoConstraints="NO" id="WQO-dm-nWn">
+                                                    <rect key="frame" x="51.5" y="51.5" width="25" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="Uqo-lk-TUd"/>
-                                                        <constraint firstAttribute="width" constant="23" id="wAz-e1-7WR"/>
+                                                        <constraint firstAttribute="height" constant="25" id="Uqo-lk-TUd"/>
+                                                        <constraint firstAttribute="width" constant="25" id="wAz-e1-7WR"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKF-nz-VBe">
@@ -127,8 +127,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="coffeeBin" width="34.5" height="34.5"/>
         <image name="main" width="20" height="20"/>
-        <image name="unselectedRadio" width="18" height="18"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
