@@ -36,6 +36,19 @@ class CalendarViewModel {
         }
     }
     
+    
+    
+    // cardList에 필요한 것 
+    var cardListCount: Int {
+        cardList.value.count
+    }
+    
+    // cardList에 필요한 것
+    func getCardData(idx: Int)-> Card {
+        self.cardList.value[idx]
+    }
+    
+    
     var cellAreaCount: Int {
         cellArea.value.count
     }
