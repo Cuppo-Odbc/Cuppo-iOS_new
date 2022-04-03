@@ -37,6 +37,8 @@
 		9F7D542127F7465500D75CD0 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542027F7465500D75CD0 /* DayModel.swift */; };
 		9F7D542527F7478D00D75CD0 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542427F7478D00D75CD0 /* Observable.swift */; };
 		9F7D542727F9D6F800D75CD0 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542627F9D6F800D75CD0 /* CalendarService.swift */; };
+		9F7D542B27FA104300D75CD0 /* CardListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542A27FA104300D75CD0 /* CardListResponse.swift */; };
+		9F7D542E27FA228700D75CD0 /* UIString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542D27FA228700D75CD0 /* UIString.swift */; };
 		9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962227D64C0200FF42BA /* AppDelegate.swift */; };
 		9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962427D64C0200FF42BA /* SceneDelegate.swift */; };
 		9F81962A27D64C0200FF42BA /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962827D64C0200FF42BA /* TabBar.storyboard */; };
@@ -96,6 +98,8 @@
 		9F7D542027F7465500D75CD0 /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
 		9F7D542427F7478D00D75CD0 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		9F7D542627F9D6F800D75CD0 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
+		9F7D542A27FA104300D75CD0 /* CardListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListResponse.swift; sourceTree = "<group>"; };
+		9F7D542D27FA228700D75CD0 /* UIString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIString.swift; sourceTree = "<group>"; };
 		9F81961F27D64C0200FF42BA /* Cuppo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuppo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F81962227D64C0200FF42BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F81962427D64C0200FF42BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,41 +200,6 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		9F253EB727D719030010C1E6 /* CoffeeList */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CoffeeList;
-			sourceTree = "<group>";
-		};
-		9F253EB827D719210010C1E6 /* Calendar */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Calendar;
-			sourceTree = "<group>";
-		};
-		9F253EB927D719280010C1E6 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		9F253EBA27D719360010C1E6 /* SignUp */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SignUp;
-			sourceTree = "<group>";
-		};
-		9F253EBB27D7194E0010C1E6 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Setting;
-			sourceTree = "<group>";
-		};
 		9F253EBC27D71AC10010C1E6 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +258,22 @@
 			isa = PBXGroup;
 			children = (
 				9F7D542027F7465500D75CD0 /* DayModel.swift */,
+				9F7D542A27FA104300D75CD0 /* CardListResponse.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		9F7D542827FA0DCF00D75CD0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9F7D542927FA0DD500D75CD0 /* Calendar */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9F7D542927FA0DD500D75CD0 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
 				9F7D542627F9D6F800D75CD0 /* CalendarService.swift */,
 			);
 			path = Calendar;
@@ -349,7 +334,7 @@
 		9F81963827D64C4D00FF42BA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				9F81963D27D64CC800FF42BA /* Network */,
+				9F7D542827FA0DCF00D75CD0 /* Network */,
 				A8373A7727DDE28B00BA0442 /* Model */,
 				9F81963E27D64CCF00FF42BA /* Views */,
 				9F7D541B27F73C0000D75CD0 /* ViewModels */,
@@ -371,6 +356,7 @@
 				9F253EA027D669320010C1E6 /* UIColor.swift */,
 				9F253EA227D6693B0010C1E6 /* UIViewController.swift */,
 				9F253EC027D71CA60010C1E6 /* UIFont.swift */,
+				9F7D542D27FA228700D75CD0 /* UIString.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -384,18 +370,6 @@
 				A872773527EF06E900B11132 /* UserDataCenter.swift */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		9F81963D27D64CC800FF42BA /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				9F253EB927D719280010C1E6 /* Login */,
-				9F253EBA27D719360010C1E6 /* SignUp */,
-				9F253EB827D719210010C1E6 /* Calendar */,
-				9F253EB727D719030010C1E6 /* CoffeeList */,
-				9F253EBB27D7194E0010C1E6 /* Setting */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		9F81963E27D64CCF00FF42BA /* Views */ = {
@@ -602,6 +576,7 @@
 				9F253EC827D72D760010C1E6 /* CoffeeViewController.swift in Sources */,
 				A85A980B27EE093F003DFC0F /* LetterStyleViewController.swift in Sources */,
 				A8373A6D27DD270F00BA0442 /* UnderLineTextField.swift in Sources */,
+				9F7D542E27FA228700D75CD0 /* UIString.swift in Sources */,
 				9F7D541E27F73C1700D75CD0 /* CalendarViewModel.swift in Sources */,
 				9F7D541027F3122C00D75CD0 /* AlertView + PickerView.swift in Sources */,
 				9F7D541227F3621E00D75CD0 /* CalendarHelper.swift in Sources */,
@@ -620,6 +595,7 @@
 				9F253EB627D712D10010C1E6 /* SettingViewController.swift in Sources */,
 				A872773627EF06E900B11132 /* UserDataCenter.swift in Sources */,
 				9F253E9F27D668D30010C1E6 /* Constant.swift in Sources */,
+				9F7D542B27FA104300D75CD0 /* CardListResponse.swift in Sources */,
 				A8373A6F27DDC12700BA0442 /* LoginViewModel.swift in Sources */,
 				9F253EBF27D71B4C0010C1E6 /* ViewModelProtocol.swift in Sources */,
 				9F253EC127D71CA60010C1E6 /* UIFont.swift in Sources */,

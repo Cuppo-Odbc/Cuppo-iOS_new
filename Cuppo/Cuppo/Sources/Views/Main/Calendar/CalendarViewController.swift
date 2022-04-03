@@ -32,7 +32,7 @@ class CalendarViewController: BaseController {
         
         yearLabel.text = viewModel.getYear()
         monthLabel.text = viewModel.getMonth()
-        
+        setupData()
         setBind()
         setMonthView()
         setCollectionView()
@@ -50,6 +50,10 @@ class CalendarViewController: BaseController {
         viewModel.setDayInCellArea()
     }
     
+    private func setupData() {
+        viewModel.requestCardListAPI()
+    }
+    
     func setBind() {
         viewModel.selectedDate.bind { date in
             self.yearLabel.text = self.viewModel.getYear()
@@ -57,9 +61,9 @@ class CalendarViewController: BaseController {
             self.collectionView.reloadData()
         }
         
-        viewModel.searchedList.bind { days in
+        viewModel.cardList.bind { _ in
             //TODO: 해당 날짜의 이미지뷰 hidden true / false
-            
+            self.collectionView.reloadData()
         }
     }
     
@@ -73,6 +77,7 @@ extension CalendarViewController: CustomAlertProtocol {
     func okButtonTapped(_ popupView: UIView, _ year: String?, _ month: String?) {
         viewModel.changeSelectedDate(year: year!, month: month!)
         setMonthView()
+        setupData()
         popupView.removeFromSuperview()
         
     }

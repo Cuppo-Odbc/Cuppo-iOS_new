@@ -8,16 +8,32 @@
 import Foundation
 
 class CalendarViewModel {
+    let calendarDataManger = CalendarService.shared
     
     var selectedDate: Observable2<Date> = Observable2(value: Date())
     var cellArea: Observable2<[DayModel]> = Observable2(value:[DayModel]())
-    var searchedList: Observable2<[String]> = Observable2(value: [String]())
     
-    func requestAPI(){
-        //TODO: API 호출해서 응답값 받고, 그걸 우리가쓸 모델형태로 변경 후 그걸 searchedList에 넣어주자.
-        let responseData = ["31","1","2"] // 임시
-        
-        searchedList.value.append(contentsOf: responseData)
+    var cardList: Observable2<[Card]> = Observable2(value: [Card]())
+    
+    func requestCardListAPI(){
+        //TODO: API 호출해서 응답값 받고, 그걸 우리가쓸 모델형태로 변경 후 그걸 cardList에 넣어주자.
+        calendarDataManger.requestCardList(year: Int(getYear())!, month: Int(getNumberMonth())!) { response in
+            let newCardList = response.content
+            self.cardList.value = newCardList
+            self.setCardInDay()
+        }
+    }
+    
+    func setCardInDay(){
+        cardList.value.forEach { card in
+            // 카드가 존재하는 날짜
+            let day = card.date.substring(from: 8, to: 9)
+            
+            // cellArea의 isExist를 true로 바꾸기
+            if let idx = cellArea.value.firstIndex(where: { $0.dayName == day }) {
+                cellArea.value[idx].isExist = true
+            }
+        }
     }
     
     var cellAreaCount: Int {
@@ -25,8 +41,13 @@ class CalendarViewModel {
     }
     
     /* 선택 셀 정보 (날짜) */
-    func getCellDate(idx: Int)-> DayModel {
-        self.cellArea.value[idx]
+    func getCellDate(idx: Int)-> String {
+        self.cellArea.value[idx].dayName
+    }
+    
+    /* 선택 셀 정보 (카드 존재 유무) */
+    func getCellCard(idx: Int)-> Bool {
+        self.cellArea.value[idx].isExist
     }
     
     /* 선택된 날짜로 교체 */
@@ -61,7 +82,7 @@ class CalendarViewModel {
     
     /* 해당 월에 날짜 넣기 */
     func appendCellDate(day: String) {
-        cellArea.value.append(DayModel(dayName: day))
+        cellArea.value.append(DayModel(dayName: day, isExist: false))
     }
     
     /* 날짜 변경하기 */
