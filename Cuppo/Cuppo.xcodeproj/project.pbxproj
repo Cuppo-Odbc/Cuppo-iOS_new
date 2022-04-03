@@ -39,6 +39,7 @@
 		9F7D542727F9D6F800D75CD0 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542627F9D6F800D75CD0 /* CalendarService.swift */; };
 		9F7D542B27FA104300D75CD0 /* CardListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542A27FA104300D75CD0 /* CardListResponse.swift */; };
 		9F7D542E27FA228700D75CD0 /* UIString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542D27FA228700D75CD0 /* UIString.swift */; };
+		9F7D543027FA34F400D75CD0 /* UIDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542F27FA34F400D75CD0 /* UIDate.swift */; };
 		9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962227D64C0200FF42BA /* AppDelegate.swift */; };
 		9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962427D64C0200FF42BA /* SceneDelegate.swift */; };
 		9F81962A27D64C0200FF42BA /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962827D64C0200FF42BA /* TabBar.storyboard */; };
@@ -100,6 +101,7 @@
 		9F7D542627F9D6F800D75CD0 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
 		9F7D542A27FA104300D75CD0 /* CardListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListResponse.swift; sourceTree = "<group>"; };
 		9F7D542D27FA228700D75CD0 /* UIString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIString.swift; sourceTree = "<group>"; };
+		9F7D542F27FA34F400D75CD0 /* UIDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDate.swift; sourceTree = "<group>"; };
 		9F81961F27D64C0200FF42BA /* Cuppo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuppo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F81962227D64C0200FF42BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F81962427D64C0200FF42BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				9F253EA227D6693B0010C1E6 /* UIViewController.swift */,
 				9F253EC027D71CA60010C1E6 /* UIFont.swift */,
 				9F7D542D27FA228700D75CD0 /* UIString.swift */,
+				9F7D542F27FA34F400D75CD0 /* UIDate.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				9F253ECC27D7A6310010C1E6 /* BaseController.swift in Sources */,
 				A85A981427EE4D20003DFC0F /* PasswordChangeViewController.swift in Sources */,
 				9F253EA327D6693B0010C1E6 /* UIViewController.swift in Sources */,
+				9F7D543027FA34F400D75CD0 /* UIDate.swift in Sources */,
 				9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */,
 				A85A980827ED8294003DFC0F /* SettingActionView.swift in Sources */,
 				9F7D541627F364C900D75CD0 /* CalendarVC + UICollectionView.swift in Sources */,

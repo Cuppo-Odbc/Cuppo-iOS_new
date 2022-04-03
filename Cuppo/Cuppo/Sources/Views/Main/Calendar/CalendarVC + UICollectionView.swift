@@ -17,10 +17,38 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "calendarCell", for: indexPath) as? CalendarCell else {
             return UICollectionViewCell()
         }
-        cell.dayLabel.text = viewModel.getCellDate(idx: indexPath.item)
-        cell.coffeeImage.isHidden = !viewModel.getCellCard(idx: indexPath.item)
+        let target = viewModel.getCellData(idx: indexPath.item)
+        
+        cell.dayLabel.text = target.dayName
+        cell.coffeeImage.isHidden = !target.isExist
+        cell.dayLabel.textColor = target.isTouch ? .black : UIColor.cuppoGray
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let target = viewModel.getCellData(idx: indexPath.item)
+        if target.isTouch {
+            //TODO: - 만약 이미 카드가 존재한다면 등록안됨
+            if !target.isExist {
+                moveToVC(selectIdx: indexPath.row)
+            }else {
+                let popupView = AlertView(frame: view.bounds)
+                popupView.okButton.isHidden = true
+                popupView.popupAlert(firstBtnTitle: "확인", secondBtnTitle: nil, content: "이미 카드가 등록되었습니다.", myView: popupView)
+                popupView.delegate = self
+                view.addSubview(popupView)
+            }
+        } else {
+            if target.dayName != "" {
+                let popupView = AlertView(frame: view.bounds)
+                popupView.okButton.isHidden = true
+                popupView.popupAlert(firstBtnTitle: "확인", secondBtnTitle: nil, content: "카드 등록이 안되는 날짜입니다.", myView: popupView)
+                popupView.delegate = self
+                view.addSubview(popupView)
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

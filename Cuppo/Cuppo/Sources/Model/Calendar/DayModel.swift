@@ -10,4 +10,5 @@ import Foundation
 struct DayModel {
     var dayName: String
     var isExist: Bool
+    var isTouch: Bool
 }

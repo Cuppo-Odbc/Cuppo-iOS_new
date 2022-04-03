@@ -67,6 +67,14 @@ class CalendarViewController: BaseController {
         }
     }
     
+    func moveToVC(selectIdx: Int){
+        let storyboard = UIStoryboard(name: "Coffee", bundle: nil)
+        guard let CoffeeVC = storyboard.instantiateViewController(identifier: "CoffeeSB") as? CoffeeViewController else { return }
+        CoffeeVC.id = selectIdx
+        CoffeeVC.modalPresentationStyle = .fullScreen
+        self.present(CoffeeVC, animated: true, completion: nil)
+    }
+    
 }
 
 extension CalendarViewController: CustomAlertProtocol {
@@ -79,7 +87,5 @@ extension CalendarViewController: CustomAlertProtocol {
         setMonthView()
         setupData()
         popupView.removeFromSuperview()
-        
     }
-    
 }

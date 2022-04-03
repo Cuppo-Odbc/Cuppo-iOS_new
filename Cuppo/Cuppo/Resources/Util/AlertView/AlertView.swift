@@ -17,8 +17,8 @@ class AlertView: UIView {
     var monthArr: [Int] = [1,2,3,4,5,6,7,8,9,10,11,12]
     var currentView: UIView!
     
-    var selectYear: String = ""
-    var selectMonth: String = ""
+    var selectYear: String = "2012"
+    var selectMonth: String = "3"
     
     // MARK: - UIComponents
     @IBOutlet var customView: UIView!

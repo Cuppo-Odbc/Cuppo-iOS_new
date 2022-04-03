@@ -74,5 +74,15 @@ class CalendarHelper {
         return dateFormatter.date(from: dateString)!
     }
     
+    // 선택한 날짜
+    func resultDate(_ selectYear: String, _ selectMonth: String, _ selectDay: String) -> Date {
+        let dateString:String = "\(selectYear)-\(selectMonth)-\(selectDay) 00:00:00"
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+
+        return dateFormatter.date(from: dateString)!
+    }
     
 }

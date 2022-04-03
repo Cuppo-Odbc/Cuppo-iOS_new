@@ -98,7 +98,10 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="check"/>
+                                        <state key="normal" image="checkButton"/>
+                                        <connections>
+                                            <segue destination="8gU-Ev-Sew" kind="presentation" modalPresentationStyle="fullScreen" id="6F3-th-wH4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAc-ia-XsL">
                                         <rect key="frame" x="30" y="22" width="17" height="15"/>
@@ -108,7 +111,10 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="back"/>
+                                        <state key="normal" image="closeButton"/>
+                                        <connections>
+                                            <action selector="dismissButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tkB-u4-tdZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -156,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+            <point key="canvasLocation" x="-274" y="131"/>
         </scene>
         <!--Diary View Controller-->
         <scene sceneID="kBW-rA-M3H">
@@ -192,7 +198,7 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="check"/>
+                                        <state key="normal" image="checkButton"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkq-j2-d86">
                                         <rect key="frame" x="30" y="22" width="17" height="15"/>
@@ -277,13 +283,14 @@
                             <constraint firstItem="RQE-Zo-2Vp" firstAttribute="leading" secondItem="vcm-yD-vYb" secondAttribute="leading" id="tFW-Dv-5Gw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Gxv-FO-SHO"/>
                     <connections>
                         <outlet property="textView" destination="2QU-fG-yxj" id="924-a1-V5l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XaS-YN-S3x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="786.95652173913049" y="130.58035714285714"/>
+            <point key="canvasLocation" x="686" y="131"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8bX-Pu-0Ka">
@@ -392,12 +399,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKo-i7-VVg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1459.4202898550725" y="130.58035714285714"/>
+            <point key="canvasLocation" x="2009" y="131"/>
         </scene>
     </scenes>
     <resources>
         <image name="back" width="17" height="16"/>
-        <image name="check" width="18" height="13"/>
+        <image name="checkButton" width="18" height="13"/>
+        <image name="closeButton" width="15" height="15"/>
         <image name="hotame" width="1000" height="1000"/>
         <image name="menu" width="26" height="26"/>
         <systemColor name="labelColor">

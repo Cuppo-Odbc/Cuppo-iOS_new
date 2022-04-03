@@ -41,14 +41,10 @@ class CalendarViewModel {
     }
     
     /* 선택 셀 정보 (날짜) */
-    func getCellDate(idx: Int)-> String {
-        self.cellArea.value[idx].dayName
+    func getCellData(idx: Int)-> DayModel {
+        self.cellArea.value[idx]
     }
     
-    /* 선택 셀 정보 (카드 존재 유무) */
-    func getCellCard(idx: Int)-> Bool {
-        self.cellArea.value[idx].isExist
-    }
     
     /* 선택된 날짜로 교체 */
     func setSelectedDate(selectedDate: Date){
@@ -82,7 +78,9 @@ class CalendarViewModel {
     
     /* 해당 월에 날짜 넣기 */
     func appendCellDate(day: String) {
-        cellArea.value.append(DayModel(dayName: day, isExist: false))
+        let touch: Bool = day != "" ? compareNow(getDay: day) : false
+
+        cellArea.value.append(DayModel(dayName: day, isExist: false, isTouch: touch))
     }
     
     /* 날짜 변경하기 */
@@ -90,6 +88,12 @@ class CalendarViewModel {
         selectedDate.value = CalendarHelper().changeDate(year, month)
     }
     
+    /* 현재 날짜와 비교하기 */
+    func compareNow(getDay: String) -> Bool{
+        let nowDate = CalendarHelper().resultDate(getYear(), getMonth(), getDay)
+        if Date().dateCompare(fromDate: nowDate) == "Future" { return false }
+        return true
+    }
     
     /* 선택한 년,월에 해당하는 일 대입 */
     func setDayInCellArea(){
@@ -98,7 +102,7 @@ class CalendarViewModel {
         let daysInMonth = CalendarHelper().daysInMonth(date: selectedDate.value)
         let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate.value)
         let startingSpaces = CalendarHelper().weekDay(date: firstDayOfMonth)
-
+        
         while count < 42 {
             let dayLocation = count - startingSpaces
 
