@@ -87,8 +87,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZ7-xg-SPD">
-                                <rect key="frame" x="30" y="156" width="21.5" height="28.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZ7-xg-SPD">
+                                <rect key="frame" x="30" y="156" width="45" height="28.5"/>
                                 <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
