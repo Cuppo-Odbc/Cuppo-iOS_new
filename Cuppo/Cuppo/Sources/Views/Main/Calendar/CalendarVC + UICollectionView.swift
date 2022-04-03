@@ -17,8 +17,8 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "calendarCell", for: indexPath) as? CalendarCell else {
             return UICollectionViewCell()
         }
-        cell.dayLabel.text = viewModel.getCellDate(idx: indexPath.item).dayName
-        cell.coffeeImage.isHidden = true
+        cell.dayLabel.text = viewModel.getCellDate(idx: indexPath.item)
+        cell.coffeeImage.isHidden = !viewModel.getCellCard(idx: indexPath.item)
         
         return cell
     }
