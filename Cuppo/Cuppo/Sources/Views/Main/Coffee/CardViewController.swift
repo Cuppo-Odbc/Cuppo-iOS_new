@@ -10,6 +10,7 @@ import SnapKit
 
 extension CardViewController: DropDownProtocol {
     func editAction() {
+        moveToVC()
         print("수정")
     }
     
@@ -54,6 +55,10 @@ class CardViewController: UIViewController {
         setUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    }
+    
     // MARK: - Functions
     func setupData(data: Card){
         viewModel.setCardInfo(newCardInfo: data)
@@ -76,6 +81,18 @@ class CardViewController: UIViewController {
             $0.width.equalTo(130)
             $0.height.equalTo(150)
         }
+    }
+    
+    func moveToVC(){
+        let storyboard = UIStoryboard(name: "Coffee", bundle: nil)
+        guard let DiaryVC = storyboard.instantiateViewController(identifier: "DiarySB") as? DiaryViewController else {
+            return
+        }
+        DiaryVC.modalPresentationStyle = .fullScreen
+        DiaryVC.viewModel.setType(cardType: .editCard)
+        DiaryVC.setData(data: viewModel.getCardInfo())
+        present(DiaryVC, animated: true, completion: nil)
+        
     }
     
 }

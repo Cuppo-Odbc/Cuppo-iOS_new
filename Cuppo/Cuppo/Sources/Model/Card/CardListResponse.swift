@@ -12,9 +12,9 @@ struct CardListResponse: Decodable {
 
 struct Card: Decodable {
     let id: String
-    let title: String
-    let content: String
-    let coffee: String
+    var title: String
+    var content: String
+    var coffee: String
     let created_at: String
     let date: String
     

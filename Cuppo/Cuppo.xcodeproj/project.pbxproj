@@ -50,6 +50,7 @@
 		9F7D544827FAF82B00D75CD0 /* CardModifyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D544727FAF82B00D75CD0 /* CardModifyRequest.swift */; };
 		9F7D544A27FB2BBE00D75CD0 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D544927FB2BBE00D75CD0 /* DropDownView.swift */; };
 		9F7D544D27FB2C5F00D75CD0 /* DropDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F7D544C27FB2C5F00D75CD0 /* DropDownView.xib */; };
+		9F7D545027FB679700D75CD0 /* DiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D544F27FB679700D75CD0 /* DiaryViewModel.swift */; };
 		9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962227D64C0200FF42BA /* AppDelegate.swift */; };
 		9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962427D64C0200FF42BA /* SceneDelegate.swift */; };
 		9F81962A27D64C0200FF42BA /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962827D64C0200FF42BA /* TabBar.storyboard */; };
@@ -122,6 +123,7 @@
 		9F7D544727FAF82B00D75CD0 /* CardModifyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModifyRequest.swift; sourceTree = "<group>"; };
 		9F7D544927FB2BBE00D75CD0 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 		9F7D544C27FB2C5F00D75CD0 /* DropDownView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownView.xib; sourceTree = "<group>"; };
+		9F7D544F27FB679700D75CD0 /* DiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewModel.swift; sourceTree = "<group>"; };
 		9F81961F27D64C0200FF42BA /* Cuppo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuppo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F81962227D64C0200FF42BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F81962427D64C0200FF42BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		9F7D541B27F73C0000D75CD0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9F7D544E27FB677F00D75CD0 /* Diary */,
 				9F7D544027FADC7300D75CD0 /* Card */,
 				9F7D543327FAC2F800D75CD0 /* CardList */,
 				9F7D541C27F73C0700D75CD0 /* Calendar */,
@@ -354,6 +357,14 @@
 				9F7D544927FB2BBE00D75CD0 /* DropDownView.swift */,
 			);
 			path = DropDownView;
+			sourceTree = "<group>";
+		};
+		9F7D544E27FB677F00D75CD0 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				9F7D544F27FB679700D75CD0 /* DiaryViewModel.swift */,
+			);
+			path = Diary;
 			sourceTree = "<group>";
 		};
 		9F81961627D64C0200FF42BA = {
@@ -688,6 +699,7 @@
 				A8373A8527DDFE4600BA0442 /* SignUpService.swift in Sources */,
 				9F253ECF27DA4C370010C1E6 /* DiaryViewController.swift in Sources */,
 				9F7D544227FADC7D00D75CD0 /* CardViewModel.swift in Sources */,
+				9F7D545027FB679700D75CD0 /* DiaryViewModel.swift in Sources */,
 				9F6AAA0727E78B6B008CE72F /* TabBarViewController.swift in Sources */,
 				9F7D543527FAC32F00D75CD0 /* CardListViewModel.swift in Sources */,
 				9F7D542527F7478D00D75CD0 /* Observable.swift in Sources */,

@@ -17,6 +17,7 @@ class CoffeeViewController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dismissKeyboardWhenTappedAround()
     }
    
 }

@@ -31,17 +31,21 @@ class CalendarViewController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setupData()
+        setCollectionView()
+        setBind()
+        setMonthView()
     }
     
     // MARK: - Functions
     func setUI(){
         yearLabel.text = viewModel.getYear()
         monthLabel.text = viewModel.getMonth()
-        
-        setupData()
-        setCollectionView()
-        setBind()
-        setMonthView()
     }
     
     /* API 관련 */
