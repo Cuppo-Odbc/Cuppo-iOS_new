@@ -65,7 +65,7 @@ class DropDownView: UIView {
     }
     
     func setView(view: UIView){
-        view.layer.borderColor = UIColor.cuppoGray.cgColor
+        view.layer.borderColor = UIColor(named: "cuppoColor4")?.cgColor
         view.layer.borderWidth = 0.3
     }
 }
