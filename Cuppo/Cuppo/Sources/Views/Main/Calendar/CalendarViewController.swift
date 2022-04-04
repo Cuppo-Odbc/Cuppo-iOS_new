@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalendarViewController: BaseController {
+class CalendarViewController: UIViewController {
     
     // MARK: - Properties
     let viewModel = CalendarViewModel()
@@ -82,6 +82,7 @@ class CalendarViewController: BaseController {
     func moveToVC(SBName: String, SBId: String ,VCName: String){
         let storyboard = UIStoryboard(name: SBName, bundle: nil)
         let VCName = storyboard.instantiateViewController(identifier: SBId)
+        VCName.modalPresentationStyle = .fullScreen
         self.present(VCName, animated: true, completion: nil)
 //        self.navigationController?.pushViewController(VCName, animated: true)
     }

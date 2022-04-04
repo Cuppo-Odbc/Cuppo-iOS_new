@@ -23,6 +23,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basicLightMode" translatesAutoresizingMaskIntoConstraints="NO" id="Qf7-a9-6jY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqg-Vw-yoY">
                                 <rect key="frame" x="30" y="134" width="4.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="16"/>
@@ -45,7 +48,7 @@
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PjP-8e-MSd">
                                 <rect key="frame" x="15" y="286" width="384" height="527"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="aZh-s5-lVu">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -98,7 +101,9 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Qf7-a9-6jY" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="4bB-en-FeS"/>
                             <constraint firstItem="Drl-M2-ueA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="JDd-76-yz2"/>
+                            <constraint firstItem="Qf7-a9-6jY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="O3h-aY-y0w"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="PjP-8e-MSd" secondAttribute="bottom" id="QHz-F3-9OA"/>
                             <constraint firstItem="Drl-M2-ueA" firstAttribute="top" secondItem="pqg-Vw-yoY" secondAttribute="bottom" constant="1" id="RaB-sl-VmP"/>
                             <constraint firstItem="pqg-Vw-yoY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="90" id="S4U-V1-C8j"/>
@@ -107,8 +112,10 @@
                             <constraint firstItem="pqg-Vw-yoY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="ceU-fV-CRi"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pqg-Vw-yoY" secondAttribute="trailing" id="fD4-aP-DpS"/>
                             <constraint firstItem="PjP-8e-MSd" firstAttribute="top" secondItem="Drl-M2-ueA" secondAttribute="bottom" constant="100" id="hBS-kJ-1sw"/>
+                            <constraint firstAttribute="bottom" secondItem="Qf7-a9-6jY" secondAttribute="bottom" id="hdQ-Zs-aUZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Drl-M2-ueA" secondAttribute="trailing" id="kBa-pz-9x7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PjP-8e-MSd" secondAttribute="trailing" constant="15" id="mCu-ef-wCy"/>
+                            <constraint firstItem="Qf7-a9-6jY" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="r8e-8T-mMd"/>
                             <constraint firstItem="DZ7-xg-SPD" firstAttribute="top" secondItem="pqg-Vw-yoY" secondAttribute="bottom" constant="1" id="urJ-KQ-1gG"/>
                         </constraints>
                     </view>
@@ -128,6 +135,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="basicLightMode" width="375" height="812"/>
         <image name="coffeeBin" width="34.5" height="34.5"/>
         <image name="main" width="20" height="20"/>
         <image name="us_main" width="20" height="20"/>

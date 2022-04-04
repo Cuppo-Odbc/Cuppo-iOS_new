@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CoffeeViewController: BaseController {
+class CoffeeViewController: UIViewController {
     
     
     @IBAction func dismissButtonTapped(_ sender: Any) {
