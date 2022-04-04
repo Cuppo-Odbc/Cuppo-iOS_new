@@ -10,7 +10,7 @@ import UIKit
 class CoffeeListViewController: BaseController {
     
     // MARK: - Properties
-    let viewModel = CalendarViewModel()
+    let viewModel = CardViewModel()
 
     // MARK: - UIComponents
     
@@ -19,6 +19,7 @@ class CoffeeListViewController: BaseController {
     @IBOutlet weak var monthLabel: UILabel!
     
     @IBAction func changeDateTapped(_ sender: Any) {
+        /* 날짜 변경하는 팝업창 */
         let popupView = AlertView(frame: view.bounds)
         popupView.calendarAlert(popupView)
         popupView.selectYear = viewModel.getYear()
@@ -30,23 +31,31 @@ class CoffeeListViewController: BaseController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        yearLabel.text = viewModel.getYear()
-        monthLabel.text = viewModel.getMonth()
-        setupData()
-        setBind()
-        setTableView()
+        setUI()
     }
     
     // MARK: - Functions
+    func setUI(){
+        yearLabel.text = viewModel.getYear()
+        monthLabel.text = viewModel.getMonth()
+        
+        setupData()
+        setTableView()
+        setBind()
+    }
+    
+    /* API 관련 */
+    private func setupData() {
+        viewModel.requestCardListAPI()
+    }
+    
+    /* 테이블뷰 셋팅 */
     func setTableView(){
         tableView.delegate = self
         tableView.dataSource = self
     }
     
-    private func setupData() {
-        viewModel.requestCardListAPI()
-    }
-    
+    /* 바인딩하는 부분 */
     func setBind() {
         viewModel.selectedDate.bind { date in
             self.yearLabel.text = self.viewModel.getYear()
@@ -59,63 +68,10 @@ class CoffeeListViewController: BaseController {
         }
     }
     
-    func moveToVC(selectIdx: Int){
-//        let storyboard = UIStoryboard(name: "Coffee", bundle: nil)
-//        guard let CoffeeVC = storyboard.instantiateViewController(identifier: "CoffeeSB") as? CoffeeViewController else { return }
-//        CoffeeVC.id = selectIdx
-//        CoffeeVC.modalPresentationStyle = .fullScreen
-//        self.present(CoffeeVC, animated: true, completion: nil)
-    }
+    /* 화면전환 */
+    func moveToVC(selectIdx: Int){ }
     
 }
-
-extension CoffeeListViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.cardListCount
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "coffeeListCell", for: indexPath) as? CoffeeListCell else {
-            return UITableViewCell()
-        }
-        let target = viewModel.getCardData(idx: indexPath.item)
-        cell.titleLabel.text = target.title
-        urlToImg(urlStr: target.coffee, img: cell.coffeeImage)
-        cell.dateLabel.text = target.date.substring(from: 0, to: 9)
-        return cell
-    }
-
-    // 디바이스가로- 60 : 세로 x : 315 : 200
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let width = UIScreen.main.bounds.size.width - 60
-        let height = 200 * width / 315
-        
-        return height
-    }
-    
-    
-}
-
-class CoffeeListCell: UITableViewCell {
-    
-    @IBOutlet weak var layerView: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var coffeeImage: UIImageView!
-    
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 15, left: 30, bottom: 0, right: 30))
-    }
-    
-    override func awakeFromNib() {
-        layerView.layer.borderColor = UIColor.black.cgColor
-        layerView.layer.borderWidth = 1
-    }
-    
-}
-
 
 extension CoffeeListViewController: CustomAlertProtocol {
     func cancleButtonTapped(_ popupView: UIView) {

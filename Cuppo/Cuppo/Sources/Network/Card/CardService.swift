@@ -12,9 +12,9 @@ let HEADER: HTTPHeaders = [
     "Authorization":     "Bearer \(Constant.jwt)"
 ]
 
-class CalendarService {
+class CardService {
     
-    static let shared = CalendarService()
+    static let shared = CardService()
     private init() {}
     
     // MARK: - 전체 카테고리 조회

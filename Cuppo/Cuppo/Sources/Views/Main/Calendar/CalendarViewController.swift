@@ -8,6 +8,7 @@
 import UIKit
 
 class CalendarViewController: BaseController {
+    
     // MARK: - Properties
     let viewModel = CalendarViewModel()
     
@@ -17,6 +18,7 @@ class CalendarViewController: BaseController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func changeDateAction(_ sender: Any) {
+        /* 날짜 변경하는 팝업창 */
         let popupView = AlertView(frame: view.bounds)
         popupView.calendarAlert(popupView)
         popupView.selectYear = viewModel.getYear()
@@ -25,20 +27,29 @@ class CalendarViewController: BaseController {
         view.addSubview(popupView)
     }
     
-    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        yearLabel.text = viewModel.getYear()
-        monthLabel.text = viewModel.getMonth()
-        setupData()
-        setBind()
-        setMonthView()
-        setCollectionView()
+        setUI()
     }
     
     // MARK: - Functions
+    func setUI(){
+        yearLabel.text = viewModel.getYear()
+        monthLabel.text = viewModel.getMonth()
+        
+        setupData()
+        setCollectionView()
+        setBind()
+        setMonthView()
+    }
+    
+    /* API 관련 */
+    private func setupData() {
+        viewModel.requestCardListAPI()
+    }
+    
+    /* 콜렉션뷰 셋팅 */
     func setCollectionView(){
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -50,10 +61,7 @@ class CalendarViewController: BaseController {
         viewModel.setDayInCellArea()
     }
     
-    private func setupData() {
-        viewModel.requestCardListAPI()
-    }
-    
+    /* 바인딩하는 부분 */
     func setBind() {
         viewModel.selectedDate.bind { date in
             self.yearLabel.text = self.viewModel.getYear()
@@ -62,11 +70,11 @@ class CalendarViewController: BaseController {
         }
         
         viewModel.cardList.bind { _ in
-            //TODO: 해당 날짜의 이미지뷰 hidden true / false
             self.collectionView.reloadData()
         }
     }
     
+    /* 화면전환 */
     func moveToVC(selectIdx: Int){
         let storyboard = UIStoryboard(name: "Coffee", bundle: nil)
         guard let CoffeeVC = storyboard.instantiateViewController(identifier: "CoffeeSB") as? CoffeeViewController else { return }

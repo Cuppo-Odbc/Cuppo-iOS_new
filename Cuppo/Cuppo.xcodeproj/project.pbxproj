@@ -36,10 +36,13 @@
 		9F7D541E27F73C1700D75CD0 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D541D27F73C1700D75CD0 /* CalendarViewModel.swift */; };
 		9F7D542127F7465500D75CD0 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542027F7465500D75CD0 /* DayModel.swift */; };
 		9F7D542527F7478D00D75CD0 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542427F7478D00D75CD0 /* Observable.swift */; };
-		9F7D542727F9D6F800D75CD0 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542627F9D6F800D75CD0 /* CalendarService.swift */; };
+		9F7D542727F9D6F800D75CD0 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542627F9D6F800D75CD0 /* CardService.swift */; };
 		9F7D542B27FA104300D75CD0 /* CardListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542A27FA104300D75CD0 /* CardListResponse.swift */; };
 		9F7D542E27FA228700D75CD0 /* UIString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542D27FA228700D75CD0 /* UIString.swift */; };
 		9F7D543027FA34F400D75CD0 /* UIDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542F27FA34F400D75CD0 /* UIDate.swift */; };
+		9F7D543527FAC32F00D75CD0 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D543427FAC32F00D75CD0 /* CardViewModel.swift */; };
+		9F7D543827FACCD200D75CD0 /* CoffeeListVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D543727FACCD200D75CD0 /* CoffeeListVC + TableView.swift */; };
+		9F7D543A27FACCE300D75CD0 /* CoffeeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D543927FACCE300D75CD0 /* CoffeeListCell.swift */; };
 		9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962227D64C0200FF42BA /* AppDelegate.swift */; };
 		9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962427D64C0200FF42BA /* SceneDelegate.swift */; };
 		9F81962A27D64C0200FF42BA /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962827D64C0200FF42BA /* TabBar.storyboard */; };
@@ -98,10 +101,13 @@
 		9F7D541D27F73C1700D75CD0 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		9F7D542027F7465500D75CD0 /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
 		9F7D542427F7478D00D75CD0 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		9F7D542627F9D6F800D75CD0 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
+		9F7D542627F9D6F800D75CD0 /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
 		9F7D542A27FA104300D75CD0 /* CardListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListResponse.swift; sourceTree = "<group>"; };
 		9F7D542D27FA228700D75CD0 /* UIString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIString.swift; sourceTree = "<group>"; };
 		9F7D542F27FA34F400D75CD0 /* UIDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDate.swift; sourceTree = "<group>"; };
+		9F7D543427FAC32F00D75CD0 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		9F7D543727FACCD200D75CD0 /* CoffeeListVC + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoffeeListVC + TableView.swift"; sourceTree = "<group>"; };
+		9F7D543927FACCE300D75CD0 /* CoffeeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeListCell.swift; sourceTree = "<group>"; };
 		9F81961F27D64C0200FF42BA /* Cuppo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuppo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F81962227D64C0200FF42BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F81962427D64C0200FF42BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,11 +175,9 @@
 		9F253EA727D70B390010C1E6 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				9F7D543127FABD8800D75CD0 /* Extension + Cell */,
 				9F253EAA27D70BBB0010C1E6 /* Calendar.storyboard */,
-				9F7D541127F3621E00D75CD0 /* CalendarHelper.swift */,
 				9F253EB127D712AE0010C1E6 /* CalendarViewController.swift */,
-				9F7D541527F364C900D75CD0 /* CalendarVC + UICollectionView.swift */,
-				9F7D541327F3648B00D75CD0 /* CalendarCell.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -181,6 +185,7 @@
 		9F253EA827D70B660010C1E6 /* CoffeeList */ = {
 			isa = PBXGroup;
 			children = (
+				9F7D543627FACCAE00D75CD0 /* Extension + Cell */,
 				9F253EAC27D70BCC0010C1E6 /* CoffeeList.storyboard */,
 				9F253EB327D712C60010C1E6 /* CoffeeListViewController.swift */,
 			);
@@ -242,6 +247,7 @@
 		9F7D541B27F73C0000D75CD0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9F7D543327FAC2F800D75CD0 /* CardList */,
 				9F7D541C27F73C0700D75CD0 /* Calendar */,
 				9F7D542427F7478D00D75CD0 /* Observable.swift */,
 			);
@@ -260,7 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				9F7D542027F7465500D75CD0 /* DayModel.swift */,
-				9F7D542A27FA104300D75CD0 /* CardListResponse.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -268,17 +273,51 @@
 		9F7D542827FA0DCF00D75CD0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				9F7D542927FA0DD500D75CD0 /* Calendar */,
+				9F7D542927FA0DD500D75CD0 /* Card */,
 			);
 			path = Network;
 			sourceTree = "<group>";
 		};
-		9F7D542927FA0DD500D75CD0 /* Calendar */ = {
+		9F7D542927FA0DD500D75CD0 /* Card */ = {
 			isa = PBXGroup;
 			children = (
-				9F7D542627F9D6F800D75CD0 /* CalendarService.swift */,
+				9F7D542627F9D6F800D75CD0 /* CardService.swift */,
 			);
-			path = Calendar;
+			path = Card;
+			sourceTree = "<group>";
+		};
+		9F7D543127FABD8800D75CD0 /* Extension + Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9F7D541527F364C900D75CD0 /* CalendarVC + UICollectionView.swift */,
+				9F7D541327F3648B00D75CD0 /* CalendarCell.swift */,
+			);
+			path = "Extension + Cell";
+			sourceTree = "<group>";
+		};
+		9F7D543227FAC1C900D75CD0 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				9F7D542A27FA104300D75CD0 /* CardListResponse.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		9F7D543327FAC2F800D75CD0 /* CardList */ = {
+			isa = PBXGroup;
+			children = (
+				9F7D543427FAC32F00D75CD0 /* CardViewModel.swift */,
+			);
+			path = CardList;
+			sourceTree = "<group>";
+		};
+		9F7D543627FACCAE00D75CD0 /* Extension + Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9F7D543727FACCD200D75CD0 /* CoffeeListVC + TableView.swift */,
+				9F7D543927FACCE300D75CD0 /* CoffeeListCell.swift */,
+			);
+			path = "Extension + Cell";
 			sourceTree = "<group>";
 		};
 		9F81961627D64C0200FF42BA = {
@@ -371,6 +410,7 @@
 				9F253EA427D66A3D0010C1E6 /* IndicatorView.swift */,
 				9F253ECB27D7A6310010C1E6 /* BaseController.swift */,
 				A872773527EF06E900B11132 /* UserDataCenter.swift */,
+				9F7D541127F3621E00D75CD0 /* CalendarHelper.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -400,6 +440,7 @@
 		A8373A7727DDE28B00BA0442 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9F7D543227FAC1C900D75CD0 /* Card */,
 				9F7D541F27F7463100D75CD0 /* Calendar */,
 				A8373A7827DDE29E00BA0442 /* Login */,
 			);
@@ -587,7 +628,7 @@
 				A85D998027EA203600E9B0AA /* SettingOptionCell.swift in Sources */,
 				A8373A6B27DD17CE00BA0442 /* LoginViewController.swift in Sources */,
 				9F7D540E27F3079700D75CD0 /* CustomAlertProtocol.swift in Sources */,
-				9F7D542727F9D6F800D75CD0 /* CalendarService.swift in Sources */,
+				9F7D542727F9D6F800D75CD0 /* CardService.swift in Sources */,
 				A872773927EF0CA500B11132 /* PasswordFindViewController.swift in Sources */,
 				9F253ECC27D7A6310010C1E6 /* BaseController.swift in Sources */,
 				A85A981427EE4D20003DFC0F /* PasswordChangeViewController.swift in Sources */,
@@ -607,13 +648,16 @@
 				A8373A8527DDFE4600BA0442 /* SignUpService.swift in Sources */,
 				9F253ECF27DA4C370010C1E6 /* DiaryViewController.swift in Sources */,
 				9F6AAA0727E78B6B008CE72F /* TabBarViewController.swift in Sources */,
+				9F7D543527FAC32F00D75CD0 /* CardViewModel.swift in Sources */,
 				9F7D542527F7478D00D75CD0 /* Observable.swift in Sources */,
+				9F7D543827FACCD200D75CD0 /* CoffeeListVC + TableView.swift in Sources */,
 				A8373A8127DDF96F00BA0442 /* SignUpViewController.swift in Sources */,
 				A85A981227EE19DD003DFC0F /* AccountManagementViewController.swift in Sources */,
 				9F253EB427D712C60010C1E6 /* CoffeeListViewController.swift in Sources */,
 				9F7D542127F7465500D75CD0 /* DayModel.swift in Sources */,
 				9F253EA527D66A3D0010C1E6 /* IndicatorView.swift in Sources */,
 				9F7D540A27F3061A00D75CD0 /* AlertView.swift in Sources */,
+				9F7D543A27FACCE300D75CD0 /* CoffeeListCell.swift in Sources */,
 				9F253EA127D669320010C1E6 /* UIColor.swift in Sources */,
 				A8373A7A27DDE2B800BA0442 /* LoginResponse.swift in Sources */,
 				A8373A8327DDFDFC00BA0442 /* SignUpViewModel.swift in Sources */,

@@ -75,7 +75,7 @@ class CalendarHelper {
     }
     
     // 선택한 날짜
-    func resultDate(_ selectYear: String, _ selectMonth: String, _ selectDay: String) -> Date {
+    func changeDate2(_ selectYear: String, _ selectMonth: String, _ selectDay: String) -> Date {
         let dateString:String = "\(selectYear)-\(selectMonth)-\(selectDay) 00:00:00"
         let dateFormatter = DateFormatter()
 
