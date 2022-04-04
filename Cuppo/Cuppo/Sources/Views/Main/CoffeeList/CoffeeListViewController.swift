@@ -8,53 +8,84 @@
 import UIKit
 
 class CoffeeListViewController: BaseController {
-
-    @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Properties
+    let viewModel = CardListViewModel()
+
+    // MARK: - UIComponents
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var monthLabel: UILabel!
+    
+    @IBAction func changeDateTapped(_ sender: Any) {
+        /* 날짜 변경하는 팝업창 */
+        let popupView = AlertView(frame: view.bounds)
+        popupView.calendarAlert(popupView)
+        popupView.selectYear = viewModel.getYear()
+        popupView.selectMonth = viewModel.getNumberMonth()
+        popupView.delegate = self
+        view.addSubview(popupView)
+    }
+    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
+    }
+    
+    // MARK: - Functions
+    func setUI(){
+        yearLabel.text = viewModel.getYear()
+        monthLabel.text = viewModel.getMonth()
+        
+        setupData()
+        setTableView()
+        setBind()
+    }
+    
+    /* API 관련 */
+    private func setupData() {
+        viewModel.requestCardListAPI()
+    }
+    
+    /* 테이블뷰 셋팅 */
+    func setTableView(){
         tableView.delegate = self
         tableView.dataSource = self
     }
     
-}
-
-extension CoffeeListViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "coffeeListCell", for: indexPath) as? CoffeeListCell else {
-            return UITableViewCell()
+    /* 바인딩하는 부분 */
+    func setBind() {
+        viewModel.selectedDate.bind { date in
+            self.yearLabel.text = self.viewModel.getYear()
+            self.monthLabel.text = self.viewModel.getMonth()
+            self.tableView.reloadData()
         }
-        return cell
-    }
-
-    // 디바이스가로- 60 : 세로 x : 315 : 200
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let width = UIScreen.main.bounds.size.width - 60
-        let height = 200 * width / 315
         
-        return height
+        viewModel.cardList.bind { _ in
+            self.tableView.reloadData()
+        }
     }
     
-    
-}
-
-class CoffeeListCell: UITableViewCell {
-    
-    @IBOutlet weak var layerView: UIView!
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 15, left: 30, bottom: 0, right: 30))
-    }
-    
-    override func awakeFromNib() {
-        layerView.layer.borderColor = UIColor.black.cgColor
-        layerView.layer.borderWidth = 1
+    /* 화면전환 */
+    func moveToVC(selectIdx: Int){
+        let storyboard = UIStoryboard(name: "Coffee", bundle: nil)
+        guard let CardVC = storyboard.instantiateViewController(identifier: "CardSB") as? CardViewController else { return }
+        CardVC.setupData(data: viewModel.getCardData(idx: selectIdx))
+        CardVC.modalPresentationStyle = .fullScreen
+        self.present(CardVC, animated: true, completion: nil)
     }
     
 }
 
+extension CoffeeListViewController: CustomAlertProtocol {
+    func cancleButtonTapped(_ popupView: UIView) {
+        popupView.removeFromSuperview()
+    }
+    
+    func okButtonTapped(_ popupView: UIView, _ year: String?, _ month: String?) {
+        viewModel.changeSelectedDate(year: year!, month: month!)
+        setupData()
+        popupView.removeFromSuperview()
+    }
+}

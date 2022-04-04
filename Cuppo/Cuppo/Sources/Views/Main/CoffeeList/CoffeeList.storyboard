@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,13 +36,24 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUz-Gd-GmL">
+                                        <rect key="frame" x="30" y="90" width="87.5" height="52"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="changeDateTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="96c-5z-gon"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="5ii-GL-uN3" firstAttribute="leading" secondItem="hF2-Vi-lkk" secondAttribute="leading" constant="30" id="1p9-A1-vd2"/>
+                                    <constraint firstItem="KUz-Gd-GmL" firstAttribute="bottom" secondItem="5Ob-WK-Bq1" secondAttribute="bottom" id="NLH-ov-Dm0"/>
+                                    <constraint firstItem="KUz-Gd-GmL" firstAttribute="trailing" secondItem="5Ob-WK-Bq1" secondAttribute="trailing" id="O9Y-0W-E8o"/>
                                     <constraint firstAttribute="width" secondItem="hF2-Vi-lkk" secondAttribute="height" multiplier="19:8" id="gnL-2y-XeU"/>
                                     <constraint firstItem="5Ob-WK-Bq1" firstAttribute="top" secondItem="5ii-GL-uN3" secondAttribute="bottom" id="hzf-Dc-CVB"/>
+                                    <constraint firstItem="KUz-Gd-GmL" firstAttribute="leading" secondItem="hF2-Vi-lkk" secondAttribute="leading" constant="30" id="ndI-oP-G2t"/>
                                     <constraint firstItem="5Ob-WK-Bq1" firstAttribute="leading" secondItem="hF2-Vi-lkk" secondAttribute="leading" constant="30" id="rMI-XX-PR3"/>
+                                    <constraint firstItem="KUz-Gd-GmL" firstAttribute="top" secondItem="5ii-GL-uN3" secondAttribute="top" id="tC2-19-T6w"/>
                                     <constraint firstItem="5ii-GL-uN3" firstAttribute="top" secondItem="hF2-Vi-lkk" secondAttribute="top" constant="90" id="zl2-vs-Bik"/>
                                 </constraints>
                             </view>
@@ -75,7 +86,7 @@
                                                                     <color key="textColor" red="0.41568627450000001" green="0.41568627450000001" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_hotesp" translatesAutoresizingMaskIntoConstraints="NO" id="x7W-0K-TNV">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotame" translatesAutoresizingMaskIntoConstraints="NO" id="x7W-0K-TNV">
                                                                     <rect key="frame" x="124" y="17" width="166" height="166"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="x7W-0K-TNV" secondAttribute="height" multiplier="1:1" id="asw-aN-B4P"/>
@@ -102,7 +113,10 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="coffeeImage" destination="x7W-0K-TNV" id="siD-yH-tCq"/>
+                                                    <outlet property="dateLabel" destination="c5K-fF-o1h" id="7ET-oR-mzp"/>
                                                     <outlet property="layerView" destination="oJp-3e-o78" id="BYx-y2-nVe"/>
+                                                    <outlet property="titleLabel" destination="LXq-ag-vWo" id="vrA-de-GuD"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -132,17 +146,19 @@
                     <tabBarItem key="tabBarItem" title="" image="cards" selectedImage="cards" id="wrc-AE-C4b"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="monthLabel" destination="5Ob-WK-Bq1" id="6zw-N4-yRS"/>
                         <outlet property="tableView" destination="59Z-Nt-TQr" id="lvt-LB-etf"/>
+                        <outlet property="yearLabel" destination="5ii-GL-uN3" id="I6R-AF-h43"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12.307692307692307" y="130.09478672985782"/>
+            <point key="canvasLocation" x="11.594202898550726" y="129.91071428571428"/>
         </scene>
     </scenes>
     <resources>
-        <image name="_hotesp" width="1000" height="1000"/>
         <image name="cards" width="20" height="20"/>
+        <image name="hotame" width="1000" height="1000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

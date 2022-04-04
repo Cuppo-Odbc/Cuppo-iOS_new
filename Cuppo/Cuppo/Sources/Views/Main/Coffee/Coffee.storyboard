@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i0V-XH-WYn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i0V-XH-WYn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -85,9 +85,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="#에스프레소" textAlignment="center" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="RyX-fR-crc">
-                                        <rect key="frame" x="155" y="110.5" width="104" height="30"/>
+                                        <rect key="frame" x="157.5" y="110.5" width="99" height="28.5"/>
                                         <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="22"/>
+                                        <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="21"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFL-Wj-RSU">
@@ -98,7 +98,10 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="check"/>
+                                        <state key="normal" image="checkButton"/>
+                                        <connections>
+                                            <segue destination="8gU-Ev-Sew" kind="presentation" modalPresentationStyle="fullScreen" id="6F3-th-wH4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAc-ia-XsL">
                                         <rect key="frame" x="30" y="22" width="17" height="15"/>
@@ -108,7 +111,10 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="back"/>
+                                        <state key="normal" image="closeButton"/>
+                                        <connections>
+                                            <action selector="dismissButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tkB-u4-tdZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -126,7 +132,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p21-Fh-nuy">
                                 <rect key="frame" x="0.0" y="185.5" width="414" height="366.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_hotesp" translatesAutoresizingMaskIntoConstraints="NO" id="Suq-uA-NV5">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotame" translatesAutoresizingMaskIntoConstraints="NO" id="Suq-uA-NV5">
                                         <rect key="frame" x="-293" y="20" width="1000" height="316.5"/>
                                     </imageView>
                                 </subviews>
@@ -156,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+            <point key="canvasLocation" x="-274" y="131"/>
         </scene>
         <!--Diary View Controller-->
         <scene sceneID="kBW-rA-M3H">
@@ -179,9 +185,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="#에스프레소" textAlignment="center" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="Ceu-sA-Bgz">
-                                        <rect key="frame" x="155" y="110.5" width="104" height="30"/>
+                                        <rect key="frame" x="157.5" y="110.5" width="99" height="28.5"/>
                                         <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="22"/>
+                                        <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="21"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMd-iM-gCJ">
@@ -192,7 +198,7 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="check"/>
+                                        <state key="normal" image="checkButton"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkq-j2-d86">
                                         <rect key="frame" x="30" y="22" width="17" height="15"/>
@@ -250,7 +256,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1G-GL-gmd">
                                 <rect key="frame" x="0.0" y="185.5" width="414" height="366.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_hotesp" translatesAutoresizingMaskIntoConstraints="NO" id="H9O-Bj-Bsi">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotame" translatesAutoresizingMaskIntoConstraints="NO" id="H9O-Bj-Bsi">
                                         <rect key="frame" x="-293" y="20" width="1000" height="316.5"/>
                                     </imageView>
                                 </subviews>
@@ -277,18 +283,19 @@
                             <constraint firstItem="RQE-Zo-2Vp" firstAttribute="leading" secondItem="vcm-yD-vYb" secondAttribute="leading" id="tFW-Dv-5Gw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Gxv-FO-SHO"/>
                     <connections>
                         <outlet property="textView" destination="2QU-fG-yxj" id="924-a1-V5l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XaS-YN-S3x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="786.95652173913049" y="130.58035714285714"/>
+            <point key="canvasLocation" x="686" y="131"/>
         </scene>
-        <!--View Controller-->
+        <!--Card View Controller-->
         <scene sceneID="8bX-Pu-0Ka">
             <objects>
-                <viewController id="i0V-XH-WYn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardSB" id="i0V-XH-WYn" customClass="CardViewController" customModule="Cuppo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wZg-ab-cGG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -314,21 +321,41 @@
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="menu"/>
+                                        <connections>
+                                            <action selector="memuButtonTapped:" destination="i0V-XH-WYn" eventType="touchUpInside" id="rAd-M6-Vir"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#에스프레소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pis-Al-rpz">
-                                        <rect key="frame" x="155.5" y="110.5" width="103.5" height="29"/>
-                                        <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="22"/>
+                                        <rect key="frame" x="158" y="110.5" width="98.5" height="27"/>
+                                        <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="21"/>
                                         <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMG-bz-ziW">
+                                        <rect key="frame" x="19" y="21" width="26" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="MMG-bz-ziW" secondAttribute="height" multiplier="1:1" id="6Mv-aO-FGS"/>
+                                            <constraint firstAttribute="width" constant="26" id="YBs-WX-cFV"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="closeButton"/>
+                                        <connections>
+                                            <action selector="closeButton:" destination="i0V-XH-WYn" eventType="touchUpInside" id="6CG-tT-Zkd"/>
+                                            <action selector="memuButtonTapped:" destination="i0V-XH-WYn" eventType="touchUpInside" id="LpY-Bq-1Zq"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="rPB-Tp-ynn" secondAttribute="trailing" constant="18" id="1G1-mn-cBY"/>
                                     <constraint firstItem="Pis-Al-rpz" firstAttribute="top" secondItem="czV-f9-1OH" secondAttribute="bottom" id="5LD-ii-eMG"/>
                                     <constraint firstItem="Pis-Al-rpz" firstAttribute="centerX" secondItem="9J9-uf-jIE" secondAttribute="centerX" id="MMJ-oE-ELY"/>
                                     <constraint firstItem="rPB-Tp-ynn" firstAttribute="top" secondItem="9J9-uf-jIE" secondAttribute="top" constant="19" id="WP3-Ym-0cO"/>
+                                    <constraint firstItem="MMG-bz-ziW" firstAttribute="top" secondItem="9J9-uf-jIE" secondAttribute="top" constant="21" id="blH-1X-3KW"/>
+                                    <constraint firstItem="MMG-bz-ziW" firstAttribute="width" secondItem="MMG-bz-ziW" secondAttribute="height" multiplier="1:1" id="dCr-DJ-Gvz"/>
                                     <constraint firstItem="czV-f9-1OH" firstAttribute="top" secondItem="9J9-uf-jIE" secondAttribute="top" constant="90" id="dLL-iP-7cP"/>
                                     <constraint firstAttribute="height" constant="141.5" id="iuY-Vt-z0Q"/>
+                                    <constraint firstItem="MMG-bz-ziW" firstAttribute="leading" secondItem="9J9-uf-jIE" secondAttribute="leading" constant="19" id="j6S-ht-bYt"/>
                                     <constraint firstItem="czV-f9-1OH" firstAttribute="centerX" secondItem="9J9-uf-jIE" secondAttribute="centerX" id="m0y-PH-u1M"/>
                                 </constraints>
                             </view>
@@ -343,10 +370,10 @@
                                             <constraint firstAttribute="height" constant="2" id="Ycp-ha-d91"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커피에 담긴 순간을 기록해보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDR-RF-CeU">
-                                        <rect key="frame" x="30" y="18" width="208" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커피에 담긴 순간을 기록해보세요." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDR-RF-CeU">
+                                        <rect key="frame" x="30" y="18" width="354" height="22"/>
                                         <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
-                                        <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -356,13 +383,14 @@
                                     <constraint firstItem="jDR-RF-CeU" firstAttribute="top" secondItem="4Mh-pO-upE" secondAttribute="bottom" constant="14" id="L6D-CZ-Njg"/>
                                     <constraint firstItem="4Mh-pO-upE" firstAttribute="leading" secondItem="3FT-ZR-PlY" secondAttribute="leading" constant="30" id="Q2R-bZ-SXf"/>
                                     <constraint firstItem="jDR-RF-CeU" firstAttribute="leading" secondItem="3FT-ZR-PlY" secondAttribute="leading" constant="30" id="UCs-Ue-tB7"/>
+                                    <constraint firstAttribute="trailing" secondItem="jDR-RF-CeU" secondAttribute="trailing" constant="30" id="Yt8-TT-B1s"/>
                                     <constraint firstAttribute="height" constant="310" id="jiZ-d2-CxY"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H76-D5-Gt6">
                                 <rect key="frame" x="0.0" y="185.5" width="414" height="366.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_hotesp" translatesAutoresizingMaskIntoConstraints="NO" id="Usb-2E-S2i">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotame" translatesAutoresizingMaskIntoConstraints="NO" id="Usb-2E-S2i">
                                         <rect key="frame" x="-293" y="20" width="1000" height="316.5"/>
                                     </imageView>
                                 </subviews>
@@ -376,6 +404,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7ID-bx-6yQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="3FT-ZR-PlY" firstAttribute="leading" secondItem="wZg-ab-cGG" secondAttribute="leading" id="1ZH-7Y-2iu"/>
                             <constraint firstAttribute="trailing" secondItem="H76-D5-Gt6" secondAttribute="trailing" id="3DH-x8-JvF"/>
@@ -388,17 +417,33 @@
                             <constraint firstItem="9J9-uf-jIE" firstAttribute="leading" secondItem="7ID-bx-6yQ" secondAttribute="leading" id="dft-gL-SCJ"/>
                             <constraint firstItem="H76-D5-Gt6" firstAttribute="leading" secondItem="7ID-bx-6yQ" secondAttribute="leading" id="hJ4-x4-f9B"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0se-aF-jHz" appends="YES" id="Kwd-fC-eQ9"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="coffeeImageView" destination="Usb-2E-S2i" id="JFD-Ce-lE6"/>
+                        <outlet property="contentLabel" destination="jDR-RF-CeU" id="bKh-IP-Y4Q"/>
+                        <outlet property="dateLabel" destination="czV-f9-1OH" id="8nN-Ik-u4i"/>
+                        <outlet property="menuButton" destination="rPB-Tp-ynn" id="WcT-6Z-WRr"/>
+                        <outlet property="titleLabel" destination="Pis-Al-rpz" id="nXA-je-ScO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKo-i7-VVg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0se-aF-jHz">
+                    <connections>
+                        <action selector="dropDownDismiss:" destination="i0V-XH-WYn" id="FLp-cc-vEg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1459.4202898550725" y="130.58035714285714"/>
+            <point key="canvasLocation" x="2009" y="131"/>
         </scene>
     </scenes>
     <resources>
-        <image name="_hotesp" width="1000" height="1000"/>
         <image name="back" width="17" height="16"/>
-        <image name="check" width="18" height="13"/>
+        <image name="checkButton" width="18" height="13"/>
+        <image name="closeButton" width="15" height="15"/>
+        <image name="hotame" width="1000" height="1000"/>
         <image name="menu" width="26" height="26"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
