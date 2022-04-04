@@ -22,6 +22,10 @@ extension CoffeeListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.dateLabel.text = target.date.substring(from: 0, to: 9)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        moveToVC(selectIdx: indexPath.item)
+    }
 
     // 디바이스가로- 60 : 세로 x : 315 : 200
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

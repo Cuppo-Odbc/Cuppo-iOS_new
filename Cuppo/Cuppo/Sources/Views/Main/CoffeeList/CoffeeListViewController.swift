@@ -10,10 +10,9 @@ import UIKit
 class CoffeeListViewController: BaseController {
     
     // MARK: - Properties
-    let viewModel = CardViewModel()
+    let viewModel = CardListViewModel()
 
     // MARK: - UIComponents
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
@@ -69,7 +68,13 @@ class CoffeeListViewController: BaseController {
     }
     
     /* 화면전환 */
-    func moveToVC(selectIdx: Int){ }
+    func moveToVC(selectIdx: Int){
+        let storyboard = UIStoryboard(name: "Coffee", bundle: nil)
+        guard let CardVC = storyboard.instantiateViewController(identifier: "CardSB") as? CardViewController else { return }
+        CardVC.setupData(data: viewModel.getCardData(idx: selectIdx))
+//        CardVC.modalPresentationStyle = .fullScreen
+        self.present(CardVC, animated: true, completion: nil)
+    }
     
 }
 

@@ -17,4 +17,13 @@ struct Card: Decodable {
     let coffee: String
     let created_at: String
     let date: String
+    
+    init(){
+        id = ""
+        title = ""
+        content = ""
+        coffee = ""
+        created_at = ""
+        date = ""
+    }
 }

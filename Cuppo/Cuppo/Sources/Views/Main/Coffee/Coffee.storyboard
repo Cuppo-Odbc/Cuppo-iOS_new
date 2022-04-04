@@ -292,10 +292,10 @@
             </objects>
             <point key="canvasLocation" x="686" y="131"/>
         </scene>
-        <!--View Controller-->
+        <!--Card View Controller-->
         <scene sceneID="8bX-Pu-0Ka">
             <objects>
-                <viewController id="i0V-XH-WYn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardSB" id="i0V-XH-WYn" customClass="CardViewController" customModule="Cuppo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wZg-ab-cGG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -321,6 +321,9 @@
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="menu"/>
+                                        <connections>
+                                            <action selector="memuButtonTapped:" destination="i0V-XH-WYn" eventType="touchUpInside" id="rAd-M6-Vir"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#에스프레소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pis-Al-rpz">
                                         <rect key="frame" x="155.5" y="110.5" width="103.5" height="29"/>
@@ -350,8 +353,8 @@
                                             <constraint firstAttribute="height" constant="2" id="Ycp-ha-d91"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커피에 담긴 순간을 기록해보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDR-RF-CeU">
-                                        <rect key="frame" x="30" y="18" width="208" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커피에 담긴 순간을 기록해보세요." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDR-RF-CeU">
+                                        <rect key="frame" x="30" y="18" width="354" height="22"/>
                                         <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
                                         <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -363,6 +366,7 @@
                                     <constraint firstItem="jDR-RF-CeU" firstAttribute="top" secondItem="4Mh-pO-upE" secondAttribute="bottom" constant="14" id="L6D-CZ-Njg"/>
                                     <constraint firstItem="4Mh-pO-upE" firstAttribute="leading" secondItem="3FT-ZR-PlY" secondAttribute="leading" constant="30" id="Q2R-bZ-SXf"/>
                                     <constraint firstItem="jDR-RF-CeU" firstAttribute="leading" secondItem="3FT-ZR-PlY" secondAttribute="leading" constant="30" id="UCs-Ue-tB7"/>
+                                    <constraint firstAttribute="trailing" secondItem="jDR-RF-CeU" secondAttribute="trailing" constant="30" id="Yt8-TT-B1s"/>
                                     <constraint firstAttribute="height" constant="310" id="jiZ-d2-CxY"/>
                                 </constraints>
                             </view>
@@ -396,6 +400,12 @@
                             <constraint firstItem="H76-D5-Gt6" firstAttribute="leading" secondItem="7ID-bx-6yQ" secondAttribute="leading" id="hJ4-x4-f9B"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="coffeeImageView" destination="Usb-2E-S2i" id="JFD-Ce-lE6"/>
+                        <outlet property="contentLabel" destination="jDR-RF-CeU" id="bKh-IP-Y4Q"/>
+                        <outlet property="dateLabel" destination="czV-f9-1OH" id="8nN-Ik-u4i"/>
+                        <outlet property="titleLabel" destination="Pis-Al-rpz" id="nXA-je-ScO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKo-i7-VVg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CardViewModel {
+class CardListViewModel {
     let cardDataManger = CardService.shared
     
     var selectedDate: Observable2<Date> = Observable2(value: Date())

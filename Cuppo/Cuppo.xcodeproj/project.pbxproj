@@ -40,9 +40,11 @@
 		9F7D542B27FA104300D75CD0 /* CardListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542A27FA104300D75CD0 /* CardListResponse.swift */; };
 		9F7D542E27FA228700D75CD0 /* UIString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542D27FA228700D75CD0 /* UIString.swift */; };
 		9F7D543027FA34F400D75CD0 /* UIDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D542F27FA34F400D75CD0 /* UIDate.swift */; };
-		9F7D543527FAC32F00D75CD0 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D543427FAC32F00D75CD0 /* CardViewModel.swift */; };
+		9F7D543527FAC32F00D75CD0 /* CardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D543427FAC32F00D75CD0 /* CardListViewModel.swift */; };
 		9F7D543827FACCD200D75CD0 /* CoffeeListVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D543727FACCD200D75CD0 /* CoffeeListVC + TableView.swift */; };
 		9F7D543A27FACCE300D75CD0 /* CoffeeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D543927FACCE300D75CD0 /* CoffeeListCell.swift */; };
+		9F7D543C27FAD49300D75CD0 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D543B27FAD49300D75CD0 /* CardViewController.swift */; };
+		9F7D544227FADC7D00D75CD0 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D544127FADC7D00D75CD0 /* CardViewModel.swift */; };
 		9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962227D64C0200FF42BA /* AppDelegate.swift */; };
 		9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962427D64C0200FF42BA /* SceneDelegate.swift */; };
 		9F81962A27D64C0200FF42BA /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962827D64C0200FF42BA /* TabBar.storyboard */; };
@@ -105,9 +107,11 @@
 		9F7D542A27FA104300D75CD0 /* CardListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListResponse.swift; sourceTree = "<group>"; };
 		9F7D542D27FA228700D75CD0 /* UIString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIString.swift; sourceTree = "<group>"; };
 		9F7D542F27FA34F400D75CD0 /* UIDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDate.swift; sourceTree = "<group>"; };
-		9F7D543427FAC32F00D75CD0 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		9F7D543427FAC32F00D75CD0 /* CardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewModel.swift; sourceTree = "<group>"; };
 		9F7D543727FACCD200D75CD0 /* CoffeeListVC + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoffeeListVC + TableView.swift"; sourceTree = "<group>"; };
 		9F7D543927FACCE300D75CD0 /* CoffeeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeListCell.swift; sourceTree = "<group>"; };
+		9F7D543B27FAD49300D75CD0 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		9F7D544127FADC7D00D75CD0 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		9F81961F27D64C0200FF42BA /* Cuppo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuppo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F81962227D64C0200FF42BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F81962427D64C0200FF42BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 				9F253EC527D72CA70010C1E6 /* Coffee.storyboard */,
 				9F253EC727D72D760010C1E6 /* CoffeeViewController.swift */,
 				9F253ECE27DA4C370010C1E6 /* DiaryViewController.swift */,
+				9F7D543B27FAD49300D75CD0 /* CardViewController.swift */,
 			);
 			path = Coffee;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 		9F7D541B27F73C0000D75CD0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9F7D544027FADC7300D75CD0 /* Card */,
 				9F7D543327FAC2F800D75CD0 /* CardList */,
 				9F7D541C27F73C0700D75CD0 /* Calendar */,
 				9F7D542427F7478D00D75CD0 /* Observable.swift */,
@@ -306,7 +312,7 @@
 		9F7D543327FAC2F800D75CD0 /* CardList */ = {
 			isa = PBXGroup;
 			children = (
-				9F7D543427FAC32F00D75CD0 /* CardViewModel.swift */,
+				9F7D543427FAC32F00D75CD0 /* CardListViewModel.swift */,
 			);
 			path = CardList;
 			sourceTree = "<group>";
@@ -318,6 +324,14 @@
 				9F7D543927FACCE300D75CD0 /* CoffeeListCell.swift */,
 			);
 			path = "Extension + Cell";
+			sourceTree = "<group>";
+		};
+		9F7D544027FADC7300D75CD0 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				9F7D544127FADC7D00D75CD0 /* CardViewModel.swift */,
+			);
+			path = Card;
 			sourceTree = "<group>";
 		};
 		9F81961627D64C0200FF42BA = {
@@ -647,9 +661,11 @@
 				A8373A7227DDE01400BA0442 /* LoginService.swift in Sources */,
 				A8373A8527DDFE4600BA0442 /* SignUpService.swift in Sources */,
 				9F253ECF27DA4C370010C1E6 /* DiaryViewController.swift in Sources */,
+				9F7D544227FADC7D00D75CD0 /* CardViewModel.swift in Sources */,
 				9F6AAA0727E78B6B008CE72F /* TabBarViewController.swift in Sources */,
-				9F7D543527FAC32F00D75CD0 /* CardViewModel.swift in Sources */,
+				9F7D543527FAC32F00D75CD0 /* CardListViewModel.swift in Sources */,
 				9F7D542527F7478D00D75CD0 /* Observable.swift in Sources */,
+				9F7D543C27FAD49300D75CD0 /* CardViewController.swift in Sources */,
 				9F7D543827FACCD200D75CD0 /* CoffeeListVC + TableView.swift in Sources */,
 				A8373A8127DDF96F00BA0442 /* SignUpViewController.swift in Sources */,
 				A85A981227EE19DD003DFC0F /* AccountManagementViewController.swift in Sources */,
