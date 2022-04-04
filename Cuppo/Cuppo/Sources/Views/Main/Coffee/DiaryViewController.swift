@@ -73,7 +73,7 @@ class DiaryViewController: UIViewController {
     func setTextView(){
         contentTextView.textContainerInset = .zero
         contentTextView.text = textViewPlaceHolder
-        contentTextView.textColor = .cuppoGray
+        contentTextView.textColor = UIColor(named: "cuppoColor3")
         contentTextView.delegate = self
     }
     
@@ -94,14 +94,14 @@ extension DiaryViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == textViewPlaceHolder {
             textView.text = nil
-            textView.textColor = .black
+            textView.textColor = UIColor(named: "cuppoColor1")
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             textView.text = textViewPlaceHolder
-            textView.textColor = .cuppoGray
+            textView.textColor = UIColor(named: "cuppoColor3")
         }
     }
 }

@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -25,7 +26,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqg-Vw-yoY">
                                 <rect key="frame" x="30" y="134" width="4.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="cuppoColor1"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Drl-M2-ueA">
@@ -69,7 +70,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKF-nz-VBe">
                                                     <rect key="frame" x="62" y="56" width="4" height="16"/>
                                                     <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="12"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="cuppoColor1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -90,7 +91,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZ7-xg-SPD">
                                 <rect key="frame" x="30" y="156" width="45" height="28.5"/>
                                 <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="22"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="cuppoColor1"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -111,8 +112,8 @@
                             <constraint firstItem="DZ7-xg-SPD" firstAttribute="top" secondItem="pqg-Vw-yoY" secondAttribute="bottom" constant="1" id="urJ-KQ-1gG"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="main" selectedImage="main" id="cDj-fc-yTn">
-                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <tabBarItem key="tabBarItem" title="" image="us_main" selectedImage="main" id="cDj-fc-yTn">
+                        <color key="badgeColor" name="cuppoColor1"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -129,6 +130,10 @@
     <resources>
         <image name="coffeeBin" width="34.5" height="34.5"/>
         <image name="main" width="20" height="20"/>
+        <image name="us_main" width="20" height="20"/>
+        <namedColor name="cuppoColor1">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

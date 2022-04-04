@@ -33,6 +33,7 @@ extension AlertView: UIPickerViewDelegate, UIPickerViewDataSource {
             pickerLabel = UILabel()
             pickerLabel?.font = UIFont(name: "Goyang", size: 14)
             pickerLabel?.textAlignment = .center
+            pickerLabel?.textColor = .black
         }
         
         if pickerView == yearPickerView {
