@@ -21,7 +21,7 @@ class CoffeeListCell: UITableViewCell {
     }
     
     override func awakeFromNib() {
-        layerView.layer.borderColor = UIColor.black.cgColor
+        layerView.layer.borderColor = UIColor(named: "cuppoColor5")?.cgColor
         layerView.layer.borderWidth = 1
     }
     

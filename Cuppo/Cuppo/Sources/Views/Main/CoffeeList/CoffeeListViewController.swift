@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CoffeeListViewController: BaseController {
+class CoffeeListViewController: UIViewController {
     
     // MARK: - Properties
     let viewModel = CardListViewModel()
@@ -52,6 +52,7 @@ class CoffeeListViewController: BaseController {
     func setTableView(){
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .clear
     }
     
     /* 바인딩하는 부분 */

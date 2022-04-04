@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,6 +22,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basicLightMode" translatesAutoresizingMaskIntoConstraints="NO" id="4AR-1t-eld">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZC-j8-h73">
                                 <rect key="frame" x="0.0" y="552" width="414" height="310"/>
                                 <subviews>
@@ -32,7 +36,7 @@
                                                 <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="온도">
-                                                    <color key="titleColor" red="0.68235294117647061" green="0.68235294117647061" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" name="cuppoColor3"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgB-JW-MCu">
@@ -40,7 +44,7 @@
                                                 <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="우유">
-                                                    <color key="titleColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" name="cuppoColor3"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcZ-cF-Bq6">
@@ -48,7 +52,7 @@
                                                 <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="시럽">
-                                                    <color key="titleColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" name="cuppoColor3"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfR-Ws-MWU">
@@ -56,7 +60,7 @@
                                                 <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="휘핑">
-                                                    <color key="titleColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" name="cuppoColor3"/>
                                                 </state>
                                             </button>
                                         </subviews>
@@ -81,12 +85,12 @@
                                             <constraint firstAttribute="width" constant="100" id="FOd-QW-R3Q"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="cuppoColor1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="#에스프레소" textAlignment="center" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="RyX-fR-crc">
                                         <rect key="frame" x="157.5" y="110.5" width="99" height="28.5"/>
-                                        <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" name="cuppoColor3"/>
                                         <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="21"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -133,7 +137,6 @@
                                         <rect key="frame" x="-293" y="20" width="1000" height="316.5"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Suq-uA-NV5" secondAttribute="bottom" constant="30" id="J1d-EM-kHo"/>
                                     <constraint firstItem="Suq-uA-NV5" firstAttribute="top" secondItem="p21-Fh-nuy" secondAttribute="top" constant="20" id="ROV-2H-NNS"/>
@@ -146,11 +149,15 @@
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CWD-iG-zOK" secondAttribute="trailing" id="5ZX-Iq-dMX"/>
                             <constraint firstAttribute="trailing" secondItem="p21-Fh-nuy" secondAttribute="trailing" id="97H-6f-ysR"/>
+                            <constraint firstItem="4AR-1t-eld" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="9kE-kj-0EW"/>
+                            <constraint firstAttribute="bottom" secondItem="4AR-1t-eld" secondAttribute="bottom" id="BkT-p4-YOp"/>
                             <constraint firstItem="TZC-j8-h73" firstAttribute="top" secondItem="p21-Fh-nuy" secondAttribute="bottom" id="Gk5-Zp-6UU"/>
                             <constraint firstItem="CWD-iG-zOK" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="I7t-2k-SIJ"/>
                             <constraint firstItem="p21-Fh-nuy" firstAttribute="top" secondItem="CWD-iG-zOK" secondAttribute="bottom" id="PDo-Ez-oMI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="TZC-j8-h73" secondAttribute="bottom" id="a22-hh-zv1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TZC-j8-h73" secondAttribute="trailing" id="dDv-Bi-KxS"/>
+                            <constraint firstItem="4AR-1t-eld" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="lOS-cZ-6tY"/>
+                            <constraint firstItem="4AR-1t-eld" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="lvH-PX-AaM"/>
                             <constraint firstItem="TZC-j8-h73" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nd5-A0-XBS"/>
                             <constraint firstItem="CWD-iG-zOK" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="pPR-Gw-WIh"/>
                             <constraint firstItem="p21-Fh-nuy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="s6I-qU-eeG"/>
@@ -159,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-274" y="131"/>
+            <point key="canvasLocation" x="1824.6376811594205" y="141.96428571428569"/>
         </scene>
         <!--Diary View Controller-->
         <scene sceneID="kBW-rA-M3H">
@@ -169,6 +176,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basicLightMode" translatesAutoresizingMaskIntoConstraints="NO" id="AMG-Lb-tIj">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrS-eM-RmW">
                                 <rect key="frame" x="0.0" y="44" width="414" height="141.5"/>
                                 <subviews>
@@ -178,7 +188,7 @@
                                             <constraint firstAttribute="width" constant="100" id="4kE-vr-EsY"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="cuppoColor1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMd-iM-gCJ">
@@ -215,7 +225,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="에스프레소" textAlignment="center" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="whv-CA-05U">
                                                 <rect key="frame" x="14" y="0.0" width="85" height="28.5"/>
-                                                <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" name="cuppoColor3"/>
                                                 <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="21"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -239,7 +249,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l56-ap-98X">
                                         <rect key="frame" x="30" y="2" width="32" height="2"/>
-                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                        <color key="backgroundColor" name="cuppoColor1"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="OEB-ds-d3k"/>
                                             <constraint firstAttribute="height" constant="2" id="u7d-gV-g3U"/>
@@ -247,13 +257,11 @@
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="커피에 담긴 순간을 기록해보세요." adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2QU-fG-yxj">
                                         <rect key="frame" x="26" y="18" width="358" height="242"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" name="cuppoColor3"/>
                                         <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="310" id="Dcc-KB-lDk"/>
                                     <constraint firstItem="l56-ap-98X" firstAttribute="top" secondItem="RQE-Zo-2Vp" secondAttribute="top" constant="2" id="U7M-kb-keD"/>
@@ -271,7 +279,6 @@
                                         <rect key="frame" x="-293" y="20" width="1000" height="316.5"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="H9O-Bj-Bsi" firstAttribute="centerX" secondItem="e1G-GL-gmd" secondAttribute="centerX" id="6dp-Jf-37T"/>
                                     <constraint firstItem="H9O-Bj-Bsi" firstAttribute="top" secondItem="e1G-GL-gmd" secondAttribute="top" constant="20" id="Lmc-9b-QFr"/>
@@ -284,14 +291,18 @@
                         <constraints>
                             <constraint firstItem="vcm-yD-vYb" firstAttribute="trailing" secondItem="e1G-GL-gmd" secondAttribute="trailing" id="8Lr-Mh-N1q"/>
                             <constraint firstItem="e1G-GL-gmd" firstAttribute="leading" secondItem="vcm-yD-vYb" secondAttribute="leading" id="H5Z-3f-NVr"/>
+                            <constraint firstItem="AMG-Lb-tIj" firstAttribute="top" secondItem="88j-2Q-kAS" secondAttribute="top" id="J9R-9f-5Ly"/>
                             <constraint firstItem="RQE-Zo-2Vp" firstAttribute="top" secondItem="e1G-GL-gmd" secondAttribute="bottom" id="NWX-h7-Ynt"/>
+                            <constraint firstAttribute="bottom" secondItem="AMG-Lb-tIj" secondAttribute="bottom" id="O7a-mB-Yyw"/>
                             <constraint firstItem="QrS-eM-RmW" firstAttribute="leading" secondItem="vcm-yD-vYb" secondAttribute="leading" id="dea-ao-ojY"/>
                             <constraint firstItem="vcm-yD-vYb" firstAttribute="trailing" secondItem="RQE-Zo-2Vp" secondAttribute="trailing" id="fYp-g1-0y4"/>
                             <constraint firstAttribute="trailing" secondItem="QrS-eM-RmW" secondAttribute="trailing" id="h1f-Ae-YHy"/>
                             <constraint firstItem="QrS-eM-RmW" firstAttribute="top" secondItem="vcm-yD-vYb" secondAttribute="top" id="hud-mc-hvn"/>
                             <constraint firstItem="vcm-yD-vYb" firstAttribute="bottom" secondItem="RQE-Zo-2Vp" secondAttribute="bottom" id="mlK-FI-aRF"/>
                             <constraint firstItem="e1G-GL-gmd" firstAttribute="top" secondItem="QrS-eM-RmW" secondAttribute="bottom" id="mok-MI-qR1"/>
+                            <constraint firstItem="AMG-Lb-tIj" firstAttribute="trailing" secondItem="vcm-yD-vYb" secondAttribute="trailing" id="qsM-Mi-dPD"/>
                             <constraint firstItem="RQE-Zo-2Vp" firstAttribute="leading" secondItem="vcm-yD-vYb" secondAttribute="leading" id="tFW-Dv-5Gw"/>
+                            <constraint firstItem="AMG-Lb-tIj" firstAttribute="leading" secondItem="vcm-yD-vYb" secondAttribute="leading" id="wQw-US-1Od"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gxv-FO-SHO">
@@ -318,6 +329,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basicLightMode" translatesAutoresizingMaskIntoConstraints="NO" id="3KW-hZ-EUQ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9J9-uf-jIE">
                                 <rect key="frame" x="0.0" y="88" width="414" height="141.5"/>
                                 <subviews>
@@ -327,7 +341,7 @@
                                             <constraint firstAttribute="width" constant="100" id="rYx-jb-lC3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="cuppoColor1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPB-Tp-ynn">
@@ -346,7 +360,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#에스프레소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pis-Al-rpz">
                                         <rect key="frame" x="158" y="110.5" width="98.5" height="27"/>
                                         <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="21"/>
-                                        <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <color key="textColor" name="cuppoColor3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMG-bz-ziW">
@@ -382,7 +396,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Mh-pO-upE">
                                         <rect key="frame" x="30" y="2" width="32" height="2"/>
-                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                        <color key="backgroundColor" name="cuppoColor1"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="1cW-0F-aeu"/>
                                             <constraint firstAttribute="height" constant="2" id="Ycp-ha-d91"/>
@@ -391,11 +405,10 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커피에 담긴 순간을 기록해보세요." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDR-RF-CeU">
                                         <rect key="frame" x="30" y="18" width="354" height="22"/>
                                         <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="cuppoColor1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="4Mh-pO-upE" firstAttribute="top" secondItem="3FT-ZR-PlY" secondAttribute="top" constant="2" id="36F-XD-fqM"/>
                                     <constraint firstItem="jDR-RF-CeU" firstAttribute="top" secondItem="4Mh-pO-upE" secondAttribute="bottom" constant="14" id="L6D-CZ-Njg"/>
@@ -412,7 +425,6 @@
                                         <rect key="frame" x="-293" y="20" width="1000" height="272.5"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Usb-2E-S2i" firstAttribute="top" secondItem="H76-D5-Gt6" secondAttribute="top" constant="20" id="OIy-Sa-fBc"/>
                                     <constraint firstAttribute="bottom" secondItem="Usb-2E-S2i" secondAttribute="bottom" constant="30" id="dmm-n0-Zlo"/>
@@ -427,12 +439,16 @@
                             <constraint firstItem="3FT-ZR-PlY" firstAttribute="leading" secondItem="wZg-ab-cGG" secondAttribute="leading" id="1ZH-7Y-2iu"/>
                             <constraint firstAttribute="trailing" secondItem="H76-D5-Gt6" secondAttribute="trailing" id="3DH-x8-JvF"/>
                             <constraint firstItem="7ID-bx-6yQ" firstAttribute="trailing" secondItem="3FT-ZR-PlY" secondAttribute="trailing" id="6yC-v6-1Yc"/>
+                            <constraint firstItem="3KW-hZ-EUQ" firstAttribute="top" secondItem="wZg-ab-cGG" secondAttribute="top" id="9Ph-He-dxJ"/>
+                            <constraint firstItem="3KW-hZ-EUQ" firstAttribute="trailing" secondItem="7ID-bx-6yQ" secondAttribute="trailing" id="CAa-ZH-qRQ"/>
                             <constraint firstAttribute="trailing" secondItem="9J9-uf-jIE" secondAttribute="trailing" id="JHL-Ho-Xqe"/>
                             <constraint firstItem="3FT-ZR-PlY" firstAttribute="top" secondItem="H76-D5-Gt6" secondAttribute="bottom" id="OZi-EK-ayj"/>
                             <constraint firstItem="7ID-bx-6yQ" firstAttribute="bottom" secondItem="3FT-ZR-PlY" secondAttribute="bottom" id="Sus-pw-sqI"/>
                             <constraint firstItem="H76-D5-Gt6" firstAttribute="top" secondItem="9J9-uf-jIE" secondAttribute="bottom" id="VDx-0r-Hxg"/>
                             <constraint firstItem="9J9-uf-jIE" firstAttribute="top" secondItem="7ID-bx-6yQ" secondAttribute="top" id="cns-VA-SpF"/>
                             <constraint firstItem="9J9-uf-jIE" firstAttribute="leading" secondItem="7ID-bx-6yQ" secondAttribute="leading" id="dft-gL-SCJ"/>
+                            <constraint firstItem="3KW-hZ-EUQ" firstAttribute="leading" secondItem="7ID-bx-6yQ" secondAttribute="leading" id="eod-gC-Ww4"/>
+                            <constraint firstAttribute="bottom" secondItem="3KW-hZ-EUQ" secondAttribute="bottom" id="gAN-GX-bFw"/>
                             <constraint firstItem="H76-D5-Gt6" firstAttribute="leading" secondItem="7ID-bx-6yQ" secondAttribute="leading" id="hJ4-x4-f9B"/>
                         </constraints>
                         <connections>
@@ -480,13 +496,17 @@
     </scenes>
     <resources>
         <image name="backButton" width="17" height="15.5"/>
+        <image name="basicLightMode" width="375" height="812"/>
         <image name="checkButton" width="18" height="13"/>
         <image name="closeButton" width="15" height="15"/>
         <image name="hotame" width="1000" height="1000"/>
         <image name="menu" width="26" height="26"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="cuppoColor1">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="cuppoColor3">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
