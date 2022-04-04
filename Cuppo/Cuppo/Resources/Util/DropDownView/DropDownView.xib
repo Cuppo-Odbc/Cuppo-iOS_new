@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Goyang.otf">
+            <string>Goyang</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DropDownView" customModule="Cuppo" customModuleProvider="target">
+            <connections>
+                <outlet property="deleteView" destination="z8p-Me-l2B" id="jLK-0M-cj8"/>
+                <outlet property="dropdownView" destination="iN0-l3-epB" id="hVf-13-FT6"/>
+                <outlet property="editView" destination="thk-dp-qd3" id="RVH-Np-aw7"/>
+                <outlet property="shareView" destination="BYg-7o-AJo" id="Km7-UF-mSN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YIT-aJ-S3T">
+                    <rect key="frame" x="0.0" y="0.0" width="130" height="150"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thk-dp-qd3">
+                            <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit" translatesAutoresizingMaskIntoConstraints="NO" id="s79-mB-2dF">
+                                    <rect key="frame" x="16" y="16.5" width="17" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="s79-mB-2dF" secondAttribute="height" id="7DM-Rh-r51"/>
+                                        <constraint firstAttribute="width" constant="17" id="9Tw-FY-aDp"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81f-qc-yDo">
+                                    <rect key="frame" x="81" y="13.5" width="29" height="23.5"/>
+                                    <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbm-O4-Ubd">
+                                    <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="editTapped:" destination="-1" eventType="touchUpInside" id="q8g-wg-HgA"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="lbm-O4-Ubd" firstAttribute="top" secondItem="thk-dp-qd3" secondAttribute="top" id="57v-H0-zrD"/>
+                                <constraint firstAttribute="width" constant="130" id="7H9-le-M34"/>
+                                <constraint firstAttribute="trailing" secondItem="81f-qc-yDo" secondAttribute="trailing" constant="20" id="GxE-v5-Kuh"/>
+                                <constraint firstAttribute="trailing" secondItem="lbm-O4-Ubd" secondAttribute="trailing" id="INL-rH-BV3"/>
+                                <constraint firstAttribute="bottom" secondItem="lbm-O4-Ubd" secondAttribute="bottom" id="MbD-ux-V5E"/>
+                                <constraint firstItem="lbm-O4-Ubd" firstAttribute="leading" secondItem="thk-dp-qd3" secondAttribute="leading" id="V3R-Fl-DqT"/>
+                                <constraint firstItem="s79-mB-2dF" firstAttribute="centerY" secondItem="thk-dp-qd3" secondAttribute="centerY" id="XTy-g0-K8n"/>
+                                <constraint firstAttribute="height" constant="50" id="d0S-SO-q3V"/>
+                                <constraint firstItem="81f-qc-yDo" firstAttribute="centerY" secondItem="thk-dp-qd3" secondAttribute="centerY" id="eSa-zC-D5c"/>
+                                <constraint firstItem="s79-mB-2dF" firstAttribute="leading" secondItem="thk-dp-qd3" secondAttribute="leading" constant="16" id="s2I-7g-ZQp"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYg-7o-AJo">
+                            <rect key="frame" x="0.0" y="50" width="130" height="50"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share" translatesAutoresizingMaskIntoConstraints="NO" id="NTi-uL-jwR">
+                                    <rect key="frame" x="16" y="16.5" width="17" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="17" id="EKy-wR-kx9"/>
+                                        <constraint firstAttribute="width" secondItem="NTi-uL-jwR" secondAttribute="height" id="bvu-p9-OjY"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJz-z4-EXF">
+                                    <rect key="frame" x="81" y="13.5" width="29" height="23.5"/>
+                                    <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ha2-vy-QtQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="shareTapped:" destination="-1" eventType="touchUpInside" id="7kg-I1-Qi3"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="XJz-z4-EXF" firstAttribute="centerY" secondItem="BYg-7o-AJo" secondAttribute="centerY" id="CoP-MP-mbh"/>
+                                <constraint firstAttribute="height" constant="50" id="HM6-ii-4sK"/>
+                                <constraint firstItem="NTi-uL-jwR" firstAttribute="leading" secondItem="BYg-7o-AJo" secondAttribute="leading" constant="16" id="PzW-M0-caI"/>
+                                <constraint firstAttribute="bottom" secondItem="Ha2-vy-QtQ" secondAttribute="bottom" id="UWT-wD-9uO"/>
+                                <constraint firstAttribute="width" constant="130" id="Wce-5g-A2T"/>
+                                <constraint firstItem="Ha2-vy-QtQ" firstAttribute="top" secondItem="BYg-7o-AJo" secondAttribute="top" id="XUf-vL-grq"/>
+                                <constraint firstAttribute="trailing" secondItem="XJz-z4-EXF" secondAttribute="trailing" constant="20" id="boD-h0-5f3"/>
+                                <constraint firstItem="Ha2-vy-QtQ" firstAttribute="leading" secondItem="BYg-7o-AJo" secondAttribute="leading" id="qmW-tz-YCe"/>
+                                <constraint firstItem="NTi-uL-jwR" firstAttribute="centerY" secondItem="BYg-7o-AJo" secondAttribute="centerY" id="twe-Oc-S4F"/>
+                                <constraint firstAttribute="trailing" secondItem="Ha2-vy-QtQ" secondAttribute="trailing" id="yMO-4s-cbF"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8p-Me-l2B">
+                            <rect key="frame" x="0.0" y="100" width="130" height="50"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="Ysn-n8-p4f">
+                                    <rect key="frame" x="16" y="16.5" width="17" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="17" id="PGp-la-Ns1"/>
+                                        <constraint firstAttribute="width" secondItem="Ysn-n8-p4f" secondAttribute="height" id="TmY-Ma-ffn"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="삭제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uys-i3-EFr">
+                                    <rect key="frame" x="81" y="13.5" width="29" height="23.5"/>
+                                    <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b28-SL-pay">
+                                    <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="deleteTapped:" destination="-1" eventType="touchUpInside" id="jh2-Ah-KaK"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="b28-SL-pay" secondAttribute="bottom" id="7b8-ev-Ytj"/>
+                                <constraint firstItem="Uys-i3-EFr" firstAttribute="centerY" secondItem="z8p-Me-l2B" secondAttribute="centerY" id="7rJ-vC-52q"/>
+                                <constraint firstItem="b28-SL-pay" firstAttribute="leading" secondItem="z8p-Me-l2B" secondAttribute="leading" id="BOS-1g-UIN"/>
+                                <constraint firstAttribute="width" constant="130" id="FpY-Cn-pcp"/>
+                                <constraint firstAttribute="trailing" secondItem="b28-SL-pay" secondAttribute="trailing" id="KdF-fN-g3Q"/>
+                                <constraint firstItem="Ysn-n8-p4f" firstAttribute="centerY" secondItem="z8p-Me-l2B" secondAttribute="centerY" id="Mgk-bA-0wa"/>
+                                <constraint firstItem="Ysn-n8-p4f" firstAttribute="leading" secondItem="z8p-Me-l2B" secondAttribute="leading" constant="16" id="P5m-ya-YD8"/>
+                                <constraint firstItem="b28-SL-pay" firstAttribute="top" secondItem="z8p-Me-l2B" secondAttribute="top" id="Qnb-dE-0CZ"/>
+                                <constraint firstAttribute="trailing" secondItem="Uys-i3-EFr" secondAttribute="trailing" constant="20" id="jR8-GL-4eX"/>
+                                <constraint firstAttribute="height" constant="50" id="pBj-bK-6O0"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="27.536231884057973" y="-99.107142857142847"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="delete" width="16" height="18"/>
+        <image name="edit" width="17" height="17.5"/>
+        <image name="share" width="16" height="18"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

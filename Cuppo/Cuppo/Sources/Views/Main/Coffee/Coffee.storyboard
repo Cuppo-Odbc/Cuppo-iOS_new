@@ -85,9 +85,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="#에스프레소" textAlignment="center" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="RyX-fR-crc">
-                                        <rect key="frame" x="155" y="110.5" width="104" height="30"/>
+                                        <rect key="frame" x="157.5" y="110.5" width="99" height="28.5"/>
                                         <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="22"/>
+                                        <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="21"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFL-Wj-RSU">
@@ -185,9 +185,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="#에스프레소" textAlignment="center" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="Ceu-sA-Bgz">
-                                        <rect key="frame" x="155" y="110.5" width="104" height="30"/>
+                                        <rect key="frame" x="157.5" y="110.5" width="99" height="28.5"/>
                                         <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="22"/>
+                                        <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="21"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMd-iM-gCJ">
@@ -326,19 +326,36 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#에스프레소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pis-Al-rpz">
-                                        <rect key="frame" x="155.5" y="110.5" width="103.5" height="29"/>
-                                        <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="22"/>
+                                        <rect key="frame" x="158" y="110.5" width="98.5" height="27"/>
+                                        <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="21"/>
                                         <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMG-bz-ziW">
+                                        <rect key="frame" x="19" y="21" width="26" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="MMG-bz-ziW" secondAttribute="height" multiplier="1:1" id="6Mv-aO-FGS"/>
+                                            <constraint firstAttribute="width" constant="26" id="YBs-WX-cFV"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="closeButton"/>
+                                        <connections>
+                                            <action selector="closeButton:" destination="i0V-XH-WYn" eventType="touchUpInside" id="6CG-tT-Zkd"/>
+                                            <action selector="memuButtonTapped:" destination="i0V-XH-WYn" eventType="touchUpInside" id="LpY-Bq-1Zq"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="rPB-Tp-ynn" secondAttribute="trailing" constant="18" id="1G1-mn-cBY"/>
                                     <constraint firstItem="Pis-Al-rpz" firstAttribute="top" secondItem="czV-f9-1OH" secondAttribute="bottom" id="5LD-ii-eMG"/>
                                     <constraint firstItem="Pis-Al-rpz" firstAttribute="centerX" secondItem="9J9-uf-jIE" secondAttribute="centerX" id="MMJ-oE-ELY"/>
                                     <constraint firstItem="rPB-Tp-ynn" firstAttribute="top" secondItem="9J9-uf-jIE" secondAttribute="top" constant="19" id="WP3-Ym-0cO"/>
+                                    <constraint firstItem="MMG-bz-ziW" firstAttribute="top" secondItem="9J9-uf-jIE" secondAttribute="top" constant="21" id="blH-1X-3KW"/>
+                                    <constraint firstItem="MMG-bz-ziW" firstAttribute="width" secondItem="MMG-bz-ziW" secondAttribute="height" multiplier="1:1" id="dCr-DJ-Gvz"/>
                                     <constraint firstItem="czV-f9-1OH" firstAttribute="top" secondItem="9J9-uf-jIE" secondAttribute="top" constant="90" id="dLL-iP-7cP"/>
                                     <constraint firstAttribute="height" constant="141.5" id="iuY-Vt-z0Q"/>
+                                    <constraint firstItem="MMG-bz-ziW" firstAttribute="leading" secondItem="9J9-uf-jIE" secondAttribute="leading" constant="19" id="j6S-ht-bYt"/>
                                     <constraint firstItem="czV-f9-1OH" firstAttribute="centerX" secondItem="9J9-uf-jIE" secondAttribute="centerX" id="m0y-PH-u1M"/>
                                 </constraints>
                             </view>
@@ -356,7 +373,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커피에 담긴 순간을 기록해보세요." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDR-RF-CeU">
                                         <rect key="frame" x="30" y="18" width="354" height="22"/>
                                         <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
-                                        <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -387,6 +404,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7ID-bx-6yQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="3FT-ZR-PlY" firstAttribute="leading" secondItem="wZg-ab-cGG" secondAttribute="leading" id="1ZH-7Y-2iu"/>
                             <constraint firstAttribute="trailing" secondItem="H76-D5-Gt6" secondAttribute="trailing" id="3DH-x8-JvF"/>
@@ -399,15 +417,24 @@
                             <constraint firstItem="9J9-uf-jIE" firstAttribute="leading" secondItem="7ID-bx-6yQ" secondAttribute="leading" id="dft-gL-SCJ"/>
                             <constraint firstItem="H76-D5-Gt6" firstAttribute="leading" secondItem="7ID-bx-6yQ" secondAttribute="leading" id="hJ4-x4-f9B"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0se-aF-jHz" appends="YES" id="Kwd-fC-eQ9"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="coffeeImageView" destination="Usb-2E-S2i" id="JFD-Ce-lE6"/>
                         <outlet property="contentLabel" destination="jDR-RF-CeU" id="bKh-IP-Y4Q"/>
                         <outlet property="dateLabel" destination="czV-f9-1OH" id="8nN-Ik-u4i"/>
+                        <outlet property="menuButton" destination="rPB-Tp-ynn" id="WcT-6Z-WRr"/>
                         <outlet property="titleLabel" destination="Pis-Al-rpz" id="nXA-je-ScO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKo-i7-VVg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0se-aF-jHz">
+                    <connections>
+                        <action selector="dropDownDismiss:" destination="i0V-XH-WYn" id="FLp-cc-vEg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2009" y="131"/>
         </scene>

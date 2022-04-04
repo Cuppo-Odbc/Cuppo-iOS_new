@@ -6,6 +6,21 @@
 //
 
 import UIKit
+import SnapKit
+
+extension CardViewController: DropDownProtocol {
+    func editAction() {
+        print("수정")
+    }
+    
+    func shareAction() {
+        print("공유")
+    }
+    
+    func deleteAction() {
+        print("삭제")
+    }
+}
 
 class CardViewController: UIViewController {
     
@@ -13,27 +28,30 @@ class CardViewController: UIViewController {
     let viewModel = CardViewModel()
     
     // MARK: - UIComponents
+    let dropDownView = DropDownView(frame: .zero)
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var coffeeImageView: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var menuButton: UIButton!
     
     @IBAction func memuButtonTapped(_ sender: Any) {
-        // 수정
-        
-        // 공유
-        
-        // 삭제
+        showDropDown()
     }
     
+    @IBAction func dropDownDismiss(_ sender: Any) {
+        dropDownView.removeFromSuperview()
+    }
+    
+    @IBAction func closeButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        print(viewModel.getCardInfo())
-        
     }
     
     // MARK: - Functions
@@ -46,6 +64,18 @@ class CardViewController: UIViewController {
         titleLabel.text = viewModel.getCardInfo().title
         urlToImg(urlStr: viewModel.getCardInfo().coffee, img: coffeeImageView)
         contentLabel.text = viewModel.getCardInfo().content
+    }
+    
+    func showDropDown(){
+        dropDownView.delegate = self
+        view.addSubview(dropDownView)
+        
+        dropDownView.snp.makeConstraints {
+            $0.top.equalTo(menuButton.snp.top)
+            $0.trailing.equalTo(menuButton.snp.trailing)
+            $0.width.equalTo(130)
+            $0.height.equalTo(150)
+        }
     }
     
 }

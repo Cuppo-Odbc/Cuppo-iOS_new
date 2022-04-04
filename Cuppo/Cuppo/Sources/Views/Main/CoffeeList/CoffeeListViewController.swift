@@ -72,7 +72,7 @@ class CoffeeListViewController: BaseController {
         let storyboard = UIStoryboard(name: "Coffee", bundle: nil)
         guard let CardVC = storyboard.instantiateViewController(identifier: "CardSB") as? CardViewController else { return }
         CardVC.setupData(data: viewModel.getCardData(idx: selectIdx))
-//        CardVC.modalPresentationStyle = .fullScreen
+        CardVC.modalPresentationStyle = .fullScreen
         self.present(CardVC, animated: true, completion: nil)
     }
     
