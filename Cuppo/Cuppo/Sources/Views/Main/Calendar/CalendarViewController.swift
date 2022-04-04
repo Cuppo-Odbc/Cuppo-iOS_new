@@ -78,13 +78,16 @@ class CalendarViewController: BaseController {
         }
     }
     
-    /* 화면전환 */
-    func moveToVC(selectIdx: Int){
-        let storyboard = UIStoryboard(name: "Coffee", bundle: nil)
-        guard let CoffeeVC = storyboard.instantiateViewController(identifier: "CoffeeSB") as? CoffeeViewController else { return }
-        CoffeeVC.id = selectIdx
-        CoffeeVC.modalPresentationStyle = .fullScreen
-        self.present(CoffeeVC, animated: true, completion: nil)
+    /* 화면전환 */    
+    func moveToVC(SBName: String, SBId: String ,VCName: String){
+        let storyboard = UIStoryboard(name: SBName, bundle: nil)
+        let VCName = storyboard.instantiateViewController(identifier: SBId)
+        self.present(VCName, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(VCName, animated: true)
+    }
+    
+    func moveToVC2(selectIdx: Int){
+        
     }
     
 }

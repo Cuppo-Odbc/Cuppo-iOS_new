@@ -8,6 +8,8 @@
 import Foundation
 
 class CardViewModel {
+    let cardDataManger = CardService.shared
+    
     var cardInfo: Observable2<Card> = Observable2(value: Card())
     
     // 카드 고유의 아이디 PK
@@ -31,11 +33,9 @@ class CardViewModel {
     
     // 삭제
     func deleteCard(){
-        // API
-    }
-    
-    // 수정
-    func modifyCard(){
+        cardDataManger.requestDeleteCard(cardId: cardId) { response in
+            print(response)
+        }
         // API
     }
     

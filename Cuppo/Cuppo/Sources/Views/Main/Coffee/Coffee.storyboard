@@ -441,10 +441,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="mYY-HQ-4Bm"/>
                     <connections>
+                        <outlet property="closeButton" destination="MMG-bz-ziW" id="tHF-bR-DIz"/>
                         <outlet property="coffeeImageView" destination="Usb-2E-S2i" id="JFD-Ce-lE6"/>
                         <outlet property="contentLabel" destination="jDR-RF-CeU" id="bKh-IP-Y4Q"/>
                         <outlet property="dateLabel" destination="czV-f9-1OH" id="8nN-Ik-u4i"/>
                         <outlet property="menuButton" destination="rPB-Tp-ynn" id="WcT-6Z-WRr"/>
+                        <outlet property="rootView" destination="wZg-ab-cGG" id="9by-Gl-Rzd"/>
                         <outlet property="titleLabel" destination="Pis-Al-rpz" id="nXA-je-ScO"/>
                     </connections>
                 </viewController>

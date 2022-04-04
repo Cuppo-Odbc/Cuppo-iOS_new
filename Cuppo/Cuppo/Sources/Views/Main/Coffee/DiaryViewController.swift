@@ -86,6 +86,7 @@ class DiaryViewController: UIViewController {
         popupView.okButton.isHidden = true
         popupView.popupAlert(firstBtnTitle: "확인", secondBtnTitle: nil, content: "제목과 내용을 입력해주세요.", myView: popupView)
         popupView.delegate = self
+        view.addSubview(popupView)
     }
 }
 
