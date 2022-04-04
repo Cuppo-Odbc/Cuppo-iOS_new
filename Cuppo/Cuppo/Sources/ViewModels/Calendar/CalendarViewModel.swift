@@ -106,7 +106,7 @@ class CalendarViewModel {
             let day = card.date.substring(from: 8, to: 9)
             
             // cellArea의 isExist를 true로 바꾸기
-            if let idx = cellArea.value.firstIndex(where: { $0.dayName == day }) {
+            if let idx = cellArea.value.firstIndex(where: { $0.dayName == String(Int(day)!) }) {
                 cellArea.value[idx].isExist = true
             }
         }
