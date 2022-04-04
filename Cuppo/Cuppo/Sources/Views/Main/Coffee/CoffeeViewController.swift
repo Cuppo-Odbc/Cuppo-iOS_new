@@ -9,7 +9,6 @@ import UIKit
 
 class CoffeeViewController: BaseController {
     
-    var id: Int = -1
     
     @IBAction func dismissButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -17,6 +16,7 @@ class CoffeeViewController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dismissKeyboardWhenTappedAround()
     }
    
 }

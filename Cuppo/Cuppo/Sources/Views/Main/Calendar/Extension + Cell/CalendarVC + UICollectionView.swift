@@ -32,21 +32,9 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
         if target.isTouch {
             //TODO: - 만약 이미 카드가 존재한다면 등록안됨
             if !target.isExist {
-                moveToVC(selectIdx: indexPath.row)
+                moveToVC(SBName: "Coffee", SBId: "CoffeeSB", VCName: "CoffeeVC")
             }else {
-                let popupView = AlertView(frame: view.bounds)
-                popupView.okButton.isHidden = true
-                popupView.popupAlert(firstBtnTitle: "확인", secondBtnTitle: nil, content: "이미 카드가 등록되었습니다.", myView: popupView)
-                popupView.delegate = self
-                view.addSubview(popupView)
-            }
-        } else {
-            if target.dayName != "" {
-                let popupView = AlertView(frame: view.bounds)
-                popupView.okButton.isHidden = true
-                popupView.popupAlert(firstBtnTitle: "확인", secondBtnTitle: nil, content: "카드 등록이 안되는 날짜입니다.", myView: popupView)
-                popupView.delegate = self
-                view.addSubview(popupView)
+                //TODO: - 카드 수정 화면으로? 카드 조회하면으로? 
             }
         }
     }

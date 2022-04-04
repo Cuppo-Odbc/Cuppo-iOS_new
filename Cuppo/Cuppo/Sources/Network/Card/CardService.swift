@@ -53,7 +53,7 @@ class CardService {
     }
     
     // MARK: - 카드 수정
-    func requestModifyCard(cardId:String, para: CardModifyRequest, completion: @escaping (CardModifyResponse)->(Void)){
+    func requestModifyCard(cardId:String, para: CardModifyRequest, completion: @escaping (Card)->(Void)){
         let URL = Constant.BasicURL + "/cards/\(cardId)"
         let HEADER: HTTPHeaders = [
             "accept":        "application/json",
@@ -61,7 +61,7 @@ class CardService {
             "Authorization": "Bearer \(Constant.jwt)"
         ]
     
-        AF.request(URL, method: .patch, parameters: para, encoder: JSONParameterEncoder(), headers: HEADER ).validate().responseDecodable(of:CardModifyResponse.self) { response in
+        AF.request(URL, method: .patch, parameters: para, encoder: JSONParameterEncoder(), headers: HEADER ).validate().responseDecodable(of:Card.self) { response in
             switch response.result {
             case .success(let response) :
                 completion(response)
