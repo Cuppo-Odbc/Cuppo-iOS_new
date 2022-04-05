@@ -11,6 +11,9 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Kyobo Handwriting 2019.otf</string>
+		<string>dovemayo.otf</string>
+		<string>dovemayo_bold.otf</string>
 		<string>Goyang.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>

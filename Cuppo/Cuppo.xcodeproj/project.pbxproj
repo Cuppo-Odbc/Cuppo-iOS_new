@@ -84,6 +84,9 @@
 		A872773427EEE0E300B11132 /* WithdrawalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872773327EEE0E300B11132 /* WithdrawalViewController.swift */; };
 		A872773627EF06E900B11132 /* UserDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872773527EF06E900B11132 /* UserDataCenter.swift */; };
 		A872773927EF0CA500B11132 /* PasswordFindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872773827EF0CA500B11132 /* PasswordFindViewController.swift */; };
+		A881467227FCA81B0052B215 /* Kyobo Handwriting 2019.otf in Resources */ = {isa = PBXBuildFile; fileRef = A881466F27FCA81B0052B215 /* Kyobo Handwriting 2019.otf */; };
+		A881467327FCA81B0052B215 /* dovemayo.otf in Resources */ = {isa = PBXBuildFile; fileRef = A881467027FCA81B0052B215 /* dovemayo.otf */; };
+		A881467427FCA81B0052B215 /* dovemayo_bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A881467127FCA81B0052B215 /* dovemayo_bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -167,6 +170,9 @@
 		A872773327EEE0E300B11132 /* WithdrawalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalViewController.swift; sourceTree = "<group>"; };
 		A872773527EF06E900B11132 /* UserDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCenter.swift; sourceTree = "<group>"; };
 		A872773827EF0CA500B11132 /* PasswordFindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFindViewController.swift; sourceTree = "<group>"; };
+		A881466F27FCA81B0052B215 /* Kyobo Handwriting 2019.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kyobo Handwriting 2019.otf"; sourceTree = "<group>"; };
+		A881467027FCA81B0052B215 /* dovemayo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dovemayo.otf; sourceTree = "<group>"; };
+		A881467127FCA81B0052B215 /* dovemayo_bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dovemayo_bold.otf; sourceTree = "<group>"; };
 		D13EC5D2DA38B7852FD05532 /* Pods_Cuppo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cuppo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -242,6 +248,9 @@
 		9F253EBC27D71AC10010C1E6 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				A881467127FCA81B0052B215 /* dovemayo_bold.otf */,
+				A881467027FCA81B0052B215 /* dovemayo.otf */,
+				A881466F27FCA81B0052B215 /* Kyobo Handwriting 2019.otf */,
 				9F253EC227D71E470010C1E6 /* Goyang.otf */,
 			);
 			name = Fonts;
@@ -667,14 +676,17 @@
 			files = (
 				9F7D540C27F3062400D75CD0 /* AlertView.xib in Resources */,
 				9F253EC627D72CA70010C1E6 /* Coffee.storyboard in Resources */,
+				A881467427FCA81B0052B215 /* dovemayo_bold.otf in Resources */,
 				9F253EAB27D70BBB0010C1E6 /* Calendar.storyboard in Resources */,
 				9F253EAD27D70BCC0010C1E6 /* CoffeeList.storyboard in Resources */,
 				9F81962F27D64C0400FF42BA /* LaunchScreen.storyboard in Resources */,
 				9F7D544D27FB2C5F00D75CD0 /* DropDownView.xib in Resources */,
+				A881467227FCA81B0052B215 /* Kyobo Handwriting 2019.otf in Resources */,
 				9F81962C27D64C0300FF42BA /* Assets.xcassets in Resources */,
 				9F81962A27D64C0200FF42BA /* TabBar.storyboard in Resources */,
 				9F253ECA27D7A5870010C1E6 /* Goyang.otf in Resources */,
 				9F253EAF27D70BD40010C1E6 /* Setting.storyboard in Resources */,
+				A881467327FCA81B0052B215 /* dovemayo.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
