@@ -35,6 +35,7 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
                 moveToVC(SBName: "Coffee", SBId: "CoffeeSB", VCName: "CoffeeVC")
             }else {
                 //TODO: - 카드 조회하면으로?
+                print("G")
             }
         }
     }

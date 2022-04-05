@@ -55,6 +55,7 @@
 		9F7D545627FBFA9E00D75CD0 /* CombinationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D545527FBFA9E00D75CD0 /* CombinationResponse.swift */; };
 		9F7D545827FC05A900D75CD0 /* IngredientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D545727FC05A900D75CD0 /* IngredientResponse.swift */; };
 		9F7D545A27FC072600D75CD0 /* NoIngredientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D545927FC072600D75CD0 /* NoIngredientResponse.swift */; };
+		9F7D545D27FC25EE00D75CD0 /* CoffeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D545C27FC25EE00D75CD0 /* CoffeeViewModel.swift */; };
 		9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962227D64C0200FF42BA /* AppDelegate.swift */; };
 		9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962427D64C0200FF42BA /* SceneDelegate.swift */; };
 		9F81962A27D64C0200FF42BA /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962827D64C0200FF42BA /* TabBar.storyboard */; };
@@ -132,6 +133,7 @@
 		9F7D545527FBFA9E00D75CD0 /* CombinationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationResponse.swift; sourceTree = "<group>"; };
 		9F7D545727FC05A900D75CD0 /* IngredientResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientResponse.swift; sourceTree = "<group>"; };
 		9F7D545927FC072600D75CD0 /* NoIngredientResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoIngredientResponse.swift; sourceTree = "<group>"; };
+		9F7D545C27FC25EE00D75CD0 /* CoffeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeViewModel.swift; sourceTree = "<group>"; };
 		9F81961F27D64C0200FF42BA /* Cuppo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuppo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F81962227D64C0200FF42BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F81962427D64C0200FF42BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 		9F7D541B27F73C0000D75CD0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9F7D545B27FC25CD00D75CD0 /* Coffee */,
 				9F7D544E27FB677F00D75CD0 /* Diary */,
 				9F7D544027FADC7300D75CD0 /* Card */,
 				9F7D543327FAC2F800D75CD0 /* CardList */,
@@ -392,6 +395,14 @@
 				9F7D545927FC072600D75CD0 /* NoIngredientResponse.swift */,
 			);
 			path = Combination;
+			sourceTree = "<group>";
+		};
+		9F7D545B27FC25CD00D75CD0 /* Coffee */ = {
+			isa = PBXGroup;
+			children = (
+				9F7D545C27FC25EE00D75CD0 /* CoffeeViewModel.swift */,
+			);
+			path = Coffee;
 			sourceTree = "<group>";
 		};
 		9F81961627D64C0200FF42BA = {
@@ -731,6 +742,7 @@
 				9F7D544227FADC7D00D75CD0 /* CardViewModel.swift in Sources */,
 				9F7D545027FB679700D75CD0 /* DiaryViewModel.swift in Sources */,
 				9F6AAA0727E78B6B008CE72F /* TabBarViewController.swift in Sources */,
+				9F7D545D27FC25EE00D75CD0 /* CoffeeViewModel.swift in Sources */,
 				9F7D543527FAC32F00D75CD0 /* CardListViewModel.swift in Sources */,
 				9F7D542527F7478D00D75CD0 /* Observable.swift in Sources */,
 				9F7D543C27FAD49300D75CD0 /* CardViewController.swift in Sources */,

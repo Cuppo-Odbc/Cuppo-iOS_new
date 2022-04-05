@@ -6,6 +6,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -31,7 +32,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6R4-VJ-3CU">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqF-kX-hVj">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqF-kX-hVj">
                                                 <rect key="frame" x="0.0" y="0.0" width="103.5" height="50"/>
                                                 <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -39,7 +40,7 @@
                                                     <color key="titleColor" name="cuppoColor3"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgB-JW-MCu">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgB-JW-MCu">
                                                 <rect key="frame" x="103.5" y="0.0" width="103.5" height="50"/>
                                                 <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -47,7 +48,7 @@
                                                     <color key="titleColor" name="cuppoColor3"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcZ-cF-Bq6">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcZ-cF-Bq6">
                                                 <rect key="frame" x="207" y="0.0" width="103.5" height="50"/>
                                                 <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -55,7 +56,7 @@
                                                     <color key="titleColor" name="cuppoColor3"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfR-Ws-MWU">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfR-Ws-MWU">
                                                 <rect key="frame" x="310.5" y="0.0" width="103.5" height="50"/>
                                                 <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -68,12 +69,52 @@
                                             <constraint firstAttribute="height" constant="50" id="qAK-cB-nqB"/>
                                         </constraints>
                                     </stackView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mTt-K6-ZvA">
+                                        <rect key="frame" x="30" y="60" width="354" height="250"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="15" id="7rP-aY-Yv1">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ingredientCell" id="abm-la-zlW" customClass="IngredientCell" customModule="Cuppo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MOG-dZ-Jt0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chojar" translatesAutoresizingMaskIntoConstraints="NO" id="hiL-1e-ppa">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="cuppoColor11"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="hiL-1e-ppa" secondAttribute="trailing" id="KoK-0m-MO5"/>
+                                                        <constraint firstItem="hiL-1e-ppa" firstAttribute="leading" secondItem="MOG-dZ-Jt0" secondAttribute="leading" id="QaN-Er-p79"/>
+                                                        <constraint firstAttribute="bottom" secondItem="hiL-1e-ppa" secondAttribute="bottom" id="VbT-ef-UzJ"/>
+                                                        <constraint firstItem="hiL-1e-ppa" firstAttribute="top" secondItem="MOG-dZ-Jt0" secondAttribute="top" id="aHl-os-kQk"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <connections>
+                                                    <outlet property="cellView" destination="MOG-dZ-Jt0" id="wJs-jd-9dX"/>
+                                                    <outlet property="contentView" destination="MOG-dZ-Jt0" id="mlu-aP-8LI"/>
+                                                    <outlet property="ingredientImageView" destination="hiL-1e-ppa" id="Jtt-FI-YhJ"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="mTt-K6-ZvA" secondAttribute="trailing" constant="30" id="AkJ-sl-gUf"/>
+                                    <constraint firstItem="mTt-K6-ZvA" firstAttribute="top" secondItem="6R4-VJ-3CU" secondAttribute="bottom" constant="10" id="Bb8-kJ-j9z"/>
                                     <constraint firstAttribute="trailing" secondItem="6R4-VJ-3CU" secondAttribute="trailing" id="IBh-R0-1pC"/>
                                     <constraint firstItem="6R4-VJ-3CU" firstAttribute="top" secondItem="TZC-j8-h73" secondAttribute="top" id="JWB-iX-NX3"/>
                                     <constraint firstAttribute="height" constant="310" id="Ol5-B8-k8A"/>
+                                    <constraint firstAttribute="bottom" secondItem="mTt-K6-ZvA" secondAttribute="bottom" id="SU2-7S-OSX"/>
                                     <constraint firstItem="6R4-VJ-3CU" firstAttribute="leading" secondItem="TZC-j8-h73" secondAttribute="leading" id="VXw-Nb-dkr"/>
+                                    <constraint firstItem="mTt-K6-ZvA" firstAttribute="leading" secondItem="TZC-j8-h73" secondAttribute="leading" constant="30" id="qFc-YA-wrE"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWD-iG-zOK">
@@ -103,6 +144,9 @@
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="checkButton"/>
+                                        <connections>
+                                            <action selector="nextButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kVe-JT-giw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAc-ia-XsL">
                                         <rect key="frame" x="30" y="22" width="17" height="15"/>
@@ -163,6 +207,15 @@
                             <constraint firstItem="p21-Fh-nuy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="s6I-qU-eeG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="coffeeImageView" destination="Suq-uA-NV5" id="y13-PE-Vvw"/>
+                        <outlet property="collectionView" destination="mTt-K6-ZvA" id="KE3-Jg-sFD"/>
+                        <outlet property="milkButton" destination="IgB-JW-MCu" id="Lhp-q7-c4I"/>
+                        <outlet property="syrupButton" destination="AcZ-cF-Bq6" id="TgH-Hq-YdP"/>
+                        <outlet property="temperatureButton" destination="fqF-kX-hVj" id="NLI-RI-4h1"/>
+                        <outlet property="titleTextField" destination="RyX-fR-crc" id="mDA-sy-uSt"/>
+                        <outlet property="whippingButton" destination="WfR-Ws-MWU" id="iUk-6d-ges"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -498,11 +551,15 @@
         <image name="backButton" width="17" height="15.5"/>
         <image name="basicLightMode" width="375" height="812"/>
         <image name="checkButton" width="18" height="13"/>
+        <image name="chojar" width="1000" height="1000"/>
         <image name="closeButton" width="15" height="15"/>
         <image name="hotame" width="1000" height="1000"/>
         <image name="menu" width="26" height="26"/>
         <namedColor name="cuppoColor1">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="cuppoColor11">
+            <color red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="cuppoColor3">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -51,7 +51,6 @@ class CardViewController: UIViewController {
     
     // MARK: - UIComponents
     let dropDownView = DropDownView(frame: .zero)
-    
     var screenShotImgView: UIImage?
     @IBOutlet var rootView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
