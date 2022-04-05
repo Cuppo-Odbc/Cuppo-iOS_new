@@ -21,7 +21,7 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
 
         cell.dayLabel.text = target.dayName
         cell.coffeeImage.isHidden = !target.isExist
-        cell.dayLabel.textColor = target.isTouch ? UIColor(named: "cuppoColor1") : UIColor(named: "cuppoColor3")
+        cell.dayLabel.textColor = target.isTouch ? UIColor(named: "cuppoColor1") : UIColor(named: "cuppoColor8")
         
         return cell
     }
@@ -34,7 +34,7 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
             if !target.isExist {
                 moveToVC(SBName: "Coffee", SBId: "CoffeeSB", VCName: "CoffeeVC")
             }else {
-                //TODO: - 카드 수정 화면으로? 카드 조회하면으로? 
+                //TODO: - 카드 조회하면으로?
             }
         }
     }

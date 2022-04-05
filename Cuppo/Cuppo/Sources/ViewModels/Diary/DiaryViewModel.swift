@@ -72,7 +72,6 @@ class DiaryViewModel {
     func requestModifyCardAPI(){
         let para: CardModifyRequest = CardModifyRequest(title: getCardTitle(), content: getCardContent(), coffee: getCardImageURL())
         cardDataManger.requestModifyCard(cardId: cardId, para: para) { response in
-            print("엥?")
             self.cardInfo.value = response
         }
     }
