@@ -6,6 +6,25 @@
 //
 
 import UIKit
+
+// 삭제
+struct AllowTest {
+    let combination: AllowCombination
+    let allowed: AllowAllowed
+}
+
+struct AllowCombination {
+    let temperature: String
+    let milk: String
+    let syrup: String
+}
+
+struct AllowAllowed {
+    let decoration: [String]
+}
+
+
+
 // 삭제
 struct CombinationTest {
     let name: String
@@ -38,6 +57,7 @@ struct CombinationModel {
 class CoffeeViewModel {
     
     var combinationTest: [CombinationTest] = [CombinationTest]() // 삭제
+    var allowTest: [AllowTest] = [AllowTest]() // 삭제
     
     let combinationService = CombinationService.shared
     
@@ -72,6 +92,52 @@ class CoffeeViewModel {
         combinationTest.append(CombinationTest(name: "iceame_ice", image:  "https://storage.googleapis.com/cuppo-test.appspot.com/drinks/iceame_ice.png", combination: IngredientInCombinationTest(temperature: "ice", milk: "none", syrup: "none", decoration: "ice")))
         combinationTest.append(CombinationTest(name: "hotlatte", image:  "https://storage.googleapis.com/cuppo-test.appspot.com/drinks/hotlatte.png", combination: IngredientInCombinationTest(temperature: "hot", milk: "milk", syrup: "none", decoration: "none")))
     }
+    
+    /* 불가능 조합 API  */ // 삭제
+    func requestAllowed(){
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "none", syrup: "none"), allowed: AllowAllowed(decoration: ["none"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "none", syrup: "none"), allowed: AllowAllowed(decoration: ["ice","none"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk", syrup: "none"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk", syrup: "none"), allowed: AllowAllowed(decoration: ["none","ice"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk_foam", syrup: "none"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk_foam", syrup: "none"), allowed: AllowAllowed(decoration: ["none","whipped_cream","ice"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "none", syrup: "green_tee_powder"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk", syrup: "green_tee_powder"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk_foam", syrup: "green_tee_powder"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "none", syrup: "green_tee_powder"), allowed: AllowAllowed(decoration: ["none","ice"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk", syrup: "green_tee_powder"), allowed: AllowAllowed(decoration: ["none","ice"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk_foam", syrup: "green_tee_powder"), allowed: AllowAllowed(decoration: ["none","ice"])))
+        
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "none", syrup: "strawberry_powder"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk", syrup: "strawberry_powder"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk_foam", syrup: "strawberry_powder"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "none", syrup: "strawberry_powder"), allowed: AllowAllowed(decoration: ["none","ice"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk", syrup: "strawberry_powder"), allowed: AllowAllowed(decoration: ["none","ice"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk_foam", syrup: "strawberry_powder"), allowed: AllowAllowed(decoration: ["none","ice"])))
+        
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "none", syrup: "caramel_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk", syrup: "caramel_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk_foam", syrup: "caramel_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "none", syrup: "caramel_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk", syrup: "caramel_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk_foam", syrup: "caramel_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
+        
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "none", syrup: "chocolate_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk", syrup: "chocolate_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk_foam", syrup: "chocolate_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "none", syrup: "chocolate_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk", syrup: "chocolate_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk_foam", syrup: "chocolate_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
+        
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "none", syrup: "mocha_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk", syrup: "mocha_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk_foam", syrup: "mocha_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "none", syrup: "mocha_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk", syrup: "mocha_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
+        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk_foam", syrup: "mocha_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
+        
+    }
+    
     
     // 삭제
     func getCombinationTest() -> [CombinationTest] {
