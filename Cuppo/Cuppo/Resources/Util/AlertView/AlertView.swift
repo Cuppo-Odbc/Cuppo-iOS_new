@@ -22,6 +22,7 @@ class AlertView: UIView {
     
     // MARK: - UIComponents
     @IBOutlet var customView: UIView!
+    
     @IBOutlet weak var yearPickerView: UIPickerView!
     @IBOutlet weak var monthPickerView: UIPickerView!
     @IBOutlet weak var calendarView: UIView!
@@ -43,7 +44,7 @@ class AlertView: UIView {
     // MARK: - LifeCycle
     
     override func layoutSubviews() {
-        setButton()
+        setLayer()
         setPickerView()
     }
     
@@ -75,13 +76,19 @@ class AlertView: UIView {
     }
     
     // 버튼 테두리 생성
-    func setButton(){
+    func setLayer(){
+        calendarView.layer.borderWidth = 0.5
+        calendarView.layer.borderColor = UIColor(named: "cuppoColor10")?.cgColor
+        popupView.layer.borderWidth = 0.5
+        popupView.layer.borderColor = UIColor(named: "cuppoColor10")?.cgColor
+        
         cancelButton.layer.borderWidth = 0.5
-        cancelButton.layer.borderColor = UIColor.lightGray.cgColor
+        cancelButton.layer.borderColor = UIColor(named: "cuppoColor10")?.cgColor
         
         okButton.layer.borderWidth = 0.5
-        okButton.layer.borderColor = UIColor.lightGray.cgColor
+        okButton.layer.borderColor = UIColor(named: "cuppoColor10")?.cgColor
     }
+    
     
     // PickerView 설정
     func setPickerView(){
@@ -105,8 +112,8 @@ class AlertView: UIView {
         let upLine = UIView(frame: CGRect(x: -8, y: 0, width: selectedPickerView.layer.frame.width, height: 1.5))
         let underLine = UIView(frame: CGRect(x: -8, y: 42, width: selectedPickerView.layer.frame.width, height: 1.5))
         
-        upLine.backgroundColor = .black
-        underLine.backgroundColor = .black
+        upLine.backgroundColor = UIColor(named: "cuppoColor1")
+        underLine.backgroundColor = UIColor(named: "cuppoColor1")
         
         selectedPickerView.subviews[1].addSubview(upLine)
         selectedPickerView.subviews[1].addSubview(underLine)

@@ -40,7 +40,6 @@ extension CardViewController: DropDownProtocol {
         dropDownView.removeFromSuperview()
         // TODO: - 삭제하시겠습니까란 팝업창을 띄우고 삭제버튼을 누르면 진행, 취소는 그냥 없던 일로?
         showPopupView()
-        print("삭제")
     }
     
 }
@@ -52,7 +51,6 @@ class CardViewController: UIViewController {
     
     // MARK: - UIComponents
     let dropDownView = DropDownView(frame: .zero)
-    
     var screenShotImgView: UIImage?
     @IBOutlet var rootView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
