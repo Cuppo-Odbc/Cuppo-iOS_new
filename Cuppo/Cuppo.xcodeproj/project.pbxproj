@@ -56,6 +56,9 @@
 		9F7D545827FC05A900D75CD0 /* IngredientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D545727FC05A900D75CD0 /* IngredientResponse.swift */; };
 		9F7D545A27FC072600D75CD0 /* NoIngredientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D545927FC072600D75CD0 /* NoIngredientResponse.swift */; };
 		9F7D545D27FC25EE00D75CD0 /* CoffeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D545C27FC25EE00D75CD0 /* CoffeeViewModel.swift */; };
+		9F7D545F27FC3CE000D75CD0 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D545E27FC3CE000D75CD0 /* CALayer.swift */; };
+		9F7D546327FC4ABA00D75CD0 /* CoffeeVC + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D546227FC4ABA00D75CD0 /* CoffeeVC + CollectionView.swift */; };
+		9F7D546527FC4AD300D75CD0 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D546427FC4AD300D75CD0 /* IngredientCell.swift */; };
 		9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962227D64C0200FF42BA /* AppDelegate.swift */; };
 		9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962427D64C0200FF42BA /* SceneDelegate.swift */; };
 		9F81962A27D64C0200FF42BA /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962827D64C0200FF42BA /* TabBar.storyboard */; };
@@ -134,6 +137,9 @@
 		9F7D545727FC05A900D75CD0 /* IngredientResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientResponse.swift; sourceTree = "<group>"; };
 		9F7D545927FC072600D75CD0 /* NoIngredientResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoIngredientResponse.swift; sourceTree = "<group>"; };
 		9F7D545C27FC25EE00D75CD0 /* CoffeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeViewModel.swift; sourceTree = "<group>"; };
+		9F7D545E27FC3CE000D75CD0 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		9F7D546227FC4ABA00D75CD0 /* CoffeeVC + CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoffeeVC + CollectionView.swift"; sourceTree = "<group>"; };
+		9F7D546427FC4AD300D75CD0 /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		9F81961F27D64C0200FF42BA /* Cuppo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuppo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F81962227D64C0200FF42BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F81962427D64C0200FF42BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -254,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				9F253EC527D72CA70010C1E6 /* Coffee.storyboard */,
-				9F253EC727D72D760010C1E6 /* CoffeeViewController.swift */,
+				9F7D546027FC4A7300D75CD0 /* CoffeeVC */,
 				9F253ECE27DA4C370010C1E6 /* DiaryViewController.swift */,
 				9F7D543B27FAD49300D75CD0 /* CardViewController.swift */,
 			);
@@ -405,6 +411,24 @@
 			path = Coffee;
 			sourceTree = "<group>";
 		};
+		9F7D546027FC4A7300D75CD0 /* CoffeeVC */ = {
+			isa = PBXGroup;
+			children = (
+				9F7D546127FC4A8000D75CD0 /* Extension + Cell */,
+				9F253EC727D72D760010C1E6 /* CoffeeViewController.swift */,
+			);
+			path = CoffeeVC;
+			sourceTree = "<group>";
+		};
+		9F7D546127FC4A8000D75CD0 /* Extension + Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9F7D546227FC4ABA00D75CD0 /* CoffeeVC + CollectionView.swift */,
+				9F7D546427FC4AD300D75CD0 /* IngredientCell.swift */,
+			);
+			path = "Extension + Cell";
+			sourceTree = "<group>";
+		};
 		9F81961627D64C0200FF42BA = {
 			isa = PBXGroup;
 			children = (
@@ -484,6 +508,7 @@
 				9F253EC027D71CA60010C1E6 /* UIFont.swift */,
 				9F7D542D27FA228700D75CD0 /* UIString.swift */,
 				9F7D542F27FA34F400D75CD0 /* UIDate.swift */,
+				9F7D545E27FC3CE000D75CD0 /* CALayer.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -736,6 +761,7 @@
 				A8373A6F27DDC12700BA0442 /* LoginViewModel.swift in Sources */,
 				9F253EBF27D71B4C0010C1E6 /* ViewModelProtocol.swift in Sources */,
 				9F253EC127D71CA60010C1E6 /* UIFont.swift in Sources */,
+				9F7D546327FC4ABA00D75CD0 /* CoffeeVC + CollectionView.swift in Sources */,
 				A8373A7227DDE01400BA0442 /* LoginService.swift in Sources */,
 				A8373A8527DDFE4600BA0442 /* SignUpService.swift in Sources */,
 				9F253ECF27DA4C370010C1E6 /* DiaryViewController.swift in Sources */,
@@ -743,6 +769,7 @@
 				9F7D545027FB679700D75CD0 /* DiaryViewModel.swift in Sources */,
 				9F6AAA0727E78B6B008CE72F /* TabBarViewController.swift in Sources */,
 				9F7D545D27FC25EE00D75CD0 /* CoffeeViewModel.swift in Sources */,
+				9F7D545F27FC3CE000D75CD0 /* CALayer.swift in Sources */,
 				9F7D543527FAC32F00D75CD0 /* CardListViewModel.swift in Sources */,
 				9F7D542527F7478D00D75CD0 /* Observable.swift in Sources */,
 				9F7D543C27FAD49300D75CD0 /* CardViewController.swift in Sources */,
@@ -750,6 +777,7 @@
 				A8373A8127DDF96F00BA0442 /* SignUpViewController.swift in Sources */,
 				A85A981227EE19DD003DFC0F /* AccountManagementViewController.swift in Sources */,
 				9F253EB427D712C60010C1E6 /* CoffeeListViewController.swift in Sources */,
+				9F7D546527FC4AD300D75CD0 /* IngredientCell.swift in Sources */,
 				9F7D542127F7465500D75CD0 /* DayModel.swift in Sources */,
 				9F7D545627FBFA9E00D75CD0 /* CombinationResponse.swift in Sources */,
 				9F7D544827FAF82B00D75CD0 /* CardModifyRequest.swift in Sources */,

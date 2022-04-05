@@ -6,5 +6,18 @@
 //
 
 struct CombinationResponse: Decodable {
-    
+    let result: [Combination]
+}
+
+struct Combination: Decodable {
+    let name: String
+    let image: String
+    let combination: [IngredientInCombination]
+}
+
+struct IngredientInCombination: Decodable {
+    let temperature: String
+    let milk: String
+    let syrup: String
+    let decoration: String
 }

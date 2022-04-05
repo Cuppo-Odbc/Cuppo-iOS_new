@@ -30,47 +30,139 @@
                                 <rect key="frame" x="0.0" y="552" width="414" height="310"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6R4-VJ-3CU">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                         <subviews>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqF-kX-hVj">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="50"/>
-                                                <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="온도">
-                                                    <color key="titleColor" name="cuppoColor3"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgB-JW-MCu">
-                                                <rect key="frame" x="103.5" y="0.0" width="103.5" height="50"/>
-                                                <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="우유">
-                                                    <color key="titleColor" name="cuppoColor3"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcZ-cF-Bq6">
-                                                <rect key="frame" x="207" y="0.0" width="103.5" height="50"/>
-                                                <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="시럽">
-                                                    <color key="titleColor" name="cuppoColor3"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfR-Ws-MWU">
-                                                <rect key="frame" x="310.5" y="0.0" width="103.5" height="50"/>
-                                                <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="휘핑">
-                                                    <color key="titleColor" name="cuppoColor3"/>
-                                                </state>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="huf-t5-uzd">
+                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqF-kX-hVj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="38.5"/>
+                                                        <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="온도">
+                                                            <color key="titleColor" name="cuppoColor3"/>
+                                                        </state>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OYC-t6-DHp">
+                                                        <rect key="frame" x="0.0" y="38.5" width="103.5" height="1.5"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMP-Ic-VeM">
+                                                                <rect key="frame" x="37" y="0.0" width="30" height="1.5"/>
+                                                                <color key="backgroundColor" name="cuppoColor1"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1.5" id="KBM-y5-0xE"/>
+                                                                    <constraint firstAttribute="width" constant="30" id="uZV-KD-9wC"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="mMP-Ic-VeM" firstAttribute="centerY" secondItem="OYC-t6-DHp" secondAttribute="centerY" id="1qA-AV-UhJ"/>
+                                                            <constraint firstItem="mMP-Ic-VeM" firstAttribute="centerX" secondItem="OYC-t6-DHp" secondAttribute="centerX" id="7fC-As-RQ5"/>
+                                                            <constraint firstAttribute="height" constant="1.5" id="jKG-3d-JeO"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tYr-3F-2dU">
+                                                <rect key="frame" x="103.5" y="0.0" width="103.5" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDe-8o-ZYU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="38.5"/>
+                                                        <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="우유">
+                                                            <color key="titleColor" name="cuppoColor3"/>
+                                                        </state>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHw-F6-NDB">
+                                                        <rect key="frame" x="0.0" y="38.5" width="103.5" height="1.5"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dur-Uh-42C">
+                                                                <rect key="frame" x="37" y="0.0" width="30" height="1.5"/>
+                                                                <color key="backgroundColor" name="cuppoColor1"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="30" id="Ihm-wj-NY6"/>
+                                                                    <constraint firstAttribute="height" constant="1.5" id="bb0-WD-elq"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="dur-Uh-42C" firstAttribute="centerX" secondItem="kHw-F6-NDB" secondAttribute="centerX" id="RUl-7h-c67"/>
+                                                            <constraint firstAttribute="height" constant="1.5" id="emh-qo-cVR"/>
+                                                            <constraint firstItem="dur-Uh-42C" firstAttribute="centerY" secondItem="kHw-F6-NDB" secondAttribute="centerY" id="jZb-xG-R56"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9f3-NM-op2">
+                                                <rect key="frame" x="207" y="0.0" width="103.5" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omu-9Q-0nc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="38.5"/>
+                                                        <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="시럽">
+                                                            <color key="titleColor" name="cuppoColor3"/>
+                                                        </state>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npS-L1-QCw">
+                                                        <rect key="frame" x="0.0" y="38.5" width="103.5" height="1.5"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9y-JZ-L2B">
+                                                                <rect key="frame" x="37" y="0.0" width="30" height="1.5"/>
+                                                                <color key="backgroundColor" name="cuppoColor1"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="30" id="Blw-Bk-wZ2"/>
+                                                                    <constraint firstAttribute="height" constant="1.5" id="MLt-vy-kgr"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1.5" id="3Sd-Oh-hU5"/>
+                                                            <constraint firstItem="h9y-JZ-L2B" firstAttribute="centerX" secondItem="npS-L1-QCw" secondAttribute="centerX" id="i7h-UY-Xof"/>
+                                                            <constraint firstItem="h9y-JZ-L2B" firstAttribute="centerY" secondItem="npS-L1-QCw" secondAttribute="centerY" id="w8f-Rf-nNJ"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VxS-HW-TxC">
+                                                <rect key="frame" x="310.5" y="0.0" width="103.5" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vN-ei-LWh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="38.5"/>
+                                                        <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="17"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="휘핑">
+                                                            <color key="titleColor" name="cuppoColor3"/>
+                                                        </state>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdg-mO-CxW">
+                                                        <rect key="frame" x="0.0" y="38.5" width="103.5" height="1.5"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLy-Zf-VKt">
+                                                                <rect key="frame" x="37" y="0.0" width="30" height="1.5"/>
+                                                                <color key="backgroundColor" name="cuppoColor1"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="30" id="UEo-kt-vNx"/>
+                                                                    <constraint firstAttribute="height" constant="1.5" id="htI-4e-vMi"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="uLy-Zf-VKt" firstAttribute="centerY" secondItem="pdg-mO-CxW" secondAttribute="centerY" id="Gza-j9-Esy"/>
+                                                            <constraint firstAttribute="height" constant="1.5" id="hVt-yM-17l"/>
+                                                            <constraint firstItem="uLy-Zf-VKt" firstAttribute="centerX" secondItem="pdg-mO-CxW" secondAttribute="centerX" id="nbB-Ab-8rd"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="qAK-cB-nqB"/>
+                                            <constraint firstAttribute="height" constant="40" id="qAK-cB-nqB"/>
                                         </constraints>
                                     </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mTt-K6-ZvA">
-                                        <rect key="frame" x="30" y="60" width="354" height="250"/>
+                                        <rect key="frame" x="30" y="65" width="354" height="245"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="15" id="7rP-aY-Yv1">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -108,7 +200,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="mTt-K6-ZvA" secondAttribute="trailing" constant="30" id="AkJ-sl-gUf"/>
-                                    <constraint firstItem="mTt-K6-ZvA" firstAttribute="top" secondItem="6R4-VJ-3CU" secondAttribute="bottom" constant="10" id="Bb8-kJ-j9z"/>
+                                    <constraint firstItem="mTt-K6-ZvA" firstAttribute="top" secondItem="6R4-VJ-3CU" secondAttribute="bottom" constant="25" id="Bb8-kJ-j9z"/>
                                     <constraint firstAttribute="trailing" secondItem="6R4-VJ-3CU" secondAttribute="trailing" id="IBh-R0-1pC"/>
                                     <constraint firstItem="6R4-VJ-3CU" firstAttribute="top" secondItem="TZC-j8-h73" secondAttribute="top" id="JWB-iX-NX3"/>
                                     <constraint firstAttribute="height" constant="310" id="Ol5-B8-k8A"/>
@@ -210,11 +302,15 @@
                     <connections>
                         <outlet property="coffeeImageView" destination="Suq-uA-NV5" id="y13-PE-Vvw"/>
                         <outlet property="collectionView" destination="mTt-K6-ZvA" id="KE3-Jg-sFD"/>
-                        <outlet property="milkButton" destination="IgB-JW-MCu" id="Lhp-q7-c4I"/>
-                        <outlet property="syrupButton" destination="AcZ-cF-Bq6" id="TgH-Hq-YdP"/>
+                        <outlet property="milkButton" destination="CDe-8o-ZYU" id="JTF-BP-3kt"/>
+                        <outlet property="milkUnderLine" destination="dur-Uh-42C" id="5Or-yi-Gro"/>
+                        <outlet property="syrupButton" destination="Omu-9Q-0nc" id="zg4-5X-2V1"/>
+                        <outlet property="syrupUnderLine" destination="h9y-JZ-L2B" id="NLk-fh-c3O"/>
                         <outlet property="temperatureButton" destination="fqF-kX-hVj" id="NLI-RI-4h1"/>
+                        <outlet property="temperatureUnderLine" destination="mMP-Ic-VeM" id="Hbd-HK-2kD"/>
                         <outlet property="titleTextField" destination="RyX-fR-crc" id="mDA-sy-uSt"/>
-                        <outlet property="whippingButton" destination="WfR-Ws-MWU" id="iUk-6d-ges"/>
+                        <outlet property="whippingButton" destination="2vN-ei-LWh" id="lnG-gG-1yi"/>
+                        <outlet property="whippingUnderLine" destination="uLy-Zf-VKt" id="VOD-TB-0Oh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
