@@ -29,11 +29,31 @@ class LetterStyleViewController: BaseController {
     lazy var systemFontButton = RadioViewButton().then{
         $0.setTitleLabel(text: "시스템 폰트", font: .TTFont(type: .GFReg, size: 14))
         $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(systemFontButtonTapped(_:))))
+        $0.tag = 1
     }
     
     lazy var basicFontButton = RadioViewButton().then{
         $0.setTitleLabel(text: "기본 글씨체", font: .TTFont(type: .GFReg, size: 14))
         $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(basicFontButtonTapped(_:))))
+        $0.tag = 2
+    }
+    
+    lazy var dovemayoFontButton = RadioViewButton().then{
+        $0.setTitleLabel(text: "Dovemayo", font: .TTFont(type: .dovemayo, size: 14))
+        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(basicFontButtonTapped(_:))))
+        $0.tag = 3
+    }
+    
+    lazy var dovemayoBoldFontButton = RadioViewButton().then{
+        $0.setTitleLabel(text: "DovemayoBold", font: .TTFont(type: .dovemayoBold, size: 14))
+        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(basicFontButtonTapped(_:))))
+        $0.tag = 4
+    }
+    
+    lazy var kyoboFontButton = RadioViewButton().then{
+        $0.setTitleLabel(text: "kyoboHandwriting2019", font: .TTFont(type: .kyoboHandwriting2019, size: 14))
+        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(basicFontButtonTapped(_:))))
+        $0.tag = 5
     }
     
     lazy var fontStackView = UIStackView().then{
@@ -42,6 +62,9 @@ class LetterStyleViewController: BaseController {
         $0.distribution = .equalSpacing
         $0.addArrangedSubview(systemFontButton)
         $0.addArrangedSubview(basicFontButton)
+        $0.addArrangedSubview(dovemayoFontButton)
+        $0.addArrangedSubview(dovemayoBoldFontButton)
+        $0.addArrangedSubview(kyoboFontButton)
     }
     
     //MARK: - Life Cycle
@@ -61,10 +84,37 @@ class LetterStyleViewController: BaseController {
         case .systemFont:
             self.systemFontButton.radioButton.isSelected = true
             self.basicFontButton.radioButton.isSelected = false
+            self.dovemayoFontButton.radioButton.isSelected = false
+            self.dovemayoBoldFontButton.radioButton.isSelected = false
+            self.kyoboFontButton.radioButton.isSelected = false
             break
         case .goyangFont:
             self.systemFontButton.radioButton.isSelected = false
             self.basicFontButton.radioButton.isSelected = true
+            self.dovemayoFontButton.radioButton.isSelected = false
+            self.dovemayoBoldFontButton.radioButton.isSelected = false
+            self.kyoboFontButton.radioButton.isSelected = false
+            break
+        case .dovemayo:
+            self.systemFontButton.radioButton.isSelected = false
+            self.basicFontButton.radioButton.isSelected = false
+            self.dovemayoFontButton.radioButton.isSelected = true
+            self.dovemayoBoldFontButton.radioButton.isSelected = false
+            self.kyoboFontButton.radioButton.isSelected = false
+            break
+        case .dovemayoBold:
+            self.systemFontButton.radioButton.isSelected = false
+            self.basicFontButton.radioButton.isSelected = false
+            self.dovemayoFontButton.radioButton.isSelected = false
+            self.dovemayoBoldFontButton.radioButton.isSelected = true
+            self.kyoboFontButton.radioButton.isSelected = false
+            break
+        case .kyoboHandwriting2019:
+            self.systemFontButton.radioButton.isSelected = false
+            self.basicFontButton.radioButton.isSelected = false
+            self.dovemayoFontButton.radioButton.isSelected = false
+            self.dovemayoBoldFontButton.radioButton.isSelected = false
+            self.kyoboFontButton.radioButton.isSelected = true
             break
         }
     }
@@ -110,7 +160,29 @@ class LetterStyleViewController: BaseController {
     @objc
     func basicFontButtonTapped(_ sender: UITapGestureRecognizer){
         // 폰트설정 and 버튼 속성 변경
-        UserDataCenter.shared.setGlobalFont(type: .goyangFont)
+        switch sender.view?.tag {
+        case 1:
+            UserDataCenter.shared.setGlobalFont(type: .systemFont)
+            break
+        case 2:
+            UserDataCenter.shared.setGlobalFont(type: .goyangFont)
+            break
+        case 3:
+            UserDataCenter.shared.setGlobalFont(type: .dovemayo)
+            break
+        case 4:
+            UserDataCenter.shared.setGlobalFont(type: .dovemayoBold)
+            break
+        case 5:
+            UserDataCenter.shared.setGlobalFont(type: .kyoboHandwriting2019)
+            break
+        case .none:
+            UserDataCenter.shared.setGlobalFont(type: .systemFont)
+            break
+        case .some(_):
+            UserDataCenter.shared.setGlobalFont(type: .systemFont)
+            break
+        }
         
         self.systemFontButton.radioButton.isSelected = false
         self.basicFontButton.radioButton.isSelected = true

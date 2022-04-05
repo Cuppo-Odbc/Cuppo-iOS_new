@@ -21,6 +21,9 @@ enum GlobalAppearanceMode: String {
 enum GlobalFontType: String {
     case systemFont = "systemFont"
     case goyangFont = "goyangFont"
+    case dovemayo = "dovemayo"
+    case dovemayoBold = "dovemayoBold"
+    case kyoboHandwriting2019 = "kyoboHandwriting2019"
 }
 
 class UserDataCenter {
@@ -57,13 +60,31 @@ class UserDataCenter {
     func setGlobalFont(type: GlobalFontType){
         switch type {
         case .systemFont:
-            let font = GlobalFont(isSystemFont: true, isGoyangFont: false)
+            let font = GlobalFont(type: GlobalFontType.systemFont.rawValue)
             let propertyEncoder = try? PropertyListEncoder().encode(font)
             UserDefaults.standard.set(propertyEncoder, forKey: UserDefaultsKeys.globalFont.rawValue)
             UserDefaults.standard.synchronize()
             break
         case .goyangFont:
-            let font = GlobalFont(isSystemFont: false, isGoyangFont: true)
+            let font = GlobalFont(type: GlobalFontType.goyangFont.rawValue)
+            let propertyEncoder = try? PropertyListEncoder().encode(font)
+            UserDefaults.standard.set(propertyEncoder, forKey: UserDefaultsKeys.globalFont.rawValue)
+            UserDefaults.standard.synchronize()
+            break
+        case .dovemayo:
+            let font = GlobalFont(type: GlobalFontType.dovemayo.rawValue)
+            let propertyEncoder = try? PropertyListEncoder().encode(font)
+            UserDefaults.standard.set(propertyEncoder, forKey: UserDefaultsKeys.globalFont.rawValue)
+            UserDefaults.standard.synchronize()
+            break
+        case .dovemayoBold:
+            let font = GlobalFont(type: GlobalFontType.dovemayoBold.rawValue)
+            let propertyEncoder = try? PropertyListEncoder().encode(font)
+            UserDefaults.standard.set(propertyEncoder, forKey: UserDefaultsKeys.globalFont.rawValue)
+            UserDefaults.standard.synchronize()
+            break
+        case .kyoboHandwriting2019:
+            let font = GlobalFont(type: GlobalFontType.kyoboHandwriting2019.rawValue)
             let propertyEncoder = try? PropertyListEncoder().encode(font)
             UserDefaults.standard.set(propertyEncoder, forKey: UserDefaultsKeys.globalFont.rawValue)
             UserDefaults.standard.synchronize()
@@ -85,12 +106,17 @@ class UserDataCenter {
         }
         
         if let font = try? PropertyListDecoder().decode(GlobalFont.self, from: fontData) {
-            if font.isSystemFont { // 시스템 폰트 설정
+            switch font.getFontType() {
+            case .systemFont:
                 return GlobalFontType.systemFont
-            } else if font.isGoyangFont { // 고양 폰트 설정
+            case .goyangFont:
                 return GlobalFontType.goyangFont
-            }else { // 아무 설정도 되지 않은 초기상태라면
-                return GlobalFontType.systemFont
+            case .dovemayo:
+                return GlobalFontType.dovemayo
+            case .dovemayoBold:
+                return GlobalFontType.dovemayoBold
+            case .kyoboHandwriting2019:
+                return GlobalFontType.kyoboHandwriting2019
             }
         }
         
@@ -99,11 +125,26 @@ class UserDataCenter {
 }
 
 struct GlobalFont: Codable {
-    var isSystemFont: Bool
-    var isGoyangFont: Bool
+    var fontType: String
     
-    init(isSystemFont: Bool, isGoyangFont: Bool){
-        self.isSystemFont = isSystemFont
-        self.isGoyangFont = isGoyangFont
+    init(type: String){
+        self.fontType = type
+    }
+    
+    func getFontType() -> GlobalFontType{
+        switch self.fontType {
+        case GlobalFontType.systemFont.rawValue:
+            return GlobalFontType.systemFont
+        case GlobalFontType.goyangFont.rawValue:
+            return GlobalFontType.goyangFont
+        case GlobalFontType.dovemayo.rawValue:
+            return GlobalFontType.dovemayo
+        case GlobalFontType.dovemayoBold.rawValue:
+            return GlobalFontType.dovemayoBold
+        case GlobalFontType.kyoboHandwriting2019.rawValue:
+            return GlobalFontType.kyoboHandwriting2019
+        default:
+            return GlobalFontType.systemFont
+        }
     }
 }
