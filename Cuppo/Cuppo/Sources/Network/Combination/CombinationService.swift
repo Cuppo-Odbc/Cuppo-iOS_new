@@ -12,10 +12,10 @@ class CombinationService {
     private init(){}
     
     // 커피 조합 조회
-    func requestCombination(completion: @escaping ([Combination]) -> (Void)){
+    func requestCombination(completion: @escaping (CombinationResponse) -> (Void)){
         let URL = Constant.BasicURL + "/coffee/combinations"
         
-        AF.request(URL, method: .get).validate().responseDecodable(of: [Combination].self) { response in
+        AF.request(URL, method: .get).validate().responseDecodable(of: CombinationResponse.self) { response in
             switch response.result {
             case .success(let response) :
                 completion(response)
@@ -40,10 +40,10 @@ class CombinationService {
     }
     
     // 선택 불가능한 조합 조회
-    func requestAllowedIngredients(completion: @escaping (NoIngredientResponse) -> (Void)) {
+    func requestAllowedIngredients(completion: @escaping (AllowedIngredientResponse) -> (Void)) {
         let URL = Constant.BasicURL + "/coffee/combinations/allowed"
         
-        AF.request(URL, method: .get).validate().responseDecodable(of: NoIngredientResponse.self) { response in
+        AF.request(URL, method: .get).validate().responseDecodable(of: AllowedIngredientResponse.self) { response in
             switch response.result {
             case .success(let response) :
                 completion(response)

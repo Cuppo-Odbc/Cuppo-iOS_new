@@ -9,18 +9,28 @@ import UIKit
 
 extension CoffeeListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.cardListCount
+        return viewModel.cardListCount + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "coffeeListCell", for: indexPath) as? CoffeeListCell else {
-            return UITableViewCell()
+        if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "blankCell", for: indexPath) as? BlankCell else {
+                return UITableViewCell()
+            }
+            cell.selectionStyle = .none
+            
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "coffeeListCell", for: indexPath) as? CoffeeListCell else {
+                return UITableViewCell()
+            }
+            let target = viewModel.getCardData(idx: indexPath.item-1)
+            cell.titleLabel.text = target.title
+            urlToImg(urlStr: target.coffee, img: cell.coffeeImage)
+            cell.dateLabel.text = target.date.substring(from: 0, to: 9)
+            return cell
+            
         }
-        let target = viewModel.getCardData(idx: indexPath.item)
-        cell.titleLabel.text = target.title
-        urlToImg(urlStr: target.coffee, img: cell.coffeeImage)
-        cell.dateLabel.text = target.date.substring(from: 0, to: 9)
-        return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -28,7 +38,9 @@ extension CoffeeListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        moveToVC(selectIdx: indexPath.item)
+        if indexPath.row != 0 {
+            moveToVC(selectIdx: indexPath.item-1)
+        }
     }
 
     // 디바이스가로- 60 : 세로 x : 315 : 200

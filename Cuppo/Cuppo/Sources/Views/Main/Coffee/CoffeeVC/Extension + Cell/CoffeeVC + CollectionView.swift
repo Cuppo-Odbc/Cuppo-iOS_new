@@ -19,18 +19,17 @@ extension CoffeeViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let target = viewModel.getData(idx: indexPath.item)
         urlToImg(urlStr: target.image, img: cell.ingredientImageView)
         
-//        if target.key == "whipped_cream" {
-//            cell.cellView.backgroundColor = UIColor(named: "cuppoColor13")
-//            cell.ingredientImageView.alpha = 0.2
-//            cell.isUserInteractionEnabled = false
-//        }
+        if viewModel.getCurrentElement() == "decoration" && viewModel.getAllowIngredientArr().contains(target.key) {
+            print("gg")
+            cell.unAllowed()
+        }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let target = viewModel.getData(idx: indexPath.item)
-        viewModel.setCurrentArr(ingredient: target.key)
+        viewModel.setSelectedCombinationArr(ingredient: target.key)
     }
     
     

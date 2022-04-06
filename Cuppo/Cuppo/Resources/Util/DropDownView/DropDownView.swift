@@ -21,6 +21,10 @@ class DropDownView: UIView {
     @IBOutlet weak var shareView: UIView!
     @IBOutlet weak var deleteView: UIView!
     
+    @IBOutlet weak var editLabel: UILabel!
+    @IBOutlet weak var shareLabel: UILabel!
+    @IBOutlet weak var deleteLabel: UILabel!
+    
     
     // MARK: - UI Components
     @IBAction func editTapped(_ sender: Any) {
@@ -38,6 +42,7 @@ class DropDownView: UIView {
     // MARK: - LifeCycle
     override func layoutSubviews() {
         setUI()
+        setFont()
     }
     
     override init(frame: CGRect) {
@@ -57,11 +62,17 @@ class DropDownView: UIView {
     }
     
     func setUI(){
+
         setView(view: editView)
         setView(view: shareView)
         setView(view: deleteView)
         setView(view: dropdownView)
-        
+    }
+    
+    func setFont(){
+        editLabel.font = .globalFont(size: 18)
+        shareLabel.font = .globalFont(size: 18)
+        deleteLabel.font = .globalFont(size: 18)
     }
     
     func setView(view: UIView){

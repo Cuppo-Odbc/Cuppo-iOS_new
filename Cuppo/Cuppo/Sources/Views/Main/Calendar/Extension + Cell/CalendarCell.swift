@@ -10,4 +10,9 @@ import UIKit
 class CalendarCell: UICollectionViewCell {
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var coffeeImage: UIImageView!
+
+    override func layoutSubviews() {
+        dayLabel.font = .globalFont(size: 12)
+    }
+    
 }

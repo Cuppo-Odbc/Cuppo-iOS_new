@@ -15,9 +15,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DropDownView" customModule="Cuppo" customModuleProvider="target">
             <connections>
+                <outlet property="deleteLabel" destination="Uys-i3-EFr" id="wsW-O4-LDC"/>
                 <outlet property="deleteView" destination="z8p-Me-l2B" id="jLK-0M-cj8"/>
                 <outlet property="dropdownView" destination="iN0-l3-epB" id="hVf-13-FT6"/>
+                <outlet property="editLabel" destination="81f-qc-yDo" id="OV2-Ht-Pbr"/>
                 <outlet property="editView" destination="thk-dp-qd3" id="RVH-Np-aw7"/>
+                <outlet property="shareLabel" destination="XJz-z4-EXF" id="GI6-Ho-gyK"/>
                 <outlet property="shareView" destination="BYg-7o-AJo" id="Km7-UF-mSN"/>
             </connections>
         </placeholder>

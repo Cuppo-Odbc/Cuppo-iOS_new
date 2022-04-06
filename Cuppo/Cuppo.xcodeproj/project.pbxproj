@@ -54,11 +54,13 @@
 		9F7D545327FBFA2200D75CD0 /* CombinationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D545227FBFA2200D75CD0 /* CombinationService.swift */; };
 		9F7D545627FBFA9E00D75CD0 /* CombinationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D545527FBFA9E00D75CD0 /* CombinationResponse.swift */; };
 		9F7D545827FC05A900D75CD0 /* IngredientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D545727FC05A900D75CD0 /* IngredientResponse.swift */; };
-		9F7D545A27FC072600D75CD0 /* NoIngredientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D545927FC072600D75CD0 /* NoIngredientResponse.swift */; };
+		9F7D545A27FC072600D75CD0 /* AllowedIngredientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D545927FC072600D75CD0 /* AllowedIngredientResponse.swift */; };
 		9F7D545D27FC25EE00D75CD0 /* CoffeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D545C27FC25EE00D75CD0 /* CoffeeViewModel.swift */; };
 		9F7D545F27FC3CE000D75CD0 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D545E27FC3CE000D75CD0 /* CALayer.swift */; };
 		9F7D546327FC4ABA00D75CD0 /* CoffeeVC + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D546227FC4ABA00D75CD0 /* CoffeeVC + CollectionView.swift */; };
 		9F7D546527FC4AD300D75CD0 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D546427FC4AD300D75CD0 /* IngredientCell.swift */; };
+		9F7D546727FCAD8600D75CD0 /* BlankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D546627FCAD8600D75CD0 /* BlankCell.swift */; };
+		9F7D546927FD65EE00D75CD0 /* CombinationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D546827FD65EE00D75CD0 /* CombinationModel.swift */; };
 		9F81962327D64C0200FF42BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962227D64C0200FF42BA /* AppDelegate.swift */; };
 		9F81962527D64C0200FF42BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81962427D64C0200FF42BA /* SceneDelegate.swift */; };
 		9F81962A27D64C0200FF42BA /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962827D64C0200FF42BA /* TabBar.storyboard */; };
@@ -138,11 +140,13 @@
 		9F7D545227FBFA2200D75CD0 /* CombinationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationService.swift; sourceTree = "<group>"; };
 		9F7D545527FBFA9E00D75CD0 /* CombinationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationResponse.swift; sourceTree = "<group>"; };
 		9F7D545727FC05A900D75CD0 /* IngredientResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientResponse.swift; sourceTree = "<group>"; };
-		9F7D545927FC072600D75CD0 /* NoIngredientResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoIngredientResponse.swift; sourceTree = "<group>"; };
+		9F7D545927FC072600D75CD0 /* AllowedIngredientResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowedIngredientResponse.swift; sourceTree = "<group>"; };
 		9F7D545C27FC25EE00D75CD0 /* CoffeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeViewModel.swift; sourceTree = "<group>"; };
 		9F7D545E27FC3CE000D75CD0 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		9F7D546227FC4ABA00D75CD0 /* CoffeeVC + CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoffeeVC + CollectionView.swift"; sourceTree = "<group>"; };
 		9F7D546427FC4AD300D75CD0 /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
+		9F7D546627FCAD8600D75CD0 /* BlankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankCell.swift; sourceTree = "<group>"; };
+		9F7D546827FD65EE00D75CD0 /* CombinationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationModel.swift; sourceTree = "<group>"; };
 		9F81961F27D64C0200FF42BA /* Cuppo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuppo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F81962227D64C0200FF42BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F81962427D64C0200FF42BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -365,6 +369,7 @@
 			children = (
 				9F7D543727FACCD200D75CD0 /* CoffeeListVC + TableView.swift */,
 				9F7D543927FACCE300D75CD0 /* CoffeeListCell.swift */,
+				9F7D546627FCAD8600D75CD0 /* BlankCell.swift */,
 			);
 			path = "Extension + Cell";
 			sourceTree = "<group>";
@@ -407,7 +412,8 @@
 			children = (
 				9F7D545527FBFA9E00D75CD0 /* CombinationResponse.swift */,
 				9F7D545727FC05A900D75CD0 /* IngredientResponse.swift */,
-				9F7D545927FC072600D75CD0 /* NoIngredientResponse.swift */,
+				9F7D545927FC072600D75CD0 /* AllowedIngredientResponse.swift */,
+				9F7D546827FD65EE00D75CD0 /* CombinationModel.swift */,
 			);
 			path = Combination;
 			sourceTree = "<group>";
@@ -754,12 +760,14 @@
 				9F7D544427FAF3BA00D75CD0 /* CardDeleteResponse.swift in Sources */,
 				A85D998027EA203600E9B0AA /* SettingOptionCell.swift in Sources */,
 				A8373A6B27DD17CE00BA0442 /* LoginViewController.swift in Sources */,
+				9F7D546727FCAD8600D75CD0 /* BlankCell.swift in Sources */,
 				9F7D540E27F3079700D75CD0 /* CustomAlertProtocol.swift in Sources */,
+				9F7D546927FD65EE00D75CD0 /* CombinationModel.swift in Sources */,
 				9F7D542727F9D6F800D75CD0 /* CardService.swift in Sources */,
 				A872773927EF0CA500B11132 /* PasswordFindViewController.swift in Sources */,
 				9F253ECC27D7A6310010C1E6 /* BaseController.swift in Sources */,
 				9F7D545827FC05A900D75CD0 /* IngredientResponse.swift in Sources */,
-				9F7D545A27FC072600D75CD0 /* NoIngredientResponse.swift in Sources */,
+				9F7D545A27FC072600D75CD0 /* AllowedIngredientResponse.swift in Sources */,
 				A85A981427EE4D20003DFC0F /* PasswordChangeViewController.swift in Sources */,
 				9F253EA327D6693B0010C1E6 /* UIViewController.swift in Sources */,
 				9F7D543027FA34F400D75CD0 /* UIDate.swift in Sources */,
