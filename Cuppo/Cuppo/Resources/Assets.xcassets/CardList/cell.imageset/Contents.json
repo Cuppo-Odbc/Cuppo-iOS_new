@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "hotesp.png",
+      "filename" : "cell.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "hotesp@2x.png",
+      "filename" : "cell@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "hotesp@3x.png",
+      "filename" : "cell@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

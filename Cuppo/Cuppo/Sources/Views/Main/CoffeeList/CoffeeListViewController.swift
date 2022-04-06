@@ -33,6 +33,12 @@ class CoffeeListViewController: UIViewController {
         setUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setLabel()
+        tableView.reloadData()
+    }
+    
     // MARK: - Functions
     func setUI(){
         yearLabel.text = viewModel.getYear()
@@ -41,6 +47,11 @@ class CoffeeListViewController: UIViewController {
         setupData()
         setTableView()
         setBind()
+    }
+    
+    func setLabel(){
+        yearLabel.font = .globalFont(size: 16)
+        monthLabel.font = .globalFont(size: 22)
     }
     
     /* API 관련 */

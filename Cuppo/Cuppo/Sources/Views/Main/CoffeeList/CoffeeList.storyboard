@@ -35,13 +35,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FEBRUARY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ob-WK-Bq1">
-                                        <rect key="frame" x="30" y="110.5" width="87.5" height="28.5"/>
+                                        <rect key="frame" x="30" y="111.5" width="87.5" height="28.5"/>
                                         <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="22"/>
                                         <color key="textColor" name="cuppoColor1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUz-Gd-GmL">
-                                        <rect key="frame" x="30" y="90" width="87.5" height="49"/>
+                                        <rect key="frame" x="30" y="90" width="87.5" height="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <connections>
                                             <action selector="changeDateTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="96c-5z-gon"/>
@@ -53,7 +53,7 @@
                                     <constraint firstItem="KUz-Gd-GmL" firstAttribute="bottom" secondItem="5Ob-WK-Bq1" secondAttribute="bottom" id="NLH-ov-Dm0"/>
                                     <constraint firstItem="KUz-Gd-GmL" firstAttribute="trailing" secondItem="5Ob-WK-Bq1" secondAttribute="trailing" id="O9Y-0W-E8o"/>
                                     <constraint firstAttribute="width" secondItem="hF2-Vi-lkk" secondAttribute="height" multiplier="19:8" id="gnL-2y-XeU"/>
-                                    <constraint firstItem="5Ob-WK-Bq1" firstAttribute="top" secondItem="5ii-GL-uN3" secondAttribute="bottom" id="hzf-Dc-CVB"/>
+                                    <constraint firstItem="5Ob-WK-Bq1" firstAttribute="top" secondItem="5ii-GL-uN3" secondAttribute="bottom" constant="1" id="hzf-Dc-CVB"/>
                                     <constraint firstItem="KUz-Gd-GmL" firstAttribute="leading" secondItem="hF2-Vi-lkk" secondAttribute="leading" constant="30" id="ndI-oP-G2t"/>
                                     <constraint firstItem="5Ob-WK-Bq1" firstAttribute="leading" secondItem="hF2-Vi-lkk" secondAttribute="leading" constant="30" id="rMI-XX-PR3"/>
                                     <constraint firstItem="KUz-Gd-GmL" firstAttribute="top" secondItem="5ii-GL-uN3" secondAttribute="top" id="tC2-19-T6w"/>
@@ -122,6 +122,25 @@
                                                     <outlet property="titleLabel" destination="LXq-ag-vWo" id="vrA-de-GuD"/>
                                                 </connections>
                                             </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="blankCell" rowHeight="200" id="WEJ-se-s6T" customClass="BlankCell" customModule="Cuppo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="244.5" width="414" height="200"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WEJ-se-s6T" id="iOE-fi-sBz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell" translatesAutoresizingMaskIntoConstraints="NO" id="u0J-xD-1e6">
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="u0J-xD-1e6" firstAttribute="leading" secondItem="iOE-fi-sBz" secondAttribute="leading" id="C44-5N-g3S"/>
+                                                        <constraint firstAttribute="bottom" secondItem="u0J-xD-1e6" secondAttribute="bottom" id="Uik-kW-lLb"/>
+                                                        <constraint firstItem="u0J-xD-1e6" firstAttribute="top" secondItem="iOE-fi-sBz" secondAttribute="top" id="Z1J-11-DV5"/>
+                                                        <constraint firstAttribute="trailing" secondItem="u0J-xD-1e6" secondAttribute="trailing" id="eSa-mf-1I1"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                 </subviews>
@@ -165,16 +184,17 @@
     <resources>
         <image name="basicLightMode" width="375" height="812"/>
         <image name="cards" width="20" height="20"/>
+        <image name="cell" width="315" height="200"/>
         <image name="hotame" width="1000" height="1000"/>
         <image name="us_cards" width="20" height="20"/>
         <namedColor name="cuppoColor1">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="cuppoColor5">
-            <color red="0.41568627450980389" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.41600000858306885" green="0.41600000858306885" blue="0.41600000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="cuppoColor6">
-            <color red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.37599998712539673" green="0.37599998712539673" blue="0.37599998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

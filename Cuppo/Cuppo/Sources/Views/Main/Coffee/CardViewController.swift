@@ -89,10 +89,17 @@ class CardViewController: UIViewController {
     }
     
     func setUI(){
+        setFont()
         dateLabel.text = viewModel.getCardDate()
         titleLabel.text = viewModel.getCardInfo().title
         urlToImg(urlStr: viewModel.getCardInfo().coffee, img: coffeeImageView)
         contentLabel.text = viewModel.getCardInfo().content
+    }
+    
+    func setFont(){
+        dateLabel.font = .globalFont(size: 16)
+        titleLabel.font = .globalFont(size: 21)
+        contentLabel.font = .globalFont(size: 17)
     }
     
     func showDropDown(){

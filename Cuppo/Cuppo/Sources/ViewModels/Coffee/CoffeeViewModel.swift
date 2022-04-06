@@ -7,69 +7,21 @@
 
 import UIKit
 
-// 삭제
-struct AllowTest {
-    let combination: AllowCombination
-    let allowed: AllowAllowed
-}
-
-struct AllowCombination {
-    let temperature: String
-    let milk: String
-    let syrup: String
-}
-
-struct AllowAllowed {
-    let decoration: [String]
-}
-
-
-
-// 삭제
-struct CombinationTest {
-    let name: String
-    let image: String
-    let combination: IngredientInCombinationTest
-}
-// 삭제
-struct IngredientInCombinationTest {
-    let temperature: String
-    let milk: String
-    let syrup: String
-    let decoration: String
-}
-
-
-struct CombinationModel {
-    var temperature : String
-    var milk : String
-    var syrup : String
-    var decoration : String
-    
-    init(){
-        temperature = "none"
-        milk = "none"
-        syrup = "none"
-        decoration = "none"
-    }
-}
-
 class CoffeeViewModel {
-    
-    var combinationTest: [CombinationTest] = [CombinationTest]() // 삭제
-    var allowTest: [AllowTest] = [AllowTest]() // 삭제
     
     let combinationService = CombinationService.shared
     
-    var currentElement: Observable2<String> = Observable2(value: "temperature")
-    var currentArr: Observable2<[Ingredient]> = Observable2(value: [Ingredient]())
-    
+    // 서버에서 불러온 정보
     var temperatureImgUrlArr: Observable2<[Ingredient]> = Observable2(value: [Ingredient]())
     var milkImgUrlArr: Observable2<[Ingredient]> = Observable2(value: [Ingredient]())
     var syrupImgUrlArr: Observable2<[Ingredient]> = Observable2(value: [Ingredient]())
     var whippingImgUrlArr: Observable2<[Ingredient]> = Observable2(value: [Ingredient]())
+    var allCombinationArr: Observable2<[Combination]> = Observable2(value: [Combination]())
+    var allAllowResultArr: Observable2<[AllowedResult]> = Observable2(value: [AllowedResult]())
     
-    var combinationArr: Observable2<CombinationModel> = Observable2(value: CombinationModel())
+    var currentElement: Observable2<String> = Observable2(value: "temperature") // 현재 항목
+    var currentArr: Observable2<[Ingredient]> = Observable2(value: [Ingredient]()) // 현재 항목에 따른 재료들
+    var selectResultCombinationArr: Observable2<CombinationModel> = Observable2(value: CombinationModel()) // 현재 선택한 조합 결과
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     
@@ -84,80 +36,61 @@ class CoffeeViewModel {
         }
     }
     
-    /* 조합 API */ // 삭제
+    /* 조합 API */
     func requestCombination(){
-        combinationTest.append(CombinationTest(name: "hotame", image:  "https://storage.googleapis.com/cuppo-test.appspot.com/drinks/hotame.png", combination: IngredientInCombinationTest(temperature: "hot", milk: "none", syrup: "none", decoration: "none")))
-        combinationTest.append(CombinationTest(name: "iceame", image:  "https://storage.googleapis.com/cuppo-test.appspot.com/drinks/iceame.png", combination: IngredientInCombinationTest(temperature: "ice", milk: "none", syrup: "none", decoration: "none")))
-        
-        combinationTest.append(CombinationTest(name: "iceame_ice", image:  "https://storage.googleapis.com/cuppo-test.appspot.com/drinks/iceame_ice.png", combination: IngredientInCombinationTest(temperature: "ice", milk: "none", syrup: "none", decoration: "ice")))
-        combinationTest.append(CombinationTest(name: "hotlatte", image:  "https://storage.googleapis.com/cuppo-test.appspot.com/drinks/hotlatte.png", combination: IngredientInCombinationTest(temperature: "hot", milk: "milk", syrup: "none", decoration: "none")))
-    }
-    
-    /* 불가능 조합 API  */ // 삭제
-    func requestAllowed(){
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "none", syrup: "none"), allowed: AllowAllowed(decoration: ["none"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "none", syrup: "none"), allowed: AllowAllowed(decoration: ["ice","none"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk", syrup: "none"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk", syrup: "none"), allowed: AllowAllowed(decoration: ["none","ice"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk_foam", syrup: "none"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk_foam", syrup: "none"), allowed: AllowAllowed(decoration: ["none","whipped_cream","ice"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "none", syrup: "green_tee_powder"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk", syrup: "green_tee_powder"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk_foam", syrup: "green_tee_powder"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "none", syrup: "green_tee_powder"), allowed: AllowAllowed(decoration: ["none","ice"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk", syrup: "green_tee_powder"), allowed: AllowAllowed(decoration: ["none","ice"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk_foam", syrup: "green_tee_powder"), allowed: AllowAllowed(decoration: ["none","ice"])))
-        
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "none", syrup: "strawberry_powder"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk", syrup: "strawberry_powder"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk_foam", syrup: "strawberry_powder"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "none", syrup: "strawberry_powder"), allowed: AllowAllowed(decoration: ["none","ice"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk", syrup: "strawberry_powder"), allowed: AllowAllowed(decoration: ["none","ice"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk_foam", syrup: "strawberry_powder"), allowed: AllowAllowed(decoration: ["none","ice"])))
-        
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "none", syrup: "caramel_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk", syrup: "caramel_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk_foam", syrup: "caramel_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "none", syrup: "caramel_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk", syrup: "caramel_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk_foam", syrup: "caramel_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
-        
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "none", syrup: "chocolate_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk", syrup: "chocolate_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk_foam", syrup: "chocolate_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "none", syrup: "chocolate_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk", syrup: "chocolate_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk_foam", syrup: "chocolate_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
-        
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "none", syrup: "mocha_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk", syrup: "mocha_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "hot", milk: "milk_foam", syrup: "mocha_syrup"), allowed: AllowAllowed(decoration: ["none","whipped_cream"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "none", syrup: "mocha_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk", syrup: "mocha_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
-        allowTest.append(AllowTest(combination: AllowCombination(temperature: "ice", milk: "milk_foam", syrup: "mocha_syrup"), allowed: AllowAllowed(decoration: ["none","ice"])))
-        
-    }
-    
-    
-    // 삭제
-    func getCombinationTest() -> [CombinationTest] {
-        return self.combinationTest
-    }
-    
-    // 삭제
-    // 현재조합이 조합API 안에 있는지 -> 있다면 해당 url, 없다면 에스프레소 url
-    func testImage() -> String {
-        for i in combinationTest {
-            if i.combination.temperature == getCombinationArr().temperature &&
-                i.combination.milk == getCombinationArr().milk &&
-                i.combination.syrup == getCombinationArr().syrup &&
-                i.combination.decoration == getCombinationArr().decoration
-            {
-                return i.image
-            }
-            
+        combinationService.requestCombination { response in
+            self.allCombinationArr.value = response.content
         }
-        return "https://storage.googleapis.com/cuppo-test.appspot.com/drinks/icecrm_ice.png"
+    }
+    
+    // 선택 결과 조합 이미지
+    func getResultCoffeeImgUrl() -> String {
+        for result in allCombinationArr.value {
+            if result.combination.temperature == getSelectedCombinationArr().temperature &&
+                result.combination.milk == getSelectedCombinationArr().milk &&
+                result.combination.syrup == getSelectedCombinationArr().syrup &&
+                result.combination.decoration == getSelectedCombinationArr().decoration
+            {
+                return result.image
+            }
+        }
+        // TODO: - 선택 결과 이미지 url 없는 경우 이미지 넣을거 찾기 ( 현재는 에스프레소 넣음 )
+        return "https://storage.googleapis.com/cuppo-test.appspot.com/drinks/hotesp.png"
+    }
+    
+    // 선택 결과 조합 커피 이름
+    func getResultCoffeeName() -> String {
+        for result in allCombinationArr.value {
+            if result.combination.temperature == getSelectedCombinationArr().temperature &&
+                result.combination.milk == getSelectedCombinationArr().milk &&
+                result.combination.syrup == getSelectedCombinationArr().syrup &&
+                result.combination.decoration == getSelectedCombinationArr().decoration
+            {
+                return result.name_ko
+            }
+        }
+        // TODO: - 선택 결과 조합 없는 경우
+        return "해당커피없음"
+    }
+    
+    
+    /* 불가능 조합 API  */
+    func requestAllowed(){
+        combinationService.requestAllowedIngredients { response in
+            self.allAllowResultArr.value = response.content
+        }
+    }
+    
+    // 가능한 장식 재료들
+    func getAllowIngredientArr() -> [String] {
+        for resultCase in allAllowResultArr.value {
+            if resultCase.combination.temperature == getSelectedCombinationArr().temperature &&
+                resultCase.combination.milk == getSelectedCombinationArr().milk &&
+                resultCase.combination.syrup == getSelectedCombinationArr().syrup  {
+                return resultCase.allowed.decoration
+            }
+        }
+        return []
     }
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -220,20 +153,21 @@ class CoffeeViewModel {
     
     
     /* 선택 조합 불러오기 */
-    func getCombinationArr() -> CombinationModel {
-        self.combinationArr.value
+    func getSelectedCombinationArr() -> CombinationModel {
+        self.selectResultCombinationArr.value
     }
     
     /* 현재 조합 수정 */
-    func setCurrentArr(ingredient: String) {
+    func setSelectedCombinationArr(ingredient: String) {
         if getCurrentElement() == "temperature" {
-            combinationArr.value.temperature = ingredient
+            selectResultCombinationArr.value.temperature = ingredient
         }else if getCurrentElement() == "milk" {
-            combinationArr.value.milk = ingredient
+            selectResultCombinationArr.value.milk = ingredient
         }else if getCurrentElement() == "syrup" {
-            combinationArr.value.syrup = ingredient
+            selectResultCombinationArr.value.syrup = ingredient
         }else if getCurrentElement() == "decoration" {
-            combinationArr.value.decoration = ingredient
+            selectResultCombinationArr.value.decoration = ingredient
         }
     }
 }
+

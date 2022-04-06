@@ -31,7 +31,7 @@ extension AlertView: UIPickerViewDelegate, UIPickerViewDataSource {
         var pickerLabel: UILabel? = (view as? UILabel)
         if pickerLabel == nil {
             pickerLabel = UILabel()
-            pickerLabel?.font = UIFont(name: "Goyang", size: 14)
+            pickerLabel?.font = .globalFont(size: 14)
             pickerLabel?.textAlignment = .center
             pickerLabel?.textColor = UIColor(named: "cuppoColor1")
         }

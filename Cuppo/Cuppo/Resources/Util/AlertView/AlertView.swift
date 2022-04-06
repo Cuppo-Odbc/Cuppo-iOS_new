@@ -46,6 +46,7 @@ class AlertView: UIView {
     override func layoutSubviews() {
         setLayer()
         setPickerView()
+        setFont()
     }
     
     override init(frame: CGRect) {
@@ -65,6 +66,12 @@ class AlertView: UIView {
         for year in 1950...2070 {
             yearArr.append(year)
         }
+    }
+    
+    func setFont(){
+        contentLabel.font = .globalFont(size: 16)
+        cancelButton.titleLabel?.font = .globalFont(size: 18)
+        okButton.titleLabel?.font = .globalFont(size: 18)
     }
     
     // 모든 화면에 맞춰주는 작업

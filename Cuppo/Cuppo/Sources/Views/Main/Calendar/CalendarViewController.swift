@@ -39,12 +39,19 @@ class CalendarViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        setLabel()
+        collectionView.reloadData()
     }
     
     // MARK: - Functions
     func setUI(){
         yearLabel.text = viewModel.getYear()
         monthLabel.text = viewModel.getMonth()
+    }
+    
+    func setLabel(){
+        yearLabel.font = .globalFont(size: 16)
+        monthLabel.font = .globalFont(size: 22)
     }
     
     /* API 관련 */

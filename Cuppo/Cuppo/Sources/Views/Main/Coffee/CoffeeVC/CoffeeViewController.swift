@@ -12,9 +12,10 @@ class CoffeeViewController: UIViewController {
     let viewModel = CoffeeViewModel()
     
     // MARK: - UIComponents
-    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var coffeeImageView: UIImageView!
     
+    @IBOutlet weak var todayCoffeeLabel: UILabel!
     @IBOutlet weak var temperatureButton: UIButton!
     @IBOutlet weak var milkButton: UIButton!
     @IBOutlet weak var syrupButton: UIButton!
@@ -36,11 +37,22 @@ class CoffeeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        dismissKeyboardWhenTappedAround()
         setCollectionView()
         setData()
         setButton()
         setBind()
+        setFont()
+    }
+    
+    func setFont(){
+        todayCoffeeLabel.font = .globalFont(size: 16)
+        titleLabel.font = .globalFont(size: 21)
+        
+        temperatureButton.titleLabel?.font = .globalFont(size: 17)
+        milkButton.titleLabel?.font = .globalFont(size: 17)
+        syrupButton.titleLabel?.font = .globalFont(size: 17)
+        whippingButton.titleLabel?.font = .globalFont(size: 17)
+        
     }
     
     func setCollectionView(){
@@ -52,7 +64,7 @@ class CoffeeViewController: UIViewController {
     func setData(){
         viewModel.requestIngredients()
         viewModel.requestCombination()
-//        print(viewModel.getCombinationTest())
+        viewModel.requestAllowed()
         
     }
     
@@ -87,8 +99,10 @@ class CoffeeViewController: UIViewController {
         }
         
         // 재료 선택에 따라 커피 이미지가 변경되야됨.
-        viewModel.combinationArr.bind { data in
-            self.urlToImg(urlStr: self.viewModel.testImage(), img: self.coffeeImageView)
+        viewModel.selectResultCombinationArr.bind { data in
+            self.urlToImg(urlStr: self.viewModel.getResultCoffeeImgUrl(), img: self.coffeeImageView)
+            self.titleLabel.text = "#" + self.viewModel.getResultCoffeeName()
+            print("가능 장식-> ",self.viewModel.getAllowIngredientArr())
         }
         
     }

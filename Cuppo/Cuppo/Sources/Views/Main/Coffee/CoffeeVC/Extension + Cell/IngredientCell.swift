@@ -37,4 +37,11 @@ class IngredientCell: UICollectionViewCell {
         view.layer.borderColor = UIColor(named: colorName)?.cgColor
         view.layer.cornerRadius = 10
     }
+    
+    func unAllowed(){
+        cellView.backgroundColor = UIColor(named: "cuppoColor13")
+        ingredientImageView.alpha = 0.2
+        isUserInteractionEnabled = false
+    }
+    
 }

@@ -57,6 +57,7 @@ class DiaryViewController: UIViewController {
     
     func setUI(){
         setTextView()
+        setFont()
         switch viewModel.getType() {
         case .editCard :
             leftButton.isHidden = true
@@ -68,6 +69,12 @@ class DiaryViewController: UIViewController {
         case .addCard :
             leftButton.isHidden = false
         }
+    }
+    
+    func setFont(){
+        dateLabel.font = .globalFont(size: 16)
+        titleTextField.font = .globalFont(size: 21)
+        contentTextView.font = .globalFont(size: 17)
     }
     
     func setTextView(){

@@ -6,13 +6,14 @@
 //
 
 struct CombinationResponse: Decodable {
-    let result: [Combination]
+    let content: [Combination]
 }
 
 struct Combination: Decodable {
     let name: String
+    let name_ko: String
     let image: String
-    let combination: [IngredientInCombination]
+    let combination: IngredientInCombination
 }
 
 struct IngredientInCombination: Decodable {
