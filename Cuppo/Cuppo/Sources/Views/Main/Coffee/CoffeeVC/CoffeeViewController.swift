@@ -102,8 +102,17 @@ class CoffeeViewController: UIViewController {
         viewModel.selectResultCombinationArr.bind { data in
             self.urlToImg(urlStr: self.viewModel.getResultCoffeeImgUrl(), img: self.coffeeImageView)
             self.titleLabel.text = "#" + self.viewModel.getResultCoffeeName()
-            print("가능 장식-> ",self.viewModel.getAllowIngredientArr())
+            self.viewModel.setAllowStatusArr()
         }
+        viewModel.selectStatusArr.bind { data in
+            self.viewModel.changeAllowStatusArr()
+            self.collectionView.reloadData()
+        }
+        
+        viewModel.allowStatusArr.bind { data in
+            self.collectionView.reloadData()
+        }
+        
         
     }
     
