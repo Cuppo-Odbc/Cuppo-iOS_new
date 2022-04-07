@@ -23,7 +23,13 @@ class CoffeeViewModel {
     var currentArr: Observable2<[Ingredient]> = Observable2(value: [Ingredient]()) // 현재 항목에 따른 재료들
     var selectResultCombinationArr: Observable2<CombinationModel> = Observable2(value: CombinationModel()) // 현재 선택한 조합 결과
     
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    // =============================================
+    // 이 두 부분은 업데이트가 있을때마다 손수 변경해줘야한다...
+    var selectStatusArr: Observable2<[[Bool]]> = Observable2(value: [[Bool]]())
+    var allowStatusArr: Observable2<[[Bool]]> = Observable2(value: [[Bool]]())
+    // =============================================
+    
     
     /* 재료 API 불러와 대입 */
     func requestIngredients() {
@@ -33,6 +39,8 @@ class CoffeeViewModel {
             self.syrupImgUrlArr.value = response.syrup
             self.whippingImgUrlArr.value = response.decoration
             self.setCurrentArr(newArr: self.temperatureImgUrlArr.value)
+            
+            self.initStatus(response)
         }
     }
     
@@ -112,11 +120,6 @@ class CoffeeViewModel {
         currentArr.value.count
     }
     
-    /* 선택항목들 불러오기 */
-    func getCurrentArr() -> [Ingredient] {
-        self.currentArr.value
-    }
-    
     /* 선택항목들 중 재료 불러오기 */
     func getData(idx:Int) -> Ingredient {
         self.currentArr.value[idx]
@@ -126,8 +129,7 @@ class CoffeeViewModel {
     func setCurrentArr(newArr: [Ingredient]) {
         self.currentArr.value = newArr
     }
-    
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
     
     /* 온도 항목들 불러오기 */
     func getTemperatureArr() -> [Ingredient] {
@@ -169,5 +171,133 @@ class CoffeeViewModel {
             selectResultCombinationArr.value.decoration = ingredient
         }
     }
+    
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    func initStatus(_ response: IngredientResponse){
+        // 현재 선택된 재료 초기화
+        selectStatusArr.value.append(Array(repeating: false, count: response.temperature.count))
+        selectStatusArr.value.append(Array(repeating: false, count: response.milk.count))
+        selectStatusArr.value.append(Array(repeating: false, count: response.syrup.count))
+        selectStatusArr.value.append(Array(repeating: false, count: response.decoration.count))
+        
+        for i in 0..<selectStatusArr.value.count {
+            selectStatusArr.value[i][0] = true
+        }
+        
+        /// 재료 선택 가능 여부 배열 -  초기화
+        allowStatusArr.value.append(Array(repeating: true, count: response.temperature.count))
+        allowStatusArr.value.append(Array(repeating: false, count: response.milk.count))
+        allowStatusArr.value.append(Array(repeating: false, count: response.syrup.count))
+        allowStatusArr.value.append(Array(repeating: false, count: response.decoration.count))
+        
+        for i in 1..<allowStatusArr.value.count {
+            allowStatusArr.value[i][0] = true
+        }
+    }
+    
+    func setSelectStatusArr(selectidx: Int){
+        var itemIdx: Int = 0
+        
+        if getCurrentElement() == "temperature" {
+            itemIdx = 0
+        }
+        else if getCurrentElement() == "milk" {
+            itemIdx = 1
+        }
+        
+        else if getCurrentElement() == "syrup" {
+            itemIdx = 2
+        }
+        else if getCurrentElement() == "decoration" {
+            itemIdx = 3
+        }else {
+            print("예외상황 CoffeeVM - setSelectStatusArr ")
+        }
+        
+        for i in 0 ..< selectStatusArr.value[itemIdx].count {
+            selectStatusArr.value[itemIdx][i] = selectidx == i ? true : false
+        }
+    }
+    
+    func getSelectStatusArr() -> [[Bool]] {
+        self.selectStatusArr.value
+    }
+    
+    
+    
+    func setAllowStatusArr(){
+
+        if getCurrentElement() != "decoration" {
+            print("가능한 장식->\( getAllowIngredientArr())")
+            if getAllowIngredientArr().contains("none") {
+                allowStatusArr.value[3][0] = true
+            }
+            if getAllowIngredientArr().contains("ice")  {
+                allowStatusArr.value[3][1] = true
+            }
+            
+            if getAllowIngredientArr().contains("whipped_cream") {
+                allowStatusArr.value[3][2] = true
+            }
+            
+            if !getAllowIngredientArr().contains("none") {
+                allowStatusArr.value[3][0] = false
+            }
+            
+            if !getAllowIngredientArr().contains("ice")  {
+                allowStatusArr.value[3][1] = false
+            }
+            
+            if !getAllowIngredientArr().contains("whipped_cream") {
+                allowStatusArr.value[3][2] = false
+            }
+        }
+    }
+    
+    func changeAllowStatusArr(){
+        if allowStatusArr.value.count != 0 {
+            if selectStatusArr.value[0][0] == true {
+                for i in 1..<allowStatusArr.value.count {
+                    for j in 1..<allowStatusArr.value[i].count {
+                        allowStatusArr.value[i][j] = false
+                    }
+                }
+            }
+            if selectStatusArr.value[0][0] == false {
+                for i in 1..<allowStatusArr.value.count-1 {
+                    for j in 1..<allowStatusArr.value[i].count {
+                        allowStatusArr.value[i][j] = true
+                    }
+                }
+            }
+        }
+    }
+    
+    // 선택하기와 선택못함이 동시에 true 인경우 미선택으로 상태 변경
+    func changeNoneStauts(){
+        for itemIdx in 1..<allowStatusArr.value.count {
+            for i in 0..<allowStatusArr.value[itemIdx].count {
+                if allowStatusArr.value[itemIdx][i] == false && selectStatusArr.value[itemIdx][i] == true {
+                    selectStatusArr.value[itemIdx][0] = true
+                    selectStatusArr.value[itemIdx][i] = false
+                    
+                    if itemIdx == 1 {
+                        selectResultCombinationArr.value.milk = "none"
+                    }else if  itemIdx == 2 {
+                        selectResultCombinationArr.value.syrup = "none"
+                    }else if itemIdx == 3  {
+                        selectResultCombinationArr.value.decoration = "none"
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
