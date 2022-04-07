@@ -29,9 +29,10 @@ class CoffeeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func dismissButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        showPopupView()
     }
     @IBAction func nextButtonTapped(_ sender: Any) {
+        moveToVC()
     }
     
     
@@ -100,9 +101,15 @@ class CoffeeViewController: UIViewController {
         
         // 재료 선택에 따라 커피 이미지가 변경되야됨.
         viewModel.selectResultCombinationArr.bind { data in
-            self.urlToImg(urlStr: self.viewModel.getResultCoffeeImgUrl(), img: self.coffeeImageView)
+            if self.viewModel.getResultCoffeeName() == "해당커피없음" {
+                self.viewModel.noCase()
+            }
+            
             self.titleLabel.text = "#" + self.viewModel.getResultCoffeeName()
+            self.urlToImg(urlStr: self.viewModel.getResultCoffeeImgUrl(), img: self.coffeeImageView)
             self.viewModel.setAllowStatusArr()
+            
+            
         }
         viewModel.selectStatusArr.bind { data in
             self.viewModel.changeAllowStatusArr()
@@ -153,5 +160,53 @@ class CoffeeViewController: UIViewController {
             setUnderLine(true,true,true,false)
             setButtonColor("cuppoColor3","cuppoColor3","cuppoColor3","cuppoColor1")
         }
+    }
+    
+    /* 화면전환 */
+    func moveToVC(){
+        let storyboard = UIStoryboard(name: "Coffee", bundle: nil)
+        guard let DiaryVC = storyboard.instantiateViewController(identifier: "DiarySB") as? DiaryViewController else { return }
+        DiaryVC.modalPresentationStyle = .fullScreen
+        DiaryVC.viewModel.setCoffeeInfo(newCoffeeInfo: CoffeeModel(date: "2022-04-02T00:00:00+00:00", name: viewModel.getResultCoffeeName(), imgUrl: viewModel.getResultCoffeeImgUrl(), content: "", combination: viewModel.getSelectedCombinationArr(), selectStatus: viewModel.getSelectStatusArr(), allowStatus: viewModel.getAllowStatusArr()))
+        self.present(DiaryVC, animated: true, completion: nil)
+    }
+    
+    func showPopupView(){
+        let popupView = AlertView(frame: view.bounds)
+        popupView.popupAlert(firstBtnTitle: "아니요", secondBtnTitle: "예", content: "작성된 내용이 있습니다.\n기록을 취소하시겠습니까?", myView: popupView)
+        popupView.delegate = self
+        view.addSubview(popupView)
+    }
+}
+
+extension CoffeeViewController: CustomAlertProtocol {
+    func cancleButtonTapped(_ popupView: UIView) {
+        popupView.removeFromSuperview()
+    }
+    
+    func okButtonTapped(_ popupView: UIView, _ year: String?, _ month: String?) {
+        self.dismiss(animated: true, completion: nil)
+        popupView.removeFromSuperview()
+    }
+}
+
+
+struct CoffeeModel {
+    var date: String
+    var name: String
+    var imgUrl: String
+    var content: String
+    var combination: CombinationModel
+    var selectStatus: [[Bool]]
+    var allowStatus: [[Bool]]
+    
+    init(date: String = "", name: String = "", imgUrl: String = "", content: String = "", combination: CombinationModel = CombinationModel(), selectStatus: [[Bool]] = [[Bool]](), allowStatus: [[Bool]] = [[Bool]]()){
+        self.date = date
+        self.name = name
+        self.imgUrl = imgUrl
+        self.content = content
+        self.combination = combination
+        self.selectStatus = selectStatus
+        self.allowStatus = allowStatus
     }
 }

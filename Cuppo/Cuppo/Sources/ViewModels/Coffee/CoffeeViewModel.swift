@@ -198,6 +198,7 @@ class CoffeeViewModel {
         }
     }
     
+    // 현재 항목에서 선택한 재료 표시 상태 변경
     func setSelectStatusArr(selectidx: Int){
         var itemIdx: Int = 0
         
@@ -222,12 +223,16 @@ class CoffeeViewModel {
         }
     }
     
+    // 모든 선택여부 상태 배열 불러오기
     func getSelectStatusArr() -> [[Bool]] {
         self.selectStatusArr.value
     }
     
+    func getAllowStatusArr() -> [[Bool]] {
+        self.allowStatusArr.value
+    }
     
-    
+    // 가능한 장식 상태 변경
     func setAllowStatusArr(){
 
         if getCurrentElement() != "decoration" {
@@ -257,6 +262,7 @@ class CoffeeViewModel {
         }
     }
     
+    // 온도 미선택 여부에 따라 나머지 우유 시럽 장식 선택가능여부 판단
     func changeAllowStatusArr(){
         if allowStatusArr.value.count != 0 {
             if selectStatusArr.value[0][0] == true {
@@ -295,6 +301,22 @@ class CoffeeViewModel {
                 }
             }
         }
+    }
+    
+    func noCase(){
+        
+        // 만약 얼음 -> 핫을 선택했을 경우
+        if selectStatusArr.value[3][1] == true {
+            selectStatusArr.value[3][1] = false
+        }
+        // 만약 휘핑크림 -> 아이스를 선택했을 경우
+        if selectStatusArr.value[3][2] == true {
+            selectStatusArr.value[3][2] = false
+        }
+        
+        // 팝업창 표시 후 -> 휘핑을 미기입상태로 변경
+        selectStatusArr.value[3][0] = true
+        selectResultCombinationArr.value.decoration = "none"
     }
     
     
