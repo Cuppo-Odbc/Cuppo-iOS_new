@@ -100,9 +100,15 @@ class CoffeeViewController: UIViewController {
         
         // 재료 선택에 따라 커피 이미지가 변경되야됨.
         viewModel.selectResultCombinationArr.bind { data in
-            self.urlToImg(urlStr: self.viewModel.getResultCoffeeImgUrl(), img: self.coffeeImageView)
+            if self.viewModel.getResultCoffeeName() == "해당커피없음" {
+                self.viewModel.noCase()
+            }
+            
             self.titleLabel.text = "#" + self.viewModel.getResultCoffeeName()
+            self.urlToImg(urlStr: self.viewModel.getResultCoffeeImgUrl(), img: self.coffeeImageView)
             self.viewModel.setAllowStatusArr()
+            
+            
         }
         viewModel.selectStatusArr.bind { data in
             self.viewModel.changeAllowStatusArr()
