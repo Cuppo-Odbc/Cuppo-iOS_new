@@ -12,6 +12,45 @@ class DiaryViewModel {
     
     var type: Observable2<DiaryType> = Observable2(value: .addCard)
     var cardInfo: Observable2<Card> = Observable2(value: Card())
+    var coffeeInfo: Observable2<CoffeeModel> = Observable2(value: CoffeeModel())
+    
+    func getCoffeeInfo() -> CoffeeModel {
+        self.coffeeInfo.value
+    }
+    
+    func setCoffeeInfo(newCoffeeInfo: CoffeeModel) {
+        coffeeInfo.value = newCoffeeInfo
+    }
+    
+    func getNewCoffeeDate() -> String {
+        self.getCoffeeInfo().date.substring(from: 0, to: 9)
+    }
+    
+    func getNewCardTitle() -> String {
+        self.getCoffeeInfo().name
+    }
+    
+    func getNewCardImageURL() -> String {
+        self.getCoffeeInfo().imgUrl
+    }
+    
+    func getNewCardContent() -> String {
+        self.getCoffeeInfo().content
+    }
+    
+    func setNewCardTitle(title: String) {
+        self.coffeeInfo.value.name = title
+    }
+    
+    func setNewCardContent(content: String) {
+        self.coffeeInfo.value.content = content
+    }
+    
+    func setNewCardCoffeeURL(url: String) {
+        self.coffeeInfo.value.imgUrl = url
+    }
+
+    
     
     func getType() -> DiaryType {
         self.type.value
@@ -66,6 +105,11 @@ class DiaryViewModel {
     
     // 등록 API
     func requestAddCardAPI(){
+        let para: CardAddRequest = CardAddRequest(title: getNewCardTitle(), content: getNewCardContent(), coffee: getNewCardImageURL(), date: getNewCoffeeDate())
+        print(para)
+        cardDataManger.requestAddCard(para: para) { response in
+            print("\(response)")
+        }
     }
     
     // 수정 API

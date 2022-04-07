@@ -132,14 +132,25 @@
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell" translatesAutoresizingMaskIntoConstraints="NO" id="u0J-xD-1e6">
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등록된 커피가 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRX-hU-BdO">
+                                                            <rect key="frame" x="137" y="90" width="140.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="16"/>
+                                                            <color key="textColor" name="cuppoColor6"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="WRX-hU-BdO" firstAttribute="centerX" secondItem="iOE-fi-sBz" secondAttribute="centerX" id="3GM-HW-0f8"/>
                                                         <constraint firstItem="u0J-xD-1e6" firstAttribute="leading" secondItem="iOE-fi-sBz" secondAttribute="leading" id="C44-5N-g3S"/>
                                                         <constraint firstAttribute="bottom" secondItem="u0J-xD-1e6" secondAttribute="bottom" id="Uik-kW-lLb"/>
                                                         <constraint firstItem="u0J-xD-1e6" firstAttribute="top" secondItem="iOE-fi-sBz" secondAttribute="top" id="Z1J-11-DV5"/>
                                                         <constraint firstAttribute="trailing" secondItem="u0J-xD-1e6" secondAttribute="trailing" id="eSa-mf-1I1"/>
+                                                        <constraint firstItem="WRX-hU-BdO" firstAttribute="centerY" secondItem="iOE-fi-sBz" secondAttribute="centerY" id="nGj-IE-D8P"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="noCardMarkLabel" destination="WRX-hU-BdO" id="X03-Ny-0MJ"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>

@@ -20,6 +20,7 @@ class CoffeeListCell: UITableViewCell {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 15, left: 30, bottom: 0, right: 30))
         titleLabel.font = .globalFont(size: 12)
         dateLabel.font = .globalFont(size: 12)
+
     }
     
     override func awakeFromNib() {

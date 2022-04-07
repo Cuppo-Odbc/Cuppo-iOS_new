@@ -128,7 +128,7 @@ class CardViewController: UIViewController {
     
     func showPopupView(){
         let popupView = AlertView(frame: view.bounds)
-        popupView.popupAlert(firstBtnTitle: "아니요", secondBtnTitle: "예", content: "정말로 삭제하시겠습니까?", myView: popupView)
+        popupView.popupAlert(firstBtnTitle: "아니요", secondBtnTitle: "예", content: "정말 삭제하시겠습니까?", myView: popupView)
         popupView.delegate = self
         view.addSubview(popupView)
     }

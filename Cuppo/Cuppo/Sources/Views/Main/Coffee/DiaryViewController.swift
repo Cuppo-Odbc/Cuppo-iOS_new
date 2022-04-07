@@ -24,6 +24,10 @@ class DiaryViewController: UIViewController {
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var leftButton: UIButton!
     
+    @IBAction func backButtonTapped(_ sender: Any) {
+        backPopupView()
+    }
+    
     @IBAction func completionButton(_ sender: Any) {
         // TODO: - API
         guard let titleText = titleTextField.text else {
@@ -35,9 +39,19 @@ class DiaryViewController: UIViewController {
             return
         }
         
-        viewModel.setCardTitle(title: "#"+titleText)
-        viewModel.setCardContent(content: contentText)
-        viewModel.requestModifyCardAPI()
+        
+        
+        switch viewModel.getType() {
+        case .editCard :
+            viewModel.setCardTitle(title: "#"+titleText)
+            viewModel.setCardContent(content: contentText)
+            viewModel.requestModifyCardAPI()
+        case .addCard :
+            viewModel.setNewCardTitle(title: "#"+titleText)
+            viewModel.setNewCardContent(content: contentText)
+            viewModel.requestAddCardAPI()
+        }
+        
         dismiss(animated: true, completion: nil)
     }
     
@@ -56,6 +70,7 @@ class DiaryViewController: UIViewController {
     }
     
     func setUI(){
+        
         setTextView()
         setFont()
         switch viewModel.getType() {
@@ -68,6 +83,9 @@ class DiaryViewController: UIViewController {
             contentTextView.text = viewModel.getCardContent()
         case .addCard :
             leftButton.isHidden = false
+            dateLabel.text = viewModel.getNewCoffeeDate()
+            titleTextField.text = viewModel.getCoffeeInfo().name
+            urlToImg(urlStr: viewModel.getCoffeeInfo().imgUrl, img: coffeeImageView)
         }
     }
     
@@ -91,7 +109,14 @@ class DiaryViewController: UIViewController {
     func showPopupView(){
         let popupView = AlertView(frame: view.bounds)
         popupView.okButton.isHidden = true
-        popupView.popupAlert(firstBtnTitle: "확인", secondBtnTitle: nil, content: "제목과 내용을 입력해주세요.", myView: popupView)
+        popupView.popupAlert(firstBtnTitle: "예", secondBtnTitle: nil, content: "제목과 내용을 작성해주세요.", myView: popupView)
+        popupView.delegate = self
+        view.addSubview(popupView)
+    }
+    
+    func backPopupView(){
+        let popupView = AlertView(frame: view.bounds)
+        popupView.popupAlert(firstBtnTitle: "아니요", secondBtnTitle: "예", content: "작성된 내용이 있습니다.\n기록을 취소하시겠습니까?.", myView: popupView)
         popupView.delegate = self
         view.addSubview(popupView)
     }
@@ -119,6 +144,7 @@ extension DiaryViewController: CustomAlertProtocol {
     }
     
     func okButtonTapped(_ popupView: UIView, _ year: String?, _ month: String?) {
+        self.dismiss(animated: true, completion: nil)
         popupView.removeFromSuperview()
     }
 }

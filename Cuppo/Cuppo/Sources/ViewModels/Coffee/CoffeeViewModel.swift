@@ -228,6 +228,10 @@ class CoffeeViewModel {
         self.selectStatusArr.value
     }
     
+    func getAllowStatusArr() -> [[Bool]] {
+        self.allowStatusArr.value
+    }
+    
     // 가능한 장식 상태 변경
     func setAllowStatusArr(){
 

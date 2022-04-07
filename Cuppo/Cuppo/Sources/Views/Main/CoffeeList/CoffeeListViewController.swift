@@ -17,6 +17,7 @@ class CoffeeListViewController: UIViewController {
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
     
+    
     @IBAction func changeDateTapped(_ sender: Any) {
         /* 날짜 변경하는 팝업창 */
         let popupView = AlertView(frame: view.bounds)
@@ -52,6 +53,7 @@ class CoffeeListViewController: UIViewController {
     func setLabel(){
         yearLabel.font = .globalFont(size: 16)
         monthLabel.font = .globalFont(size: 22)
+        
     }
     
     /* API 관련 */
