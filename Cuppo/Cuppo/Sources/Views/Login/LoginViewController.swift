@@ -65,7 +65,7 @@ class LoginViewController: BaseController {
         $0.setTitleColor(UIColor(named: "cuppoColor14"), for: .normal)
         $0.titleLabel?.font = UIFont.globalFont(size: 16)
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor(named: "cuppoColor14")?.cgColor ?? UIColor.black.cgColor
+        $0.layer.borderColor = UIColor.cuppoBorderColor14.cgColor
     }
     
     //MARK: - Life Cycle
@@ -80,6 +80,12 @@ class LoginViewController: BaseController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        startWithoutLoginButton.layer.borderColor = UIColor(named: "cuppoColor14")?.cgColor
     }
     
     //MARK: - Functions

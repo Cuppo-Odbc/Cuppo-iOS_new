@@ -28,9 +28,9 @@ class PasswordChangeViewController: BaseController {
     
     lazy var passwordChangeButton = UIButton().then{
         $0.setTitle("비밀번호 변경", for: .normal)
-        $0.setTitleColor(.black, for: .normal)
+        $0.setTitleColor(UIColor(named: "cuppoColor14"), for: .normal)
         $0.titleLabel?.font = UIFont.globalFont(size: 16)
-        $0.layer.borderColor = UIColor.black.cgColor
+        $0.layer.borderColor = UIColor(named: "cuppoColor14")?.cgColor
         $0.layer.borderWidth = 1.0
     }
     
@@ -54,6 +54,12 @@ class PasswordChangeViewController: BaseController {
         self.view.backgroundColor = .systemBackground
         
         setLayout()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        self.passwordChangeButton.layer.borderColor = UIColor(named: "cuppoColor14")?.cgColor
     }
     
     func setLayout(){

@@ -18,7 +18,7 @@ class RectViewButton: UIView {
     let checkLabel = UILabel().then{
         $0.text = "위 내용을 모두 확인했습니다."
         $0.font = UIFont.globalFont(size: 16)
-        $0.textColor = .black
+        
     }
     
     override init(frame: CGRect) {
@@ -74,9 +74,9 @@ class WithdrawalViewController: BaseController {
     
     lazy var withdrawalButton = UIButton().then{
         $0.setTitle("회원탈퇴", for: .normal)
-        $0.setTitleColor(.black, for: .normal)
+        $0.setTitleColor(UIColor(named: "cuppoColor14"), for: .normal)
         $0.titleLabel?.font = UIFont.globalFont(size: 16)
-        $0.layer.borderColor = UIColor.black.cgColor
+        $0.layer.borderColor = UIColor(named: "cuppoColor14")?.cgColor
         $0.layer.borderWidth = 1.0
         $0.addTarget(self, action: #selector(withdrawalButtonTapped(_:)), for: .touchUpInside)
     }
@@ -88,6 +88,12 @@ class WithdrawalViewController: BaseController {
         setLayout()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        self.withdrawalButton.layer.borderColor = UIColor(named: "cuppoColor14")?.cgColor
+    }
+
     func setLayout(){
         [alertLabel, closeButton, checkViewButton, withdrawalButton].forEach {
             self.view.addSubview($0)

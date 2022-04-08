@@ -20,4 +20,18 @@ extension UIColor {
     // MARK: 메인 테마 색 또는 자주 쓰는 색을 정의합시다
     class var bgColor: UIColor { UIColor(hex: 0xE5E5E5) }
     class var cuppoGray: UIColor { UIColor(hex: 0xAEAEAE)}
+    
+    static let cuppoBorderColor14: UIColor = {
+        if #available(iOS 13, *){
+            return UIColor{ (UITraitCollection: UITraitCollection) -> UIColor in
+                if UITraitCollection.userInterfaceStyle == .dark {
+                    return UIColor(red: 0.106, green: 0.106, blue: 0.106, alpha: 1.0)
+                }else{
+                    return UIColor(red: 0.106, green: 0.106, blue: 0.106, alpha: 1.0)
+                }
+            }
+        }else {
+            return UIColor(red: 0.106, green: 0.106, blue: 0.106, alpha: 1.0)
+        }
+    }()
 }
