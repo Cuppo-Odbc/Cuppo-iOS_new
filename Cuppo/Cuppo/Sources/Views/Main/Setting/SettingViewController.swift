@@ -43,20 +43,19 @@ class SettingViewController: BaseController {
     lazy var fontMenu = SettingActionView().then{
         $0.actionDelegate = self
         $0.type = .fontStyle
-//        $0.setTitleLabel(text: Menu.fontStyle.rawValue, font: UIFont.TTFont(type: .GFReg, size: 16.0))
         $0.setTitleLabel(text: Menu.fontStyle.rawValue, font: UIFont.globalFont(size: 16))
     }
     
     lazy var themeMenu = SettingActionView().then{
         $0.actionDelegate = self
         $0.type = .theme
-        $0.setTitleLabel(text: Menu.theme.rawValue, font: UIFont.TTFont(type: .GFReg, size: 16.0))
+        $0.setTitleLabel(text: Menu.theme.rawValue, font: UIFont.globalFont(size: 16))
         
     }
     lazy var instarMenu = SettingActionView().then{
         $0.actionDelegate = self
         $0.type = .instargram
-        $0.setTitleLabel(text: Menu.instargram.rawValue, font: UIFont.TTFont(type: .GFReg, size: 16.0))
+        $0.setTitleLabel(text: Menu.instargram.rawValue, font: UIFont.globalFont(size: 16))
     }
     
     let viewDivider = UIView().then{
@@ -66,12 +65,12 @@ class SettingViewController: BaseController {
     lazy var serviceMenu = SettingActionView().then{
         $0.actionDelegate = self
         $0.type = .serviceInfo
-        $0.setTitleLabel(text: Menu.serviceInfo.rawValue, font: UIFont.TTFont(type: .GFReg, size: 16.0))
+        $0.setTitleLabel(text: Menu.serviceInfo.rawValue, font: UIFont.globalFont(size: 16))
     }
     lazy var accountManagement = SettingActionView().then{
         $0.actionDelegate = self
         $0.type = .accountManagement
-        $0.setTitleLabel(text: Menu.accountManagement.rawValue, font: UIFont.TTFont(type: .GFReg, size: 16.0))
+        $0.setTitleLabel(text: Menu.accountManagement.rawValue, font: UIFont.globalFont(size: 16))
     }
 
     

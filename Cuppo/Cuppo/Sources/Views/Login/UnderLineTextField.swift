@@ -12,11 +12,11 @@ import Then
 class UnderLineTextField: UIView {
     //MARK: - UI Components
     let textField = UITextField().then{
-        $0.textColor = .black
+        $0.textColor = UIColor(named: "cuppoColor1")
     }
     
     let underLine = UIView().then{
-        $0.backgroundColor = .black
+        $0.backgroundColor = UIColor(named: "cuppoColor3")
     }
     
     let alertLabel = UILabel().then{
@@ -39,8 +39,8 @@ class UnderLineTextField: UIView {
     //MARK: - Functions
     private func setAttribute(){
         //TODO: 나중에 앱 설정을 가지고 있는 SingleTone 객체 값 받아와서 폰트, 사이즈 설정값 넣어주기    gfreg -> ???
-        self.textField.font = UIFont.TTFont(type: .GFReg, size: 16)
-        self.alertLabel.font = UIFont.TTFont(type: .GFReg, size: 12)
+        self.textField.font = UIFont.globalFont(size: 16)
+        self.alertLabel.font = UIFont.globalFont(size: 12)
     }
     
     private func setLayout(){

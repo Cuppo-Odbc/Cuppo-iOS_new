@@ -38,7 +38,7 @@ class LoginViewController: BaseController {
     let loginButton = UIButton().then {
         $0.setTitle("로그인", for: .normal)
         $0.setTitleColor(.black, for: .normal)
-        $0.titleLabel?.font = UIFont.TTFont(type: .GFReg, size: 16)
+        $0.titleLabel?.font = UIFont.globalFont(size: 16)
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.lightGray.cgColor
         $0.backgroundColor = .white
@@ -46,14 +46,14 @@ class LoginViewController: BaseController {
     
     let passwordFindButton = UIButton().then{
         $0.setTitle("비밀번호 찾기", for: .normal)
-        $0.setTitleColor(.lightGray, for: .normal)
-        $0.titleLabel?.font = UIFont.TTFont(type: .GFReg, size: 12)
+        $0.setTitleColor(UIColor(named: "cuppoColor3"), for: .normal)
+        $0.titleLabel?.font = UIFont.globalFont(size: 12)
     }
     
     let signUpButton = UIButton().then{
         $0.setTitle("회원가입", for: .normal)
-        $0.setTitleColor(.lightGray, for: .normal)
-        $0.titleLabel?.font = UIFont.TTFont(type: .GFReg, size: 12)
+        $0.setTitleColor(UIColor(named: "cuppoColor3"), for: .normal)
+        $0.titleLabel?.font = UIFont.globalFont(size: 12)
     }
     
     let separaterView = UIView().then{
@@ -62,10 +62,10 @@ class LoginViewController: BaseController {
     
     let startWithoutLoginButton = UIButton().then{
         $0.setTitle("로그인 없이 시작하기", for: .normal)
-        $0.setTitleColor(.black, for: .normal)
-        $0.titleLabel?.font = UIFont.TTFont(type: .GFReg, size: 16)
+        $0.setTitleColor(UIColor(named: "cuppoColor14"), for: .normal)
+        $0.titleLabel?.font = UIFont.globalFont(size: 16)
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor.black.cgColor
+        $0.layer.borderColor = UIColor(named: "cuppoColor14")?.cgColor ?? UIColor.black.cgColor
     }
     
     //MARK: - Life Cycle
@@ -75,6 +75,7 @@ class LoginViewController: BaseController {
         
         setLayout()
         bind()
+        self.dismissKeyboardWhenTappedAround()
     }
     
     override func viewDidLayoutSubviews() {

@@ -17,14 +17,14 @@ class ThemeViewController: BaseController {
         $0.themeType = .light
         $0.themeDelegate = self
         $0.radioButton.tag = 1
-        $0.setTitleLabel(text: "라이트 모드", font: .TTFont(type: .GFReg, size: 16))
+        $0.setTitleLabel(text: "라이트 모드", font: UIFont.globalFont(size: 16))
     }
     
     lazy var darkModeView = RadioViewButton().then{
         $0.themeType = .dark
         $0.themeDelegate = self
         $0.radioButton.tag = 2
-        $0.setTitleLabel(text: "다크 모드", font: .TTFont(type: .GFReg, size: 16))
+        $0.setTitleLabel(text: "다크 모드", font: UIFont.globalFont(size: 16))
     }
     
     lazy var themeStackView = UIStackView().then{

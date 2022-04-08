@@ -19,13 +19,13 @@ class AccountManagementViewController: BaseController {
     lazy var passwordChangeButton = SettingActionView().then{
         $0.accountDelegate = self
         $0.accountMenuType = .changePassword
-        $0.setTitleLabel(text: "비밀번호 변경", font: .TTFont(type: .GFReg, size: 16))
+        $0.setTitleLabel(text: "비밀번호 변경", font: UIFont.globalFont(size: 16))
     }
     
     lazy var withdrawalButton = SettingActionView().then{
         $0.accountDelegate = self
         $0.accountMenuType = .withdrawl
-        $0.setTitleLabel(text: "회원 탈퇴", font: .TTFont(type: .GFReg, size: 16))
+        $0.setTitleLabel(text: "회원 탈퇴", font: UIFont.globalFont(size: 16))
     }
     
     lazy var accountStackView = UIStackView().then{

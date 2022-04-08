@@ -43,7 +43,7 @@ class SignUpViewController: BaseController {
     
     let signUpButton = UIButton().then{
         $0.setTitle("회원가입", for: .normal)
-        $0.titleLabel?.font = UIFont.TTFont(type: .GFReg, size: 16)
+        $0.titleLabel?.font = UIFont.globalFont(size: 16)
         $0.setTitleColor(.black, for: .normal)
         $0.backgroundColor = .white
         $0.layer.borderWidth = 1
@@ -62,6 +62,7 @@ class SignUpViewController: BaseController {
 
         setLayout()
         bind()
+        self.dismissKeyboardWhenTappedAround()
     }
     
     //MARK: - Functions

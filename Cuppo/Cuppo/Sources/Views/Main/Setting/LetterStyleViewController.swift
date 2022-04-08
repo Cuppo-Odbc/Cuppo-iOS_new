@@ -23,11 +23,11 @@ class LetterStyleViewController: BaseController {
     
     let fontLabel = UILabel().then{
         $0.text = "글꼴"
-        $0.font = .TTFont(type: .GFReg, size: 18)
+        $0.font = UIFont.globalFont(size: 18)
     }
     
     lazy var systemFontButton = RadioViewButton().then{
-        $0.setTitleLabel(text: "시스템 폰트", font: .TTFont(type: .GFReg, size: 14))
+        $0.setTitleLabel(text: "시스템 폰트", font: .systemFont(ofSize: 14))
         $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(systemFontButtonTapped(_:))))
         $0.tag = 1
     }
@@ -109,7 +109,7 @@ class LetterStyleViewController: BaseController {
             self.dovemayoBoldFontButton.radioButton.isSelected = true
             self.kyoboFontButton.radioButton.isSelected = false
             break
-        case .kyoboHandwriting2019:
+        case .kyoboHandwriting2019  :
             self.systemFontButton.radioButton.isSelected = false
             self.basicFontButton.radioButton.isSelected = false
             self.dovemayoFontButton.radioButton.isSelected = false

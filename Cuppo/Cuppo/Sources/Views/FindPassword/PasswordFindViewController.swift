@@ -12,7 +12,7 @@ import Then
 class PasswordFindViewController: BaseController {
     let alertLabel = UILabel().then{
         $0.text = "가입 시 사용했던 이메일을 기입해주세요."
-        $0.font = UIFont.TTFont(type: .GFReg, size: 16)
+        $0.font = UIFont.globalFont(size: 16)
     }
     
     let emailTextField = UnderLineTextField().then{
@@ -23,7 +23,9 @@ class PasswordFindViewController: BaseController {
     lazy var passwordFindButton = UIButton().then{
         $0.setTitle("비밀번호 찾기", for: .normal)
         $0.setTitleColor(.black, for: .normal)
+        $0.titleLabel?.font = UIFont.globalFont(size: 16)
         $0.layer.borderColor = UIColor.lightGray.cgColor
+        $0.backgroundColor = .white
         $0.layer.borderWidth = 1
         $0.addTarget(self, action: #selector(passwordFindButtonTapped(_:)), for: .touchUpInside)
     }
@@ -39,6 +41,7 @@ class PasswordFindViewController: BaseController {
         self.view.backgroundColor = .systemBackground
         
         setLayout()
+        self.dismissKeyboardWhenTappedAround()
     }
     
     func setLayout(){
