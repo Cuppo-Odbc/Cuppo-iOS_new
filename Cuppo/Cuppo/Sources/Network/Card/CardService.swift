@@ -51,6 +51,25 @@ class CardService {
     }
     
     
+    // MARK: - 특정 카드 조회2
+    func requestSelectCard(cardId: String,completion: @escaping (Card)->(Void)){
+        let URL = Constant.BasicURL + "/cards/\(cardId)"
+        let HEADER: HTTPHeaders = [
+            "accept":           "application/json",
+            "Authorization":     "Bearer \(Constant.jwt)"
+        ]
+        
+        AF.request(URL, method: .get ,headers: HEADER).validate().responseDecodable(of:Card.self) { response in
+            switch response.result {
+            case .success(let response) :
+                completion(response)
+            case .failure(let error) :
+                print(" 특정 카드 조회2 네트워크 실패: ",error.localizedDescription)
+            }
+        }
+    }
+    
+    
     // MARK: - 카드 삭제
     func requestDeleteCard(cardId:String, completion: @escaping (CardDeleteResponse)->(Void)){
         

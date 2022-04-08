@@ -55,4 +55,8 @@ class CardListViewModel {
         self.cardList.value[idx]
     }
     
+    /* 특정 카드의 id */
+    func getCardId(idx: Int) -> String {
+        self.cardList.value[idx].id
+    }
 }

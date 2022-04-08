@@ -67,6 +67,7 @@
 		9F81962C27D64C0300FF42BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962B27D64C0300FF42BA /* Assets.xcassets */; };
 		9F81962F27D64C0400FF42BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962D27D64C0400FF42BA /* LaunchScreen.storyboard */; };
 		9FB8F37F27FF6F2D00830CC4 /* CardAddRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8F37E27FF6F2D00830CC4 /* CardAddRequest.swift */; };
+		9FB8F38128004E3300830CC4 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8F38028004E3300830CC4 /* CardModel.swift */; };
 		A8373A6B27DD17CE00BA0442 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A6A27DD17CE00BA0442 /* LoginViewController.swift */; };
 		A8373A6D27DD270F00BA0442 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A6C27DD270F00BA0442 /* UnderLineTextField.swift */; };
 		A8373A6F27DDC12700BA0442 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A6E27DDC12700BA0442 /* LoginViewModel.swift */; };
@@ -156,6 +157,7 @@
 		9F81962E27D64C0400FF42BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F81963027D64C0400FF42BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FB8F37E27FF6F2D00830CC4 /* CardAddRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAddRequest.swift; sourceTree = "<group>"; };
+		9FB8F38028004E3300830CC4 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		A8373A6A27DD17CE00BA0442 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Cuppo/Sources/Views/Login/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		A8373A6C27DD270F00BA0442 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UnderLineTextField.swift; path = Cuppo/Sources/Views/Login/UnderLineTextField.swift; sourceTree = SOURCE_ROOT; };
 		A8373A6E27DDC12700BA0442 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Cuppo/Sources/Views/Login/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -355,6 +357,7 @@
 				9F7D544527FAF7CC00D75CD0 /* CardModifyResponse.swift */,
 				9F7D544727FAF82B00D75CD0 /* CardModifyRequest.swift */,
 				9FB8F37E27FF6F2D00830CC4 /* CardAddRequest.swift */,
+				9FB8F38028004E3300830CC4 /* CardModel.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -807,6 +810,7 @@
 				9F7D544827FAF82B00D75CD0 /* CardModifyRequest.swift in Sources */,
 				9F253EA527D66A3D0010C1E6 /* IndicatorView.swift in Sources */,
 				9F7D540A27F3061A00D75CD0 /* AlertView.swift in Sources */,
+				9FB8F38128004E3300830CC4 /* CardModel.swift in Sources */,
 				9F7D543A27FACCE300D75CD0 /* CoffeeListCell.swift in Sources */,
 				9F253EA127D669320010C1E6 /* UIColor.swift in Sources */,
 				A8373A7A27DDE2B800BA0442 /* LoginResponse.swift in Sources */,

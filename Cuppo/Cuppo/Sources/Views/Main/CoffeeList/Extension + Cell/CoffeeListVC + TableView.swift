@@ -8,12 +8,13 @@
 import UIKit
 
 extension CoffeeListViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.cardListCount + 1
+        return viewModel.cardListCount == 0 ? viewModel.cardListCount+1 : viewModel.cardListCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        if viewModel.cardListCount == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "blankCell", for: indexPath) as? BlankCell else {
                 return UITableViewCell()
             }
@@ -24,7 +25,7 @@ extension CoffeeListViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "coffeeListCell", for: indexPath) as? CoffeeListCell else {
                 return UITableViewCell()
             }
-            let target = viewModel.getCardData(idx: indexPath.item-1)
+            let target = viewModel.getCardData(idx: indexPath.item)
             cell.titleLabel.text = target.title
             urlToImg(urlStr: target.coffee, img: cell.coffeeImage)
             cell.dateLabel.text = target.date.substring(from: 0, to: 9)
@@ -38,8 +39,8 @@ extension CoffeeListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row != 0 {
-            moveToVC(selectIdx: indexPath.item-1)
+        if viewModel.cardListCount != 0 {
+            moveToVC(selectIdx: indexPath.item)
         }
     }
 

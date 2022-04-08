@@ -88,9 +88,10 @@ class CalendarViewController: UIViewController {
     func moveToVC(SBName: String, SBId: String ,VCName: String){
         let storyboard = UIStoryboard(name: SBName, bundle: nil)
         let VCName = storyboard.instantiateViewController(identifier: SBId)
-        VCName.modalPresentationStyle = .fullScreen
-        self.present(VCName, animated: true, completion: nil)
-//        self.navigationController?.pushViewController(VCName, animated: true)
+        let NaviVC = UINavigationController(rootViewController: VCName)
+        NaviVC.modalPresentationStyle = .fullScreen
+        self.present(NaviVC, animated: true, completion: nil)
+        
     }
     
     func moveToVC2(selectIdx: Int){
