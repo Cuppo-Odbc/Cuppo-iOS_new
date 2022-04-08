@@ -38,7 +38,6 @@ class CoffeeListViewController: UIViewController {
         super.viewWillAppear(animated)
         setupData()
         setLabel()
-        tableView.reloadData()
     }
     
     // MARK: - Functions
@@ -80,6 +79,7 @@ class CoffeeListViewController: UIViewController {
         viewModel.cardList.bind { _ in
             self.tableView.reloadData()
         }
+        
     }
     
     /* 화면전환 */
@@ -87,8 +87,9 @@ class CoffeeListViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Coffee", bundle: nil)
         guard let CardVC = storyboard.instantiateViewController(identifier: "CardSB") as? CardViewController else { return }
         CardVC.viewModel.cardPK = viewModel.getCardId(idx: selectIdx)
-        CardVC.modalPresentationStyle = .fullScreen
-        self.present(CardVC, animated: true, completion: nil)
+        let NaviVC = UINavigationController(rootViewController: CardVC)
+        NaviVC.modalPresentationStyle = .fullScreen
+        self.present(NaviVC, animated: true, completion: nil)
     }
     
 }

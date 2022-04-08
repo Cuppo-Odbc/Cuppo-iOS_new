@@ -11,6 +11,7 @@ class DiaryViewModel {
     let cardDataManger = CardService.shared
     
     var type: Observable2<DiaryType> = Observable2(value: .addCard)
+    var addEndStatus: Observable2<Bool> = Observable2(value: false)
     
     func getType() -> DiaryType {
         self.type.value
@@ -27,9 +28,8 @@ class DiaryViewModel {
     // 등록 API
     func requestAddCardAPI(){
         let para: CardAddRequest = CardAddRequest(title: getNewCardTitle(), content: getNewCardContent(), coffee: getNewCardImageURL(), date: getNewCoffeeDate())
-        print(para)
         cardDataManger.requestAddCard(para: para) { response in
-            print("\(response)")
+            self.addEndStatus.value = true
         }
     }
     
@@ -73,12 +73,14 @@ class DiaryViewModel {
     
     // 카드 수정할 때
     var cardInfo: Observable2<Card> = Observable2(value: Card())
+    var editEndStatus: Observable2<Bool> = Observable2(value: false)
     
     // 수정 API
     func requestModifyCardAPI(){
         let para: CardModifyRequest = CardModifyRequest(title: getCardTitle(), content: getCardContent(), coffee: getCardImageURL())
         cardDataManger.requestModifyCard(cardId: cardId, para: para) { response in
             self.cardInfo.value = response
+            self.editEndStatus.value = true
         }
     }
     

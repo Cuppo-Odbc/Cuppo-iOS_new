@@ -17,7 +17,6 @@ extension CardViewController: CustomAlertProtocol {
     func okButtonTapped(_ popupView: UIView, _ year: String?, _ month: String?) {
         viewModel.deleteCard()
         popupView.removeFromSuperview()
-        self.dismiss(animated: true, completion: nil)
     }
     
 }
@@ -38,7 +37,6 @@ extension CardViewController: DropDownProtocol {
     
     func deleteAction() {
         dropDownView.removeFromSuperview()
-        // TODO: - 삭제하시겠습니까란 팝업창을 띄우고 삭제버튼을 누르면 진행, 취소는 그냥 없던 일로?
         showPopupView()
     }
     
@@ -57,10 +55,14 @@ class CardViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var coffeeImageView: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var closeButton: UIButton!
-    @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var closeBarButton: UIBarButtonItem!
+    @IBOutlet weak var menuBarButton: UIBarButtonItem!
     
-    @IBAction func memuButtonTapped(_ sender: Any) {
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func menuButtonTapped(_ sender: Any) {
         showDropDown()
     }
     
@@ -68,16 +70,13 @@ class CardViewController: UIViewController {
         dropDownView.removeFromSuperview()
     }
     
-    @IBAction func closeButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
         setBind()
+        setBarButtonLocation(size: 10, barButton: closeBarButton,location: 1)
+        setBarButtonLocation(size: -10, barButton: menuBarButton,location: 2)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +84,19 @@ class CardViewController: UIViewController {
     }
     
     // MARK: - Functions
+    func setBarButtonLocation(size: Double,barButton: UIBarButtonItem, location: Int){
+        
+        let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        spacer.width = size
+        if location == 1 {
+            navigationItem.setLeftBarButtonItems([spacer,barButton], animated: false)
+        }else {
+            navigationItem.setRightBarButtonItems([spacer,barButton], animated: false)
+        }
+        
+    }
+    
+    
     func setupData(){
         viewModel.requestCardInfo()
     }
@@ -93,6 +105,12 @@ class CardViewController: UIViewController {
         viewModel.cardInfo.bind { data in
             self.setupData()
             self.setUI()
+        }
+        
+        viewModel.responseEnd.bind { status in
+            if status {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
@@ -115,8 +133,8 @@ class CardViewController: UIViewController {
         view.addSubview(dropDownView)
         
         dropDownView.snp.makeConstraints {
-            $0.top.equalTo(menuButton.snp.top)
-            $0.trailing.equalTo(menuButton.snp.trailing)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-30)
             $0.width.equalTo(130)
             $0.height.equalTo(150)
         }
@@ -130,7 +148,7 @@ class CardViewController: UIViewController {
         DiaryVC.modalPresentationStyle = .fullScreen
         DiaryVC.viewModel.setType(cardType: .editCard)
         DiaryVC.setData(data: viewModel.getCardInfo())
-        present(DiaryVC, animated: false, completion: nil)
+        self.navigationController?.pushViewController(DiaryVC, animated: false)
         
     }
     
@@ -143,8 +161,8 @@ class CardViewController: UIViewController {
     
     // 스크린 캡쳐하는 함수
     func takeScreenshot(of view: UIView) {
-        closeButton.isHidden = true
-        menuButton.isHidden = true
+        closeBarButton.customView?.isHidden = true
+        menuBarButton.customView?.isHidden = true
         UIGraphicsBeginImageContextWithOptions(
             CGSize(width: view.bounds.width, height: view.bounds.height),
             false,
@@ -159,8 +177,8 @@ class CardViewController: UIViewController {
         shareMotionAction()
         
         UIImageWriteToSavedPhotosAlbum(screenshot, self, #selector(imageWasSaved), nil)
-        closeButton.isHidden = false
-        menuButton.isHidden = false
+        closeBarButton.customView?.isHidden = false
+        menuBarButton.customView?.isHidden = false
     }
     
     // 공유하는 함수

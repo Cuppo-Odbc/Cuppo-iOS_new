@@ -18,7 +18,6 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
             return UICollectionViewCell()
         }
         let target = viewModel.getCellData(idx: indexPath.item)
-
         cell.dayLabel.text = target.dayName
         cell.coffeeImage.isHidden = !target.isExist
         cell.dayLabel.textColor = target.isTouch ? UIColor(named: "cuppoColor1") : UIColor(named: "cuppoColor8")

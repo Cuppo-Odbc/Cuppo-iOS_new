@@ -11,7 +11,7 @@ class CardViewModel {
     let cardDataManger = CardService.shared
     var cardPK: String = ""
     var cardInfo: Observable2<Card> = Observable2(value: Card())
-    
+    var responseEnd: Observable2<Bool> = Observable2(value: false)
     
     func requestCardInfo(){
         cardDataManger.requestSelectCard(cardId: cardPK) { response in
@@ -39,9 +39,10 @@ class CardViewModel {
     }
     
     // 삭제
-    func deleteCard(){
+    func deleteCard() {
         cardDataManger.requestDeleteCard(cardId: cardId) { response in
-            print(response)
+            print("잘 삭제되었다.")
+            self.responseEnd.value = true
         }
     }
     

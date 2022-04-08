@@ -53,7 +53,7 @@ class DiaryViewController: UIViewController {
             viewModel.requestAddCardAPI()
         }
         
-        dismiss(animated: true, completion: nil)
+        
     }
     
     // MARK: - LifeCycle
@@ -89,6 +89,10 @@ class DiaryViewController: UIViewController {
         setFont()
         switch viewModel.getType() {
         case .editCard :
+            leftButton.tintColor = .clear
+            leftButton.isEnabled = false
+            leftButton.isAccessibilityElement = false
+
             leftButton.customView?.isHidden = true
             dateLabel.text = viewModel.getCardDate()
             let lastIdx = viewModel.getCardTitle().count-1
@@ -118,6 +122,18 @@ class DiaryViewController: UIViewController {
     
     /* 바인딩하는 부분 */
     func setBind() {
+        viewModel.editEndStatus.bind { status in
+            if status {
+                self.navigationController?.popViewController(animated: false)
+            }
+        }
+        
+        viewModel.addEndStatus.bind { status in
+            if status {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        
     }
     
     func showPopupView(){

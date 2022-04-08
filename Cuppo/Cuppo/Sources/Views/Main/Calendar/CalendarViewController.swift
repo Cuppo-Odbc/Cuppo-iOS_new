@@ -31,16 +31,15 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        setupData()
         setCollectionView()
         setBind()
-        setMonthView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setLabel()
-        collectionView.reloadData()
+        setupData()
+        setMonthView()
     }
     
     // MARK: - Functions
