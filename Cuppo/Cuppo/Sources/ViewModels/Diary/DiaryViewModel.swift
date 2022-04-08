@@ -11,8 +11,28 @@ class DiaryViewModel {
     let cardDataManger = CardService.shared
     
     var type: Observable2<DiaryType> = Observable2(value: .addCard)
-    var cardInfo: Observable2<Card> = Observable2(value: Card())
+    
+    func getType() -> DiaryType {
+        self.type.value
+    }
+    
+    func setType(cardType: DiaryType) {
+        type.value = cardType
+    }
+    
+    
+    // 커피 등록할 때
     var coffeeInfo: Observable2<CoffeeModel> = Observable2(value: CoffeeModel())
+    
+    // 등록 API
+    func requestAddCardAPI(){
+        let para: CardAddRequest = CardAddRequest(title: getNewCardTitle(), content: getNewCardContent(), coffee: getNewCardImageURL(), date: getNewCoffeeDate())
+        print(para)
+        cardDataManger.requestAddCard(para: para) { response in
+            print("\(response)")
+        }
+    }
+    
     
     func getCoffeeInfo() -> CoffeeModel {
         self.coffeeInfo.value
@@ -49,15 +69,17 @@ class DiaryViewModel {
     func setNewCardCoffeeURL(url: String) {
         self.coffeeInfo.value.imgUrl = url
     }
-
     
     
-    func getType() -> DiaryType {
-        self.type.value
-    }
+    // 카드 수정할 때
+    var cardInfo: Observable2<Card> = Observable2(value: Card())
     
-    func setType(cardType: DiaryType) {
-        type.value = cardType
+    // 수정 API
+    func requestModifyCardAPI(){
+        let para: CardModifyRequest = CardModifyRequest(title: getCardTitle(), content: getCardContent(), coffee: getCardImageURL())
+        cardDataManger.requestModifyCard(cardId: cardId, para: para) { response in
+            self.cardInfo.value = response
+        }
     }
     
     // 카드 고유의 아이디 PK
@@ -102,22 +124,6 @@ class DiaryViewModel {
     func setCardInfo(newCardInfo: Card) {
         self.cardInfo.value = newCardInfo
     }
-    
-    // 등록 API
-    func requestAddCardAPI(){
-        let para: CardAddRequest = CardAddRequest(title: getNewCardTitle(), content: getNewCardContent(), coffee: getNewCardImageURL(), date: getNewCoffeeDate())
-        print(para)
-        cardDataManger.requestAddCard(para: para) { response in
-            print("\(response)")
-        }
-    }
-    
-    // 수정 API
-    func requestModifyCardAPI(){
-        let para: CardModifyRequest = CardModifyRequest(title: getCardTitle(), content: getCardContent(), coffee: getCardImageURL())
-        cardDataManger.requestModifyCard(cardId: cardId, para: para) { response in
-            self.cardInfo.value = response
-        }
-    }
+
     
 }

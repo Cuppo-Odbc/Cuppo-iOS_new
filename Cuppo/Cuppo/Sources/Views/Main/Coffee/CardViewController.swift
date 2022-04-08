@@ -76,7 +76,8 @@ class CardViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
+        setupData()
+        setBind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,8 +85,15 @@ class CardViewController: UIViewController {
     }
     
     // MARK: - Functions
-    func setupData(data: Card){
-        viewModel.setCardInfo(newCardInfo: data)
+    func setupData(){
+        viewModel.requestCardInfo()
+    }
+    
+    func setBind(){
+        viewModel.cardInfo.bind { data in
+            self.setupData()
+            self.setUI()
+        }
     }
     
     func setUI(){
@@ -122,7 +130,7 @@ class CardViewController: UIViewController {
         DiaryVC.modalPresentationStyle = .fullScreen
         DiaryVC.viewModel.setType(cardType: .editCard)
         DiaryVC.setData(data: viewModel.getCardInfo())
-        present(DiaryVC, animated: true, completion: nil)
+        present(DiaryVC, animated: false, completion: nil)
         
     }
     

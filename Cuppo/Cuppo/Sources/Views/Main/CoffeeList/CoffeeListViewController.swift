@@ -36,6 +36,7 @@ class CoffeeListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupData()
         setLabel()
         tableView.reloadData()
     }
@@ -85,7 +86,7 @@ class CoffeeListViewController: UIViewController {
     func moveToVC(selectIdx: Int){
         let storyboard = UIStoryboard(name: "Coffee", bundle: nil)
         guard let CardVC = storyboard.instantiateViewController(identifier: "CardSB") as? CardViewController else { return }
-        CardVC.setupData(data: viewModel.getCardData(idx: selectIdx))
+        CardVC.viewModel.cardPK = viewModel.getCardId(idx: selectIdx)
         CardVC.modalPresentationStyle = .fullScreen
         self.present(CardVC, animated: true, completion: nil)
     }

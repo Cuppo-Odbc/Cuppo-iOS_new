@@ -22,7 +22,10 @@ class DiaryViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var coffeeImageView: UIImageView!
     @IBOutlet weak var contentTextView: UITextView!
-    @IBOutlet weak var leftButton: UIButton!
+    
+    @IBOutlet weak var leftButton: UIBarButtonItem!
+    @IBOutlet weak var rightButton: UIBarButtonItem!
+    
     
     @IBAction func backButtonTapped(_ sender: Any) {
         backPopupView()
@@ -39,8 +42,6 @@ class DiaryViewController: UIViewController {
             return
         }
         
-        
-        
         switch viewModel.getType() {
         case .editCard :
             viewModel.setCardTitle(title: "#"+titleText)
@@ -55,18 +56,31 @@ class DiaryViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         dismissKeyboardWhenTappedAround()
         setBind()
         setUI()
+        setBarButtonLocation(size: 10, barButton: leftButton,location: 1)
+        setBarButtonLocation(size: -10, barButton: rightButton,location: 2)
     }
     
     // MARK: - Functions
     func setData(data: Card){
         viewModel.setCardInfo(newCardInfo: data)
+    }
+    
+    func setBarButtonLocation(size: Double,barButton: UIBarButtonItem, location: Int){
+        
+        let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        spacer.width = size
+        if location == 1 {
+            navigationItem.setLeftBarButtonItems([spacer,barButton], animated: false)
+        }else {
+            navigationItem.setRightBarButtonItems([spacer,barButton], animated: false)
+        }
+        
     }
     
     func setUI(){
@@ -75,14 +89,14 @@ class DiaryViewController: UIViewController {
         setFont()
         switch viewModel.getType() {
         case .editCard :
-            leftButton.isHidden = true
+            leftButton.customView?.isHidden = true
             dateLabel.text = viewModel.getCardDate()
             let lastIdx = viewModel.getCardTitle().count-1
             titleTextField.text = viewModel.getCardTitle().substring(from: 1, to: lastIdx)
             urlToImg(urlStr: viewModel.getCardImageURL(), img: coffeeImageView)
             contentTextView.text = viewModel.getCardContent()
         case .addCard :
-            leftButton.isHidden = false
+            leftButton.customView?.isHidden = false
             dateLabel.text = viewModel.getNewCoffeeDate()
             titleTextField.text = viewModel.getCoffeeInfo().name
             urlToImg(urlStr: viewModel.getCoffeeInfo().imgUrl, img: coffeeImageView)
@@ -144,7 +158,7 @@ extension DiaryViewController: CustomAlertProtocol {
     }
     
     func okButtonTapped(_ popupView: UIView, _ year: String?, _ month: String?) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
         popupView.removeFromSuperview()
     }
 }

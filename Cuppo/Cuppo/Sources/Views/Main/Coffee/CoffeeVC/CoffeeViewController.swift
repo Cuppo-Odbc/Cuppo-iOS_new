@@ -28,9 +28,14 @@ class CoffeeViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var leftBarButton: UIBarButtonItem!
+    @IBOutlet weak var rightBarButton: UIBarButtonItem!
+    
+    
     @IBAction func dismissButtonTapped(_ sender: Any) {
         showPopupView()
     }
+    
     @IBAction func nextButtonTapped(_ sender: Any) {
         moveToVC()
     }
@@ -43,6 +48,20 @@ class CoffeeViewController: UIViewController {
         setButton()
         setBind()
         setFont()
+        setBarButtonLocation(size: 10, barButton: leftBarButton,location: 1)
+        setBarButtonLocation(size: -10, barButton: rightBarButton,location: 2)
+    }
+    
+    func setBarButtonLocation(size: Double,barButton: UIBarButtonItem, location: Int){
+        
+        let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        spacer.width = size
+        if location == 1 {
+            navigationItem.setLeftBarButtonItems([spacer,barButton], animated: false)
+        }else {
+            navigationItem.setRightBarButtonItems([spacer,barButton], animated: false)
+        }
+        
     }
     
     func setFont(){
@@ -167,8 +186,8 @@ class CoffeeViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Coffee", bundle: nil)
         guard let DiaryVC = storyboard.instantiateViewController(identifier: "DiarySB") as? DiaryViewController else { return }
         DiaryVC.modalPresentationStyle = .fullScreen
-        DiaryVC.viewModel.setCoffeeInfo(newCoffeeInfo: CoffeeModel(date: "2022-04-02T00:00:00+00:00", name: viewModel.getResultCoffeeName(), imgUrl: viewModel.getResultCoffeeImgUrl(), content: "", combination: viewModel.getSelectedCombinationArr(), selectStatus: viewModel.getSelectStatusArr(), allowStatus: viewModel.getAllowStatusArr()))
-        self.present(DiaryVC, animated: true, completion: nil)
+        DiaryVC.viewModel.setCoffeeInfo(newCoffeeInfo: CoffeeModel(date: "2022-04-02T00:00:00+00:00", name: viewModel.getResultCoffeeName(), imgUrl: viewModel.getResultCoffeeImgUrl(), content: ""))
+        self.navigationController?.pushViewController(DiaryVC, animated: true)
     }
     
     func showPopupView(){
@@ -191,22 +210,3 @@ extension CoffeeViewController: CustomAlertProtocol {
 }
 
 
-struct CoffeeModel {
-    var date: String
-    var name: String
-    var imgUrl: String
-    var content: String
-    var combination: CombinationModel
-    var selectStatus: [[Bool]]
-    var allowStatus: [[Bool]]
-    
-    init(date: String = "", name: String = "", imgUrl: String = "", content: String = "", combination: CombinationModel = CombinationModel(), selectStatus: [[Bool]] = [[Bool]](), allowStatus: [[Bool]] = [[Bool]]()){
-        self.date = date
-        self.name = name
-        self.imgUrl = imgUrl
-        self.content = content
-        self.combination = combination
-        self.selectStatus = selectStatus
-        self.allowStatus = allowStatus
-    }
-}

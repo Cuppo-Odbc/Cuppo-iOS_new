@@ -9,8 +9,15 @@ import Foundation
 
 class CardViewModel {
     let cardDataManger = CardService.shared
-    
+    var cardPK: String = ""
     var cardInfo: Observable2<Card> = Observable2(value: Card())
+    
+    
+    func requestCardInfo(){
+        cardDataManger.requestSelectCard(cardId: cardPK) { response in
+            self.setCardInfo(newCardInfo: response)
+        }
+    }
     
     // 카드 고유의 아이디 PK
     var cardId: String {
@@ -36,7 +43,6 @@ class CardViewModel {
         cardDataManger.requestDeleteCard(cardId: cardId) { response in
             print(response)
         }
-        // API
     }
     
 }
