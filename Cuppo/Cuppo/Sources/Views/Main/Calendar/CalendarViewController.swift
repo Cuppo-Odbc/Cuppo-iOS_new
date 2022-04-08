@@ -31,16 +31,15 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        setupData()
         setCollectionView()
         setBind()
-        setMonthView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setLabel()
-        collectionView.reloadData()
+        setupData()
+        setMonthView()
     }
     
     // MARK: - Functions
@@ -57,6 +56,7 @@ class CalendarViewController: UIViewController {
     /* API 관련 */
     private func setupData() {
         viewModel.requestCardListAPI()
+        showIndicator()
     }
     
     /* 콜렉션뷰 셋팅 */
@@ -81,21 +81,35 @@ class CalendarViewController: UIViewController {
         
         viewModel.cardList.bind { _ in
             self.collectionView.reloadData()
+            self.dismissIndicator()
+        }
+        
+        viewModel.cardPK.bind { data in
+            if data != "" {
+                self.moveToShowVC(cardId: data)
+            }
         }
     }
     
     /* 화면전환 */    
-    func moveToVC(SBName: String, SBId: String ,VCName: String){
-        let storyboard = UIStoryboard(name: SBName, bundle: nil)
-        let VCName = storyboard.instantiateViewController(identifier: SBId)
-        let NaviVC = UINavigationController(rootViewController: VCName)
+    func moveToAddVC(){
+        let storyboard = UIStoryboard(name: "Coffee", bundle: nil)
+        guard let CoffeeVC = storyboard.instantiateViewController(identifier: "CoffeeSB") as? CoffeeViewController else { return }
+        CoffeeVC.viewModel.selectedDate.value = viewModel.getFullDateString()
+        
+        let NaviVC = UINavigationController(rootViewController: CoffeeVC)
         NaviVC.modalPresentationStyle = .fullScreen
         self.present(NaviVC, animated: true, completion: nil)
         
     }
     
-    func moveToVC2(selectIdx: Int){
-        
+    func moveToShowVC(cardId: String){
+        let storyboard = UIStoryboard(name: "Coffee", bundle: nil)
+        guard let CardVC = storyboard.instantiateViewController(identifier: "CardSB") as? CardViewController else { return }
+        CardVC.viewModel.cardPK = cardId
+        let NaviVC = UINavigationController(rootViewController: CardVC)
+        NaviVC.modalPresentationStyle = .fullScreen
+        self.present(NaviVC, animated: true, completion: nil)
     }
     
 }

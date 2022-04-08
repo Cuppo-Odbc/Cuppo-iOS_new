@@ -59,4 +59,19 @@ class CardListViewModel {
     func getCardId(idx: Int) -> String {
         self.cardList.value[idx].id
     }
+    
+    func getCardDate(dateString: String) -> String {
+        return getFormattedDate(dateString: dateString)
+    }
+    
+    func getFormattedDate(dateString: String) -> String{
+        let testDate = dateString.substring(from: 0, to: 9)
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd"
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "yyyy.MM.dd"
+        let date: Date? = dateFormatterGet.date(from: testDate)
+        return dateFormatterPrint.string(from: date!)
+    }
 }

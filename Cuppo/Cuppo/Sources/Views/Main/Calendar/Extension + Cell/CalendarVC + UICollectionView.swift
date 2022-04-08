@@ -18,7 +18,6 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
             return UICollectionViewCell()
         }
         let target = viewModel.getCellData(idx: indexPath.item)
-
         cell.dayLabel.text = target.dayName
         cell.coffeeImage.isHidden = !target.isExist
         cell.dayLabel.textColor = target.isTouch ? UIColor(named: "cuppoColor1") : UIColor(named: "cuppoColor8")
@@ -27,15 +26,15 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let target = viewModel.getCellData(idx: indexPath.item)
         if target.isTouch {
             //TODO: - 만약 이미 카드가 존재한다면 등록안됨
             if !target.isExist {
-                moveToVC(SBName: "Coffee", SBId: "CoffeeSB", VCName: "CoffeeVC")
+                viewModel.setFullDateString(day: target.dayName)
+                moveToAddVC()
             }else {
                 //TODO: - 카드 조회하면으로?
-                print("G")
+                viewModel.requestDetailCardAPI(day: target.dayName)
             }
         }
     }

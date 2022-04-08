@@ -28,20 +28,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hF2-Vi-lkk">
                                 <rect key="frame" x="0.0" y="44" width="414" height="174.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ii-GL-uN3">
-                                        <rect key="frame" x="30" y="90" width="30.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ii-GL-uN3">
+                                        <rect key="frame" x="30" y="90" width="4.5" height="20.5"/>
                                         <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="16"/>
                                         <color key="textColor" name="cuppoColor1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FEBRUARY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ob-WK-Bq1">
-                                        <rect key="frame" x="30" y="111.5" width="87.5" height="28.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ob-WK-Bq1">
+                                        <rect key="frame" x="30" y="111.5" width="30" height="28.5"/>
                                         <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="22"/>
                                         <color key="textColor" name="cuppoColor1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUz-Gd-GmL">
-                                        <rect key="frame" x="30" y="90" width="87.5" height="50"/>
+                                        <rect key="frame" x="30" y="90" width="30" height="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <connections>
                                             <action selector="changeDateTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="96c-5z-gon"/>
@@ -77,19 +77,19 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJp-3e-o78">
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022.02.10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5K-fF-o1h">
-                                                                    <rect key="frame" x="349" y="15" width="49" height="16"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5K-fF-o1h">
+                                                                    <rect key="frame" x="398" y="15" width="0.0" height="0.0"/>
                                                                     <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="12"/>
                                                                     <color key="textColor" name="cuppoColor5"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#아메리카노" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXq-ag-vWo">
-                                                                    <rect key="frame" x="16" y="15" width="57" height="16"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXq-ag-vWo">
+                                                                    <rect key="frame" x="16" y="15" width="8" height="16"/>
                                                                     <fontDescription key="fontDescription" name="Goyang" family="Goyang" pointSize="12"/>
                                                                     <color key="textColor" name="cuppoColor6"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotame" translatesAutoresizingMaskIntoConstraints="NO" id="x7W-0K-TNV">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x7W-0K-TNV">
                                                                     <rect key="frame" x="124" y="17" width="166" height="166"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="x7W-0K-TNV" secondAttribute="height" multiplier="1:1" id="asw-aN-B4P"/>
@@ -196,7 +196,6 @@
         <image name="basicLightMode" width="375" height="812"/>
         <image name="cards" width="20" height="20"/>
         <image name="cell" width="315" height="200"/>
-        <image name="hotame" width="1000" height="1000"/>
         <image name="us_cards" width="20" height="20"/>
         <namedColor name="cuppoColor1">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

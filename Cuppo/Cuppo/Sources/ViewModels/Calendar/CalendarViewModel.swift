@@ -14,6 +14,19 @@ class CalendarViewModel {
     var selectedDate: Observable2<Date> = Observable2(value: Date())
     var cellArea: Observable2<[DayModel]> = Observable2(value:[DayModel]())
     
+    var fullDateString: Observable2<String> = Observable2(value: "")
+    var cardPK: Observable2<String> = Observable2(value: "")
+    
+    func getFullDateString() -> String {
+        self.fullDateString.value
+    }
+    
+    func setFullDateString(day: String) {
+        let getDay: String = day.count < 10 ? "0"+day : day
+        self.fullDateString.value = "\(getYear())-\(getNumberMonth())-\(getDay)"
+    }
+    
+    
     func requestCardListAPI(){
         //TODO: API 호출해서 응답값 받고, 그걸 우리가쓸 모델형태로 변경 후 그걸 cardList에 넣어주자.
         cardDataManger.requestCardList(year: Int(getYear())!, month: Int(getNumberMonth())!) { response in
@@ -22,6 +35,13 @@ class CalendarViewModel {
             self.setCardInDay()
         }
     }
+    
+    func requestDetailCardAPI(day: String){
+        cardDataManger.requestSelectCard(year: Int(getYear())!, month: Int(getNumberMonth())!, day: Int(day)!) { response in
+            self.cardPK.value = response.content[0].id
+        }
+    }
+    
     
     // MARK: - selectedDate
     

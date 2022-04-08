@@ -19,6 +19,7 @@ class DiaryViewController: UIViewController {
     
     // MARK: - UIComponents
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var hashTagLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var coffeeImageView: UIImageView!
     @IBOutlet weak var contentTextView: UITextView!
@@ -34,26 +35,25 @@ class DiaryViewController: UIViewController {
     @IBAction func completionButton(_ sender: Any) {
         // TODO: - API
         guard let titleText = titleTextField.text else {
-            showPopupView()
             return
         }
         guard let contentText = contentTextView.text else {
-            showPopupView()
             return
         }
-        
-        switch viewModel.getType() {
-        case .editCard :
-            viewModel.setCardTitle(title: "#"+titleText)
-            viewModel.setCardContent(content: contentText)
-            viewModel.requestModifyCardAPI()
-        case .addCard :
-            viewModel.setNewCardTitle(title: "#"+titleText)
-            viewModel.setNewCardContent(content: contentText)
-            viewModel.requestAddCardAPI()
+        if titleText == "" || contentText == "커피에 담긴 순간을 기록해보세요." {
+            showPopupView()
+        }else {
+            switch viewModel.getType() {
+            case .editCard :
+                viewModel.setCardTitle(title: "#"+titleText)
+                viewModel.setCardContent(content: contentText)
+                viewModel.requestModifyCardAPI()
+            case .addCard :
+                viewModel.setNewCardTitle(title: "#"+titleText)
+                viewModel.setNewCardContent(content: contentText)
+                viewModel.requestAddCardAPI()
+            }
         }
-        
-        dismiss(animated: true, completion: nil)
     }
     
     // MARK: - LifeCycle
@@ -84,11 +84,14 @@ class DiaryViewController: UIViewController {
     }
     
     func setUI(){
-        
         setTextView()
         setFont()
         switch viewModel.getType() {
         case .editCard :
+            leftButton.tintColor = .clear
+            leftButton.isEnabled = false
+            leftButton.isAccessibilityElement = false
+
             leftButton.customView?.isHidden = true
             dateLabel.text = viewModel.getCardDate()
             let lastIdx = viewModel.getCardTitle().count-1
@@ -105,6 +108,7 @@ class DiaryViewController: UIViewController {
     
     func setFont(){
         dateLabel.font = .globalFont(size: 16)
+        hashTagLabel.font = .globalFont(size: 21)
         titleTextField.font = .globalFont(size: 21)
         contentTextView.font = .globalFont(size: 17)
     }
@@ -118,6 +122,18 @@ class DiaryViewController: UIViewController {
     
     /* 바인딩하는 부분 */
     func setBind() {
+        viewModel.editEndStatus.bind { status in
+            if status {
+                self.navigationController?.popViewController(animated: false)
+            }
+        }
+        
+        viewModel.addEndStatus.bind { status in
+            if status {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        
     }
     
     func showPopupView(){

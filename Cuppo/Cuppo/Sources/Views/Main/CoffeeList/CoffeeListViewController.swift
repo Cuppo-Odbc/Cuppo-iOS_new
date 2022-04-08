@@ -31,24 +31,21 @@ class CoffeeListViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
+        setBind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupData()
         setLabel()
-        tableView.reloadData()
+        setUI()
     }
     
     // MARK: - Functions
     func setUI(){
         yearLabel.text = viewModel.getYear()
         monthLabel.text = viewModel.getMonth()
-        
-        setupData()
         setTableView()
-        setBind()
     }
     
     func setLabel(){
@@ -60,6 +57,7 @@ class CoffeeListViewController: UIViewController {
     /* API 관련 */
     private func setupData() {
         viewModel.requestCardListAPI()
+        showIndicator()
     }
     
     /* 테이블뷰 셋팅 */
@@ -79,7 +77,9 @@ class CoffeeListViewController: UIViewController {
         
         viewModel.cardList.bind { _ in
             self.tableView.reloadData()
+            self.dismissIndicator()
         }
+        
     }
     
     /* 화면전환 */
@@ -87,8 +87,9 @@ class CoffeeListViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Coffee", bundle: nil)
         guard let CardVC = storyboard.instantiateViewController(identifier: "CardSB") as? CardViewController else { return }
         CardVC.viewModel.cardPK = viewModel.getCardId(idx: selectIdx)
-        CardVC.modalPresentationStyle = .fullScreen
-        self.present(CardVC, animated: true, completion: nil)
+        let NaviVC = UINavigationController(rootViewController: CardVC)
+        NaviVC.modalPresentationStyle = .fullScreen
+        self.present(NaviVC, animated: true, completion: nil)
     }
     
 }
