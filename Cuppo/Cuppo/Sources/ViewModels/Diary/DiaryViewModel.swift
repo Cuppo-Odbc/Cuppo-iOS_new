@@ -27,7 +27,7 @@ class DiaryViewModel {
     
     // 등록 API
     func requestAddCardAPI(){
-        let para: CardAddRequest = CardAddRequest(title: getNewCardTitle(), content: getNewCardContent(), coffee: getNewCardImageURL(), date: getNewCoffeeDate())
+        let para: CardAddRequest = CardAddRequest(title: getNewCardTitle(), content: getNewCardContent(), coffee: getNewCardImageURL(), date: getAddNewCoffeeDate())
         cardDataManger.requestAddCard(para: para) { response in
             self.addEndStatus.value = true
         }
@@ -42,8 +42,23 @@ class DiaryViewModel {
         coffeeInfo.value = newCoffeeInfo
     }
     
+    func getAddNewCoffeeDate() -> String {
+        self.coffeeInfo.value.date.substring(from: 0, to: 9)
+    }
+    
     func getNewCoffeeDate() -> String {
-        self.getCoffeeInfo().date.substring(from: 0, to: 9)
+        self.getFormattedDate(dateString: self.getCoffeeInfo().date)
+    }
+    
+    func getFormattedDate(dateString: String) -> String{
+        let testDate = dateString.substring(from: 0, to: 9)
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd"
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "yy.MM.dd"
+        let date: Date? = dateFormatterGet.date(from: testDate)
+        return dateFormatterPrint.string(from: date!)
     }
     
     func getNewCardTitle() -> String {
@@ -95,7 +110,7 @@ class DiaryViewModel {
     }
     
     func getCardDate() -> String {
-        self.getCardInfo().date.substring(from: 0, to: 9)
+        self.getFormattedDate(dateString: self.getCardInfo().date)
     }
     
     func getCardTitle() -> String {

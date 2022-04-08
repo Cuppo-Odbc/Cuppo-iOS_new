@@ -11,6 +11,8 @@ class CoffeeViewModel {
     
     let combinationService = CombinationService.shared
     
+    var selectedDate: Observable2<String> = Observable2(value: String())
+    
     // 서버에서 불러온 정보
     var temperatureImgUrlArr: Observable2<[Ingredient]> = Observable2(value: [Ingredient]())
     var milkImgUrlArr: Observable2<[Ingredient]> = Observable2(value: [Ingredient]())

@@ -28,7 +28,7 @@ extension CoffeeListViewController: UITableViewDelegate, UITableViewDataSource {
             let target = viewModel.getCardData(idx: indexPath.item)
             cell.titleLabel.text = target.title
             urlToImg(urlStr: target.coffee, img: cell.coffeeImage)
-            cell.dateLabel.text = target.date.substring(from: 0, to: 9)
+            cell.dateLabel.text = viewModel.getCardDate(dateString: target.date)
             return cell
             
         }

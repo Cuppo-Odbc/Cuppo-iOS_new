@@ -187,7 +187,7 @@ class CoffeeViewController: UIViewController {
         guard let DiaryVC = storyboard.instantiateViewController(identifier: "DiarySB") as? DiaryViewController else { return }
         DiaryVC.modalPresentationStyle = .fullScreen
         DiaryVC.viewModel.setType(cardType: .addCard)
-        DiaryVC.viewModel.setCoffeeInfo(newCoffeeInfo: CoffeeModel(date: "2022-04-02T00:00:00+00:00", name: viewModel.getResultCoffeeName(), imgUrl: viewModel.getResultCoffeeImgUrl(), content: ""))
+        DiaryVC.viewModel.setCoffeeInfo(newCoffeeInfo: CoffeeModel(date: viewModel.selectedDate.value, name: viewModel.getResultCoffeeName(), imgUrl: viewModel.getResultCoffeeImgUrl(), content: ""))
         self.navigationController?.pushViewController(DiaryVC, animated: true)
     }
     

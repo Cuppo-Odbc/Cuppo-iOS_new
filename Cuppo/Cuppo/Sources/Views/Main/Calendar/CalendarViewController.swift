@@ -84,10 +84,12 @@ class CalendarViewController: UIViewController {
     }
     
     /* 화면전환 */    
-    func moveToVC(SBName: String, SBId: String ,VCName: String){
-        let storyboard = UIStoryboard(name: SBName, bundle: nil)
-        let VCName = storyboard.instantiateViewController(identifier: SBId)
-        let NaviVC = UINavigationController(rootViewController: VCName)
+    func moveToVC(){
+        let storyboard = UIStoryboard(name: "Coffee", bundle: nil)
+        guard let CoffeeVC = storyboard.instantiateViewController(identifier: "CoffeeSB") as? CoffeeViewController else { return }
+        CoffeeVC.viewModel.selectedDate.value = viewModel.getFullDateString()
+        
+        let NaviVC = UINavigationController(rootViewController: CoffeeVC)
         NaviVC.modalPresentationStyle = .fullScreen
         self.present(NaviVC, animated: true, completion: nil)
         

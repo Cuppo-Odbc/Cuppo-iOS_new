@@ -30,7 +30,18 @@ class CardViewModel {
     }
     
     func getCardDate() -> String {
-        self.getCardInfo().date.substring(from: 0, to: 9)
+        self.getFormattedDate(dateString: self.getCardInfo().date)
+    }
+    
+    func getFormattedDate(dateString: String) -> String{
+        let testDate = dateString.substring(from: 0, to: 9)
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd"
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "yy.MM.dd"
+        let date: Date? = dateFormatterGet.date(from: testDate)
+        return dateFormatterPrint.string(from: date!)
     }
     
     // 카드 정보 변경
