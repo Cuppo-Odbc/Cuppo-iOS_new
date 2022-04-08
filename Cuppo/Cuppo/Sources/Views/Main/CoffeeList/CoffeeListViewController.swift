@@ -31,23 +31,21 @@ class CoffeeListViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
+        setBind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupData()
         setLabel()
+        setUI()
     }
     
     // MARK: - Functions
     func setUI(){
         yearLabel.text = viewModel.getYear()
         monthLabel.text = viewModel.getMonth()
-        
-        setupData()
         setTableView()
-        setBind()
     }
     
     func setLabel(){
@@ -59,6 +57,7 @@ class CoffeeListViewController: UIViewController {
     /* API 관련 */
     private func setupData() {
         viewModel.requestCardListAPI()
+        showIndicator()
     }
     
     /* 테이블뷰 셋팅 */
@@ -78,6 +77,7 @@ class CoffeeListViewController: UIViewController {
         
         viewModel.cardList.bind { _ in
             self.tableView.reloadData()
+            self.dismissIndicator()
         }
         
     }

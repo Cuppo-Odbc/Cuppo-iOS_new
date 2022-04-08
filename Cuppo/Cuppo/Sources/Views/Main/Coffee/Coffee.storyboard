@@ -432,6 +432,7 @@
                         <outlet property="coffeeImageView" destination="H9O-Bj-Bsi" id="lU7-lm-0dS"/>
                         <outlet property="contentTextView" destination="2QU-fG-yxj" id="dLT-eO-5Ct"/>
                         <outlet property="dateLabel" destination="aKe-FH-BCP" id="Rlm-Aw-NpW"/>
+                        <outlet property="hashTagLabel" destination="MjX-J9-Pii" id="nsv-eY-wu9"/>
                         <outlet property="leftButton" destination="1UG-a0-L6R" id="7VQ-px-z3z"/>
                         <outlet property="rightButton" destination="AVq-fD-o1k" id="nnk-va-RVx"/>
                         <outlet property="titleTextField" destination="whv-CA-05U" id="QBj-Z0-W7e"/>

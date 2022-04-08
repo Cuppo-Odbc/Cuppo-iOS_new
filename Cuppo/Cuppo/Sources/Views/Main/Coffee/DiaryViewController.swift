@@ -19,6 +19,7 @@ class DiaryViewController: UIViewController {
     
     // MARK: - UIComponents
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var hashTagLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var coffeeImageView: UIImageView!
     @IBOutlet weak var contentTextView: UITextView!
@@ -34,26 +35,25 @@ class DiaryViewController: UIViewController {
     @IBAction func completionButton(_ sender: Any) {
         // TODO: - API
         guard let titleText = titleTextField.text else {
-            showPopupView()
             return
         }
         guard let contentText = contentTextView.text else {
-            showPopupView()
             return
         }
-        
-        switch viewModel.getType() {
-        case .editCard :
-            viewModel.setCardTitle(title: "#"+titleText)
-            viewModel.setCardContent(content: contentText)
-            viewModel.requestModifyCardAPI()
-        case .addCard :
-            viewModel.setNewCardTitle(title: "#"+titleText)
-            viewModel.setNewCardContent(content: contentText)
-            viewModel.requestAddCardAPI()
+        if titleText == "" || contentText == "커피에 담긴 순간을 기록해보세요." {
+            showPopupView()
+        }else {
+            switch viewModel.getType() {
+            case .editCard :
+                viewModel.setCardTitle(title: "#"+titleText)
+                viewModel.setCardContent(content: contentText)
+                viewModel.requestModifyCardAPI()
+            case .addCard :
+                viewModel.setNewCardTitle(title: "#"+titleText)
+                viewModel.setNewCardContent(content: contentText)
+                viewModel.requestAddCardAPI()
+            }
         }
-        
-        
     }
     
     // MARK: - LifeCycle
@@ -84,7 +84,6 @@ class DiaryViewController: UIViewController {
     }
     
     func setUI(){
-        
         setTextView()
         setFont()
         switch viewModel.getType() {
@@ -109,6 +108,7 @@ class DiaryViewController: UIViewController {
     
     func setFont(){
         dateLabel.font = .globalFont(size: 16)
+        hashTagLabel.font = .globalFont(size: 21)
         titleTextField.font = .globalFont(size: 21)
         contentTextView.font = .globalFont(size: 17)
     }

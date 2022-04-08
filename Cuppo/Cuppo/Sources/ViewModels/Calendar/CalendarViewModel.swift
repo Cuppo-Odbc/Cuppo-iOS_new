@@ -15,6 +15,7 @@ class CalendarViewModel {
     var cellArea: Observable2<[DayModel]> = Observable2(value:[DayModel]())
     
     var fullDateString: Observable2<String> = Observable2(value: "")
+    var cardPK: Observable2<String> = Observable2(value: "")
     
     func getFullDateString() -> String {
         self.fullDateString.value
@@ -34,6 +35,13 @@ class CalendarViewModel {
             self.setCardInDay()
         }
     }
+    
+    func requestDetailCardAPI(day: String){
+        cardDataManger.requestSelectCard(year: Int(getYear())!, month: Int(getNumberMonth())!, day: Int(day)!) { response in
+            self.cardPK.value = response.content[0].id
+        }
+    }
+    
     
     // MARK: - selectedDate
     

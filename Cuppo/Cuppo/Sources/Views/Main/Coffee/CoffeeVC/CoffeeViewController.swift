@@ -120,15 +120,15 @@ class CoffeeViewController: UIViewController {
         
         // 재료 선택에 따라 커피 이미지가 변경되야됨.
         viewModel.selectResultCombinationArr.bind { data in
-            if self.viewModel.getResultCoffeeName() == "해당커피없음" {
+            if self.viewModel.getResultCoffeeName() == "해당커피없음" && data.temperature != "none" {
                 self.viewModel.noCase()
+                self.showToast(message: "해당 조합이 없어 설정이 초기화 되었습니다.")
             }
             
             self.titleLabel.text = "#" + self.viewModel.getResultCoffeeName()
             self.urlToImg(urlStr: self.viewModel.getResultCoffeeImgUrl(), img: self.coffeeImageView)
             self.viewModel.setAllowStatusArr()
-            
-            
+
         }
         viewModel.selectStatusArr.bind { data in
             self.viewModel.changeAllowStatusArr()
@@ -138,8 +138,6 @@ class CoffeeViewController: UIViewController {
         viewModel.allowStatusArr.bind { data in
             self.collectionView.reloadData()
         }
-        
-        
     }
     
     func setUnderLine(_ status1: Bool,_ status2: Bool,_ status3: Bool,_ status4: Bool){
@@ -197,6 +195,25 @@ class CoffeeViewController: UIViewController {
         popupView.delegate = self
         view.addSubview(popupView)
     }
+    
+    func showToast(message : String) {
+        let toastLabel = UILabel(frame: CGRect(x: self.view.center.x - 150, y: self.view.frame.size.height-100, width: 300, height: 35))
+        toastLabel.backgroundColor = UIColor(named: "cuppoColor1")!.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor(named: "cuppoColor9")
+        toastLabel.font = .globalFont(size: 14)
+        toastLabel.textAlignment = .center;
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds = true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
+    
 }
 
 extension CoffeeViewController: CustomAlertProtocol {

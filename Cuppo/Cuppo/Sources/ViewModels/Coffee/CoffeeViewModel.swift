@@ -227,18 +227,17 @@ class CoffeeViewModel {
     
     // 모든 선택여부 상태 배열 불러오기
     func getSelectStatusArr() -> [[Bool]] {
-        self.selectStatusArr.value
+        selectStatusArr.value
     }
     
     func getAllowStatusArr() -> [[Bool]] {
-        self.allowStatusArr.value
+        allowStatusArr.value
     }
     
     // 가능한 장식 상태 변경
     func setAllowStatusArr(){
-
         if getCurrentElement() != "decoration" {
-            print("가능한 장식->\( getAllowIngredientArr())")
+//            print("가능한 장식->\( getAllowIngredientArr())")
             if getAllowIngredientArr().contains("none") {
                 allowStatusArr.value[3][0] = true
             }
@@ -262,24 +261,25 @@ class CoffeeViewModel {
                 allowStatusArr.value[3][2] = false
             }
         }
+    
     }
     
     // 온도 미선택 여부에 따라 나머지 우유 시럽 장식 선택가능여부 판단
     func changeAllowStatusArr(){
         if allowStatusArr.value.count != 0 {
-            if selectStatusArr.value[0][0] == true {
+            if selectStatusArr.value[0][0] {
                 for i in 1..<allowStatusArr.value.count {
                     for j in 1..<allowStatusArr.value[i].count {
                         allowStatusArr.value[i][j] = false
                     }
                 }
-            }
-            if selectStatusArr.value[0][0] == false {
+            }else {
                 for i in 1..<allowStatusArr.value.count-1 {
                     for j in 1..<allowStatusArr.value[i].count {
                         allowStatusArr.value[i][j] = true
                     }
                 }
+                
             }
         }
     }
@@ -307,18 +307,20 @@ class CoffeeViewModel {
     
     func noCase(){
         
-        // 만약 얼음 -> 핫을 선택했을 경우
-        if selectStatusArr.value[3][1] == true {
-            selectStatusArr.value[3][1] = false
-        }
-        // 만약 휘핑크림 -> 아이스를 선택했을 경우
-        if selectStatusArr.value[3][2] == true {
-            selectStatusArr.value[3][2] = false
-        }
+            // 만약 얼음 -> 핫을 선택했을 경우
+            if selectStatusArr.value[3][1] == true {
+                selectStatusArr.value[3][1] = false
+            }
+            // 만약 휘핑크림 -> 아이스를 선택했을 경우
+            if selectStatusArr.value[3][2] == true {
+                selectStatusArr.value[3][2] = false
+            }
+            
+            // 팝업창 표시 후 -> 휘핑을 미기입상태로 변경
+            
+            selectStatusArr.value[3][0] = true
+            selectResultCombinationArr.value.decoration = "none"
         
-        // 팝업창 표시 후 -> 휘핑을 미기입상태로 변경
-        selectStatusArr.value[3][0] = true
-        selectResultCombinationArr.value.decoration = "none"
     }
     
     

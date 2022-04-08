@@ -31,10 +31,10 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
             //TODO: - 만약 이미 카드가 존재한다면 등록안됨
             if !target.isExist {
                 viewModel.setFullDateString(day: target.dayName)
-                moveToVC()
+                moveToAddVC()
             }else {
                 //TODO: - 카드 조회하면으로?
-                print("G")
+                viewModel.requestDetailCardAPI(day: target.dayName)
             }
         }
     }

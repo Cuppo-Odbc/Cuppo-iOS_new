@@ -73,8 +73,8 @@ class CardViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupData()
         setBind()
+        setupData()
         setBarButtonLocation(size: 10, barButton: closeBarButton,location: 1)
         setBarButtonLocation(size: -10, barButton: menuBarButton,location: 2)
     }
@@ -99,12 +99,14 @@ class CardViewController: UIViewController {
     
     func setupData(){
         viewModel.requestCardInfo()
+        showIndicator()
     }
     
     func setBind(){
         viewModel.cardInfo.bind { data in
             self.setupData()
             self.setUI()
+            self.dismissIndicator()
         }
         
         viewModel.responseEnd.bind { status in
