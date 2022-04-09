@@ -13,8 +13,9 @@ class LoginService {
         "accept":           "application/json",
         "Content-Type":     "application/json"
     ]
-    let url = "http://cuppotest-env.eba-ag42sqsg.ap-northeast-2.elasticbeanstalk.com/auth/signin"
     
+    let url = "\(Constant.BasicURL)/auth/signin"
+
     func requestLogin(email: String, password: String, completion: @escaping ((LoginResponse)->(Void))){
         AF.request(self.url,
                    method: .post,

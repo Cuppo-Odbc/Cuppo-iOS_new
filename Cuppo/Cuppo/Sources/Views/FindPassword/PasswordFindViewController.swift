@@ -10,6 +10,8 @@ import SnapKit
 import Then
 
 class PasswordFindViewController: BaseController {
+    let passwordFindViewModel = PasswordFindViewModel()
+    
     let alertLabel = UILabel().then{
         $0.text = "가입 시 사용했던 이메일을 기입해주세요."
         $0.font = UIFont.globalFont(size: 16)
@@ -77,7 +79,16 @@ class PasswordFindViewController: BaseController {
     
     @objc
     func passwordFindButtonTapped(_ sender: UIButton){
-        
+        self.passwordFindViewModel.requestFindPassword(email: self.emailTextField.textField.text ?? "") { isSuccess in
+            if isSuccess {
+                //TODO: 이메일 전송 성공
+                print("이메일 전송 성공")
+            }else{
+                //TODO: 등록되지 않은 이메일 혹은 실패
+                print("등록되지 않은 이메일 혹은 실패")
+            }
+            
+        }
     }
     
     @objc
