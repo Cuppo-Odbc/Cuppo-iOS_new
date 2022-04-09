@@ -8,6 +8,8 @@
 import UIKit
 
 class PasswordChangeViewController: BaseController {
+    let passwordChangeViewModel = PasswordChangeViewModel()
+    
     let currentPasswordTextField = UnderLineTextField().then{
         $0.setPlaceHolder(placeHolder: "현재 비밀번호")
         $0.setAlertLabel(text: "비밀번호가 다릅니다")
@@ -32,6 +34,7 @@ class PasswordChangeViewController: BaseController {
         $0.titleLabel?.font = UIFont.globalFont(size: 16)
         $0.layer.borderColor = UIColor(named: "cuppoColor14")?.cgColor
         $0.layer.borderWidth = 1.0
+        $0.addTarget(self, action: #selector(passwordChangeButtonTapped(_:)), for: .touchUpInside)
     }
     
     lazy var passwordStackView = UIStackView().then{
@@ -54,6 +57,7 @@ class PasswordChangeViewController: BaseController {
         self.view.backgroundColor = .systemBackground
         
         setLayout()
+        self.dismissKeyboardWhenTappedAround()
     }
     
     override func viewWillLayoutSubviews() {
@@ -85,6 +89,23 @@ class PasswordChangeViewController: BaseController {
             $0.leading.equalToSuperview().offset(30)
             $0.width.height.equalTo(15)
         }
+    }
+    
+    @objc
+    func passwordChangeButtonTapped(_ sender: UIButton){
+        // 임시 조건: 새 비번, 새 비번확인 같은경우 -> 나중엔 현재비번 검증 and 새 비번, 새 비번확인 같은경우로 수정해야함
+        if self.newPasswordTextField.textField.text == self.newPasswordCheckTextField.textField.text {
+            self.passwordChangeViewModel.requestPasswordChange(password: self.newPasswordTextField.textField.text ?? "") { isSuccess in
+                if isSuccess { // 비밀번호 변경 성공 -> 성공 얼럿 띄우고, ok액션에 dismiss.
+                    print("비밀번호 변경 성공")
+                }else{ // 비밀번호 변경 실패 다시시도해주세요~
+                    print("비밀번호 변경 실패")
+                }
+            }
+        }else{
+            print("비번 확인 다름")
+        }
+        
     }
     
     @objc

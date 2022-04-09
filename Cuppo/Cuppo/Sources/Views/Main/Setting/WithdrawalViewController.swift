@@ -57,6 +57,8 @@ class RectViewButton: UIView {
 
 class WithdrawalViewController: BaseController {
     //MARK: - Properties
+    let viewModel = WithdrawalViewModel()
+    
     let alertText = "탈퇴한 계정 및 이용 내역은 복구나 재사용이 불가능하니 탈퇴 시 유의하시기 바랍니다.\n\n탈퇴 시, 구매 내역은 모두 소멸되며 환불할 수 없습니다. 또한 다른 계정으로 양도할 수 없습니다."
     
     lazy var alertLabel = UILabel().then{
@@ -135,9 +137,17 @@ class WithdrawalViewController: BaseController {
     @objc
     func withdrawalButtonTapped(_ sender: UIButton){
         if self.checkViewButton.rectButton.isSelected {
-            //TODO: 회원 탈퇴 완료
+            self.viewModel.requestWithdrawal { isSuccess in
+                if isSuccess { //TODO: 회원 탈퇴 완료 얼럿, 로그인 화면으로 전환
+                    self.view.window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+                    print("회원탈퇴 성공")
+                } else{ // 회원 탈퇴 실패 얼럿
+                    print("회원탈퇴 실패")
+                }
+            }
         }else{
             //TODO: 체크해달라는 alert 띄워야함
+            print("약관 동의 해주세영")
         }
     }
 }

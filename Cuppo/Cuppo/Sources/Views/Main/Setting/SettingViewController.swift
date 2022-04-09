@@ -79,9 +79,11 @@ class SettingViewController: BaseController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .systemBackground
-        self.customNavigationBarAttribute(.clear, .black)
+        self.customNavigationBarAttribute(.clear, UIColor(named: "cuppoColor1") ?? .black)
         self.navigationController?.navigationBar.topItem?.title = "설정"
-        
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.globalFont(size: 18)
+        ]
         setLayout()
     }
     

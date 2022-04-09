@@ -87,6 +87,7 @@ class AccountManagementViewController: BaseController {
                 self.converMemberButton.isHidden = true
             case .nonMember: // 현재 유저가 비회원이라면
                 self.withdrawalButton.isHidden = true
+                self.passwordChangeButton.isHidden = true
             }
         }
     }
@@ -117,7 +118,10 @@ extension AccountManagementViewController: SettingAccountDelegate {
             popupNonMemberLogoutAlertView()
             break
         case .converMember:
-            //TODO: 회원으로 전환 api 수행
+            //TODO: 회원으로 전환 뷰로 이동
+            let convertMemberVC = ConverMemberViewController()
+            convertMemberVC.modalPresentationStyle = .overFullScreen
+            self.present(convertMemberVC, animated: true, completion: nil)
             break
         case .withdrawl:
             let widthdrawlVC = WithdrawalViewController()

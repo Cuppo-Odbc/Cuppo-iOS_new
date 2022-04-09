@@ -137,12 +137,41 @@ class LoginViewController: BaseController {
                 //TODO: 처음 비회원 로그인하는 경우: 비회원 로그인 버튼 클릭 -> 로그인 이력 검증 -> 비회원 api -> 응답값 로컬에 저장 -> 로그인 api -> 메인
                 //TODO: 이후 비회원 로그인하는 경우: 비회원 로그인 버튼 클릭 -> 로그인 이력 검증 -> 로그인 api -> 메인
                 self.viewModel.anonymousLogin { response in
-                    self.viewModel.setAccessTokenForUser(token: response.loginSuccess?.accessToken ?? "") // 액세스 토큰 저장
-                    self.viewModel.setMemberInfo(memberType: .nonMember) // 멤버 분류 세팅
-                    let sb = UIStoryboard(name: "TabBar", bundle: nil)
-                    let tabbarVC = sb.instantiateViewController(withIdentifier: "tabbarViewController")
-                    
-                    self.view.window?.rootViewController = tabbarVC
+                    switch response.type {
+                    case .success:
+                        self.viewModel.setAccessTokenForUser(token: response.loginSuccess?.accessToken ?? "")
+                        // 액세스 토큰 저장
+                       self.viewModel.setMemberInfo(memberType: .nonMember) // 멤버 분류 세팅
+                       let sb = UIStoryboard(name: "TabBar", bundle: nil)
+                       let tabbarVC = sb.instantiateViewController(withIdentifier: "tabbarViewController")
+                       
+                       self.view.window?.rootViewController = tabbarVC
+                        break
+                    case .fail:
+                        guard let failureType = response.loginFailure?.getFailureType() else { return }
+                        switch failureType {
+                        case .invalidPassword:
+                            //TODO: 패스워드 올바르지않음 얼럿
+                            self.emailTextField.alertLabel.isHidden = true
+                            self.passwordTextField.alertLabel.isHidden = false
+                            print("패스워드 올바르지 않음")
+                            break
+                        case .emailNotFound:
+                            //TODO: 이메일 올바르지 않음 alert
+                            self.emailTextField.alertLabel.isHidden = false
+                            self.passwordTextField.alertLabel.isHidden = true
+                            print("이메일 올바르지 않음")
+                            break
+                        case .exception:
+                            //TODO: 예외 얼럿
+                            self.emailTextField.alertLabel.isHidden = false
+                            print("이메일 올바르지 않음")
+                            break
+                        }
+
+                        break
+                    }
+                     
                 }
             }
             .disposed(by: disposeBag)

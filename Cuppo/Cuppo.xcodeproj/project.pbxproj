@@ -68,6 +68,19 @@
 		9F81962F27D64C0400FF42BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962D27D64C0400FF42BA /* LaunchScreen.storyboard */; };
 		9FB8F37F27FF6F2D00830CC4 /* CardAddRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8F37E27FF6F2D00830CC4 /* CardAddRequest.swift */; };
 		9FB8F38128004E3300830CC4 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8F38028004E3300830CC4 /* CardModel.swift */; };
+		A8318F83280174CB00E8950C /* PasswordFindService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8318F82280174CB00E8950C /* PasswordFindService.swift */; };
+		A8318F862801755C00E8950C /* PasswordFindRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8318F852801755C00E8950C /* PasswordFindRequest.swift */; };
+		A8318F882801768C00E8950C /* PasswordFindViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8318F872801768C00E8950C /* PasswordFindViewModel.swift */; };
+		A8318F8A28019C9500E8950C /* AnonymousLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8318F8928019C9500E8950C /* AnonymousLoginResponse.swift */; };
+		A8318F8C2801A71100E8950C /* ConverMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8318F8B2801A71100E8950C /* ConverMemberViewController.swift */; };
+		A8318F8E2801A79500E8950C /* ConvertMemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8318F8D2801A79500E8950C /* ConvertMemberViewModel.swift */; };
+		A8318F902801A7F200E8950C /* ConvertMemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8318F8F2801A7F200E8950C /* ConvertMemberService.swift */; };
+		A8318F932801AC7800E8950C /* ConvertMemberRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8318F922801AC7800E8950C /* ConvertMemberRequest.swift */; };
+		A8318F952801BA7B00E8950C /* PasswordChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8318F942801BA7B00E8950C /* PasswordChangeViewModel.swift */; };
+		A8318F972801BA8A00E8950C /* PasswordChangeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8318F962801BA8A00E8950C /* PasswordChangeService.swift */; };
+		A8318F9A2801BB2B00E8950C /* PasswordChangeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8318F992801BB2B00E8950C /* PasswordChangeRequest.swift */; };
+		A8318F9C2801CBBA00E8950C /* WithdrawalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8318F9B2801CBBA00E8950C /* WithdrawalViewModel.swift */; };
+		A8318F9E2801CBC900E8950C /* WithdrawalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8318F9D2801CBC900E8950C /* WithdrawalService.swift */; };
 		A8373A6B27DD17CE00BA0442 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A6A27DD17CE00BA0442 /* LoginViewController.swift */; };
 		A8373A6D27DD270F00BA0442 /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A6C27DD270F00BA0442 /* UnderLineTextField.swift */; };
 		A8373A6F27DDC12700BA0442 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8373A6E27DDC12700BA0442 /* LoginViewModel.swift */; };
@@ -158,6 +171,19 @@
 		9F81963027D64C0400FF42BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FB8F37E27FF6F2D00830CC4 /* CardAddRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAddRequest.swift; sourceTree = "<group>"; };
 		9FB8F38028004E3300830CC4 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		A8318F82280174CB00E8950C /* PasswordFindService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFindService.swift; sourceTree = "<group>"; };
+		A8318F852801755C00E8950C /* PasswordFindRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFindRequest.swift; sourceTree = "<group>"; };
+		A8318F872801768C00E8950C /* PasswordFindViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFindViewModel.swift; sourceTree = "<group>"; };
+		A8318F8928019C9500E8950C /* AnonymousLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymousLoginResponse.swift; sourceTree = "<group>"; };
+		A8318F8B2801A71100E8950C /* ConverMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverMemberViewController.swift; sourceTree = "<group>"; };
+		A8318F8D2801A79500E8950C /* ConvertMemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertMemberViewModel.swift; sourceTree = "<group>"; };
+		A8318F8F2801A7F200E8950C /* ConvertMemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertMemberService.swift; sourceTree = "<group>"; };
+		A8318F922801AC7800E8950C /* ConvertMemberRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertMemberRequest.swift; sourceTree = "<group>"; };
+		A8318F942801BA7B00E8950C /* PasswordChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeViewModel.swift; sourceTree = "<group>"; };
+		A8318F962801BA8A00E8950C /* PasswordChangeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeService.swift; sourceTree = "<group>"; };
+		A8318F992801BB2B00E8950C /* PasswordChangeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeRequest.swift; sourceTree = "<group>"; };
+		A8318F9B2801CBBA00E8950C /* WithdrawalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalViewModel.swift; sourceTree = "<group>"; };
+		A8318F9D2801CBC900E8950C /* WithdrawalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalService.swift; sourceTree = "<group>"; };
 		A8373A6A27DD17CE00BA0442 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Cuppo/Sources/Views/Login/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		A8373A6C27DD270F00BA0442 /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UnderLineTextField.swift; path = Cuppo/Sources/Views/Login/UnderLineTextField.swift; sourceTree = SOURCE_ROOT; };
 		A8373A6E27DDC12700BA0442 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Cuppo/Sources/Views/Login/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -249,6 +275,13 @@
 				A85A981127EE19DD003DFC0F /* AccountManagementViewController.swift */,
 				A85A981327EE4D20003DFC0F /* PasswordChangeViewController.swift */,
 				A872773327EEE0E300B11132 /* WithdrawalViewController.swift */,
+				A8318F8B2801A71100E8950C /* ConverMemberViewController.swift */,
+				A8318F8D2801A79500E8950C /* ConvertMemberViewModel.swift */,
+				A8318F8F2801A7F200E8950C /* ConvertMemberService.swift */,
+				A8318F942801BA7B00E8950C /* PasswordChangeViewModel.swift */,
+				A8318F962801BA8A00E8950C /* PasswordChangeService.swift */,
+				A8318F9B2801CBBA00E8950C /* WithdrawalViewModel.swift */,
+				A8318F9D2801CBC900E8950C /* WithdrawalService.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -558,6 +591,30 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A8318F842801754000E8950C /* FindPassword */ = {
+			isa = PBXGroup;
+			children = (
+				A8318F852801755C00E8950C /* PasswordFindRequest.swift */,
+			);
+			path = FindPassword;
+			sourceTree = "<group>";
+		};
+		A8318F912801AC5600E8950C /* ConvertMember */ = {
+			isa = PBXGroup;
+			children = (
+				A8318F922801AC7800E8950C /* ConvertMemberRequest.swift */,
+			);
+			path = ConvertMember;
+			sourceTree = "<group>";
+		};
+		A8318F982801BB1200E8950C /* PasswordChange */ = {
+			isa = PBXGroup;
+			children = (
+				A8318F992801BB2B00E8950C /* PasswordChangeRequest.swift */,
+			);
+			path = PasswordChange;
+			sourceTree = "<group>";
+		};
 		A8373A7027DDDD6300BA0442 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +629,9 @@
 		A8373A7727DDE28B00BA0442 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A8318F982801BB1200E8950C /* PasswordChange */,
+				A8318F912801AC5600E8950C /* ConvertMember */,
+				A8318F842801754000E8950C /* FindPassword */,
 				9F7D545427FBFA8300D75CD0 /* Combination */,
 				9F7D543227FAC1C900D75CD0 /* Card */,
 				9F7D541F27F7463100D75CD0 /* Calendar */,
@@ -585,6 +645,7 @@
 			children = (
 				A8373A7927DDE2B800BA0442 /* LoginResponse.swift */,
 				A8373A7D27DDEDCF00BA0442 /* LoginRequest.swift */,
+				A8318F8928019C9500E8950C /* AnonymousLoginResponse.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -614,6 +675,8 @@
 			isa = PBXGroup;
 			children = (
 				A872773827EF0CA500B11132 /* PasswordFindViewController.swift */,
+				A8318F82280174CB00E8950C /* PasswordFindService.swift */,
+				A8318F872801768C00E8950C /* PasswordFindViewModel.swift */,
 			);
 			path = FindPassword;
 			sourceTree = "<group>";
@@ -767,6 +830,8 @@
 				A85D998027EA203600E9B0AA /* SettingOptionCell.swift in Sources */,
 				A8373A6B27DD17CE00BA0442 /* LoginViewController.swift in Sources */,
 				9F7D546727FCAD8600D75CD0 /* BlankCell.swift in Sources */,
+				A8318F972801BA8A00E8950C /* PasswordChangeService.swift in Sources */,
+				A8318F8E2801A79500E8950C /* ConvertMemberViewModel.swift in Sources */,
 				9F7D540E27F3079700D75CD0 /* CustomAlertProtocol.swift in Sources */,
 				9F7D546927FD65EE00D75CD0 /* CombinationModel.swift in Sources */,
 				9F7D542727F9D6F800D75CD0 /* CardService.swift in Sources */,
@@ -774,6 +839,7 @@
 				9F253ECC27D7A6310010C1E6 /* BaseController.swift in Sources */,
 				9F7D545827FC05A900D75CD0 /* IngredientResponse.swift in Sources */,
 				9F7D545A27FC072600D75CD0 /* AllowedIngredientResponse.swift in Sources */,
+				A8318F9C2801CBBA00E8950C /* WithdrawalViewModel.swift in Sources */,
 				A85A981427EE4D20003DFC0F /* PasswordChangeViewController.swift in Sources */,
 				9F253EA327D6693B0010C1E6 /* UIViewController.swift in Sources */,
 				9F7D543027FA34F400D75CD0 /* UIDate.swift in Sources */,
@@ -789,8 +855,13 @@
 				9F253EC127D71CA60010C1E6 /* UIFont.swift in Sources */,
 				9F7D546327FC4ABA00D75CD0 /* CoffeeVC + CollectionView.swift in Sources */,
 				A8373A7227DDE01400BA0442 /* LoginService.swift in Sources */,
+				A8318F8A28019C9500E8950C /* AnonymousLoginResponse.swift in Sources */,
+				A8318F83280174CB00E8950C /* PasswordFindService.swift in Sources */,
+				A8318F932801AC7800E8950C /* ConvertMemberRequest.swift in Sources */,
 				A8373A8527DDFE4600BA0442 /* SignUpService.swift in Sources */,
 				9F253ECF27DA4C370010C1E6 /* DiaryViewController.swift in Sources */,
+				A8318F862801755C00E8950C /* PasswordFindRequest.swift in Sources */,
+				A8318F8C2801A71100E8950C /* ConverMemberViewController.swift in Sources */,
 				9F7D544227FADC7D00D75CD0 /* CardViewModel.swift in Sources */,
 				9F7D545027FB679700D75CD0 /* DiaryViewModel.swift in Sources */,
 				9F6AAA0727E78B6B008CE72F /* TabBarViewController.swift in Sources */,
@@ -803,8 +874,11 @@
 				A8373A8127DDF96F00BA0442 /* SignUpViewController.swift in Sources */,
 				9FB8F37F27FF6F2D00830CC4 /* CardAddRequest.swift in Sources */,
 				A85A981227EE19DD003DFC0F /* AccountManagementViewController.swift in Sources */,
+				A8318F882801768C00E8950C /* PasswordFindViewModel.swift in Sources */,
 				9F253EB427D712C60010C1E6 /* CoffeeListViewController.swift in Sources */,
+				A8318F902801A7F200E8950C /* ConvertMemberService.swift in Sources */,
 				9F7D546527FC4AD300D75CD0 /* IngredientCell.swift in Sources */,
+				A8318F9A2801BB2B00E8950C /* PasswordChangeRequest.swift in Sources */,
 				9F7D542127F7465500D75CD0 /* DayModel.swift in Sources */,
 				9F7D545627FBFA9E00D75CD0 /* CombinationResponse.swift in Sources */,
 				9F7D544827FAF82B00D75CD0 /* CardModifyRequest.swift in Sources */,
@@ -818,6 +892,8 @@
 				A85D998227EA2E2F00E9B0AA /* OptionHeaderView.swift in Sources */,
 				A85A980D27EE0B06003DFC0F /* RadioViewButton.swift in Sources */,
 				A8373A7E27DDEDCF00BA0442 /* LoginRequest.swift in Sources */,
+				A8318F952801BA7B00E8950C /* PasswordChangeViewModel.swift in Sources */,
+				A8318F9E2801CBC900E8950C /* WithdrawalService.swift in Sources */,
 				9F7D544A27FB2BBE00D75CD0 /* DropDownView.swift in Sources */,
 				9F7D545327FBFA2200D75CD0 /* CombinationService.swift in Sources */,
 				9F7D541427F3648B00D75CD0 /* CalendarCell.swift in Sources */,

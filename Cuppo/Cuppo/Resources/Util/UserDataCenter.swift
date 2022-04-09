@@ -111,6 +111,11 @@ class UserDataCenter {
         UserDefaults.standard.synchronize()
     }
     
+    func removeNonMemberInfo(){
+        UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.nonMemberInfo.rawValue)
+        UserDefaults.standard.synchronize()
+    }
+    
     func getUserInterfaceStyle() -> Bool {
         return UserDefaults.standard.bool(forKey: "GlobalAppearanceMode")
     }
