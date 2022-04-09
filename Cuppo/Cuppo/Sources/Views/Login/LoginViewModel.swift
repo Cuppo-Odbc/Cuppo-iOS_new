@@ -25,4 +25,8 @@ class LoginViewModel {
     func setAccessTokenForUser(token: String){
         self.userDataCenter.setAccessToken(token: token)
     }
+    
+    func setMemberInfo(memberType: MemberType){
+        self.userDataCenter.setMemberInfo(memberType: memberType)
+    }
 }

@@ -26,16 +26,26 @@ enum GlobalFontType: String {
     case kyoboHandwriting2019 = "kyoboHandwriting2019"
 }
 
+enum MemberType: String {
+    case member // 회원
+    case nonMember // 비회원
+}
+
 class UserDataCenter {
     static let shared = UserDataCenter()
     
     var accessToken: String?
+    var memberType: MemberType?
     
     private init() { }
     
     //MARK: - Functions
     func setAccessToken(token: String){
         self.accessToken = token
+    }
+    
+    func setMemberInfo(memberType: MemberType){
+        self.memberType = memberType
     }
     
     /// 다크 모드 설정

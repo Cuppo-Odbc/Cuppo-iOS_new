@@ -99,6 +99,7 @@ class LoginViewController: BaseController {
                     case .success:
                         //TODO: 로그인 성공, 메인화면으로 전환 and 인디케이터 넣어도 좋음
                         self.viewModel.setAccessTokenForUser(token: response.loginSuccess?.accessToken ?? "")
+                        self.viewModel.setMemberInfo(memberType: .member)
                         
                         let sb = UIStoryboard(name: "TabBar", bundle: nil)
                         let tabbarVC = sb.instantiateViewController(withIdentifier: "tabbarViewController")
@@ -133,6 +134,7 @@ class LoginViewController: BaseController {
         
         self.startWithoutLoginButton.rx.tap
             .bind{
+                self.viewModel.setMemberInfo(memberType: .nonMember)
                 let sb = UIStoryboard(name: "TabBar", bundle: nil)
                 let tabbarVC = sb.instantiateViewController(withIdentifier: "tabbarViewController")
                 

@@ -89,7 +89,6 @@ class SignUpViewController: BaseController {
     
     func popupFailureAlertView(){
         popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "회원가입 실패\n중복된 이메일입니다. 다시 입력해주세요.", myView: self.popupView)
-//        self.popupView.cancelButton.isHidden = true
         
         self.view.addSubview(popupView)
         
