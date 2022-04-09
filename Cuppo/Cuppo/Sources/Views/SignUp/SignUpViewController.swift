@@ -55,17 +55,49 @@ class SignUpViewController: BaseController {
         $0.addTarget(self, action: #selector(closeButtonTapped(_:)), for: .touchUpInside)
     }
     
+    let popupView = AlertView(frame: .zero)
+    
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
 
         setLayout()
+        setAlertView()
         bind()
         self.dismissKeyboardWhenTappedAround()
     }
     
     //MARK: - Functions
+    func setAlertView(){
+        self.popupView.frame = self.view.frame
+        popupView.delegate = self
+    }
+    
+    func popupSuccessAlertView(){
+        popupView.popupAlert(firstBtnTitle: "네", secondBtnTitle: nil, content: "회원가입 성공\n로그인 화면으로 이동하여 로그인을 진행해주세요.", myView: self.popupView)
+//        self.popupView.okButton.isHidden = true
+        
+        self.view.addSubview(popupView)
+        
+        popupView.snp.makeConstraints{
+            $0.edges.equalToSuperview()
+        }
+        
+        self.view.layoutIfNeeded()
+    }
+    
+    func popupFailureAlertView(){
+        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "회원가입 실패\n중복된 이메일입니다. 다시 입력해주세요.", myView: self.popupView)
+//        self.popupView.cancelButton.isHidden = true
+        
+        self.view.addSubview(popupView)
+        
+        popupView.snp.makeConstraints{
+            $0.edges.equalToSuperview()
+        }
+    }
+    
     func bind(){
         self.signUpButton.rx.tap
             .bind{
@@ -78,22 +110,22 @@ class SignUpViewController: BaseController {
                 self.passwordCheckTextField.alertLabel.isHidden = passwordCheckIsHidden
 
                 if [emailIsHidden, passwordIsHidden, passwordCheckIsHidden].contains(false) {
-                    //TODO: false 가 존재한다면, 잘못된 입력 얼럿 띄우기
+                    //TODO: false 가 존재한다면, 잘못된 입력 얼럿 띄우기 굳이?
                     print("잘못된 입력입니다. 얼럿")
                 }else{
                     //TODO: false 가 존재하지 않는다면, 회원가입 성공, 메인으로 이동
                     self.viewModel.signUp(email: self.emailTextField.textField.text ?? "",
                                           password: self.passwordTextField.textField.text ?? "") { isSignupSuccess in
                         if isSignupSuccess {
-                            //TODO: 회원가입 성공, 끝나면 유저 토큰 저장 후 로그인 화면으로 이동
-                            self.dismiss(animated: true, completion: nil)
+                            //TODO: 회원가입 성공, 로그인 화면으로 이동
+                            self.view.endEditing(false)
+                            self.popupSuccessAlertView()
                         }else{
                             //TODO: 실패 - 중복된 이메일입니다 alert 띄우기
-                            
+                            self.view.endEditing(false)
+                            self.popupFailureAlertView()
                         }
                     }
-                    
-                    
                 }
             }
             .disposed(by: disposeBag)
@@ -131,4 +163,16 @@ class SignUpViewController: BaseController {
         self.dismiss(animated: true, completion: nil)
     }
     
+}
+
+extension SignUpViewController: CustomAlertProtocol {
+    func cancleButtonTapped(_ popupView: UIView) {
+        popupView.removeFromSuperview()
+    }
+
+    func okButtonTapped(_ popupView: UIView, _ year: String?, _ month: String?) {
+        popupView.removeFromSuperview()
+        self.dismiss(animated: true, completion: nil)
+    }
+
 }

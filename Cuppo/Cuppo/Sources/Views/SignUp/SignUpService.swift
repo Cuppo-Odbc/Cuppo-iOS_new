@@ -13,7 +13,8 @@ class SignUpService {
         "accept":           "application/json",
         "Content-Type":     "application/json"
     ]
-    let url = "http://cuppotest-env.eba-ag42sqsg.ap-northeast-2.elasticbeanstalk.com/auth/signup"
+    
+    let url = "\(Constant.BasicURL)/auth/signup"
     
     func requestSignUp(email: String, password: String, completion: @escaping ((Bool)->(Void))) {
         AF.request(self.url,
@@ -23,7 +24,19 @@ class SignUpService {
             .responseJSON { response in
                 switch response.result {
                 case .success:
-                    completion(true)
+                    if let statusCode = response.response?.statusCode {
+                        switch statusCode {
+                        case 200:
+                            completion(true)
+                            break
+                        case 400:
+                            completion(false)
+                            break
+                        default:
+                            completion(false)
+                            break
+                        }
+                    }
                 case .failure:
                     completion(false)
                     print("fail , statusCode --> \(response.result)")
