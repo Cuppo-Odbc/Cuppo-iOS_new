@@ -10,12 +10,14 @@ import UIKit
 class RadioViewButton: UIView {
     var themeType: GlobalAppearanceMode?
     var themeDelegate: ThemeViewDelegate?
+    var letterDelegate: LetterViewDelegate?
     
     let menuLabel = UILabel()
     lazy var radioButton = UIButton().then {
         $0.setImage(UIImage(named: "selectedRadio"), for: .selected)
         $0.setImage(UIImage(named: "unselectedRadio"), for: .normal)
         $0.addTarget(self, action: #selector(radioTapped(_:)), for: .touchUpInside)
+        $0.isSelected = false
     }
     
     override init(frame: CGRect) {
@@ -54,16 +56,21 @@ class RadioViewButton: UIView {
     @objc
     func radioTapped(_ sender: UIButton){
         // selected 설정 변경
-        guard let themeType = self.themeType else { return }
-        guard let delegate = self.themeDelegate else { return }
-        
-        switch themeType {
-        case .light:
-            UserDataCenter.shared.setLightMode()
-        case .dark:
-            UserDataCenter.shared.setDarkMode()
+        if let themeType = self.themeType {
+            guard let themeDelegate = self.themeDelegate else { return }
+            switch themeType {
+            case .light:
+                UserDataCenter.shared.setLightMode()
+            case .dark:
+                UserDataCenter.shared.setDarkMode()
+            }
+            
+            themeDelegate.radioButtonTapped(tag: sender.tag)
         }
         
-        delegate.radioButtonTapped(tag: sender.tag)
+        if let letterDelegate = self.letterDelegate {
+            letterDelegate.radioButtonTapped(tag: self.tag)
+        }
+        
     }
 }
