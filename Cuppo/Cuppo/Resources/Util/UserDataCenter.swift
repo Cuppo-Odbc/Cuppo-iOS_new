@@ -9,8 +9,9 @@ import UIKit
 import SwiftUI
 
 enum UserDefaultsKeys: String {
-    case globalAppearanceMode
-    case globalFont
+    case globalAppearanceMode // 테마
+    case globalFont // 전체 폰트
+    case nonMemberInfo // 비회원 아이디/패스워드 정보
 }
 
 enum GlobalAppearanceMode: String {
@@ -102,6 +103,14 @@ class UserDataCenter {
         }
     }
     
+    /// 비회원 정보 UserDefaults 에 저장
+    func setNonMemberInfo(email: String, password: String){
+        let nonMemberInfo = NonMemberInfo(email: email, password: password)
+        let propertyEncoder = try? PropertyListEncoder().encode(nonMemberInfo)
+        UserDefaults.standard.set(propertyEncoder, forKey: UserDefaultsKeys.nonMemberInfo.rawValue)
+        UserDefaults.standard.synchronize()
+    }
+    
     func getUserInterfaceStyle() -> Bool {
         return UserDefaults.standard.bool(forKey: "GlobalAppearanceMode")
     }
@@ -132,6 +141,18 @@ class UserDataCenter {
         
         return GlobalFontType.systemFont
     }
+    
+    func getNonMemberInfo() -> NonMemberInfo?{
+        guard let memberInfo = UserDefaults.standard.value(forKey: UserDefaultsKeys.nonMemberInfo.rawValue) as? Data else {
+            return nil
+        }
+        
+        if let memberInfo = try? PropertyListDecoder().decode(NonMemberInfo.self, from: memberInfo) {
+            return memberInfo
+        }
+        
+        return nil
+    }
 }
 
 struct GlobalFont: Codable {
@@ -156,5 +177,15 @@ struct GlobalFont: Codable {
         default:
             return GlobalFontType.systemFont
         }
+    }
+}
+
+struct NonMemberInfo: Codable {
+    var email: String
+    var password: String
+    
+    init(email: String, password: String){
+        self.email = email
+        self.password = password
     }
 }

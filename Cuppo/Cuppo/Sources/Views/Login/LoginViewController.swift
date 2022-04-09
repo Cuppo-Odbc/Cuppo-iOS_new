@@ -98,8 +98,8 @@ class LoginViewController: BaseController {
                     switch response.type {
                     case .success:
                         //TODO: 로그인 성공, 메인화면으로 전환 and 인디케이터 넣어도 좋음
-                        self.viewModel.setAccessTokenForUser(token: response.loginSuccess?.accessToken ?? "")
-                        self.viewModel.setMemberInfo(memberType: .member)
+                        self.viewModel.setAccessTokenForUser(token: response.loginSuccess?.accessToken ?? "") // 액세스 토큰 저장
+                        self.viewModel.setMemberInfo(memberType: .member) // 멤버 분류 세팅
                         
                         let sb = UIStoryboard(name: "TabBar", bundle: nil)
                         let tabbarVC = sb.instantiateViewController(withIdentifier: "tabbarViewController")
@@ -134,11 +134,16 @@ class LoginViewController: BaseController {
         
         self.startWithoutLoginButton.rx.tap
             .bind{
-                self.viewModel.setMemberInfo(memberType: .nonMember)
-                let sb = UIStoryboard(name: "TabBar", bundle: nil)
-                let tabbarVC = sb.instantiateViewController(withIdentifier: "tabbarViewController")
-                
-                self.view.window?.rootViewController = tabbarVC
+                //TODO: 처음 비회원 로그인하는 경우: 비회원 로그인 버튼 클릭 -> 로그인 이력 검증 -> 비회원 api -> 응답값 로컬에 저장 -> 로그인 api -> 메인
+                //TODO: 이후 비회원 로그인하는 경우: 비회원 로그인 버튼 클릭 -> 로그인 이력 검증 -> 로그인 api -> 메인
+                self.viewModel.anonymousLogin { response in
+                    self.viewModel.setAccessTokenForUser(token: response.loginSuccess?.accessToken ?? "") // 액세스 토큰 저장
+                    self.viewModel.setMemberInfo(memberType: .nonMember) // 멤버 분류 세팅
+                    let sb = UIStoryboard(name: "TabBar", bundle: nil)
+                    let tabbarVC = sb.instantiateViewController(withIdentifier: "tabbarViewController")
+                    
+                    self.view.window?.rootViewController = tabbarVC
+                }
             }
             .disposed(by: disposeBag)
         
