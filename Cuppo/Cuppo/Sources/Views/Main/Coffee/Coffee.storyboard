@@ -562,6 +562,7 @@
                         <outlet property="closeBarButton" destination="4zF-05-ZwU" id="Hpv-ma-Qub"/>
                         <outlet property="coffeeImageView" destination="Usb-2E-S2i" id="JFD-Ce-lE6"/>
                         <outlet property="contentLabel" destination="jDR-RF-CeU" id="bKh-IP-Y4Q"/>
+                        <outlet property="contentLine" destination="4Mh-pO-upE" id="oXh-o5-IwA"/>
                         <outlet property="dateLabel" destination="czV-f9-1OH" id="8nN-Ik-u4i"/>
                         <outlet property="menuBarButton" destination="Oah-r4-CxE" id="MN8-v7-MJw"/>
                         <outlet property="rootView" destination="wZg-ab-cGG" id="9by-Gl-Rzd"/>

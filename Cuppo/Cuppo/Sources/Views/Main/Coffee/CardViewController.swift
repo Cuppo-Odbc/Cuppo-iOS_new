@@ -57,6 +57,8 @@ class CardViewController: UIViewController {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var closeBarButton: UIBarButtonItem!
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
+    @IBOutlet weak var contentLine: UIView!
+    
     
     @IBAction func closeButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -75,6 +77,7 @@ class CardViewController: UIViewController {
         super.viewDidLoad()
         setBind()
         setupData()
+        self.contentLine.isHidden = true
         setBarButtonLocation(size: 10, barButton: closeBarButton,location: 1)
         setBarButtonLocation(size: -10, barButton: menuBarButton,location: 2)
     }
@@ -84,6 +87,7 @@ class CardViewController: UIViewController {
     }
     
     // MARK: - Functions
+
     func setBarButtonLocation(size: Double,barButton: UIBarButtonItem, location: Int){
         
         let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
@@ -99,11 +103,11 @@ class CardViewController: UIViewController {
     
     func setupData(){
         viewModel.requestCardInfo()
-        showIndicator()
     }
     
     func setBind(){
         viewModel.cardInfo.bind { data in
+            self.showIndicator()
             self.setupData()
             self.setUI()
             self.dismissIndicator()
@@ -114,6 +118,13 @@ class CardViewController: UIViewController {
                 self.dismiss(animated: true, completion: nil)
             }
         }
+        
+        viewModel.addStartStatus.bind { status in
+            if status {
+                self.contentLine.isHidden = false
+            }
+        }
+        
     }
     
     func setUI(){
@@ -122,6 +133,7 @@ class CardViewController: UIViewController {
         titleLabel.text = viewModel.getCardInfo().title
         urlToImg(urlStr: viewModel.getCardInfo().coffee, img: coffeeImageView)
         contentLabel.text = viewModel.getCardInfo().content
+        viewModel.addStartStatus.value = true
     }
     
     func setFont(){

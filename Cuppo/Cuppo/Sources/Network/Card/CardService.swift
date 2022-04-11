@@ -7,19 +7,19 @@
 
 import Alamofire
 
-
-
 class CardService {
     
     static let shared = CardService()
     private init() {}
+    private let jwt = UserDataCenter.shared.accessToken ?? ""
+
     
     // MARK: - 전체 카드 조회
     func requestCardList(year: Int, month: Int ,completion: @escaping (CardListResponse)->(Void)){
         let URL = Constant.BasicURL + "/cards?year=\(year)&month=\(month)"
         let HEADER: HTTPHeaders = [
             "accept":           "application/json",
-            "Authorization":     "Bearer \(Constant.jwt)"
+            "Authorization":     "Bearer \(jwt)"
         ]
         
         AF.request(URL, method: .get ,headers: HEADER).validate().responseDecodable(of:CardListResponse.self) { response in
@@ -37,7 +37,7 @@ class CardService {
         let URL = Constant.BasicURL + "/cards?year=\(year)&month=\(month)&day=\(day)"
         let HEADER: HTTPHeaders = [
             "accept":           "application/json",
-            "Authorization":     "Bearer \(Constant.jwt)"
+            "Authorization":     "Bearer \(jwt)"
         ]
         
         AF.request(URL, method: .get ,headers: HEADER).validate().responseDecodable(of:CardListResponse.self) { response in
@@ -56,7 +56,7 @@ class CardService {
         let URL = Constant.BasicURL + "/cards/\(cardId)"
         let HEADER: HTTPHeaders = [
             "accept":           "application/json",
-            "Authorization":     "Bearer \(Constant.jwt)"
+            "Authorization":     "Bearer \(jwt)"
         ]
         
         AF.request(URL, method: .get ,headers: HEADER).validate().responseDecodable(of:Card.self) { response in
@@ -77,7 +77,7 @@ class CardService {
         let HEADER: HTTPHeaders = [
             "accept":        "application/json",
             "Content-Type":  "application/json",
-            "Authorization": "Bearer \(Constant.jwt)"
+            "Authorization": "Bearer \(jwt)"
         ]
         
         AF.request(URL, method: .delete ,headers: HEADER ).validate().responseDecodable(of:CardDeleteResponse.self) { response in
@@ -96,7 +96,7 @@ class CardService {
         let HEADER: HTTPHeaders = [
             "accept":        "application/json",
             "Content-Type":  "application/json",
-            "Authorization": "Bearer \(Constant.jwt)"
+            "Authorization": "Bearer \(jwt)"
         ]
     
         AF.request(URL, method: .patch, parameters: para, encoder: JSONParameterEncoder(), headers: HEADER ).validate().responseDecodable(of:Card.self) { response in
@@ -115,7 +115,7 @@ class CardService {
         let HEADER: HTTPHeaders = [
             "accept":        "application/json",
             "Content-Type":  "application/json",
-            "Authorization": "Bearer \(Constant.jwt)"
+            "Authorization": "Bearer \(jwt)"
         ]
     
         AF.request(URL, method: .post, parameters: para, encoder: JSONParameterEncoder(), headers: HEADER ).validate().responseDecodable(of:Card.self) { response in

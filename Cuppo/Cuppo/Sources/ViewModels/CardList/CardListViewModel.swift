@@ -12,6 +12,7 @@ class CardListViewModel {
     
     var selectedDate: Observable2<Date> = Observable2(value: Date())
     var cardList: Observable2<[Card]> = Observable2(value: [Card]())
+    var addStartStatus: Observable2<Bool> = Observable2(value: false)
     
     func requestCardListAPI(){
         //TODO: API 호출해서 응답값 받고, 그걸 우리가쓸 모델형태로 변경 후 그걸 cardList에 넣어주자.

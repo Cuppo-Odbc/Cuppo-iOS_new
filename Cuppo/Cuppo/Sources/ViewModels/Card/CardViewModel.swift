@@ -12,6 +12,7 @@ class CardViewModel {
     var cardPK: String = ""
     var cardInfo: Observable2<Card> = Observable2(value: Card())
     var responseEnd: Observable2<Bool> = Observable2(value: false)
+    var addStartStatus: Observable2<Bool> = Observable2(value: false)
     
     func requestCardInfo(){
         cardDataManger.requestSelectCard(cardId: cardPK) { response in

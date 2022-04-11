@@ -56,7 +56,6 @@ class CalendarViewController: UIViewController {
     /* API 관련 */
     private func setupData() {
         viewModel.requestCardListAPI()
-        showIndicator()
     }
     
     /* 콜렉션뷰 셋팅 */
@@ -80,6 +79,7 @@ class CalendarViewController: UIViewController {
         }
         
         viewModel.cardList.bind { _ in
+            self.showIndicator()
             self.collectionView.reloadData()
             self.dismissIndicator()
         }

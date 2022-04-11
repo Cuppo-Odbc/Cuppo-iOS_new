@@ -45,19 +45,16 @@ class CoffeeListViewController: UIViewController {
     func setUI(){
         yearLabel.text = viewModel.getYear()
         monthLabel.text = viewModel.getMonth()
-        setTableView()
     }
     
     func setLabel(){
         yearLabel.font = .globalFont(size: 16)
         monthLabel.font = .globalFont(size: 22)
-        
     }
     
     /* API 관련 */
     private func setupData() {
         viewModel.requestCardListAPI()
-        showIndicator()
     }
     
     /* 테이블뷰 셋팅 */
@@ -76,8 +73,16 @@ class CoffeeListViewController: UIViewController {
         }
         
         viewModel.cardList.bind { _ in
+            self.showIndicator()
+            self.viewModel.addStartStatus.value = true
             self.tableView.reloadData()
             self.dismissIndicator()
+        }
+        
+        viewModel.addStartStatus.bind { status in
+            if status {
+                self.setTableView()
+            }
         }
         
     }
