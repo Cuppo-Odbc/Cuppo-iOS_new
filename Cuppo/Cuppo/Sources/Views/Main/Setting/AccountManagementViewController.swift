@@ -52,32 +52,20 @@ class AccountManagementViewController: BaseController {
         $0.addArrangedSubview(withdrawalButton)
     }
     
-    let popupView = AlertView(frame: .zero)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.view.backgroundColor = .systemBackground
         self.navigationItem.title = "계정 관리"
         setLayout()
         checkCurrentUserInfo()
-        setAlertView()
     }
     
-    func setAlertView(){
-        self.popupView.frame = self.view.frame
-        popupView.delegate = self
-    }
     
     func popupNonMemberLogoutAlertView(){
-        popupView.popupAlert(firstBtnTitle: "네", secondBtnTitle: "아니오", content: "로그아웃 하시겠습니까?", myView: self.popupView)
-//        self.popupView.cancelButton.isHidden = true
-        
+        let popupView = AlertView(frame: view.bounds)
+        popupView.popupAlert(firstBtnTitle: "아니요", secondBtnTitle: "네", content: "로그아웃 하시겠습니까?", myView: popupView)
+        popupView.delegate = self
         self.view.addSubview(popupView)
-        
-        popupView.snp.makeConstraints{
-            $0.edges.equalToSuperview()
-        }
     }
     
     func checkCurrentUserInfo(){

@@ -68,6 +68,7 @@
 		9F81962F27D64C0400FF42BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F81962D27D64C0400FF42BA /* LaunchScreen.storyboard */; };
 		9FB8F37F27FF6F2D00830CC4 /* CardAddRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8F37E27FF6F2D00830CC4 /* CardAddRequest.swift */; };
 		9FB8F38128004E3300830CC4 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8F38028004E3300830CC4 /* CardModel.swift */; };
+		9FE772692804561F0022FE89 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE772682804561F0022FE89 /* TestViewController.swift */; };
 		A8318F83280174CB00E8950C /* PasswordFindService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8318F82280174CB00E8950C /* PasswordFindService.swift */; };
 		A8318F862801755C00E8950C /* PasswordFindRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8318F852801755C00E8950C /* PasswordFindRequest.swift */; };
 		A8318F882801768C00E8950C /* PasswordFindViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8318F872801768C00E8950C /* PasswordFindViewModel.swift */; };
@@ -171,6 +172,7 @@
 		9F81963027D64C0400FF42BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FB8F37E27FF6F2D00830CC4 /* CardAddRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAddRequest.swift; sourceTree = "<group>"; };
 		9FB8F38028004E3300830CC4 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		9FE772682804561F0022FE89 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		A8318F82280174CB00E8950C /* PasswordFindService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFindService.swift; sourceTree = "<group>"; };
 		A8318F852801755C00E8950C /* PasswordFindRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFindRequest.swift; sourceTree = "<group>"; };
 		A8318F872801768C00E8950C /* PasswordFindViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFindViewModel.swift; sourceTree = "<group>"; };
@@ -583,6 +585,7 @@
 		9F81963E27D64CCF00FF42BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9FE772682804561F0022FE89 /* TestViewController.swift */,
 				A872773727EF0C8700B11132 /* FindPassword */,
 				A8373A7F27DDF95400BA0442 /* SignUp */,
 				A8373A7027DDDD6300BA0442 /* Login */,
@@ -884,6 +887,7 @@
 				9F7D544827FAF82B00D75CD0 /* CardModifyRequest.swift in Sources */,
 				9F253EA527D66A3D0010C1E6 /* IndicatorView.swift in Sources */,
 				9F7D540A27F3061A00D75CD0 /* AlertView.swift in Sources */,
+				9FE772692804561F0022FE89 /* TestViewController.swift in Sources */,
 				9FB8F38128004E3300830CC4 /* CardModel.swift in Sources */,
 				9F7D543A27FACCE300D75CD0 /* CoffeeListCell.swift in Sources */,
 				9F253EA127D669320010C1E6 /* UIColor.swift in Sources */,

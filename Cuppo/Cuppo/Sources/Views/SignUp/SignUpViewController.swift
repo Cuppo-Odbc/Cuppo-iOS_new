@@ -55,46 +55,35 @@ class SignUpViewController: BaseController {
         $0.addTarget(self, action: #selector(closeButtonTapped(_:)), for: .touchUpInside)
     }
     
-    let popupView = AlertView(frame: .zero)
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-
         setLayout()
-        setAlertView()
         bind()
         self.dismissKeyboardWhenTappedAround()
     }
     
     //MARK: - Functions
-    func setAlertView(){
-        self.popupView.frame = self.view.frame
-        popupView.delegate = self
-    }
+
     
     func popupSuccessAlertView(){
-        popupView.popupAlert(firstBtnTitle: "네", secondBtnTitle: nil, content: "회원가입 성공\n로그인 화면으로 이동하여 로그인을 진행해주세요.", myView: self.popupView)
-//        self.popupView.okButton.isHidden = true
-        
+        let popupView = AlertView(frame: view.bounds)
+        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "회원가입 성공\n로그인 화면으로 이동하여 로그인을 진행해주세요.", myView: popupView)
+        popupView.cancelButton.isHidden = true
+        popupView.delegate = self
         self.view.addSubview(popupView)
-        
-        popupView.snp.makeConstraints{
-            $0.edges.equalToSuperview()
-        }
-        
         self.view.layoutIfNeeded()
     }
     
     func popupFailureAlertView(){
-        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "회원가입 실패\n중복된 이메일입니다. 다시 입력해주세요.", myView: self.popupView)
-        
+        let popupView = AlertView(frame: view.bounds)
+        popupView.popupAlert(firstBtnTitle: "네", secondBtnTitle: nil, content: "회원가입 실패\n중복된 이메일입니다. 다시 입력해주세요.", myView: popupView)
+        popupView.okButton.isHidden = true
+        popupView.delegate = self
         self.view.addSubview(popupView)
-        
-        popupView.snp.makeConstraints{
-            $0.edges.equalToSuperview()
-        }
+        self.view.layoutIfNeeded()
     }
     
     func bind(){
