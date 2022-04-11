@@ -24,6 +24,7 @@ class LoginViewController: BaseController {
     
     let passwordTextField = UnderLineTextField().then{
         $0.setPlaceHolder(placeHolder: "비밀번호")
+        $0.textField.isSecureTextEntry = true
         $0.setAlertLabel(text: "비밀번호가 다릅니다.")
     }
     

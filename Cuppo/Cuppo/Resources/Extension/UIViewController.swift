@@ -54,10 +54,14 @@ extension UIViewController {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = backgroundColor
-            appearance.titleTextAttributes = [.foregroundColor: titleColor]
+            appearance.titleTextAttributes = [.foregroundColor: titleColor, .font: UIFont.globalFont(size: 18)]
             appearance.shadowColor = .clear
             self.navigationController?.navigationBar.standardAppearance = appearance
             self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+            self.navigationController?.navigationBar.tintColor = titleColor
+            let yourBackImage = UIImage(named: "backButton")
+            self.navigationController?.navigationBar.backIndicatorImage = yourBackImage
+            self.navigationItem.backButtonTitle = ""
         }
     
 }

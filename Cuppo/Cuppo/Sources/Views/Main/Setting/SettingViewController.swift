@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Then
 import SwiftUI
+import SafariServices
 
 enum Menu: String {
     case fontStyle = "글자 스타일"
@@ -72,18 +73,15 @@ class SettingViewController: BaseController {
         $0.type = .accountManagement
         $0.setTitleLabel(text: Menu.accountManagement.rawValue, font: UIFont.globalFont(size: 16))
     }
-
+    
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .systemBackground
-        self.customNavigationBarAttribute(.clear, UIColor(named: "cuppoColor1") ?? .black)
         self.navigationController?.navigationBar.topItem?.title = "설정"
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.globalFont(size: 18)
-        ]
+        self.customNavigationBarAttribute(.clear, UIColor(named: "cuppoColor1")!)
         setLayout()
     }
     
@@ -98,7 +96,7 @@ class SettingViewController: BaseController {
             $0.leading.equalTo(self.view.safeAreaLayoutGuide).offset(30)
             $0.trailing.equalTo(self.view.safeAreaLayoutGuide).offset(-30)
         }
-
+        
         viewDivider.snp.makeConstraints{
             $0.top.equalTo(topSettingView.snp.bottom).offset(30)
             $0.leading.trailing.equalToSuperview()
@@ -125,8 +123,18 @@ extension SettingViewController: SettingActionDelegate {
             self.navigationController?.pushViewController(themeVC, animated: true)
             break
         case .instargram:
+            guard let instarUrl = URL(string: "https://www.instagram.com/cupp.o_/") else { return }
+            let instarSafariView: SFSafariViewController = SFSafariViewController(url: instarUrl)
+            DispatchQueue.main.async { [weak self] in
+                self?.present(instarSafariView, animated: true, completion: nil)
+            }
             break
         case .serviceInfo:
+            guard let serviceUrl = URL(string: "https://charmed-veil-c90.notion.site/76b42075857548c1b032e90985857bbd") else { return }
+            let serviceSafariView: SFSafariViewController = SFSafariViewController(url: serviceUrl)
+            DispatchQueue.main.async { [weak self] in
+                self?.present(serviceSafariView, animated: true, completion: nil)
+            }
             break
         case .accountManagement:
             let accountVC = AccountManagementViewController()

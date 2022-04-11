@@ -76,7 +76,6 @@ class LetterStyleViewController: BaseController {
         super.viewDidLoad()
 
         self.view.backgroundColor = .systemBackground
-        self.customNavigationBarAttribute(.clear, .black)
         self.navigationItem.title = "글자 스타일"
         
         setLetterButton()
