@@ -24,6 +24,7 @@ class RectViewButton: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        self.rectButton.addTarget(self, action: #selector(tapped(_:)), for: .touchUpInside)
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapped(_:))))
         setLayout()
     }
