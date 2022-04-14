@@ -89,6 +89,19 @@ class LoginViewController: BaseController {
         startWithoutLoginButton.layer.borderColor = UIColor(named: "cuppoColor14")?.cgColor
     }
     
+    /**
+     로그인 없이 사용할 경우,
+     앱 재설치 및 기기 변경 시
+     기존 데이터가 사라집니다.
+     */
+    func popupSuccessAlertView(){
+        let popupView = AlertView(frame: view.bounds)
+        popupView.popupAlert(firstBtnTitle: "취소", secondBtnTitle: "확인", content: "로그인 없이 사용할 경우, 앱 재설치 및 기기 변경 시 기존 데이터가 사라집니다.", myView: popupView)
+        popupView.delegate = self
+        self.view.addSubview(popupView)
+        self.view.layoutIfNeeded()
+    }
+    
     //MARK: - Functions
     func bind(){
         self.loginButton.rx.tap
@@ -101,7 +114,6 @@ class LoginViewController: BaseController {
                         //TODO: 로그인 성공, 메인화면으로 전환 and 인디케이터 넣어도 좋음
                         self.viewModel.setAccessTokenForUser(token: response.loginSuccess?.accessToken ?? "") // 액세스 토큰 저장
                         self.viewModel.setMemberInfo(memberType: .member) // 멤버 분류 세팅
-                        
                         let sb = UIStoryboard(name: "TabBar", bundle: nil)
                         let tabbarVC = sb.instantiateViewController(withIdentifier: "tabbarViewController")
                         
@@ -142,11 +154,9 @@ class LoginViewController: BaseController {
                     case .success:
                         self.viewModel.setAccessTokenForUser(token: response.loginSuccess?.accessToken ?? "")
                         // 액세스 토큰 저장
-                       self.viewModel.setMemberInfo(memberType: .nonMember) // 멤버 분류 세팅
-                       let sb = UIStoryboard(name: "TabBar", bundle: nil)
-                       let tabbarVC = sb.instantiateViewController(withIdentifier: "tabbarViewController")
-                       
-                       self.view.window?.rootViewController = tabbarVC
+                        self.viewModel.setMemberInfo(memberType: .nonMember) // 멤버 분류 세팅
+                        self.popupSuccessAlertView()
+                        
                         break
                     case .fail:
                         guard let failureType = response.loginFailure?.getFailureType() else { return }
@@ -169,10 +179,10 @@ class LoginViewController: BaseController {
                             print("이메일 올바르지 않음")
                             break
                         }
-
+                        
                         break
                     }
-                     
+                    
                 }
             }
             .disposed(by: disposeBag)
@@ -241,4 +251,19 @@ class LoginViewController: BaseController {
             $0.height.equalTo(50.0)
         }
     }
+}
+
+extension LoginViewController: CustomAlertProtocol {
+    func cancleButtonTapped(_ popupView: UIView) {
+        popupView.removeFromSuperview()
+    }
+    
+    func okButtonTapped(_ popupView: UIView, _ year: String?, _ month: String?) {
+        popupView.removeFromSuperview()
+        let sb = UIStoryboard(name: "TabBar", bundle: nil)
+        let tabbarVC = sb.instantiateViewController(withIdentifier: "tabbarViewController")
+        
+        self.view.window?.rootViewController = tabbarVC
+    }
+    
 }

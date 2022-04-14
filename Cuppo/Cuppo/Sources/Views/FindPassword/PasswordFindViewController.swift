@@ -77,17 +77,28 @@ class PasswordFindViewController: BaseController {
         }
     }
     
+    func popupSuccessAlertView(){
+        let popupView = AlertView(frame: view.bounds)
+        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "이메일 전송 성공\n전송된 메일을 통해 비밀번호를 재설정 해주세요.", myView: popupView)
+        popupView.cancelButton.isHidden = true
+        popupView.delegate = self
+        self.view.addSubview(popupView)
+        self.view.layoutIfNeeded()
+    }
+    
     @objc
     func passwordFindButtonTapped(_ sender: UIButton){
-        self.passwordFindViewModel.requestFindPassword(email: self.emailTextField.textField.text ?? "") { isSuccess in
-            if isSuccess {
-                //TODO: 이메일 전송 성공
-                print("이메일 전송 성공")
-            }else{
-                //TODO: 등록되지 않은 이메일 혹은 실패
-                print("등록되지 않은 이메일 혹은 실패")
+        if let text = self.emailTextField.textField.text {
+            self.passwordFindViewModel.requestFindPassword(email: text) { isSuccess in
+                if isSuccess {
+                    //TODO: 이메일 전송 성공
+                    self.emailTextField.alertLabel.isHidden = true
+                    self.popupSuccessAlertView()
+                }else{
+                    //TODO: 등록되지 않은 이메일 혹은 실패
+                    self.emailTextField.alertLabel.isHidden = false
+                }
             }
-            
         }
     }
     
@@ -95,4 +106,16 @@ class PasswordFindViewController: BaseController {
     func closeButtonTapped(_ sender: UIButton){
         self.dismiss(animated: true, completion: nil)
     }
+}
+
+extension PasswordFindViewController: CustomAlertProtocol {
+    func cancleButtonTapped(_ popupView: UIView) {
+        popupView.removeFromSuperview()
+    }
+
+    func okButtonTapped(_ popupView: UIView, _ year: String?, _ month: String?) {
+        popupView.removeFromSuperview()
+        self.dismiss(animated: true, completion: nil)
+    }
+
 }

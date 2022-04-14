@@ -107,10 +107,12 @@ class SignUpViewController: BaseController {
                         if isSignupSuccess {
                             //TODO: 회원가입 성공, 로그인 화면으로 이동
                             self.view.endEditing(false)
+                            self.emailTextField.alertLabel.isHidden = true
                             self.popupSuccessAlertView()
                         }else{
                             //TODO: 실패 - 중복된 이메일입니다 alert 띄우기
                             self.view.endEditing(false)
+                            self.emailTextField.alertLabel.isHidden = false
                             self.popupFailureAlertView()
                         }
                     }

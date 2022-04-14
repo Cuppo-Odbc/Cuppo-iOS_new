@@ -11,8 +11,8 @@ class PasswordFindViewModel {
     let passwordFindService = PasswordFindService()
     
     func requestFindPassword(email: String, completion: @escaping (Bool)->(Void)){
-        self.passwordFindService.requestPasswordFind(email: email) {
-            completion(true)
+        self.passwordFindService.requestPasswordFind(email: email) { isSuccess in
+            completion(isSuccess)
         }
     }
 }

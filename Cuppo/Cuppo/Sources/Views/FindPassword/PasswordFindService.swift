@@ -16,7 +16,7 @@ class PasswordFindService {
     
     let url = "\(Constant.BasicURL)/auth/reset-password"
     
-    func requestPasswordFind(email: String, completion: @escaping (()->(Void))) {
+    func requestPasswordFind(email: String, completion: @escaping ((Bool)->(Void))) {
         AF.request(self.url,
                    method: .post,
                    parameters: PasswordFindRequest(email: email).toDict,
@@ -27,18 +27,18 @@ class PasswordFindService {
                     if let statusCode = response.response?.statusCode {
                         switch statusCode {
                         case 200:
-                            completion()
+                            completion(true)
                             break
                         case 400:
-                            completion()
+                            completion(false)
                             break
                         default:
-                            completion()
+                            completion(false)
                             break
                         }
                     }
                 case .failure:
-                    completion()
+                    completion(false)
                     print("fail , statusCode --> \(response.result)")
                 }
             }
