@@ -51,12 +51,18 @@ class PasswordChangeViewController: BaseController {
         $0.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
     }
     
+    let navigationTitleLabel = UILabel().then{
+        $0.text = "비밀번호 변경"
+        $0.font = UIFont.globalFont(size: 18)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .systemBackground
         
         setLayout()
+        setNavigationButton()
         self.dismissKeyboardWhenTappedAround()
     }
     
@@ -66,8 +72,19 @@ class PasswordChangeViewController: BaseController {
         self.passwordChangeButton.layer.borderColor = UIColor(named: "cuppoColor14")?.cgColor
     }
     
+    @objc
+    func back(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setNavigationButton(){
+        let backbutton = UIBarButtonItem(image: UIImage(named: "backButton"), style: .done, target: self, action: #selector(back))
+        self.navigationItem.leftBarButtonItem = backbutton
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "cuppoColor1")
+    }
+    
     func setLayout(){
-        [passwordStackView, passwordChangeButton, closeButton].forEach {
+        [passwordStackView, passwordChangeButton, closeButton, navigationTitleLabel].forEach {
             self.view.addSubview($0)
         }
         
@@ -89,6 +106,27 @@ class PasswordChangeViewController: BaseController {
             $0.leading.equalToSuperview().offset(30)
             $0.width.height.equalTo(15)
         }
+        
+        navigationTitleLabel.snp.makeConstraints{
+            $0.centerY.equalTo(closeButton.snp.centerY)
+            $0.centerX.equalToSuperview()
+        }
+    }
+    
+    func popupSuccessAlertView(){
+        let popupView = AlertView(frame: view.bounds)
+        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "비밀번호가 성공적으로 변경되었습니다.", myView: popupView)
+        popupView.cancelButton.isHidden = true
+        popupView.delegate = self
+        self.view.addSubview(popupView)
+    }
+    
+    func popupFailureAlertView(){
+        let popupView = AlertView(frame: view.bounds)
+        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "비밀번호 변경 실패\n올바른 비밀번호를 입력해주세요.", myView: popupView)
+        popupView.cancelButton.isHidden = true
+        popupView.delegate = self
+        self.view.addSubview(popupView)
     }
     
     @objc
@@ -98,12 +136,17 @@ class PasswordChangeViewController: BaseController {
             self.passwordChangeViewModel.requestPasswordChange(password: self.newPasswordTextField.textField.text ?? "") { isSuccess in
                 if isSuccess { // 비밀번호 변경 성공 -> 성공 얼럿 띄우고, ok액션에 dismiss.
                     print("비밀번호 변경 성공")
+                    self.newPasswordCheckTextField.alertLabel.isHidden = true
+                    self.popupSuccessAlertView()
                 }else{ // 비밀번호 변경 실패 다시시도해주세요~
                     print("비밀번호 변경 실패")
+                    self.newPasswordCheckTextField.alertLabel.isHidden = true
+                    self.popupFailureAlertView()
                 }
             }
         }else{
             print("비번 확인 다름")
+            self.newPasswordCheckTextField.alertLabel.isHidden = false
         }
         
     }
@@ -112,4 +155,16 @@ class PasswordChangeViewController: BaseController {
     func closeButtonTapped(_ sender: UIButton){
         self.dismiss(animated: true, completion: nil)
     }
+}
+
+extension PasswordChangeViewController: CustomAlertProtocol {
+    func cancleButtonTapped(_ popupView: UIView) {
+        popupView.removeFromSuperview()
+    }
+
+    func okButtonTapped(_ popupView: UIView, _ year: String?, _ month: String?) {
+        popupView.removeFromSuperview()
+        self.dismiss(animated: true, completion: nil)
+    }
+
 }

@@ -45,6 +45,18 @@ class ThemeViewController: BaseController {
         
         setThemeButton()
         setLayout()
+        setNavigationButton()
+    }
+    
+    @objc
+    func back(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setNavigationButton(){
+        let backbutton = UIBarButtonItem(image: UIImage(named: "backButton"), style: .done, target: self, action: #selector(back))
+        self.navigationItem.leftBarButtonItem = backbutton
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "cuppoColor1")
     }
     
     func setThemeButton(){

@@ -83,10 +83,14 @@ class WithdrawalViewController: BaseController {
         $0.addTarget(self, action: #selector(withdrawalButtonTapped(_:)), for: .touchUpInside)
     }
     
+    let navigationTitleLabel = UILabel().then{
+        $0.text = "회원탈퇴"
+        $0.font = UIFont.globalFont(size: 18)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
-    
         setLayout()
     }
     
@@ -96,8 +100,32 @@ class WithdrawalViewController: BaseController {
         self.withdrawalButton.layer.borderColor = UIColor(named: "cuppoColor14")?.cgColor
     }
 
+    func popupSuccessAlertView(){
+        let popupView = AlertView(frame: view.bounds)
+        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "회원탈퇴가 완료되었습니다.", myView: popupView)
+        popupView.delegate = self
+        popupView.cancelButton.isHidden = true
+        self.view.addSubview(popupView)
+    }
+    
+    func popupFailureAlertView(){
+        let popupView = AlertView(frame: view.bounds)
+        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "회원탈퇴 실패\n다시 시도해주세요.", myView: popupView)
+        popupView.delegate = self
+        popupView.cancelButton.isHidden = true
+        self.view.addSubview(popupView)
+    }
+    
+    func popupWaringAlertView(){
+        let popupView = AlertView(frame: view.bounds)
+        popupView.popupAlert(firstBtnTitle: "네", secondBtnTitle: nil, content: "회원탈퇴 약관에 동의해주세요.", myView: popupView)
+        popupView.delegate = self
+        popupView.okButton.isHidden = true
+        self.view.addSubview(popupView)
+    }
+    
     func setLayout(){
-        [alertLabel, closeButton, checkViewButton, withdrawalButton].forEach {
+        [alertLabel, closeButton, checkViewButton, withdrawalButton, navigationTitleLabel].forEach {
             self.view.addSubview($0)
         }
         
@@ -126,7 +154,10 @@ class WithdrawalViewController: BaseController {
             $0.height.equalTo(50)
         }
         
-        
+        navigationTitleLabel.snp.makeConstraints{
+            $0.centerY.equalTo(closeButton.snp.centerY)
+            $0.centerX.equalToSuperview()
+        }
     }
     
     @objc
@@ -139,15 +170,31 @@ class WithdrawalViewController: BaseController {
         if self.checkViewButton.rectButton.isSelected {
             self.viewModel.requestWithdrawal { isSuccess in
                 if isSuccess { //TODO: 회원 탈퇴 완료 얼럿, 로그인 화면으로 전환
-                    self.view.window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
                     print("회원탈퇴 성공")
+                    self.popupSuccessAlertView()
                 } else{ // 회원 탈퇴 실패 얼럿
+                    self.popupFailureAlertView()
                     print("회원탈퇴 실패")
                 }
             }
         }else{
             //TODO: 체크해달라는 alert 띄워야함
             print("약관 동의 해주세영")
+            self.popupWaringAlertView()
         }
     }
+}
+
+extension WithdrawalViewController: CustomAlertProtocol {
+    func cancleButtonTapped(_ popupView: UIView) {
+        popupView.removeFromSuperview()
+    }
+
+    func okButtonTapped(_ popupView: UIView, _ year: String?, _ month: String?) {
+        popupView.removeFromSuperview()
+        self.dismiss(animated: true, completion: nil)
+        
+        self.view.window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+    }
+
 }

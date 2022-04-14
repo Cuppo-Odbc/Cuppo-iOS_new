@@ -56,6 +56,11 @@ class ConverMemberViewController: BaseController {
         $0.addTarget(self, action: #selector(closeButtonTapped(_:)), for: .touchUpInside)
     }
     
+    let navigationTitleLabel = UILabel().then{
+        $0.text = "회원으로 전환"
+        $0.font = UIFont.globalFont(size: 18)
+    }
+    
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,17 +75,18 @@ class ConverMemberViewController: BaseController {
     
     func popupSuccessAlertView(){
         let popupView = AlertView(frame: view.bounds)
-        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "회원가입 성공\n로그인 화면으로 이동하여 로그인을 진행해주세요.", myView: popupView)
+        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "회원전환 성공\n로그인 화면으로 이동하여 로그인을 진행해주세요.", myView: popupView)
         popupView.cancelButton.isHidden = true
+        popupView.delegate = self
         self.view.addSubview(popupView)
-        
         self.view.layoutIfNeeded()
     }
     
     func popupFailureAlertView(){
         let popupView = AlertView(frame: view.bounds)
-        popupView.popupAlert(firstBtnTitle: "네", secondBtnTitle: nil, content: "회원가입 실패\n중복된 이메일입니다. 다시 입력해주세요.", myView: popupView)
+        popupView.popupAlert(firstBtnTitle: "네", secondBtnTitle: nil, content: "회원전환 실패\n중복된 이메일입니다. 다시 입력해주세요.", myView: popupView)
         popupView.okButton.isHidden = true
+        popupView.delegate = self
         self.view.addSubview(popupView)
         self.view.layoutIfNeeded()
     }
@@ -121,7 +127,7 @@ class ConverMemberViewController: BaseController {
     }
     
     func setLayout(){
-        [closeButton, inputStackView, signUpButton].forEach {
+        [closeButton, inputStackView, signUpButton, navigationTitleLabel].forEach {
             self.view.addSubview($0)
         }
         
@@ -144,6 +150,11 @@ class ConverMemberViewController: BaseController {
             $0.trailing.equalToSuperview().offset(-38)
             $0.height.equalTo(50.0)
         }
+        
+        navigationTitleLabel.snp.makeConstraints{
+            $0.centerY.equalTo(closeButton.snp.centerY)
+            $0.centerX.equalToSuperview()
+        }
     }
     
     @objc
@@ -160,7 +171,6 @@ extension ConverMemberViewController: CustomAlertProtocol {
     
     func okButtonTapped(_ popupView: UIView, _ year: String?, _ month: String?) {
         popupView.removeFromSuperview()
-        self.dismiss(animated: true, completion: nil)
         
         self.view.window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
     }

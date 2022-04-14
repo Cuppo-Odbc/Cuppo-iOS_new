@@ -80,6 +80,7 @@ class LetterStyleViewController: BaseController {
         
         setLetterButton()
         setLayout()
+        setNavigationButton()
     }
     
     func setLetterButton(){
@@ -130,6 +131,25 @@ class LetterStyleViewController: BaseController {
         }
     }
     
+    @objc
+    func back(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setNavigationButton(){
+        let backbutton = UIBarButtonItem(image: UIImage(named: "backButton"), style: .done, target: self, action: #selector(back))
+        self.navigationItem.leftBarButtonItem = backbutton
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "cuppoColor1")
+    }
+    
+    func popupAlertView(){
+        let popupView = AlertView(frame: view.bounds)
+        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "확인", content: "설정된 글꼴은 앱 재시작시 적용됩니다.", myView: popupView)
+        popupView.cancelButton.isHidden = true
+        popupView.delegate = self
+        self.view.addSubview(popupView)
+    }
+    
     private func checkSeletedButton(tag: Int){
         [systemFontButton, basicFontButton, dovemayoFontButton, dovemayoBoldFontButton, kyoboFontButton].forEach { button in
             button.radioButton.isSelected = button.tag == tag ? true : false
@@ -145,31 +165,49 @@ extension LetterStyleViewController: LetterViewDelegate {
             UserDataCenter.shared.setGlobalFont(type: .systemFont)
             self.guideLabel.font = UIFont.globalFont(size: 16)
             checkSeletedButton(tag: tag)
+            self.popupAlertView()
             break
         case 2:
             UserDataCenter.shared.setGlobalFont(type: .goyangFont)
             self.guideLabel.font = UIFont.globalFont(size: 16)
             checkSeletedButton(tag: tag)
+            self.popupAlertView()
             break
         case 3:
             UserDataCenter.shared.setGlobalFont(type: .dovemayo)
             self.guideLabel.font = UIFont.globalFont(size: 16)
             checkSeletedButton(tag: tag)
+            self.popupAlertView()
             break
         case 4:
             UserDataCenter.shared.setGlobalFont(type: .dovemayoBold)
             self.guideLabel.font = UIFont.globalFont(size: 16)
             checkSeletedButton(tag: tag)
+            self.popupAlertView()
             break
         case 5:
             UserDataCenter.shared.setGlobalFont(type: .kyoboHandwriting2019)
             self.guideLabel.font = UIFont.globalFont(size: 16)
             checkSeletedButton(tag: tag)
+            self.popupAlertView()
             break
         default:
             UserDataCenter.shared.setGlobalFont(type: .systemFont)
             self.guideLabel.font = UIFont.globalFont(size: 16)
             checkSeletedButton(tag: tag)
+            self.popupAlertView()
+            break
         }
     }
+}
+
+extension LetterStyleViewController: CustomAlertProtocol {
+    func cancleButtonTapped(_ popupView: UIView) {
+        popupView.removeFromSuperview()
+    }
+
+    func okButtonTapped(_ popupView: UIView, _ year: String?, _ month: String?) {
+        popupView.removeFromSuperview()
+    }
+
 }
