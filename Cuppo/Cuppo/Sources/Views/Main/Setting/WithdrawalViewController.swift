@@ -103,7 +103,7 @@ class WithdrawalViewController: BaseController {
 
     func popupSuccessAlertView(){
         let popupView = AlertView(frame: view.bounds)
-        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "회원탈퇴가 완료되었습니다.", myView: popupView)
+        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "확인", content: "회원탈퇴가 완료되었습니다.", myView: popupView)
         popupView.delegate = self
         popupView.cancelButton.isHidden = true
         self.view.addSubview(popupView)
@@ -111,7 +111,7 @@ class WithdrawalViewController: BaseController {
     
     func popupFailureAlertView(){
         let popupView = AlertView(frame: view.bounds)
-        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "회원탈퇴 실패\n다시 시도해주세요.", myView: popupView)
+        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "확인", content: "회원탈퇴 실패\n다시 시도해주세요.", myView: popupView)
         popupView.delegate = self
         popupView.cancelButton.isHidden = true
         self.view.addSubview(popupView)
@@ -119,7 +119,7 @@ class WithdrawalViewController: BaseController {
     
     func popupWaringAlertView(){
         let popupView = AlertView(frame: view.bounds)
-        popupView.popupAlert(firstBtnTitle: "네", secondBtnTitle: nil, content: "회원탈퇴 약관에 동의해주세요.", myView: popupView)
+        popupView.popupAlert(firstBtnTitle: "확인", secondBtnTitle: nil, content: "약관 확인 후 동의해주세요.", myView: popupView)
         popupView.delegate = self
         popupView.okButton.isHidden = true
         self.view.addSubview(popupView)

@@ -144,7 +144,7 @@ class LetterStyleViewController: BaseController {
     
     func popupAlertView(){
         let popupView = AlertView(frame: view.bounds)
-        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "확인", content: "설정된 글꼴은 앱 재시작시 적용됩니다.", myView: popupView)
+        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "확인", content: "변경된 글꼴은 앱 재시작 시 적용됩니다.", myView: popupView)
         popupView.cancelButton.isHidden = true
         popupView.delegate = self
         self.view.addSubview(popupView)

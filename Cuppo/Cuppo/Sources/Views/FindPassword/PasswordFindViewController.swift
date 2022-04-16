@@ -79,7 +79,7 @@ class PasswordFindViewController: BaseController {
     
     func popupSuccessAlertView(){
         let popupView = AlertView(frame: view.bounds)
-        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "이메일 전송 성공\n전송된 메일을 통해 비밀번호를 재설정 해주세요.", myView: popupView)
+        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "확인", content: "전송된 이메일을 통해 비밀번호를 재설정 해주세요.", myView: popupView)
         popupView.cancelButton.isHidden = true
         popupView.delegate = self
         self.view.addSubview(popupView)

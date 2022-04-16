@@ -75,7 +75,7 @@ class ConverMemberViewController: BaseController {
     
     func popupSuccessAlertView(){
         let popupView = AlertView(frame: view.bounds)
-        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "회원전환 성공\n로그인 화면으로 이동하여 로그인을 진행해주세요.", myView: popupView)
+        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "확인", content: "회원전환 성공\n로그인 화면으로 이동하여 로그인을 진행해주세요.", myView: popupView)
         popupView.cancelButton.isHidden = true
         popupView.delegate = self
         self.view.addSubview(popupView)
@@ -84,7 +84,7 @@ class ConverMemberViewController: BaseController {
     
     func popupFailureAlertView(){
         let popupView = AlertView(frame: view.bounds)
-        popupView.popupAlert(firstBtnTitle: "네", secondBtnTitle: nil, content: "회원전환 실패\n중복된 이메일입니다. 다시 입력해주세요.", myView: popupView)
+        popupView.popupAlert(firstBtnTitle: "확인", secondBtnTitle: nil, content: "회원전환 실패\n중복된 이메일입니다. 다시 입력해주세요.", myView: popupView)
         popupView.okButton.isHidden = true
         popupView.delegate = self
         self.view.addSubview(popupView)

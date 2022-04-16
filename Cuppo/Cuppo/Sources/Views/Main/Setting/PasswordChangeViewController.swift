@@ -115,7 +115,7 @@ class PasswordChangeViewController: BaseController {
     
     func popupSuccessAlertView(){
         let popupView = AlertView(frame: view.bounds)
-        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "비밀번호가 성공적으로 변경되었습니다.", myView: popupView)
+        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "확인", content: "비밀번호가 성공적으로 변경되었습니다.", myView: popupView)
         popupView.cancelButton.isHidden = true
         popupView.delegate = self
         self.view.addSubview(popupView)
@@ -123,7 +123,7 @@ class PasswordChangeViewController: BaseController {
     
     func popupFailureAlertView(){
         let popupView = AlertView(frame: view.bounds)
-        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "네", content: "비밀번호 변경 실패\n올바른 비밀번호를 입력해주세요.", myView: popupView)
+        popupView.popupAlert(firstBtnTitle: nil, secondBtnTitle: "확인", content: "비밀번호 변경 실패\n올바른 비밀번호를 입력해주세요.", myView: popupView)
         popupView.cancelButton.isHidden = true
         popupView.delegate = self
         self.view.addSubview(popupView)
