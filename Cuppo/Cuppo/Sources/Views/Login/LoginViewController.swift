@@ -76,6 +76,7 @@ class LoginViewController: BaseController {
         
         setLayout()
         bind()
+        self.customNavigationBarAttribute(.clear, .clear)
         self.dismissKeyboardWhenTappedAround()
     }
     
@@ -107,11 +108,14 @@ class LoginViewController: BaseController {
         self.loginButton.rx.tap
             .bind{
                 //TODO: 로그인 검증 로직
+                self.showIndicator() // 인디케이터 보여짐
                 self.viewModel.login(email: self.emailTextField.textField.text ?? "",
                                      password: self.passwordTextField.textField.text ?? ""){ response in
                     switch response.type {
                     case .success:
                         //TODO: 로그인 성공, 메인화면으로 전환 and 인디케이터 넣어도 좋음
+                        self.dismissIndicator() //인디케이터 숨김
+                        
                         self.viewModel.setAccessTokenForUser(token: response.loginSuccess?.accessToken ?? "") // 액세스 토큰 저장
                         self.viewModel.setMemberInfo(memberType: .member) // 멤버 분류 세팅
                         let sb = UIStoryboard(name: "TabBar", bundle: nil)
@@ -120,22 +124,30 @@ class LoginViewController: BaseController {
                         self.view.window?.rootViewController = tabbarVC
                         break
                     case .fail:
-                        guard let failureType = response.loginFailure?.getFailureType() else { return }
+                        guard let failureType = response.loginFailure?.getFailureType() else {
+                            self.dismissIndicator() //인디케이터 숨김
+                            return }
                         switch failureType {
                         case .invalidPassword:
                             //TODO: 패스워드 올바르지않음 얼럿
+                            self.dismissIndicator() //인디케이터 숨김
+                            
                             self.emailTextField.alertLabel.isHidden = true
                             self.passwordTextField.alertLabel.isHidden = false
                             print("패스워드 올바르지 않음")
                             break
                         case .emailNotFound:
                             //TODO: 이메일 올바르지 않음 alert
+                            self.dismissIndicator() //인디케이터 숨김
+                            
                             self.emailTextField.alertLabel.isHidden = false
                             self.passwordTextField.alertLabel.isHidden = true
                             print("이메일 올바르지 않음")
                             break
                         case .exception:
                             //TODO: 예외 얼럿
+                            
+                            self.dismissIndicator() //인디케이터 숨김
                             self.emailTextField.alertLabel.isHidden = false
                             print("이메일 올바르지 않음")
                             break
@@ -149,9 +161,12 @@ class LoginViewController: BaseController {
             .bind{
                 //TODO: 처음 비회원 로그인하는 경우: 비회원 로그인 버튼 클릭 -> 로그인 이력 검증 -> 비회원 api -> 응답값 로컬에 저장 -> 로그인 api -> 메인
                 //TODO: 이후 비회원 로그인하는 경우: 비회원 로그인 버튼 클릭 -> 로그인 이력 검증 -> 로그인 api -> 메인
+                self.showIndicator()
+                
                 self.viewModel.anonymousLogin { response in
                     switch response.type {
                     case .success:
+                        self.dismissIndicator() //인디케이터 숨김
                         self.viewModel.setAccessTokenForUser(token: response.loginSuccess?.accessToken ?? "")
                         // 액세스 토큰 저장
                         self.viewModel.setMemberInfo(memberType: .nonMember) // 멤버 분류 세팅
@@ -159,22 +174,31 @@ class LoginViewController: BaseController {
                         
                         break
                     case .fail:
-                        guard let failureType = response.loginFailure?.getFailureType() else { return }
+                        guard let failureType = response.loginFailure?.getFailureType() else {
+                            self.dismissIndicator() //인디케이터 숨김
+                            return
+                        }
                         switch failureType {
                         case .invalidPassword:
                             //TODO: 패스워드 올바르지않음 얼럿
+                            self.dismissIndicator() //인디케이터 숨김
+                            
                             self.emailTextField.alertLabel.isHidden = true
                             self.passwordTextField.alertLabel.isHidden = false
                             print("패스워드 올바르지 않음")
                             break
                         case .emailNotFound:
                             //TODO: 이메일 올바르지 않음 alert
+                            self.dismissIndicator() //인디케이터 숨김
+                            
                             self.emailTextField.alertLabel.isHidden = false
                             self.passwordTextField.alertLabel.isHidden = true
                             print("이메일 올바르지 않음")
                             break
                         case .exception:
                             //TODO: 예외 얼럿
+                            self.dismissIndicator() //인디케이터 숨김
+                            
                             self.emailTextField.alertLabel.isHidden = false
                             print("이메일 올바르지 않음")
                             break

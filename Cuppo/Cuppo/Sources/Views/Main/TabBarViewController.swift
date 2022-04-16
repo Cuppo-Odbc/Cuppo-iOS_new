@@ -12,4 +12,10 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        self.tabBar.backgroundImage = UIImage(named: "basicLightMode.jpeg")
+    }
 }
