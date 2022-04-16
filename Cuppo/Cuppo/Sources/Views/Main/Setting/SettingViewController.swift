@@ -60,7 +60,7 @@ class SettingViewController: BaseController {
     }
     
     let viewDivider = UIView().then{
-        $0.backgroundColor = .secondaryLabel
+        $0.backgroundColor = UIColor(named: "cuppoColor10")
     }
     
     lazy var serviceMenu = SettingActionView().then{
