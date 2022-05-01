@@ -16,6 +16,7 @@ class DiaryViewController: UIViewController {
     
     let viewModel = DiaryViewModel()
     let textViewPlaceHolder: String = "커피에 담긴 순간을 기록해보세요."
+    private var originalBottomMargin: CGFloat = 0
     
     // MARK: - UIComponents
     @IBOutlet weak var dateLabel: UILabel!
@@ -23,6 +24,7 @@ class DiaryViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var coffeeImageView: UIImageView!
     @IBOutlet weak var contentTextView: UITextView!
+    @IBOutlet var bottomContainerMargin: NSLayoutConstraint!
     
     @IBOutlet weak var leftButton: UIBarButtonItem!
     @IBOutlet weak var rightButton: UIBarButtonItem!
@@ -59,6 +61,8 @@ class DiaryViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        originalBottomMargin = self.bottomContainerMargin.constant
+        addNotification()
         dismissKeyboardWhenTappedAround()
         setBind()
         setUI()
@@ -149,6 +153,31 @@ class DiaryViewController: UIViewController {
         popupView.popupAlert(firstBtnTitle: "아니요", secondBtnTitle: "예", content: "작성된 내용이 있습니다.\n기록을 취소하시겠습니까?.", myView: popupView)
         popupView.delegate = self
         view.addSubview(popupView)
+    }
+    
+    private func addNotification(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+          let keyboardHeight = keyboardFrame.cgRectValue.height
+          let animationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
+          UIView.animate(withDuration: animationDuration){
+              self.bottomContainerMargin.constant = keyboardHeight - self.view.safeAreaInsets.bottom - 100
+              self.view.layoutIfNeeded()
+          }
+        }
+    }
+      
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        let animvationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
+        
+        UIView.animate(withDuration: animvationDuration) {
+            self.bottomContainerMargin.constant = self.originalBottomMargin
+            self.view.layoutIfNeeded()
+        }
     }
 }
 

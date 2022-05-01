@@ -22,7 +22,8 @@ class CalendarViewModel {
     }
     
     func setFullDateString(day: String) {
-        let getDay: String = day.count < 10 ? "0"+day : day
+        let getDay: String = day.count < 2 ? "0"+day : day
+
         self.fullDateString.value = "\(getYear())-\(getNumberMonth())-\(getDay)"
     }
     
